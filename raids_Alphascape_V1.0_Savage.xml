@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>次元の狭間オメガ零式：アルファ編1</name>
+  <rev>rev3</rev>
+  <zone>Alphascape V1.0 (Savage)</zone>
+  <description>
+    次元の狭間オメガ零式：アルファ編1タイムライン
+  </description>
+  <author>
+    anoyetta
+  </author>
+  <license>CC BY-SA</license>
+  <locale>JA</locale>
+  <entry>ENTRY</entry>
+  <start>0039:戦闘開始！</start>
+
+  <!-- revisions
+  rev3 anoyetta
+    ・ロール別通知を整備した。
+      ほのお、じしん、たつまきなどロール別に対処が異なるものの通知を切り替えるようにした。
+    ・インプロージョンについて混沌の泥土の有無によって通知を切り替えるようにした
+      避ける通知か、当たりに行く通知か
+  -->
+
+  <default target-element="Activity" target-attr="notice-d" value="Both" />
+  <default target-element="Activity" target-attr="notice-o" value="-6" />
+  <default target-element="Activity" target-attr="sync-s" value="-10" />
+  <default target-element="Activity" target-attr="sync-e" value="10" />
+
+  <!-- 汚泥フラグの操作 begin -->
+  <t no="-1" sync="^1A:[mex] gains the effect of 混沌の泥土">
+    <expressions>
+      <set name="is_deido" value="true" />
+    </expressions>
+  </t>
+
+  <t no="-1" sync="^1E:[mex] loses the effect of 混沌の泥土">
+    <expressions>
+      <set name="is_deido" value="false" />
+    </expressions>
+  </t>
+  <!-- 汚泥フラグの操作 end -->
+
+  <t text="自分にマーカー" sync="(1B:[id8]:[mex]:|[mex]に「マーキング」の効果。)" notice="自分にマーカー">
+    <v-notice 
+      duration="5" 
+      duration-visible="false" 
+      order="-1" 
+      job-icon="true" />
+  </t>
+
+  <t text="マーカー\n ➜ ${_nex}" sync="(1B:[id8]:[nex]:|[nex]に「マーキング」の効果。)">
+    <v-notice 
+      duration="5" 
+      duration-visible="false" 
+      order="10" 
+      style="NOTICE_NORMAL_SMALL" 
+      job-icon="true" />
+  </t>
+
+  <!-- インプロージョン 泥土なし begin -->  
+  <t text="左右 ➜ 前後" sync="カオスは「ヴァーティカルインプロージョン」の構え" notice="左右から前後へ。" >
+    <expressions>
+      <pre name="is_deido" value="false" />
+    </expressions>
+    <v-notice duration="6" icon="全体強攻撃.png" duration-visible="false" />
+  </t>
+
+  <t text="前後 ➜ 左右" sync="カオスは「ホリゾンタルインプロージョン」の構え" notice="前後から左右へ。" >
+    <expressions>
+      <pre name="is_deido" value="false" />
+    </expressions>
+    <v-notice duration="6" icon="全体強攻撃.png" duration-visible="false" />
+  </t>
+  <!-- インプロージョン 泥土なし end -->  
+
+  <!-- インプロージョン 泥土あり begin -->
+  <t text="前後 ➜ 左右\n当たる" sync="カオスは「ヴァーティカルインプロージョン」の構え" notice="前後から左右へ、食らう。">
+    <expressions>
+      <pre name="is_deido" value="true" />
+    </expressions>
+    <v-notice duration="6" icon="Explosion.png" duration-visible="false" />
+  </t>
+
+  <t text="左右 ➜ 前後\n当たる" sync="カオスは「ホリゾンタルインプロージョン」の構え" notice="左右から前後へ、食らう。">
+    <expressions>
+      <pre name="is_deido" value="true" />
+    </expressions>
+    <v-notice duration="6" icon="Explosion.png" duration-visible="false" />
+  </t>
+  <!-- インプロージョン 泥土あり end -->  
+
+  <t text="カオスパンチ\n➜ ${_pc}" sync="starts using カオティックディスパーション on [pc]" notice="カオス。">
+    <v-notice duration="6" icon="単体強攻撃.png" duration-visible="false" />
+  </t>
+
+  <t text="背面に！" sync="カオスは「ダミングイーディクト」の構え" notice="背面えー。">
+    <v-notice duration="6" icon="背面集合.png" duration-visible="false" />
+  </t>
+
+  @if (Model.Player.InRole("TANK", "HEALER")) {
+    <t text="Ｔ＋Ｈ ➔外向き\nＤＰＳ ➔内向き" sync="カオスは「たつまき」の構え" notice="外向きにー。" >
+      <v-notice duration="6" icon="ノックバック.png" duration-visible="false" />
+    </t>
+  } else {
+    <t text="ＤＰＳ ➔内向き\nＴ＋Ｈ ➔外向き" sync="カオスは「たつまき」の構え" notice="内向きにー。" >
+      <v-notice duration="6" icon="ノックバック.png" duration-visible="false" />
+    </t>
+  }
+
+  <!-- 識別用エントリフェーズ -->
+  <s name="ENTRY" >
+  <a time="15" text="分岐待ち" icon="分岐.png" />
+    <t text="分岐＞ほのお" sync="カオスは「ダミングイーディクト」の構え" >
+      <load target="TYPE A" truncate="true" />
+      <load target="TYPE C" />
+      <load target="TYPE B" />
+    </t>
+
+    <t text="分岐＞つなみ" sync="インプロージョン」の構え" >
+      <load target="TYPE B" truncate="true" />
+      <load target="TYPE C" />
+      <load target="TYPE A" />
+    </t>
+  </s>
+  <!-- 識別用エントリフェーズ end -->
+
+  @{
+    var NOTICE_FILE = Model.Player.InRole("TANK", "HEALER") ?
+      "次は、ほのお、散開する。" :
+      "次は、ほのお。";
+    
+    var NOTICE_TORNADO = Model.Player.InRole("TANK") ?
+      "次は、たつまき、誘導する。" :
+      "次は、たつまき、移動する。";
+    
+    var NOTICE_EARTHSHAKE = Model.Player.InRole("DPS") ?
+      "次は、じしん、被弾する。" :
+      "次は、じしん。";
+  }
+
+  <!-- TYPE A begin -->
+  <s name="TYPE A">
+    <a time="14" text="ほのお" sync="カオスは「ほのお」の構え" notice="@NOTICE_FILE" icon="ファイア系.png" />
+    <a time="31" text="Ｔ＆Ｈ爆発" icon="爆発.png" notice="次は、タンクヒラ爆発。" />
+    <a time="31" text="インプロージョン" sync="インプロージョン」の構え" />
+    <a time="43" text="ＤＰＳ爆発" icon="爆発.png" notice="次は、DPS爆発。" />
+    <a time="51" text="カオティックディスパーション" sync="カオスは「カオティックディスパーション」の構え" notice="次は、タンク大ダメージ。" icon="単体強攻撃.png" />
+    <a time="63" text="ほのお" sync="カオスは「ほのお」の構え" notice="@NOTICE_FILE" icon="ファイア系.png" />
+    <a time="82" text="Ｔ＆Ｈ爆発" icon="爆発系.png" notice="次は、タンクヒラ爆発。" />
+    <a time="82" text="着弾せよ" icon="頭割り.png" />
+    <a time="95" text="ＤＰＳ爆発" icon="爆発系.png" notice="次は、DPS爆発。" />
+    <a time="95" text="突出せよ" icon="避ける.png" />
+    <a time="105" text="追尾せよ" />
+
+    <a time="124" text="たつまき" sync="カオスは「たつまき」の構え" notice="@NOTICE_TORNADO" icon="ツイスター.png" />
+    <a time="136" text="アンブラスマッシュ" sync="カオスは「アンブラスマッシュ」の構え" icon="距離減衰.png" />
+    <a time="146" text="ダミングイーディクト" />
+    <a time="149" text="吹き飛ばし" icon="ノックバック.png" />
+    <a time="165" text="カオティックディスパーション" sync="カオスは「カオティックディスパーション」の構え" notice="次は、タンク大ダメージ。" icon="単体強攻撃.png" />
+    <a time="177" text="たつまき" sync="カオスは「たつまき」の構え" notice="次は、たつまき。" />
+    <a time="189" text="着弾せよ" notice="次は、ふきとばしの準備。" />
+    <a time="195" text="吹き飛ばし" icon="ノックバック.png" />
+    <a time="197" text="突出せよ" icon="避ける.png" />
+    <a time="209" text="追尾せよ（タンク線取り）" sync="カオスは「追尾せよ」の構え" icon="マーカー.png" />
+    <a time="223" text="ローディング" />
+  </s>
+  <!-- TYPE A end -->
+
+  <!-- TYPE B begin -->
+  <s name="TYPE B" >
+    <a time="15" text="つなみ" sync="カオスは「つなみ」の構え" icon="全体攻撃.png" notice="次は、つなみ。" />
+    <a time="24" text="アンブラスマッシュ" sync="カオスは「アンブラスマッシュ」の構え" icon="距離減衰.png" />
+    <a time="33" text="ダミングイーディクト" sync="カオスは「ダミングイーディクト」の構え"/>
+    <a time="52" text="カオティックディスパーション" sync="カオスは「カオティックディスパーション」の構え" notice="次は、タンク大ダメージ。" icon="単体強攻撃.png" />
+    <a time="64" text="つなみ" sync="カオスは「つなみ」の構え" icon="全体攻撃.png" notice="次は、つなみ。" />
+    <a time="74" text="着弾せよ" sync="カオスは「着弾せよ」の構え" />
+    <a time="82" text="突出せよ" icon="避ける.png" />
+    <a time="94" text="追尾せよ(タンク線取り)" sync="カオスは「追尾せよ」の構え" icon="マーカー.png" />
+
+    <a time="116" text="じしん" sync="カオスは「じしん」の構え" icon="全体攻撃.png" notice="@NOTICE_EARTHSHAKE"  />
+    <a time="130" text="インプロージョン" sync="インプロージョン」の構え" />
+    <a time="149" text="カオティックディスパーション" sync="カオスは「カオティックディスパーション」の構え" notice="次は、タンク大ダメージ。" icon="単体強攻撃.png" />
+    <a time="161" text="じしん" sync="カオスは「じしん」の構え" icon="全体攻撃.png" notice="@NOTICE_EARTHSHAKE"  />
+    <a time="173" text="着弾せよ" icon="頭割り.png" />
+    <a time="180" text="突出せよ" icon="避ける.png" />
+    <a time="191" text="追尾せよ(玉)" />
+    <a time="204" text="ローディング" />
+  </s>
+  <!-- TYPE B end -->
+
+  @{
+    var NOTICE_DPS_BOMB = Model.Player.InRole("TANK", "HEALER") ?
+      "次は、DPS爆発、外向きに。" :
+      "次は、DPS爆発。";
+  }
+
+  <!-- TYPE C begin -->
+  <s name="TYPE C" >
+    <a time="0" text="バウル・オブ・アゴニー" />
+    <a time="19" text="ＤＰＳ爆発" notice="@NOTICE_DPS_BOMB" />
+    <a time="21" text="Ｔ＆Ｈ爆発" notice="次は、タンクヒラ爆発。" />
+    <a time="49" text="ソウル・オブ・カオス" sync="カオスの「ソウル・オブ・カオス" />
+    <a time="65" text="ローディング" />
+  </s>
+  <!-- TYPE C end -->
+</timeline>

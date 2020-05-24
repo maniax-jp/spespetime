@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+<name>希望の園エデン零式：覚醒編２</name>
+<rev>TEST1</rev>
+<description>
+希望の園エデン零式：覚醒編２
+201907310250:テスト版。動作未チェック
+201907311941:連続剣逆だった。まずいですよこれは・・・！
+</description>
+<author>Aqua Cat,RINGS</author>
+<license>CC BY-SA</license>
+<zone>854</zone>
+<locale>JA</locale>
+<entry>ENTRY</entry>
+<start>0039:戦闘開始！</start>
+
+<default target-element="Activity" target-attr="notice-d" value="Both" />
+<default target-element="Activity" target-attr="notice-o" value="-6" />
+<default target-element="Activity" target-attr="sync-s" value="-10" />
+<default target-element="Activity" target-attr="sync-e" value="10" />
+
+
+<t text="復讐の連続剣" sync="ヴォイドウォーカーは「復讐の連続剣」の構え。" notice="中央・散開・直線">
+<v-notice
+duration="5"
+duration-visible="false"
+icon="True"
+order="-1" />
+</t>
+
+<t text="混沌の連続剣" sync="ヴォイドウォーカーは「混沌の連続剣」の構え。" notice="直線・中央・散開">
+<v-notice
+duration="5"
+duration-visible="false"
+icon="True"
+order="-1" />
+</t>
+
+<t text="スライサー" sync="ヴォイドウォーカーは「ドゥームヴォイド・スライサー」の構え。" notice="中央アンチ">
+<v-notice
+duration="5"
+duration-visible="false"
+icon="True"
+order="-1" />
+</t>
+
+<t text="ギロチン" sync="ヴォイドウォーカーは「ドゥームヴォイド・ギロチン」の構え。" notice="側面アンチ">
+<v-notice
+duration="5"
+duration-visible="false"
+icon="True"
+order="-1" />
+</t>
+
+<t text="腕オレンジ" sync="エレボスの巨腕 starts using 虚ろなる害意 on エレボスの巨腕." notice="腕オレンジ">
+<v-notice
+duration="5"
+duration-visible="false"
+icon="True"
+order="-1" />
+</t>
+
+<t text="ノックバック" sync="エレボスの巨腕 starts using 虚ろなる悪意 on エレボスの巨腕." notice="ノックバック">
+<v-notice
+duration="5"
+duration-visible="false"
+icon="True"
+order="-1" />
+</t>
+
+ 
+
+<s name="ENTRY">
+<a time="005" text="クリーバー" sync="ヴォイドウォーカーは「ドゥームヴォイド・クリーバー」の構え。" notice="８方向" />
+<a time="011" sync="次元の裂け目が開いた……！" />
+<a time="019" text="ダークホーリー" sync="ヴォイドウォーカーは「ダークホーリー」を唱えた。" notice="ダークホーリー。" />
+<a time="027" sync="ヴォイドウォーカー:さあ、もう一度だ……深淵へと通じ得る境界を斬り裂かん！" />
+<a time="027" text="スライサー／ギロチン" sync="ヴォイドウォーカーは「ドゥームヴォイド・スライサー」の構え。" />
+<a time="033" sync="次元の裂け目が開いた……！" />
+<a time="037" text="ダークファイガ" sync="ヴォイドウォーカーは「ダークファイガ」を唱えた。" notice="ダークファイガ。" />
+<a time="056" sync="ヴォイドウォーカー:我が魔法を遅延させよう…… 死の言霊は、睦言のように甘く、密やかに忍び寄るのだ……。" />
+<a time="056" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="061" text="ダークホーリー" sync="ヴォイドウォーカーは「ダークホーリー」を唱えた。" notice="ディレイ・ダークホーリー。" />
+<a time="069" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="075" text="ダークファイガ" sync="ヴォイドウォーカーは「ダークファイガ」を唱えた。" notice="ディレイ・ダークファイガ。" />
+<a time="083" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="088" text="シャドウアイ" sync="ヴォイドウォーカーは「シャドウアイ」を唱えた。" notice="ディレイ・シャドウアイ。" />
+<a time="098" text="ヘルウィンド" sync="ヴォイドウォーカーは「ヘルウィンド」を唱えた。" notice="ヘルウィンド。" />
+<a time="115" text="シャドーフレイム" sync="ヴォイドウォーカーは「シャドーフレイム」の構え。" notice="タンク単体。" />
+<a time="126" text="エントロピー" sync="ヴォイドウォーカーは「エントロピー」を唱えた。" notice="全体攻撃。" />
+<a time="132" sync="ヴォイドウォーカー:嗚呼、昏き深淵よ！ 世を隔てる悪しき境界を引き裂け！" />
+<a time="134" sync="次元の裂け目より、エレボスの巨腕が現れた……！" />
+<a time="137" text="虚ろなる害意" sync="エレボスの巨腕 starts using 虚ろなる害意 on エレボスの巨腕." />
+<a time="143" text="ギロチン" sync="ヴォイドウォーカーは「ドゥームヴォイド・ギロチン」の構え。" />
+<a time="149" sync="次元の裂け目が開いた……！" />
+<a time="151" text="スライサー" sync="ヴォイドウォーカーは「ドゥームヴォイド・スライサー」の構え。" />
+<a time="155" sync="次元の裂け目より、エレボスの巨腕が現れた……！" />
+<a time="157" sync="次元の裂け目が開いた……！" />
+<a time="158" text="虚ろなる悪意" sync="エレボスの巨腕 starts using 虚ろなる悪意 on エレボスの巨腕." />
+<a time="170" text="クリーバー" sync="ヴォイドウォーカーは「ドゥームヴォイド・クリーバー」の構え。" notice="８方向" />
+<a time="175" sync="次元の裂け目が開いた……！" />
+<a time="185" text="シャドーフレイム" sync="ヴォイドウォーカーは「シャドーフレイム」の構え。" notice="タンク単体。" />
+<a time="195" text="エントロピー" sync="ヴォイドウォーカーは「エントロピー」を唱えた。" notice="全体攻撃。" />
+<a time="205" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="210" text="ヘルウィンド" sync="ヴォイドウォーカーは「ヘルウィンド」を唱えた。" notice="ディレイ・ヘルウィンド。" />
+<a time="218" text="フレア" sync="ヴォイドウォーカーは「フレア」を唱えた。" notice="フレア。" />
+<a time="226" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="231" text="シャドウアイ" sync="ヴォイドウォーカーは「シャドウアイ」を唱えた。" notice="ディレイ・シャドウアイ。" />
+<a time="255" text="シャドーフレイム" sync="ヴォイドウォーカーは「シャドーフレイム」の構え。" notice="タンク単体。" />
+<a time="265" text="エントロピー" sync="ヴォイドウォーカーは「エントロピー」を唱えた。" notice="全体攻撃。" />
+<a time="276" sync="ヴォイドウォーカー:光に目を焼かれた者どもめ…… 貴様たちに、定めを示してみせよう！" />
+<a time="277" text="罪と罰" notice="罪と罰。" />
+<a time="280" text="クリーバー" sync="ヴォイドウォーカーは「ドゥームヴォイド・クリーバー」の構え。" notice="８方向" />
+<a time="286" sync="次元の裂け目が開いた……！" />
+<a time="289" text="ダークホーリー" sync="ヴォイドウォーカーは「ダークホーリー」を唱えた。" notice="ダークホーリー。" />
+<a time="299" text="スライサー／ギロチン" sync="ヴォイドウォーカーは「ドゥームヴォイド・スライサー」の構え。" />
+<a time="305" sync="次元の裂け目が開いた……！" />
+<a time="324" text="シャドーフレイム" sync="ヴォイドウォーカーは「シャドーフレイム」の構え。" notice="タンク単体。" />
+<a time="335" text="エントロピー" sync="ヴォイドウォーカーは「エントロピー」を唱えた。" notice="全体攻撃。" />
+<a time="345" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="349" sync="次元の裂け目より、エレボスの巨腕が現れた……！" />
+<a time="350" text="フレア" sync="ヴォイドウォーカーは「フレア」を唱えた。" notice="ディレイ・フレア。" />
+<a time="352" text="虚ろなる害意" sync="エレボスの巨腕 starts using 虚ろなる害意 on エレボスの巨腕." />
+<a time="358" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="363" text="ダークホーリー" sync="ヴォイドウォーカーは「ダークホーリー」を唱えた。" notice="ディレイ・ダークホーリー。" />
+<a time="371" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="376" text="フレア" sync="ヴォイドウォーカーは「フレア」を唱えた。" notice="ディレイ・フレア。" />
+<a time="394" text="シャドーフレイム" sync="ヴォイドウォーカーは「シャドーフレイム」の構え。" notice="タンク単体。" />
+<a time="405" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="410" text="シャドウアイ" sync="ヴォイドウォーカーは「シャドウアイ」を唱えた。" notice="ディレイ・シャドウアイ。" />
+<a time="418" sync="ヴォイドウォーカーは「ディレイスペル」の構え。" />
+<a time="423" text="ダークファイガ" sync="ヴォイドウォーカーは「ダークファイガ」を唱えた。" notice="ディレイ・ダークファイガ。" />
+<a time="439" text="罪と罰" notice="罪と罰。" />
+<a time="449" text="クリーバー" sync="ヴォイドウォーカーは「ドゥームヴォイド・クリーバー」の構え。" notice="８方向" />
+<a time="455" sync="次元の裂け目が開いた……！" />
+<a time="463" text="シャドーフレイム" sync="ヴォイドウォーカーは「シャドーフレイム」の構え。" notice="タンク単体。" />
+<a time="491" sync="ヴォイドウォーカー:混沌を司るは闇の力…… 昏き魔力よ、限りなく増大し、終末をも覆いつくせ！" />
+<a time="491" text="クワイタス" sync="ヴォイドウォーカーは「クワイタス」を唱えた。" notice="クワイタス。" />
+<a time="501" sync="ヴォイドウォーカー:光に溺れた愚者どもめ……その首を断ち斬ってくれるッ！" />
+<a time="502" text="ランダム連続剣" />
+<a time="507" sync="次元の裂け目が開いた……！" />
+<a time="511" sync="次元の裂け目が開いた……！" />
+<a time="514" sync="次元の裂け目が開いた……！" />
+<a time="526" text="ランダム連続剣" />
+<a time="532" sync="次元の裂け目が開いた……！" />
+<a time="535" sync="次元の裂け目が開いた……！" />
+<a time="538" sync="次元の裂け目が開いた……！" />
+<a time="550" text="クワイタス" sync="ヴォイドウォーカーは「クワイタス」を唱えた。" notice="クワイタス。" />
+<a time="562" text="ランダム連続剣" />
+<a time="568" sync="次元の裂け目が開いた……！" />
+<a time="571" sync="次元の裂け目が開いた……！" />
+<a time="574" sync="次元の裂け目が開いた……！" />
+<a time="586" text="クワイタス" sync="ヴォイドウォーカーは「クワイタス」を唱えた。" notice="クワイタス。" />
+<a time="595" text="クワイタス" sync="ヴォイドウォーカーは「クワイタス」を唱えた。" notice="クワイタス。" />
+<a time="604" text="クワイタス" sync="ヴォイドウォーカーは「クワイタス」を唱えた。" notice="クワイタス。" />
+<a time="612" text="時間切れ詠唱" sync="ヴォイドウォーカー:もはや、これ以上、戦い続ける意味はなし……。 その魂を無に帰すべき時が来た……！" notice="時間切れ" />
+</s>
+</timeline>

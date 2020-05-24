@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+<name>希望の園エデン零式：覚醒編4</name>
+<rev>1.0</rev>
+<description>
+201908031604:作成。動作確認Rev1.0
+AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
+</description>
+<author>Aqua Cat,RINGS</author>
+<license>CC BY-SA</license>
+<zone>856</zone>
+<locale>JA</locale>
+<entry>前半</entry>
+<start>0039:戦闘開始！</start>
+
+
+<s name="前半">
+<a time="000" sync="タイタン:聞け、大地の叫びを……感じよ、大地の重みを…… そして、沈め、大地の怒りによって……！" />
+<a time="010" text="ロッククラッシュ" sync="タイタンは「ロッククラッシュ」の構え。" notice="ロッククラッシュ。" />
+<a time="026" text="大地の重み" sync="タイタンは「大地の重み」の構え。" notice="大地の重み。" />
+<a time="035" text="イビルアース" sync="タイタンは「イビルアース」の構え。" notice="イビルアース。" />
+<a time="051" text="大地の叫び" sync="タイタン starts using 大地の叫び" notice="大地の叫び。" />
+<a time="062" text="ジオクラッシュ" sync="タイタン starts using ジオクラッシュ" notice="ジオクラッシュ。" />
+<!--分岐-->
+<a time="080" text="分岐待ち" icon="分岐.png" />
+<t text="車輪" sync="タイタンの「大地の車輪」" notice="車輪スタート">
+<load target="車輪" truncate="true" />
+<load target="前半共通" />
+<load target="手甲" />
+<load target="中盤" />
+</t>
+<t text="手甲" sync="タイタンの「大地の手甲」" notice="手甲スタート">
+<load target="手甲" truncate="true" />
+<load target="前半共通" />
+<load target="車輪" />
+<load target="中盤" />
+</t>
+</s>
+
+<s name="車輪">
+<a time="000" text="大地の車輪" sync="タイタンの「大地の車輪」" notice="大地の車輪。" />
+<a time="005" text="フォールトゾーン" sync="タイタンの「フォールトゾーン」" notice="フォールトゾーン。" />
+<a time="007" text="フォールトライン" sync="タイタンは「フォールトライン」の構え。" notice="フォールトライン。" />
+<a time="012" text="マグニチュード5.0" sync="タイタンは「マグニチュード5.0」の構え。" notice="マグニチュード5.0。" />
+<a time="020" text="大地の鎧" sync="タイタンの「大地の鎧」" notice="大地の鎧。" />
+</s>
+
+<s name="手甲">
+<a time="000" text="大地の手甲" sync="タイタンの「大地の手甲」" notice="大地の手甲。" />
+<a time="007" text="メガ・ランドスライド" sync="タイタンの「メガ・ランドスライド」" notice="メガ・ランドスライド。" />
+<a time="016" text="大地の叫び" sync="タイタンは「大地の叫び」の構え。" notice="大地の叫び。" />
+<a time="026" text="ランドスライド" sync="タイタンは「ランドスライド」の構え。" notice="ランドスライド。" />
+<a time="032" text="衝撃" sync="ボムボルダーの「衝撃」" notice="衝撃。" />
+<a time="034" text="ランドスライド" sync="タイタンは「(ライト|レフト)・ランドスライド」の構え。" notice="ランドスライド。" />
+<a time="038" text="爆散" sync="ボムボルダーは「爆散」の構え。" notice="爆散。" />
+<a time="042" text="爆散" sync="ボムボルダーは「爆散」の構え。" notice="爆散。" />
+<a time="046" text="大地の鎧" sync="タイタンの「大地の鎧」" notice="大地の鎧。" />
+</s>
+
+<s name="前半共通">
+<a time="031" text="岩盤崩落" sync="タイタンは「岩盤崩落」の構え。" notice="岩盤崩落。" />
+<a time="011" text="岩盤崩落" sync="タイタンは「岩盤崩落」の構え。" notice="岩盤崩落。" />
+<a time="019" text="ボムボルダー" sync="タイタンは「ボムボルダー」の構え。" notice="ボムボルダー。" />
+<a time="024" text="岩盤崩落" sync="ジャイアントボルダー starts using 岩盤崩落" notice="岩盤崩落。" />
+<a time="028" text="衝撃" sync="ボムボルダーの「衝撃」" notice="衝撃。" />
+<a time="031" text="衝撃" sync="ボムボルダーの「衝撃」" notice="衝撃。" />
+<a time="032" text="サイズミックW" sync="タイタンは「サイズミックウェーブ」の構え。" notice="サイズミックウェーブ。" />
+<a time="033" text="爆散" sync="ボムボルダーは「爆散」の構え。" notice="爆散。" />
+<a time="035" text="爆散" sync="ボムボルダーは「爆散」の構え。" notice="爆散。" />
+<a time="037" text="爆散" sync="ボムボルダーは「爆散」の構え。" notice="爆散。" />
+<a time="046" text="大地の叫び" sync="タイタンは「大地の叫び」の構え。" notice="大地の叫び。" />
+<a time="054" text="ロッククラッシュ" sync="タイタンは「ロッククラッシュ」の構え。" notice="ロッククラッシュ。" />
+<a time="076" text="ジオクラッシュ" sync="タイタンは「ジオクラッシュ」の構え。" notice="ジオクラッシュ。" />
+</s>
+
+<s name="中盤"><!--マキシタイタン部分-->
+<a time="000" sync="タイタン:我は、そなたの心を映す鏡…… まだ足りぬ、あの恐怖に比肩せぬと感じるならば……！" />
+<a time="014" sync="タイタン:我は、その心にこそ応えよう……！ 命育む土の力よ、今ここに覚醒せよッ！" />
+<a time="015" text="オーロジェニー" sync="タイタンの「オーロジェニー」" notice="オーロジェニー。" />
+<a time="031" text="大地の怒り" sync="マキシタイタンは「大地の怒り」の構え。" notice="大地の怒り。" />
+<a time="045" sync="マキシタイタン:ヌオオオオオオッ！ 我が内から湧きいずる大地の怒りは止められん！" />
+<a time="045" text="大地の拳(予兆)" sync="マキシタイタンは「大地の拳」の構え。" notice="大地の拳。" />
+<a time="061" text="大地の両拳" sync="マキシタイタンは「大地の両拳」の構え。" notice="大地の両拳。" />
+<a time="071" text="メガリスクラッシュ" sync="マキシタイタンは「メガリスクラッシュ」の構え。" notice="メガリスクラッシュ。" />
+<a time="086" text="アップリフト" sync="マキシタイタンは「クラスタルアップリフト」の構え。" notice="クラスタルアップリフト。" />
+<a time="094" text="大地の重み" sync="マキシタイタン starts using 大地の重み on マキシタイタン." notice="大地の重み。" />
+<a time="106" text="大地の怒り" sync="マキシタイタンは「大地の怒り」の構え。" notice="大地の怒り。" />
+<a time="123" text="ジェイル(予兆)" sync="マキシタイタンは「グラナイト・ジェイル」の構え。" notice="ジェイルの予兆" />
+<a time="129" text="エリア破壊x3" sync="マキシタイタンは「ロックフラクチャー」の構え。" notice="ロックフラクチャー3連" />
+<a time="141" text="ジェイルPOP" sync="グラナイト・ジェイルは「爆散」の構え。" notice="ジェイルがポップ" />
+<a time="144" text="エリア破壊x2" sync="マキシタイタンは「ロックフラクチャー」の構え。" notice="ロックフラクチャー2" />
+<a time="157" text="エリア破壊x1" sync="マキシタイタンは「ロックフラクチャー」の構え。" notice="ロックフラクチャー1" />
+<!--a time="169" text="☆トルバ☆" notice="トルバ" /-->
+<a time="170" text="大地の怒り" sync="マキシタイタンは「大地の怒り」の構え。" notice="大地の怒り。" />
+<a time="181" text="激震" sync="マキシタイタンは「激震」の構え。" notice="激震。" />
+<a time="197" text="大地の両拳" sync="マキシタイタンは「大地の両拳」の構え。" notice="大地の両拳。" />
+<a time="205" text="大地の拳(予兆)" sync="マキシタイタンは「大地の拳」の構え。" notice="大地の拳。" />
+<a time="209" text="イビルアース" sync="マキシタイタン starts using イビルアース on マキシタイタン." notice="イビルアース。" />
+<!--
+<a time="213" text="大地の拳" sync="マキシタイタン starts using 大地の拳 on マキシタイタン." notice="大地の拳。" />
+<a time="216" text="大地の拳" sync="マキシタイタン starts using 大地の拳 on マキシタイタン." notice="大地の拳。" />
+-->
+<a time="224" text="クラスタルアップリフト" sync="マキシタイタンは「クラスタルアップリフト」の構え。" notice="クラスタルアップリフト。" />
+<a time="242" text="ジェイル" sync="グラナイト・ジェイルは「爆散」の構え。" notice="爆散。" />
+<a time="246" text="大地の響き" sync="マキシタイタンは「大地の響き」の構え。" notice="大地の響き。" />
+<a time="262" text="大陸の重み" sync="マキシタイタンは「大陸の重み」の構え。" notice="大陸の重み。" />
+<a time="281" text="大地の怒り" sync="マキシタイタンは「大地の怒り」の構え。" notice="大地の怒り。" />
+<a time="292" text="激震" sync="マキシタイタンは「激震」の構え。" notice="激震。" />
+<a time="308" text="ロックフラクチャー" sync="マキシタイタンは「ロックフラクチャー」の構え。" notice="ロックフラクチャー。" />
+<a time="322" text="メガリスクラッシュ" sync="マキシタイタンは「メガリスクラッシュ」の構え。" notice="メガリスクラッシュ。" />
+<a time="332" text="ロックフラクチャー" sync="マキシタイタンは「ロックフラクチャー」の構え。" notice="ロックフラクチャー。" />
+<a time="347" text="大地の怒り" sync="マキシタイタンは「大地の怒り」の構え。" notice="大地の怒り。" />
+<a time="380" text="フェーズ移行" sync="マキシタイタン:よくぞ、耐えてくれる……！" notice="フェーズ移行" goto="最終" sync-s="-40"/>
+</s>
+<s name="最終"><!--タイタンが再POPしたところから。-->
+<a time="000" text="オーロジェニー" sync="マキシタイタンは「オーロジェニー」の構え。" notice="オーロジェニー。" />
+<!--a time="002" text="☆ミンネ(ナ)☆" notice="ナイトにミンネ" /-->
+<!--a time="010" text="☆トルバ☆" notice="トルバ" /-->
+<a time="012" text="大地の怒り" sync="タイタンは「大地の怒り」の構え。" notice="大地の怒り。" />
+<a time="042" text="大地の両拳" sync="マキシタイタン starts using 大地の両拳" notice="大地の両拳。" />
+<a time="054" text="大地の叫び" sync="タイタンは「大地の叫び」の構え。" notice="大地の叫び。" />
+<a time="058" text="激震" sync="マキシタイタン starts using 激震 on マキシタイタン." notice="激震。" />
+<a time="067" text="大地の叫び" sync="タイタンは「大地の叫び」の構え。" notice="大地の叫び。" />
+<a time="076" text="大地の怒り" sync="タイタンは「大地の怒り」の構え。" notice="大地の怒り。" />
+<a time="105" sync="マキシタイタンは力を溜めている……！" />
+<a time="106" text="大地の拳(予兆)" sync="マキシタイタン starts using 大地の拳 on マキシタイタン." notice="大地の拳。" />
+<!--ここはチェック中。パンチが来るタイミングっぽいけどズレる。
+<a time="112" text="大地の拳" notice="大地の拳。" />
+<a time="115" text="大地の拳" notice="大地の拳。" />
+-->
+<a time="118" text="ロッククラッシュ" sync="タイタンは「ロッククラッシュ」の構え。" notice="ロッククラッシュ。" />
+<a time="131" text="メガリスクラッシュ" sync="マキシタイタン starts using メガリスクラッシュ on Cross Whites." notice="次は、メガリスクラッシュ。" />
+<a time="142" text="大地の怒り" sync="タイタンは「大地の怒り」の構え。" notice="次は、大地の怒り。" />
+<a time="149" text="大地の怒り" sync="タイタン starts using 大地の怒り on タイタン." notice="次は、大地の怒り。" />
+<a time="171" sync="マキシタイタンは力を溜めている……！" />
+<a time="172" text="大地の拳(予兆)" sync="マキシタイタン starts using 大地の拳 on マキシタイタン." notice="次は、大地の拳。" />
+<!--
+<a time="179" text="大地の拳" sync="タイタン starts using 大地の拳 on タイタン." notice="次は、大地の拳。" />
+<a time="182" text="大地の拳" sync="マキシタイタン starts using 大地の拳 on マキシタイタン." notice="次は、大地の拳。" />
+-->
+<!-- a time="182" text="☆トルバ☆" notice="トルバ" /-->
+<a time="183" text="大地の叫び" sync="タイタンは「大地の叫び」の構え。" notice="次は、大地の叫び。" />
+<a time="187" text="激震" sync="マキシタイタン starts using 激震 on マキシタイタン." notice="次は、激震。" />
+<a time="195" text="大地の叫び" sync="タイタンは「大地の叫び」の構え。" notice="次は、大地の叫び。" />
+<a time="199" text="激震" sync="マキシタイタン starts using 激震 on マキシタイタン." notice="次は、激震。" />
+<a time="207" text="大地の叫び" sync="タイタンは「大地の叫び」の構え。" notice="次は、大地の叫び。" />
+<a time="214" text="時間切れ詠唱開始" sync="タイタンは「大地の怒り」の構え。" notice="次は、大地の怒り。" />
+<a time="230" text="時間切れ" />
+</s>
+</timeline>

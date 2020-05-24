@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>次元の狭間オメガ零式：アルファ編3</name>
+  <rev>draft</rev>
+  <description>
+    (C)anoyetta, CC BY-SA
+    (C)RINGS, CC BY-SA
+    (C)Aqua Cat,CC BY-SA
+    201809220405:作成　あくあきゃっと /SpecialThanks Kom_T
+    201809261355:クリエイティブコモンズを追記、動作確認。byあくあきゃっと
+  </description>
+  <zone>Alphascape V3.0 (Savage)</zone>
+  <locale>JA</locale>
+  <entry>スタート</entry>
+  <start>0039:戦闘開始！</start>
+
+  <default target-element="Activity" target-attr="notice-d" value="Both" />
+  <default target-element="Activity" target-attr="notice-o" value="-5" />
+
+  <!-- 重要なアクティビティを通知するトリガ begin -->
+  <!-- 現在設定無し -->
+
+  <s name="スタート">
+    <a time="025" text="アトミックレイ" sync="オメガは「アトミックレイ」の構え。" notice="全体攻撃" sync-s="-20" />
+    <a time="035" text="マスタードボム" sync="オメガは「マスタードボム」の構え。" notice="MT強攻撃" sync-s="-30" />
+    <a time="042" text="火炎放射" sync="オメガは「火炎放射」の構え。" notice="火炎放射。" />
+    <a time="050" text="左右波動砲" sync="舷斉射・波動砲」の構え。" notice="波動砲" />
+    <a time="058" text="左右波動砲" notice="波動砲" />
+    <a time="069" text="プリントアウト" sync="オメガは「プリントアウト」の構え。" notice="ロケットパンチ" />
+    <a time="078" text="ロケパン着弾" sync="ロケットパンチは「着弾」の構え。" notice="着弾3" />
+    <a time="083" text="マスタードボム" sync="オメガは「マスタードボム」の構え。" notice="MT強攻撃" />
+    <a time="083" text="ロケパン着弾" sync="ロケットパンチは「着弾」の構え。" notice="着弾2" />
+    <a time="088" text="ロケパン着弾" sync="ロケットパンチは「着弾」の構え。" notice="着弾1" />
+    <a time="104" text="フェーズ移行" sync="オメガは「サークルプログラム」の構え" goto="チェッカーP" sync-s="-40"/>
+  </s>
+
+  <s name="チェッカーP">
+    <a time="014" text="プログラム実行" sync="レベルチェッカーは「プログラム実行」の構え。" notice="プログラム実行" sync-s="-20" />
+    <a time="021" text="マグネット" sync="レベルチェッカーは「マグネット」を唱えた。" notice="マグネット。" />
+    <a time="037" text="プログラム実行" sync="レベルチェッカーは「プログラム実行」の構え。" notice="プログラム実行" />
+    <a time="069" text="内周範囲" sync="レベルチェッカーは「初期化」を唱えた。" notice="ないしゅう範囲" />
+    <a time="075" text="外周範囲" sync="レベルチェッカーは「最適化」を唱えた。" notice="外周範囲" />
+    <a time="084" text="強制終了" sync="レベルチェッカーは「強制終了」を唱えた。" notice="強制終了" />
+    <a time="097" text="時間切れ" />
+    <a time="120" text="フェーズ移行" sync="ガ……ガガ……ハードウェアに深刻なエラー発生……" goto="オメガP1" sync-s="-40"/>
+    <a time="130" text="フェーズ移行(強制移行用)" sync="オメガは「デルタアタック」の構え。" goto="オメガP1" sync-s="-40"/>
+  </s>
+
+  <s name="オメガP1">
+    <a time="011" text="デルタアタック" sync="限界を突破し、デルタアタックに備えよ！" notice="デルタアタック。" sync-s="-20" />
+    <a time="013" sync="照準……固定……セーフティー解除…… 最大出力、デルタアタック！" />
+    <a time="029" sync="敵性アルファグループの生存を確認…… 驚くべき結果ですが、これもまた想定の範囲内です。" />
+    <a time="043" text="ミサイル発射" sync="オメガの「ミサイル発射」" notice="範囲予兆" />
+    <a time="045" text="火炎放射" sync="オメガは「火炎放射」の構え。" notice="火炎放射。" />
+    <a time="045" text="AoE発生" />
+    <a time="054" text="左右波動砲" sync="舷斉射・波動砲」の構え。" notice="波動砲" />
+    <a time="061" text="左右波動砲" notice="波動砲" />
+    <a time="074" text="マスタードボム" sync="オメガは「マスタードボム」の構え。" notice="MT強攻撃" />
+    <a time="082" text="ブラスター" sync="オメガの「ブラスター」" notice="ST線処理" />
+    <a time="085" text="アトミックレイ" sync="オメガは「アトミックレイ」の構え。" notice="範囲攻撃" />
+    <!--ロケパン大-->
+    <a time="100" text="プリントアウト(大)" sync="オメガは「プリントアウト」の構え。" notice="ロケットパンチ、ポップ" />
+    <a time="117" text="ロケパン突進" sync="ロケットパンチの「突進」" notice="ロケットパンチ" />
+    <a time="119" text="オメガスライド" sync="オメガは「オメガスライド」の構え。" notice="頭割り" />
+    <a time="129" text="プリントアウト(大)" sync="オメガは「プリントアウト」の構え。" notice="ロケットパンチ、ポップ" />
+    <a time="146" text="ロケパン突進" sync="ロケットパンチの「突進」" notice="ロケットパンチ" />
+    <a time="146" text="左右波動砲" sync="舷斉射・波動砲」の構え。" notice="左右確認" />
+    <a time="154" text="左右波動砲" notice="左右確認" />
+    <!--サークルプログラム 効果不明。-->
+    <a time="166" text="サークルプログラム更新" sync="オメガは「サークルプログラム更新」の構え。" />
+    <a time="179" text="火炎放射" sync="オメガは「火炎放射」の構え。" notice="火炎放射。" />
+    <a time="188" text="零式波動砲" sync="舷斉射・零式波動砲」の構え。" notice="零式波動砲" />
+    <!--パントクラトル1回目-->
+    <a time="205" text="パントクラトル" sync="オメガは「パントクラトル」の構え。" notice="パントクラトル" />
+    <a time="220" text="頭割り" sync="オメガは「射撃統制システム起動」の構え。" notice="頭割り" />
+    <a time="262" text="アトミックレイ" sync="オメガは「アトミックレイ」の構え。" notice="全体範囲" sync-s="-20" />
+    <a time="274" text="プリントアウト" sync="オメガは「プリントアウト」の構え。" notice="ロケットパンチ" />
+    <a time="283" text="着弾" notice="着弾" />
+    <a time="297" text="マスタードボム" sync="オメガは「マスタードボム」の構え。" notice="MT強攻撃" />
+    <a time="310" text="アトミックレイ" sync="オメガは「アトミックレイ」の構え。" notice="全体範囲" />
+    <a time="319" text="火炎放射(強)" sync="オメガは「火炎放射」の構え。" notice="超いたい火炎放射。" />
+    <a time="328" text="連続波動砲" sync="舷斉射・零式波動砲」の構え。" notice="連続波動砲" />
+    <!--パントクラトル2回目-->
+    <a time="345" text="パントクラトル" sync="オメガは「パントクラトル」の構え。" notice="パントクラトル" />
+    <a time="373" text="頭割り" sync="オメガは「射撃統制システム起動」の構え。" notice="頭割り" />
+    <a time="385" text="レーザーｘ3、1回目" notice="レーザー1回目" />
+    <a time="393" text="レーザーｘ3、2回目" notice="レーザー2回目" />
+    <a time="414" text="零式波動砲" sync="舷斉射・零式波動砲」の構え。" notice="零式波動砲" />
+    <a time="423" text="零式波動砲" notice="零式波動砲" />
+    <a time="439" text="ミールストーム" sync="オメガは「ミールストーム」の構え。" notice="ミールストーム" />
+    <a time="452" text="マスタードボム" sync="オメガは「マスタードボム」の構え。" notice="MT強攻撃" />
+    <a time="459" text="ブラスター" sync="オメガの「ブラスター」" notice="ST線処理" />
+    <a time="462" text="アトミックレイ3連" sync="オメガは「アトミックレイ」の構え。" notice="全体範囲3連" />
+    <a time="468" text="アトミックレイ2" />
+    <a time="474" text="アトミックレイ1" />
+    <a time="477" text="サークル" sync="オメガは「サークル」の構え。" notice="最終詠唱" />
+    <a time="495" text="時間切れ" />
+  </s>
+</timeline>

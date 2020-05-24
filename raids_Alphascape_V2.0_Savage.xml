@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>次元の狭間オメガ零式：アルファ編2</name>
+  <rev>rev2</rev>
+  <zone>Alphascape V2.0 (Savage)</zone>
+  <description>
+    次元の狭間オメガ零式：アルファ編2 タイムライン
+    実行には v5.19.2 以降が必要です。
+    タイムラインを追加。
+    noticeは、タンクに最適化されているので、必要に応じて変更してください。
+  </description>
+  <locale>JA</locale>
+  <entry>前半フェーズ</entry>
+  <start>0039:戦闘開始！</start>
+
+  <default target-element="Activity" target-attr="notice-d" value="Both" />
+  <default target-element="Activity" target-attr="notice-o" value="-3" />
+  <default target-element="Activity" target-attr="sync-s" value="-10" />
+  <default target-element="Activity" target-attr="sync-e" value="10" />
+
+  <!-- 重要なアクティビティを通知するトリガ スペスペに登録してもいい TLロード時のみ有効 begin -->
+  <!--
+  <t text="自分にマーカー" sync="^1B:[id8]:[mex]:" notice="自分にマーカー。">
+    <v-notice
+      duration="5"
+      duration-visible="false"
+      icon="Marker.png" />
+  </t>
+
+  <t text="マーカー\n ➜ ${_nex}" sync="^1B:[id8]:[nex]:">
+    <v-notice
+      duration="5"
+      duration-visible="false"
+      style="NOTICE_NORMAL"
+      icon="Marker.png" />
+  </t>
+
+  <t text="自分にマーキング" sync="[mex]に「マーキング」の効果。" notice="自分にマーキング。">
+    <v-notice
+      duration="5"
+      duration-visible="false"
+      icon="Marker.png" />
+  </t>
+
+  <t text="マーキング\n ➜ ${_nex}" sync="[nex]に「マーキング」の効果。">
+    <v-notice
+      duration="5"
+      duration-visible="false"
+      style="NOTICE_NORMAL"
+      icon="Marker.png" />
+  </t>
+  -->
+  <!-- 重要なアクティビティを通知するトリガ end -->
+
+  <!-- 回転トリガ begin -->
+  <!-- 1回転目の定義 start -->
+  <t text="横回転 ➔中央／Ｘ" sync="^15:[id8]:ミドガルズオルム:31AC" notice="いっかいめ横">
+    <expressions>
+      <set name="take1_yoko" value="true" />
+    </expressions>
+    <v-notice
+      sync-to-hide="ミドガルズオルムは魔力を解き放った！"
+      order="-1"
+      icon="AOEHorizontal.png"
+      duration="25"
+      duration-visible="false"
+      style="NOTICE_NORMAL" />
+  </t>
+
+  <t text="縦回転 ➔外円／＋" sync="^15:[id8]:ミドガルズオルム:31AD" notice="いっかいめ縦">
+    <expressions>
+      <set name="take1_yoko" value="false" />
+    </expressions>
+    <v-notice
+      sync-to-hide="ミドガルズオルムは魔力を解き放った！"
+      order="-1"
+      icon="AOEVertical.png"
+      duration="25"
+      duration-visible="false"
+      style="NOTICE_NORMAL" />
+  </t>
+  <!-- 1回転目の定義 end -->
+
+  <!-- 2回転目の定義 start -->
+  <!-- 横→横 -->
+  <t text="横回転 ➔離れろ" sync="^15:[id8]:ミドガルズオルム:31AE" notice="離れる">
+    <expressions>
+      <pre name="take1_yoko" value="true" />
+    </expressions>
+    <v-notice
+      sync-to-hide="ミドガルズオルムは魔力を解き放った！"
+      icon="Leave.png"
+      duration="25"
+      duration-visible="false"
+      style="NOTICE_NORMAL" />
+  </t>
+
+  <!-- 縦→横 -->
+  <t text="横回転 ➔東西南北へ" sync="^15:[id8]:ミドガルズオルム:31AE" notice="マーカーへ">
+    <expressions>
+      <pre name="take1_yoko" value="false" />
+    </expressions>
+    <v-notice
+      sync-to-hide="ミドガルズオルムは魔力を解き放った！"
+      icon="AOECross.png"
+      duration="25"
+      duration-visible="false"
+      style="NOTICE_NORMAL" />
+  </t>
+
+  <!-- 横→縦 -->
+  <t text="縦回転 ➔中央へ" sync="^15:[id8]:ミドガルズオルム:31B0" notice="内側へ">
+    <expressions>
+      <pre name="take1_yoko" value="true" />
+    </expressions>
+    <v-notice
+      sync-to-hide="ミドガルズオルムは魔力を解き放った！"
+      icon="DamageShare.png"
+      duration="25"
+      duration-visible="false"
+      style="NOTICE_NORMAL" />
+  </t>
+
+  <!-- 縦→縦 -->
+  <t text="縦回転 ➔四隅へ" sync="^15:[id8]:ミドガルズオルム:31B0" notice="四つ角へ">
+    <expressions>
+      <pre name="take1_yoko" value="false" />
+    </expressions>
+    <v-notice
+      sync-to-hide="ミドガルズオルムは魔力を解き放った！"
+      icon="AOEPlus.png"
+      duration="25"
+      duration-visible="false"
+      style="NOTICE_NORMAL" />
+  </t>
+  <!-- 2回転目の定義 end -->
+  <!-- 回転トリガ end -->
+
+  <s name="前半フェーズ">
+    <a time="15"   text="縦回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="X範囲攻撃" />
+    <a time="27"   text="縦回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="X範囲攻撃" />
+    <a time="38"   text="横回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="内周範囲攻撃" />
+    <a time="42"   text="アク・モーン" sync="ミドガルズオルムは「アク・モーン」の構え。" notice="" icon="頭割り" />
+    <a time="57"   text="横回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="内周範囲攻撃" />
+    <a time="65"   text="テイルエンド" sync="ミドガルズオルムは「テイルエンド」の構え。" notice="テイルエンドきます" icon="単体強攻撃" />
+    <a time="81"   text="横回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="注意" />
+    <a time="93"   text="ランダム回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="注意" />
+    <a time="105"  text="縦回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="注意" />
+    <a time="108"  text="テイルエンド" sync="ミドガルズオルムは「テイルエンド」の構え。" notice="テイルエンドきます" icon="単体強攻撃" />
+    <a time="114"  text="サンダーストーム" sync="ミドガルズオルム starts using サンダーストーム on" notice="雷きます" />
+    <a time="118"  text="ランダム回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="注意" />
+    <a time="126"  text="天地開闢" sync="ミドガルズオルムは「天地開闢」の構え。" notice="青、天ならシャーク" icon="スイッチ" />
+    <a time="137"  text="テイルエンド" sync="ミドガルズオルムは「テイルエンド」の構え。" notice="テイルエンドきます" icon="単体強攻撃" />
+    <a time="153"  text="横回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="注意" />
+    <a time="156"  text="ノーザンクロス" sync="ミドガルズオルムは「ノーザンクロス」を唱えた。" notice="床凍ります" />
+    <a time="166"  text="ランダム回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="注意" />
+    <a time="170"  text="アク・ラーイ" sync="ミドガルズオルムは「アク・ラーイ」の構え。" notice="" />
+    <a time="182"  text="横回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="注意" />
+    <a time="192"  text="ホリッドロア" sync="ミドガルズオルム starts using ホリッドロア on Unknown." notice="AOEきます" />
+    <a time="194"  text="ランダム回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="注意" />
+    <a time="203"   text="" sync="我が眷属よ……！ 奢りしヒトに、その牙を突き立てるがいい！" notice="STなら、雑魚にアルティメイテム" goto="雑魚フェーズ" />
+  </s>
+
+  <s name="雑魚フェーズ">
+    <a time="16"   text="フロストブレス" sync="エンシェントドラゴンの「フロストブレス」" notice="" />
+    <a time="26"   text="フロストブレス" sync="エンシェントドラゴンの「フロストブレス」" notice="" />
+    <a time="40"   text="フロストブレス" sync="エンシェントドラゴンの「フロストブレス」" notice="" />
+    <a time="51"   text="フロストブレス" sync="エンシェントドラゴンの「フロストブレス」" notice="" />
+    <a time="61"   text="フロストブレス" sync="エンシェントドラゴンの「フロストブレス」" notice="" />
+    <a time="70"   text="" sync="これぞ原初の星が抱く、滅びの光……！" notice="" />
+    <a time="94"   text="カータライズ" sync="ミドガルズオルムは「カータライズ」の構え。" notice="" />
+    <a time="105"  text="カータライズ" sync="ミドガルズオルムは「カータライズ」の構え。" notice="" />
+    <a time="115"  text="タッチダウン" sync="ミドガルズオルムの「タッチダウン」" notice="地ならシャーク" icon="スイッチ" goto="後半フェーズ" />
+  </s>
+
+  <s name="後半フェーズ">
+    <a time="0"  text="タッチダウン"/>
+    <a time="5"  text="天地開闢" sync="ミドガルズオルムは「天地開闢」の構え。" notice="天なら挑発、かぶったらみえにくいから注意" icon="スイッチ" />
+    <a time="22"  text="クリムゾンブレス" sync="ミドガルズオルムの「クリムゾンブレス」" notice="" />
+    <a time="30"  text="クリムゾンブレス" sync="ミドガルズオルムの「クリムゾンブレス」" notice="" />
+    <a time="37"  text="クリムゾンブレス" sync="ミドガルズオルムの「クリムゾンブレス」" notice="" />
+    <a time="44"  text="クリムゾンブレス" sync="ミドガルズオルムの「クリムゾンブレス」" notice="" />
+    <a time="69"  text="ヒートテイル" sync="ミドガルズオルムの「ヒートテイル」" notice="" icon="単体強攻撃" />
+    <a time="81"  text="カータライズ" sync="ミドガルズオルムは「カータライズ」の構え。" notice="" />
+    <a time="86"  text="カータライズ" sync="ミドガルズオルムの「カータライズ」" notice="" />
+    <a time="92"  text="カータライズ" sync="ミドガルズオルムは「カータライズ」の構え。" notice="" />
+    <a time="97"  text="カータライズ" sync="ミドガルズオルムの「カータライズ」" notice="" />
+    <a time="111"  text="テイルエンド" sync="ミドガルズオルムは「テイルエンド」の構え。" notice="タンクスイッチ、テイルエンドきます" icon="スイッチ" />
+    <a time="122"  text="アク・モーン" sync="ミドガルズオルムは「アク・モーン」の構え。" notice="" icon="頭割り" />
+    <a time="134"  text="サンダーストーム" sync="Unknown starts using サンダーストーム on" notice="指定位置に散開" icon="散開B" />
+    <a time="133"  text="ホリッドロア" sync="ミドガルズオルムは「ホリッドロア」の構え。" notice="" />
+    <a time="148"  text="ランダム回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="注意" />
+    <a time="152"  text="テイルエンド" sync="ミドガルズオルムは「テイルエンド」の構え。" notice="テイルエンドきます" icon="単体強攻撃" />
+    <a time="161"  text="ランダム回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="注意" />
+    <a time="168"  text="天地開闢" sync="ミドガルズオルムは「天地開闢」の構え。" notice="天ならシャーク、地なら挑発" icon="スイッチ" />
+    <a time="179"  text="エクサフレア" sync="ミドガルズオルムは「エクサフレア」の構え。" notice="" />
+    <a time="187"  text="アク・モーン" sync="ミドガルズオルムは「アク・モーン」の構え。" notice="" icon="頭割り" />
+    <a time="211"  text="ランダム回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="注意" />
+    <a time="214"  text="ノーザンクロス" sync="ミドガルズオルムは「ノーザンクロス」を唱えた。" notice="床凍ります" />
+    <a time="222"  text="サンダーストーム" sync="ミドガルズオルム starts using サンダーストーム on" notice="" />
+    <a time="225"  text="ランダム回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="注意" />
+    <a time="230"  text="ホリッドロア" sync="ミドガルズオルムは「ホリッドロア」の構え。" notice="AOEきます" />
+    <a time="242"  text="アク・ラーイ" sync="ミドガルズオルムは「アク・ラーイ」の構え。" notice="" />
+    <a time="245"  text="アク・ラーイ" sync="ミドガルズオルムの「アク・ラーイ」" notice="" />
+    <a time="247"  text="テイルエンド" sync="ミドガルズオルムは「テイルエンド」の構え。" notice="テイルエンド連続できます" icon="単体強攻撃" />
+    <a time="251"  text="テイルエンド" sync="ミドガルズオルムの「テイルエンド」" notice="テイルエンドきます" icon="単体強攻撃" />
+    <a time="262"  text="ランダム回転(1回目)" sync="ミドガルズオルムの魔力が満ちたようだ……！" notice="" icon="注意" />
+    <a time="265"  text="テイルエンド" sync="ミドガルズオルムは「テイルエンド」の構え。" notice="テイルエンドきます" icon="単体強攻撃" />
+    <a time="275"  text="ランダム回転(2回目)" sync="ミドガルズオルムは魔力を解き放った！" notice="" icon="注意" />
+    <a time="282"  text="天地開闢" sync="ミドガルズオルムは「天地開闢」の構え。" notice="天ならシャーク、地なら挑発" icon="スイッチ" />
+    <a time="293"  text="エクサフレア" sync="ミドガルズオルムは「エクサフレア」の構え。" notice="" />
+    <a time="300"  text="アク・モーン" sync="ミドガルズオルムは「アク・モーン」の構え。" notice="" icon="タイマー" />
+    <a time="321"   text="がんばれ！" sync="無益な抵抗も、もはやこれまで…… 我が咆哮にて終焉を告げようぞ！"  />
+  </s>
+</timeline>

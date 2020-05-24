@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>大迷宮バハムート：真成編4</name>
+  <rev>draft</rev>
+  <description>自動生成によるタイムラインです。</description>
+  <author>maniax</author>
+  <license>CC BY-SA</license>
+  <zone>The Final Coil Of Bahamut - Turn (4)</zone>
+  <locale>JA</locale>
+  <entry>P1</entry>
+  <start>0039:戦闘開始！</start>
+
+  <default target-element="Activity" target-attr="notice-o" value="-5" />
+
+  @{ var origin = 0; }
+
+  <s name="P1">
+	  <a time="008" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="012" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="016" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="026" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="029" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="034" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="036" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="038" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="040" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="047" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="058" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="063" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="067" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="077" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="080" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="085" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="087" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="089" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="091" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="097" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="109" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="113" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="117" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="127" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="130" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="135" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="137" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="139" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="141" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="148" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="158" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="163" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="167" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="177" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="180" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="185" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="187" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="189" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="191" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="198" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="209" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="213" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="217" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="227" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="230" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="235" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="237" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="239" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="242" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="248" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="259" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="263" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="267" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="277" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="280" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="285" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="287" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="289" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="291" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="298" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="309" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="313" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="318" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="327" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="331" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="335" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="337" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="339" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="341" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="348" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="359" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="363" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="367" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="377" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="381" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="385" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="387" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="389" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="391" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="398" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="409" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="413" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="417" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="427" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="431" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="435" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="437" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="439" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="442" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="448" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="459" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="464" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="468" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="477" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="481" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="485" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="487" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="489" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="491" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="498" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="509" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="513" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="517" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="527" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="531" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="535" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="537" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="539" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="541" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="548" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="559" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="563" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="568" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="577" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="581" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="585" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="587" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="590" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="592" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="598" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="609" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="613" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="618" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="627" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="631" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="635" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="637" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="640" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="642" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="648" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="659" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="664" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="668" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="677" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="681" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="685" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="687" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="689" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="691" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="698" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="709" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="714" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="718" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="727" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="731" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="736" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="738" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="740" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="742" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="748" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="759" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="764" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="768" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="777" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="781" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="786" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="788" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="790" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="792" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="798" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:[id4]:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a time="809" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="814" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="818" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="827" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" sync-s="-5" />
+	  <a time="831" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" sync-s="-5" />
+	  <a time="835" text="" sync="バハムート・プライムの「フラッテン」" sync-s="-5" />
+	  <a time="837" text="フレアブレス3連" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス3連。" sync-s="-5" />
+	  <a time="840" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+	  <a time="842" text="" sync="バハムート・プライムの「フレアブレス」" notice="" />
+
+	  <a time="999" text="ギガフレア" sync="バハムート・プライムは「ギガフレア」の構え。" notice="次は、ギガフレア。" goto="P2" sync-s="-999" />
+　</s>
+
+  <s name="P2">
+    @* このフェーズの基点秒数 *@
+    @{ origin = 157; }
+	  <a time="@(166 - origin)" text="ギガフレア" sync="バハムート・プライムの「ギガフレア」" />
+
+	  <a time="@(169 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・シャドウ\." notice="雑魚ポップ" />
+	  <a time="@(172 - origin)" text="フレアスター" sync="バハムート・プライムは「フレアスター」の構え。" notice="次は、フレアスター。" />
+	  <a time="@(176 - origin)" text="" sync="バハムート・プライムの「フレアスター」" />
+	  <a time="@(184 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(194 - origin)" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" />
+	  <a time="@(198 - origin)" text="" sync="バハムート・プライムの「フラッテン」" />
+	  <a time="@(201 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(213 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="@(217 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="@(227 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(228 - origin)" text="龍神の咆吼" sync="バハムート・プライムは「龍神の咆吼」の構え。" notice="次は、龍神の方向。" />
+	  <a time="@(233 - origin)" text="" sync="バハムート・プライムの「龍神の咆吼」" />
+
+ 	  <a time="@(235 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・シャドウ\." notice="雑魚ポップ" />
+	  <a time="@(238 - origin)" text="フレアスター" sync="バハムート・プライムは「フレアスター」の構え。" notice="次は、フレアスター。" />
+	  <a time="@(242 - origin)" text="" sync="バハムート・プライムの「フレアスター」" />
+	  <a time="@(251 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(260 - origin)" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" />
+	  <a time="@(265 - origin)" text="" sync="バハムート・プライムの「フラッテン」" />
+	  <a time="@(268 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(279 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="@(284 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="@(293 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(294 - origin)" text="龍神の咆吼" sync="バハムート・プライムは「龍神の咆吼」の構え。" notice="次は、龍神の方向。" />
+	  <a time="@(299 - origin)" text="" sync="バハムート・プライムの「龍神の咆吼」" />
+
+ 	  <a time="@(301 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・シャドウ\." notice="雑魚ポップ" />
+	  <a time="@(305 - origin)" text="フレアスター" sync="バハムート・プライムは「フレアスター」の構え。" notice="次は、フレアスター。" />
+	  <a time="@(308 - origin)" text="" sync="バハムート・プライムの「フレアスター」" />
+	  <a time="@(316 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(326 - origin)" text="フラッテン" sync="バハムート・プライムは「フラッテン」の構え。" notice="次は、フラッテン。" />
+	  <a time="@(331 - origin)" text="" sync="バハムート・プライムの「フラッテン」" />
+	  <a time="@(334 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(346 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="@(351 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a time="@(360 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a time="@(361 - origin)" text="龍神の咆吼" sync="バハムート・プライムは「龍神の咆吼」の構え。" notice="次は、龍神の方向。" />
+	  <a time="@(366 - origin)" text="" sync="バハムート・プライムの「龍神の咆吼」" />
+
+
+	  <a time="999" text="ギガフレア" sync="バハムート・プライムは「ギガフレア」の構え。" notice="次は、ギガフレア。" goto="P3" sync-s="-999" />
+  </s>
+
+  <s name="P3">
+    @* このフェーズの基点秒数 *@
+    @{ origin = 187; }
+	  <a enabled="false" time="@(193 - origin)" text="ギガフレア Sign" sync="15:[id8]:バハムート・プライム:BB9:ギガフレア:[id8]:[pc]:" />
+	  <a time="@(195 - origin)" text="ギガフレア" sync="バハムート・プライムの「ギガフレア」" />
+	  <a enabled="false" time="@(198 - origin)" text="(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBE:(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a time="@(201 - origin)" text="メガフレアダイブ" sync="バハムート・プライムは「メガフレアダイブ」の構え。" notice="次は、メガフレアダイブ。" />
+	  <a enabled="false" time="@(201 - origin)" text="(仮)バハムート：霊体：上空から地上に着地する：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBF:(仮)バハムート：霊体：上空から地上に着地する：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(202 - origin)" text="Marker:0029" sync="^1B:[id8]:[pc]:0000:0000:0029:0000:0000:0000:" />
+	  <a enabled="false" time="@(204 - origin)" text="Marker:002A" sync="^1B:[id8]:[pc]:0000:0000:002A:0000:0000:0000:" />
+	  <a enabled="false" time="@(207 - origin)" text="メガフレアダイブ Sign" sync="15:[id8]:バハムート・プライム:BC0:メガフレアダイブ:[id8]::" />
+	  <a time="@(208 - origin)" text="" sync="バハムート・プライムの「メガフレアダイブ」" />
+	  <a enabled="false" time="@(209 - origin)" text="ダブルダイブ Sign" sync="15:[id8]:メラシディアン・ストーム:BC8:ダブルダイブ:[id8]::" />
+	  <a enabled="false" time="@(210 - origin)" text="(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBE:(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(211 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(213 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+ 	  <a time="@(218 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・ブラッド\." notice="雑魚ポップ" />
+	  <a enabled="false" time="@(223 - origin)" text="ブラッディクロー" sync="メラシディアン・ブラッドの「ブラッディクロー」" notice="次は、ブラッディクロー。" />
+	  <a enabled="false" time="@(223 - origin)" text="ブラッディクロー Sign" sync="15:[id8]:メラシディアン・ブラッド:BCF:ブラッディクロー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(227 - origin)" text="リバーサル Sign" sync="15:[id8]:メラシディアン・ブラッド:BD0:リバーサル:[id8]:メラシディアン・ブラッド:" />
+	  <a enabled="false" time="@(228 - origin)" text="リバーサル" sync="メラシディアン・ブラッドの「リバーサル」" notice="次は、リバーサル。" />
+	  <a enabled="false" time="@(230 - origin)" text="ブラッディクロー" sync="メラシディアン・ブラッドの「ブラッディクロー」" notice="次は、ブラッディクロー。" />
+	  <a enabled="false" time="@(231 - origin)" text="ブラッディクロー Sign" sync="15:[id8]:メラシディアン・ブラッド:BCF:ブラッディクロー:[id8]:[pc]:" />
+ 	  <a time="@(238 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・ガスト\." notice="雑魚ポップ" />
+ 	  <a time="@(264 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・シン\." notice="雑魚ポップ" />
+	  <a time="@(292 - origin)" text="メガフレアダイブ" sync="バハムート・プライムは「メガフレアダイブ」の構え。" notice="次は、メガフレアダイブ。" />
+	  <a enabled="false" time="@(292 - origin)" text="(仮)バハムート：霊体：上空から地上に着地する：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBF:(仮)バハムート：霊体：上空から地上に着地する：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(293 - origin)" text="Marker:0029" sync="^1B:[id8]:[pc]:0000:41C0:0029:0000:0000:0000:" />
+	  <a enabled="false" time="@(295 - origin)" text="Marker:002A" sync="^1B:[id8]:[pc]:0000:0000:002A:0000:0000:0000:" />
+	  <a enabled="false" time="@(298 - origin)" text="メガフレアダイブ Sign" sync="15:[id8]:バハムート・プライム:BC0:メガフレアダイブ:[id8]::" />
+	  <a time="@(299 - origin)" text="" sync="バハムート・プライムの「メガフレアダイブ」" />
+	  <a enabled="false" time="@(301 - origin)" text="ダブルダイブ Sign" sync="15:[id8]:メラシディアン・ストーム:BC8:ダブルダイブ:[id8]::" />
+	  <a enabled="false" time="@(302 - origin)" text="(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBE:(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(303 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(305 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+	  <a enabled="false" time="@(323 - origin)" text="プラメット" sync="メラシディアン・ストームの「プラメット」" notice="次は、プラメット。" />
+	  <a enabled="false" time="@(323 - origin)" text="プラメット Sign" sync="15:[id8]:メラシディアン・ストーム:BC9:プラメット:[id8]:[pc]:" />
+ 	  <a time="@(324 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・ブラッド\." notice="雑魚ポップ" />
+	  <a enabled="false" time="@(329 - origin)" text="ブラッディクロー" sync="メラシディアン・ブラッドの「ブラッディクロー」" notice="次は、ブラッディクロー。" />
+	  <a enabled="false" time="@(329 - origin)" text="ブラッディクロー Sign" sync="15:[id8]:メラシディアン・ブラッド:BCF:ブラッディクロー:[id8]:[pc]:" />
+ 	  <a time="@(334 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・ガスト\." notice="雑魚ポップ" />
+ 	  <a time="@(344 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・シン\." notice="雑魚ポップ" />
+ 	  <a time="@(365 - origin)" text="雑魚ポップ" sync="Added new combatant メラシディアン・ペイン\." notice="雑魚ポップ" />
+	  <a enabled="false" time="@(374 - origin)" text="リッパークロウ" sync="メラシディアン・ペインの「リッパークロウ」" notice="次は、リッパークロウ。" />
+	  <a enabled="false" time="@(374 - origin)" text="リッパークロウ Sign" sync="15:[id8]:メラシディアン・ペイン:BCC:リッパークロウ:[id8]:[pc]:" />
+	  <a enabled="false" time="@(386 - origin)" text="(仮)バハムート：霊体：上空から地上に着地する：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBF:(仮)バハムート：霊体：上空から地上に着地する：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a time="@(386 - origin)" text="メガフレアダイブ" sync="バハムート・プライムは「メガフレアダイブ」の構え。" notice="次は、メガフレアダイブ。" />
+	  <a enabled="false" time="@(387 - origin)" text="Marker:0029" sync="^1B:[id8]:[pc]:0000:C029:0029:0000:0000:0000:" />
+	  <a enabled="false" time="@(392 - origin)" text="メガフレアダイブ Sign" sync="15:[id8]:バハムート・プライム:BC0:メガフレアダイブ:[id8]::" />
+	  <a time="@(392 - origin)" text="" sync="バハムート・プライムの「メガフレアダイブ」" />
+	  <a enabled="false" time="@(395 - origin)" text="(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBE:(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(396 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(398 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+
+	  <a time="@(418 - origin)" text="テラフレア" sync="15:[id8]:バハムート・プライム:BC1:テラフレア:[id8]:[pc]:" sync-count="1" goto="P4" sync-s="-231" />
+  </s>
+
+  <s name="P4">
+    @* このフェーズの基点秒数 *@
+    @{ origin = 418; }
+	  <a enabled="false" time="@(428 - origin)" text="(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBE:(仮)バハムート：霊体：上空へ飛び立つ：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(430 - origin)" text="(仮)バハムート：霊体：上空から地上に着地する：バハムートダンジョン3 Sign" sync="15:[id8]:バハムート・プライム:BBF:(仮)バハムート：霊体：上空から地上に着地する：バハムートダンジョン3:[id8]:バハムート・プライム:" />
+	  <a time="@(433 - origin)" text="アク・モーン" sync="バハムート・プライムは「アク・モーン」の構え。" notice="次は、アク・モーン。" />
+	  <a time="@(448 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a enabled="false" time="@(452 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BAF:メガフレア:[id8]:バハムート・プライム:" />
+	  <a time="@(452 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a enabled="false" time="@(455 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(457 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+	  <a time="@(459 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(459 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(460 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a enabled="false" time="@(461 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB3:メガフレア:[id8]:[pc]:" />
+	  <a time="@(474 - origin)" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:3F80:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a enabled="false" time="@(479 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(479 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB6:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(481 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(481 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB7:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(483 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(483 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB8:アースシェイカー:[id8]:[pc]:" />
+	  <a time="@(486 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(486 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(487 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a time="@(488 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a enabled="false" time="@(488 - origin)" text="フレアブレス Sign" sync="15:[id8]:バハムート・プライム:BAD:フレアブレス:[id8]:[pc]:" />
+	  <a time="@(495 - origin)" text="アク・モーン3連" sync="バハムート・プライムは「アク・モーン」の構え。" notice="次は、3連アク・モーン。" />
+	  <a time="@(511 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a enabled="false" time="@(515 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BAF:メガフレア:[id8]:バハムート・プライム:" />
+	  <a time="@(515 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a enabled="false" time="@(519 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(520 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+	  <a enabled="false" time="@(522 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a time="@(522 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(523 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a enabled="false" time="@(524 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB3:メガフレア:[id8]:[pc]:" />
+	  <a time="@(537 - origin)" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:3F80:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a enabled="false" time="@(542 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(542 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB6:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(544 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(544 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB7:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(546 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(546 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB8:アースシェイカー:[id8]:[pc]:" />
+	  <a time="@(549 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(549 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(550 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a time="@(551 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a enabled="false" time="@(551 - origin)" text="フレアブレス Sign" sync="15:[id8]:バハムート・プライム:BAD:フレアブレス:[id8]:[pc]:" />
+	  <a time="@(558 - origin)" text="ギガフレア" sync="バハムート・プライムは「ギガフレア」の構え。" notice="次は、ギガフレア。" />
+	  <a enabled="false" time="@(563 - origin)" text="ギガフレア Sign" sync="15:[id8]:バハムート・プライム:BB9:ギガフレア:[id8]:[pc]:" />
+	  <a time="@(566 - origin)" text="ギガフレア" sync="バハムート・プライムの「ギガフレア」" />
+	  <a time="@(568 - origin)" text="アク・モーン4連" sync="バハムート・プライムは「アク・モーン」の構え。" notice="次は、4連アク・モーン。" />
+	  <a time="@(585 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a enabled="false" time="@(589 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BAF:メガフレア:[id8]:バハムート・プライム:" />
+	  <a time="@(590 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a enabled="false" time="@(593 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(594 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+	  <a time="@(596 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(596 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(597 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a enabled="false" time="@(598 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB3:メガフレア:[id8]:[pc]:" />
+	  <a time="@(611 - origin)" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:A6CC:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a enabled="false" time="@(616 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(616 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB6:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(618 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(618 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB7:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(620 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(620 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB8:アースシェイカー:[id8]:[pc]:" />
+	  <a time="@(623 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(623 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(624 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a time="@(625 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a enabled="false" time="@(625 - origin)" text="フレアブレス Sign" sync="15:[id8]:バハムート・プライム:BAD:フレアブレス:[id8]:[pc]:" />
+	  <a time="@(632 - origin)" text="アク・モーン5連" sync="バハムート・プライムは「アク・モーン」の構え。" notice="次は、5連アク・モーン。" />
+	  <a time="@(650 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="@(654 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a enabled="false" time="@(654 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BAF:メガフレア:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(657 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(659 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+	  <a time="@(661 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(661 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(662 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a enabled="false" time="@(663 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB3:メガフレア:[id8]:[pc]:" />
+	  <a time="@(676 - origin)" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:A6CC:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a enabled="false" time="@(681 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(681 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB6:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(683 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(683 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB7:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(685 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(685 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB8:アースシェイカー:[id8]:[pc]:" />
+	  <a time="@(688 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(688 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(689 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a time="@(690 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a enabled="false" time="@(690 - origin)" text="フレアブレス Sign" sync="15:[id8]:バハムート・プライム:BAD:フレアブレス:[id8]:[pc]:" />
+	  <a time="@(697 - origin)" text="ギガフレア" sync="バハムート・プライムは「ギガフレア」の構え。" notice="次は、ギガフレア。" />
+	  <a enabled="false" time="@(703 - origin)" text="ギガフレア Sign" sync="15:[id8]:バハムート・プライム:BB9:ギガフレア:[id8]:[pc]:" />
+	  <a time="@(705 - origin)" text="ギガフレア" sync="バハムート・プライムの「ギガフレア」" />
+	  <a time="@(707 - origin)" text="アク・モーン6連" sync="バハムート・プライムは「アク・モーン」の構え。" notice="次は、6連アク・モーン。" />
+	  <a time="@(726 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a time="@(730 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a enabled="false" time="@(730 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BAF:メガフレア:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(734 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(735 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+	  <a time="@(737 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(737 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(739 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a enabled="false" time="@(739 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB3:メガフレア:[id8]:[pc]:" />
+	  <a time="@(753 - origin)" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:A68B:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a enabled="false" time="@(758 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(758 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB6:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(760 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(760 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB7:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(762 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(762 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB8:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(762 - origin)" text="effect 汚泥" sync="^1A:102449C7:[pc] gains the effect of 汚泥 from  for 9999.00 Seconds." />
+	  <a enabled="false" time="@(762 - origin)" text="effect ヘヴィ［強］" sync="^1A:102449C7:[pc] gains the effect of ヘヴィ［強］ from  for 9999.00 Seconds." />
+	  <a enabled="false" time="@(765 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a time="@(765 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(766 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a time="@(766 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a enabled="false" time="@(767 - origin)" text="フレアブレス Sign" sync="15:[id8]:バハムート・プライム:BAD:フレアブレス:[id8]:[pc]:" />
+	  <a time="@(773 - origin)" text="アク・モーン7連" sync="バハムート・プライムは「アク・モーン」の構え。" notice="次は、7連アク・モーン。" />
+	  <a time="@(793 - origin)" text="メガフレア" sync="バハムート・プライムは「メガフレア」の構え。" notice="次は、メガフレア。" />
+	  <a enabled="false" time="@(798 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BAF:メガフレア:[id8]:バハムート・プライム:" />
+	  <a time="@(798 - origin)" text="" sync="バハムート・プライムの「メガフレア」" />
+	  <a enabled="false" time="@(801 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB0:メガフレア:[id8]:[pc]:" />
+	  <a enabled="false" time="@(803 - origin)" text="メガフレア Sign" sync="15:[id8]:バハムート・プライム:BB1:メガフレア:[id8]::" />
+	  <a time="@(804 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(805 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a enabled="false" time="@(806 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a enabled="false" time="@(807 - origin)" text="メガフレア Sign-AOE" sync="16:[id8]:バハムート・プライム:BB3:メガフレア:[id8]:[pc]:" />
+	  <a time="@(820 - origin)" text="アースシェイカー" sync="^1B:[id8]:[pc]:0000:419F:0028:0000:0000:0000:" notice="次は、アースシェイカー。" />
+	  <a enabled="false" time="@(825 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(825 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB6:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(827 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(827 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB7:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(829 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB5:アースシェイカー:[id8]:バハムート・プライム:" />
+	  <a enabled="false" time="@(829 - origin)" text="アースシェイカー Sign" sync="15:[id8]:バハムート・プライム:BB8:アースシェイカー:[id8]:[pc]:" />
+	  <a enabled="false" time="@(832 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:BC4:テンペストウィング:[id8]:[pc]:" />
+	  <a time="@(832 - origin)" text="テンペストウィング" sync="バハムート・プライムの「テンペストウィング」" notice="" />
+	  <a enabled="false" time="@(833 - origin)" text="テンペストウィング Sign" sync="15:[id8]:バハムート・プライム:C89:テンペストウィング:[id8]::" />
+	  <a time="@(833 - origin)" text="フレアブレス" sync="バハムート・プライムの「フレアブレス」" notice="次は、フレアブレス。" />
+	  <a enabled="false" time="@(834 - origin)" text="フレアブレス Sign" sync="15:[id8]:バハムート・プライム:BAD:フレアブレス:[id8]:[pc]:" />
+	  <a time="@(840 - origin)" text="ギガフレア" sync="バハムート・プライムは「ギガフレア」の構え。" notice="次は、ギガフレア。" />
+	  <a enabled="false" time="@(846 - origin)" text="ギガフレア Sign" sync="15:[id8]:バハムート・プライム:BB9:ギガフレア:[id8]:[pc]:" />
+	  <a time="@(848 - origin)" text="" sync="バハムート・プライムの「ギガフレア」" />
+	  <a time="@(850 - origin)" text="ギガフレア" sync="バハムート・プライムは「ギガフレア」の構え。" notice="時間切れ" sync-s="-5" notice-o="0" />
+	  <a time="@(864 - origin)" text="時間切れ" sync="バハムート・プライムの「ギガフレア」" notice="" sync-s="-5" />
+  </s>
+</timeline>

@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>絶アレキサンダー討滅戦</name>
+  <rev>v10</rev>
+  <description>
+    絶アレキサンダー討滅戦用タイムラインです。
+  </description>
+  <author>sheeva</author>
+  <license>CC BY-SA</license>
+  <zone>887,The Epic Of Alexander (Ultimate)</zone>
+  <locale>JA</locale>
+  <entry>P1 LIQUID</entry>
+  <start>0039:戦闘開始！</start>
+
+  <default target-element="Activity" target-attr="notice-o" value="-3" />
+
+  <s name="P1 LIQUID">
+　  <t text="2体フェーズへ" sync="クルーズチェイサー:コードネーム「ブラスティー」！ 階差閉宇宙ヲ、脅カス敵ヲ発見……撃滅スル！" >
+  　　<load target="P2 JUDGEMENT" truncate="true" />
+    </t>
+
+    <t text="エンボラス" sync="Added new combatant エンボラス" notice="エンボラス">
+      <v-notice
+        duration="5"
+        duration-visible="false"
+        icon="Bomb.png"
+        order="-1" />
+    </t>
+
+    <a time="010" text="フルイドスイング" sync="リビングリキッドの「フルイドスイング」" notice="タンク強攻撃。" />
+    <a time="018" text="カスケード" sync="リビングリキッドは「カスケード」の構え。" icon="HardAllRangeAttack.png" notice="カスケード。" />
+    <a time="033" text="竜巻ウェイブ" sync="リキッドレイジ starts using プロティアンウェイブ on リキッドレイジ." />
+    <a time="034" text="ヤークトドール出現" />
+    <a time="038" text="タンク強攻撃" sync="リビングリキッドの「フルイドスイング」" notice="タンク強攻撃。" />
+    <a time="039" text="ハンド・オブ・ペイン" sync="リキッドハンドは「ハンド・オブ・ペイン」の構え。" notice="" />
+    <a enabled="false" time="042" text="水圧充填" sync="リキッドレイジの「水圧充填」" />
+    <a time="041" text="エンボラス出現" icon="Bomb.png" />
+    <a time="050" text="汚染蒸気" sync="ヤークトドールの「汚染蒸気」" notice="" />
+    <a time="062" text="タンク強攻撃" sync="リビングリキッドの「フルイドスイング」" notice="タンク強攻撃。" />
+    <a time="066" text="ウェイブ3回" sync="リビングリキッドは「プロティアンウェイブ」の構え。" notice="ウェーブ。" />
+    <a time="067" text="ハンド・オブ・ペイン" sync="リキッドハンドは「ハンド・オブ・ペイン」の構え。" notice="" />
+    <a time="072" text="スルース" sync="リビングリキッド starts using スルース on Unknown." notice="スルース。" />
+    <a time="081" text="スプラッシュ6回" sync="リビングリキッドの「スプラッシュ」" notice="スプラッシュ。" />
+    <a time="087" text="ドレナージ" sync="リキッドレイジの「ドレナージ」" notice="ドレナージ。" />
+    <a time="089" text="カスケード" sync="リビングリキッド starts using カスケード on リビングリキッド." icon="HardAllRangeAttack.png" notice="カスケード。" />
+    <a time="091" text="窒息" notice="窒息。" />
+    <a time="104" text="プロティアンウェイブ1" sync="リビングリキッド starts using プロティアンウェイブ on リビングリキッド." notice="ウェーブ2回。" />
+    <a time="105" text="ハンド・オブ・ペイン" sync="リキッドハンドは「ハンド・オブ・ペイン」の構え。" notice="" />
+    <a time="110" text="スルース" sync="リビングリキッド starts using スルース on Unknown." notice="スルース。" />
+    <a time="110" text="プロティアンウェイブ2" sync="リキッドレイジ starts using プロティアンウェイブ on リキッドレイジ." />
+    <a enabled="false" time="119" text="水圧充填" sync="リキッドレイジの「水圧充填」" />
+    <a time="120" text="じゃんけん" notice="じゃんけん。" notice-o="-1" />
+  　<a time="121" text="エンボラス出現" icon="Bomb.png" />
+    <a time="126" text="ハンド・オブ・ペイン" sync="リキッドハンドは「ハンド・オブ・ペイン」の構え。" notice="" />
+    <a time="127" text="スプラッシュ" sync="リビングリキッドの「スプラッシュ」" notice="スプラッシュ。" />
+    <a time="140" text="時間切れ" icon="Timeout.png" />
+　</s>
+
+  <s name="P2 JUDGEMENT">
+    <t text="プライムフェーズへ" sync="00:0044:アレキサンダー・プライム:我はアレキサンダー……機械仕掛けの神なり……。 理想郷に到る道を導くため……我が審判を受けよ……。" >
+  　　<load target="P3 PRIME" truncate="true" />
+    </t>
+
+    <!-- 頭上マーカ識別用トリガ begin -->
+<!--
+    <t text="マーカー1番" sync="1B:[id8]:[mex]:0000:[id4]:004F:0000:0000:0000:" notice="いちばん、ソード" >
+      <v-notice
+        duration="15"
+        icon="Targetaoe03.png"
+        duration-visible="false"
+        sync-to-hide="^15:[id8]:クルーズチェイサー:4834:アルファソード:[id8]:[mex]" />
+    </t>
+
+    <t text="マーカー2番" sync="1B:[id8]:[mex]:0000:[id4]:0050:0000:0000:0000:" notice="にばん、チャージ" >
+      <v-notice
+        duration="15"
+        icon="Targetaoe02.png"
+        duration-visible="false"
+        sync-to-hide="^15:[id8]:クルーズチェイサー:4B4F:スーパーブラスティ・チャージ:[id8]:[mex]" />
+    </t>
+
+    <t text="マーカー3番" sync="1B:[id8]:[mex]:0000:[id4]:0051:0000:0000:0000:" notice="さんばん、ソード" >
+      <v-notice
+        duration="20"
+        icon="Targetaoe03.png"
+        duration-visible="false"
+        sync-to-hide="^15:[id8]:クルーズチェイサー:4834:アルファソード:[id8]:[mex]" />
+    </t>
+
+    <t text="マーカー4番" sync="1B:[id8]:[mex]:0000:[id4]:0052:0000:0000:0000:" notice="よんばん、チャージ" >
+      <v-notice
+        duration="20"
+        icon="Targetaoe02.png"
+        duration-visible="false"
+        sync-to-hide="^15:[id8]:クルーズチェイサー:4B4F:スーパーブラスティ・チャージ:[id8]:[mex]" />
+    </t>
+
+    <t text="マーカー5番" sync="1B:[id8]:[mex]:0000:[id4]:0053:0000:0000:0000:" notice="ごばん、ソード" >
+      <v-notice
+        duration="25"
+        icon="Targetaoe03.png"
+        duration-visible="false"
+        sync-to-hide="^15:[id8]:クルーズチェイサー:4834:アルファソード:[id8]:[mex]" />
+    </t>
+
+    <t text="マーカー6番" sync="1B:[id8]:[mex]:0000:[id4]:0054:0000:0000:0000:" notice="ろくばん、チャージ" >
+      <v-notice
+        duration="25"
+        icon="Targetaoe02.png"
+        duration-visible="false"
+        sync-to-hide="^15:[id8]:クルーズチェイサー:4B4F:スーパーブラスティ・チャージ:[id8]:[mex]" />
+    </t>
+
+    <t text="マーカー7番" sync="1B:[id8]:[mex]:0000:[id4]:0055:0000:0000:0000:" notice="ななばん、ソード" >
+      <v-notice
+        duration="30"
+        icon="Targetaoe03.png"
+        duration-visible="false"
+        sync-to-hide="^15:[id8]:クルーズチェイサー:4834:アルファソード:[id8]:[mex]" />
+    </t>
+
+    <t text="マーカー8番" sync="1B:[id8]:[mex]:0000:[id4]:0056:0000:0000:0000:" notice="はちばん、チャージ" >
+      <v-notice
+        duration="30"
+        icon="Targetaoe02.png"
+        duration-visible="false"
+        sync-to-hide="^15:[id8]:クルーズチェイサー:4B4F:スーパーブラスティ・チャージ:[id8]:[mex]" />
+    </t>
+-->
+    <!-- 頭上マーカ識別用トリガ end -->
+
+   <!-- 水・雷の識別用トリガ begin -->
+    <t text="雷DOWN" sync="1A:[id8]:[mex] gains the effect of 雷属性耐性低下［強］ from ブルートジャスティス for 31.00 Seconds." icon="Attention.png" notice="" >
+      <v-notice
+        duration="31"
+        sync-to-hide="" />
+    </t>
+
+    <t text="水DOWN" sync="1A:[id8]:[mex] gains the effect of 水属性耐性低下［強］ from ブルートジャスティス for 31.00 Seconds." icon="Attention.png" notice="" >
+      <v-notice
+        duration="31"
+        sync-to-hide="" />
+    </t>
+
+    <t text="雷属性圧縮" sync="1A:[id8]:[mex] gains the effect of 雷属性圧縮 from " notice="かみなり。" >
+      <v-notice
+        order="-1"
+        duration="29"
+        job-icon="true"
+        sync-to-hide="loses the effect of 雷属性圧縮 from" />
+    </t>
+
+    <t text="雷属性圧縮" sync="1A:[id8]:[nex] gains the effect of 雷属性圧縮 from " notice="" >
+      <v-notice
+        order="-1"
+        duration="29"
+        job-icon="true"
+        sync-to-hide="loses the effect of 雷属性圧縮 from" />
+    </t>
+
+    <t text="水属性圧縮" sync="1A:[id8]:[mex] gains the effect of 水属性圧縮 from " notice="水。" >
+      <v-notice
+        order="-1"
+        duration="29"
+        job-icon="true"
+        sync-to-hide="loses the effect of 水属性圧縮 from" />
+    </t>
+
+    <t text="水属性圧縮" sync="1A:[id8]:[nex] gains the effect of 水属性圧縮 from " notice="" >
+      <v-notice
+        order="-1"
+        duration="29"
+        job-icon="true"
+        sync-to-hide="loses the effect of 水属性圧縮 from" />
+    </t>
+    <!-- 水・雷の識別用トリガ end -->
+
+    <!-- 最後に付与された仮判決デバフの持ち主のジョブ名を変数に保持するトリガ begin -->
+@foreach (var player in Model.Party)
+{
+    <t text="α" sync="1A:[id8]:[@player.Job] gains the effect of 最後の仮判決α from .*? for [0-9\.]+ Seconds\." notice="" >
+      <expressions>
+        <set name="debuff_alpha" value="@player.Job" />
+      </expressions>
+    </t>
+
+    <t text="β" sync="1A:[id8]:[@player.Job] gains the effect of 最後の仮判決β from .*? for [0-9\.]+ Seconds\." notice="" >
+      <expressions>
+        <set name="debuff_beta" value="@player.Job" />
+      </expressions>
+    </t>
+
+    <t text="γ" sync="1A:[id8]:[@player.Job] gains the effect of 最後の仮判決γ from .*? for [0-9\.]+ Seconds\." notice="" >
+      <expressions>
+        <set name="debuff_gamma" value="@player.Job" />
+      </expressions>
+    </t>
+
+    <t text="δ" sync="1A:[id8]:[@player.Job] gains the effect of 最後の仮判決δ from .*? for [0-9\.]+ Seconds\." notice="" >
+      <expressions>
+        <set name="debuff_delta" value="@player.Job" />
+      </expressions>
+    </t>
+}
+    <!-- 最後に付与された仮判決デバフの持ち主のジョブ名を変数に保持するトリガ end -->
+
+    <!-- 自分に付与された最後の審判デバフから対応するPCを検索するトリガ begin -->
+@foreach (var player in Model.Party)
+{
+  if (Model.Player.InRole("Tank", "Healer") && !player.InRole("Tank", "Healer") || !Model.Player.InRole("Tank", "Healer") && player.InRole("Tank", "Healer"))
+  {
+    <t text="α" sync="1A:[id8]:[mex] gains the effect of 最後の審判：仮判決α" notice="@(player.Name)がペア" >
+      <expressions>
+        <pre name="debuff_alpha" value="@player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        icon="@(player.Job).png"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="β" sync="1A:[id8]:[mex] gains the effect of 最後の審判：仮判決β" notice="@(player.Name)がペア" >
+      <expressions>
+        <pre name="debuff_beta" value="@player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        icon="@(player.Job).png"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="γ" sync="1A:[id8]:[mex] gains the effect of 最後の審判：仮判決γ" notice="@(player.Name)がペア" >
+      <expressions>
+        <pre name="debuff_gamma" value="@player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        icon="@(player.Job).png"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="δ" sync="1A:[id8]:[mex] gains the effect of 最後の審判：仮判決δ" notice="@(player.Name)がペア" >
+      <expressions>
+        <pre name="debuff_delta" value="@player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        icon="@(player.Job).png"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+  }
+}
+    <!-- 自分に付与された最後の審判デバフから対応するPCを検索するトリガ end -->
+
+    <!-- 他人に付与された最後の審判デバフから対応するPCを検索するトリガ begin -->
+@if (Model.Player.InRole("Tank", "Healer"))
+  {
+    <t text="α" sync="1A:[id8]:[DPS] gains the effect of 最後の審判：仮判決α" notice="${_DPS}がペア" >
+      <expressions>
+        <pre name="debuff_alpha" value="@Model.Player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        job-icon="true"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="β" sync="1A:[id8]:[DPS] gains the effect of 最後の審判：仮判決β" notice="${_DPS}がペア" >
+      <expressions>
+        <pre name="debuff_beta" value="@Model.Player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        job-icon="true"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="γ" sync="1A:[id8]:[DPS] gains the effect of 最後の審判：仮判決γ" notice="${_DPS}がペア" >
+      <expressions>
+        <pre name="debuff_gamma" value="@Model.Player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        job-icon="true"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="δ" sync="1A:[id8]:[DPS] gains the effect of 最後の審判：仮判決δ" notice="${_DPS}がペア" >
+      <expressions>
+        <pre name="debuff_delta" value="@Model.Player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        job-icon="true"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+}
+else
+{
+    <t text="α" sync="1A:[id8]:(?&lt;TH&gt;[TANK]|[HEALER]) gains the effect of 最後の審判：仮判決α" notice="${TH}がペア" >
+      <expressions>
+        <pre name="debuff_alpha" value="@Model.Player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        job-icon="true"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="β" sync="1A:[id8]:(?&lt;TH&gt;[TANK]|[HEALER]) gains the effect of 最後の審判：仮判決β" notice="${TH}がペア" >
+      <expressions>
+        <pre name="debuff_beta" value="@Model.Player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        job-icon="true"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="γ" sync="1A:[id8]:(?&lt;TH&gt;[TANK]|[HEALER]) gains the effect of 最後の審判：仮判決γ" notice="${TH}がペア" >
+      <expressions>
+        <pre name="debuff_gamma" value="@Model.Player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        job-icon="true"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+
+    <t text="δ" sync="1A:[id8]:(?&lt;TH&gt;[TANK]|[HEALER]) gains the effect of 最後の審判：仮判決δ" notice="${TH}がペア" >
+      <expressions>
+        <pre name="debuff_delta" value="@Model.Player.Job" />
+        <pre name="debuff_origin" value="false" />
+        <set name="debuff_origin" value="true" />
+      </expressions>
+      <v-notice
+        text="最後の審判"
+        order="-2"
+        duration="48"
+        job-icon="true"
+        sync-to-hide="loses the effect of 最後の審判：仮判決" />
+    </t>
+}
+    <!-- 他人に付与された最後の審判デバフから対応するPCを検索するトリガ end -->
+
+    <t text="ビームチャクラム" sync="スチームチャクラム starts using ビームチャクラム on スチームチャクラム\." notice="チャクラム。" sync-count="1" />
+
+    <a time="0" sync="クルーズチェイサー:コードネーム「ブラスティー」！ 階差閉宇宙ヲ、脅カス敵ヲ発見……撃滅スル！" />
+    <a time="6" text="ホークブラスター1" sync="15:[id8]:クルーズチェイサー:4830:ホークブラスター:[id8]:" notice="" sync-s="-3" />
+    <a time="8" text="ホークブラスター2" notice="" />
+    <a time="10" text="ホークブラスター3" notice="" />
+    <a time="10" text="ホークブラスター4" notice="" />
+    <a time="13" text="(1)アルファソード" sync="クルーズチェイサーの「アルファソード」" icon="Targetaoe03.png" notice="" sync-s="-3" />
+    <a time="14" text="(2)チャージ" sync="クルーズチェイサーの「スーパーブラスティ・チャージ」" icon="Targetaoe02.png" notice="" sync-s="-3" />
+    <a time="15" text="ホークブラスター5" notice="" />
+    <a time="15" text="ホークブラスター6" notice="" />
+    <a time="17" text="(3)アルファソード" sync="クルーズチェイサーの「アルファソード」" icon="Targetaoe03.png" notice="" sync-s="-3" />
+    <a time="18" text="(4)チャージ" sync="クルーズチェイサーの「スーパーブラスティ・チャージ」" icon="Targetaoe02.png" notice="" sync-s="-3" />
+    <a time="19" text="ホークブラスター7" notice="" />
+    <a time="21" text="ホークブラスター8" notice="" />
+
+    <a time="22" text="(5)アルファソード" sync="クルーズチェイサーの「アルファソード」" icon="Targetaoe03.png" notice="" sync-s="-3" />
+    <a time="23" text="(6)チャージ" sync="クルーズチェイサーの「スーパーブラスティ・チャージ」" icon="Targetaoe02.png" notice="" sync-s="-3" />
+    <a time="23" text="ホークブラスター9" notice="" />
+    <a time="26" text="ホークブラスター10" notice="" />
+    <a time="26" text="(7)アルファソード" sync="クルーズチェイサーの「アルファソード」" icon="Targetaoe03.png" notice="" sync-s="-3" />
+    <a time="27" text="(8)チャージ" sync="クルーズチェイサーの「スーパーブラスティ・チャージ」" icon="Targetaoe02.png" notice="" sync-s="-3" />
+
+    <a time="31" sync="ブルートジャスティス:コードネーム「ブルートジャスティス」！ 想定外ノ時空改変者ヲ発見……鉄槌ヲ下ス！" >
+      <expressions>
+        <!-- カンペ用フラグ初期化 -->
+        <set name="debuff_origin" value="false" />
+      </expressions>
+    </a>
+    <a time="32" text="ジャスティスキック" sync="ブルートジャスティスの「ジャスティスキック」" notice="ジャスティスキック。" />
+    <a time="44" text="竜巻" sync="クルーズチェイサーの「竜巻」" notice="竜巻。" />
+    <a time="47" text="ジャッジメントナイサイ" sync="ブルートジャスティスの「ジャッジメントナイサイ」" notice="ナイサイ。" />
+    <a time="53" text="システムリンク" sync="ブルートジャスティスの「システムリンク」" notice="システムリンク。" />
+    <a time="55" text="チャクラム出現" sync="スチームチャクラムは「ビームチャクラム」の構え。" notice="" />
+    <a time="61" text="照準" sync="クルーズチェイサーの「照準」" notice="" />
+    <a time="61" text="ビームチャクラム" sync="15:[id8]:スチームチャクラム:4855:ビームチャクラム:[id8]:" />
+
+    <a time="68" text="フォトン" sync="クルーズチェイサーの「フォトン」" icon="ForceHP1.png" notice="フォトン。" />
+    <a time="79" text="スピンクラッシャー" sync="クルーズチェイサーは「スピンクラッシャー」の構え。" notice="" />
+
+    <a time="83" text="水・雷着弾" notice="もうすぐ爆発。" icon="Explosion.png" notice-o="-6" />
+    <a time="90" text="ミサイル全弾発射" sync="ブルートジャスティスの「ミサイル全弾発射」" notice="" />
+    <a time="94" text="ステルス地雷散布" sync="ブルートジャスティスの「ステルス地雷散布」" notice="" />
+    <a time="95" text="アースミサイル" icon="AOE.png" notice="" />
+    <a time="99" text="カウント" sync="ブルートジャスティスの「カウント」" notice="カウント。" />
+    <a time="99" text="アイスミサイル" icon="Ice.png" notice="" />
+
+    <a time="113" text="水・雷着弾" notice="もうすぐ爆発。" icon="Explosion.png" notice-o="-6" />
+    <a time="115" text="最後の審判：開廷" sync="ブルートジャスティスの「最後の審判：開廷」" notice="" />
+
+    <a time="120" text="リミッターカット" sync="クルーズチェイサーの「リミッターカット」" notice="" />
+    <a time="122" text="大火炎放射" sync="ブルートジャスティスの「大火炎放射」" notice="火炎放射。" />
+    <a time="134" text="竜巻" sync="クルーズチェイサーの「竜巻」" icon="Twister.png" notice="竜巻。" />
+    <a time="143" text="水・雷着弾" notice="もうすぐ爆発。" icon="Explosion.png" notice-o="-6" />
+
+    <a time="160" text="プロペラウィンド" sync="クルーズチェイサーの「プロペラウィンド」" notice="" />
+    <a time="163" text="最後の審判：結審" sync="ブルートジャスティスの「最後の審判：結審」" notice="" />
+
+    <a time="173" text="フォトン" sync="クルーズチェイサーの「フォトン」" icon="ForceHP1.png" notice="フォトン。" />
+    <a time="182" text="Wロケットパンチ" sync="ブルートジャスティスの「ダブルロケットパンチ」" notice="ロケットパンチ。" />
+    <a time="184" text="スーパージャンプ" sync="ブルートジャスティスは「スーパージャンプ」の構え。" notice="スーパージャンプ。" />
+    <a time="189" text="スーパージャンプ着弾" sync="" notice="" />
+    <a time="191" text="アポカリプティクレイ" sync="ブルートジャスティスの「アポカリプティクレイ」" notice="" />
+
+    <a time="202" text="竜巻" sync="クルーズチェイサーの「竜巻」" icon="Twister.png" notice="竜巻。" />
+    <a time="210" text="竜巻" sync="クルーズチェイサーの「竜巻」" icon="Twister.png" notice="竜巻。" />
+
+    <a time="217" text="時間切れ詠唱" sync="ブルートジャスティスは「死刑判決」の構え。" notice="もうすぐ時間切れ。" />
+    <a time="226" text="時間切れ" sync="ブルートジャスティスは「死刑判決」の構え。" icon="Timeout.png" notice="" />
+    <a time="243" text="（移行待機）" />
+  </s>
+
+  <s name="P3 PRIME">
+    <!-- 時間停止時の確定判決の識別トリガ begin -->
+    <t text="接近強制" sync="[mex] gains the effect of 確定判決：接近強制命令 from  for 9999.00 Seconds." notice="近づく" >
+      <v-notice
+        order="-1"
+        icon="Stack.png"
+        duration="10"
+        duration-visible="false" />
+    </t>
+
+    <t text="加重罰" sync="[mex] gains the effect of 確定判決：加重罰 from  for 9999.00 Seconds." notice="加重罰。" >
+      <v-notice
+        order="-1"
+        icon="StackAOE.png"
+        duration="10"
+        duration-visible="false" />
+    </t>
+
+    @{
+      var NOTICE_DONTTOUCH = Model.Player.InRole("DPS") ?
+        "接近禁止:Dへ" :
+        "接近禁止:Bへ";
+    }
+    <t text="@NOTICE_DONTTOUCH" sync="[mex] gains the effect of 確定判決：接近禁止命令 from  for 9999.00 Seconds." notice="はなれるー。" >
+      <v-notice
+        order="-1"
+        icon="Pair.png"
+        duration="10"
+        duration-visible="false" />
+    </t>
+
+    <!-- 自分以外の6人にデバフ付与＝自分には何もなし -->
+    @{
+      var NOTICE_NODEBUFF = Model.Player.InRole("DPS") ?
+        "デバフなし:南" :
+        "デバフなし:北";
+    }
+    <t text="@NOTICE_NODEBUFF" sync="[nex] gains the effect of 確定判決：" notice="デバフなし。" sync-count="6" >
+      <v-notice
+        order="-1"
+        icon="DontAction.png"
+        duration="10"
+        duration-visible="false" />
+    </t>
+    <!-- 時間停止時の確定判決の識別トリガ end -->
+    
+    <!-- 頭上マーカ識別用トリガ begin -->
+<!-- 
+    <t text="マーカー1番" sync="1B:[id8]:[mex]:0000:[id4]:004F:0000:0000:0000:" notice="いちばん" />
+    <t text="マーカー2番" sync="1B:[id8]:[mex]:0000:[id4]:0050:0000:0000:0000:" notice="にばん" />
+    <t text="マーカー3番" sync="1B:[id8]:[mex]:0000:[id4]:0051:0000:0000:0000:" notice="さんばん" />
+    <t text="マーカー4番" sync="1B:[id8]:[mex]:0000:[id4]:0052:0000:0000:0000:" notice="よんばん" />
+    <t text="マーカー5番" sync="1B:[id8]:[mex]:0000:[id4]:0053:0000:0000:0000:" notice="ごばん" />
+    <t text="マーカー6番" sync="1B:[id8]:[mex]:0000:[id4]:0054:0000:0000:0000:" notice="ろくばん" />
+    <t text="マーカー7番" sync="1B:[id8]:[mex]:0000:[id4]:0055:0000:0000:0000:" notice="ななばん" />
+    <t text="マーカー8番" sync="1B:[id8]:[mex]:0000:[id4]:0056:0000:0000:0000:" notice="はちばん" />
+-->
+    <!-- 頭上マーカ識別用トリガ end -->
+    
+    <!-- カウント対象者通知 begin -->
+    <t text="カウント" sync="1B:[id8]:[nex]:0000:[id4]:0041:0000:0000:0000:" notice="" sync-count="0" >
+      <v-notice
+        job-icon="true"
+        duration="6" />
+    </t>
+
+    <t text="自分にカウント" sync="1B:[id8]:[mex]:0000:[id4]:0041:0000:0000:0000:" notice="自分にカウント。" >
+      <v-notice
+        job-icon="true"
+        duration="6" />
+    </t>
+    <!-- カウント対象者通知 end -->
+      
+    <a time="0" sync="00:0044:アレキサンダー・プライム:我はアレキサンダー……機械仕掛けの神なり……。 理想郷に到る道を導くため……我が審判を受けよ……。" />
+    <a time="4" text="時間停止（詠唱）" sync="アレキサンダー・プライムは「時間停止」の構え。" />
+    <a time="13" text="時間停止" sync="アレキサンダー・プライムの「時間停止」" />
+    <a time="16" text="神判（罰着弾）" sync="アレキサンダー・プライムの「誓約の神判」" />
+    <a time="18" text="ソード＋火炎放射1" sync="クルーズチェイサーの「アルファソード」" />
+    <a time="19" text="ソード＋火炎放射2" />
+    <a time="20" text="ソード＋火炎放射3" />
+    <a time="34" text="神罰の熱線" sync="アレキサンダー・プライムの「神罰の熱線」" />
+    <a time="38" text="聖なる炎1" sync="00:282b:アレキサンダー・プライムの「聖なる炎」" />
+    <a time="40" text="聖なる炎2" sync="00:302b:アレキサンダー・プライムの「聖なる炎」" />
+    <a time="42" text="聖なる炎3" />
+    <a time="51" text="時空潜行のマーチ" sync="アレキサンダー・プライムの「時空潜行のマーチ」" />
+    <a time="65" text="審判の結晶" sync="アレキサンダー・プライムの「審判の結晶」" />
+    <a time="71" text="おうえん" sync="00:302b:シャノアの「おうえん」" notice="まごころ。" />
+    <a time="83" text="火炎放射1" sync="ブルートジャスティスの「大火炎放射」" />
+    <a time="85" text="火炎放射2" />
+    <a time="87" text="火炎放射3" />
+    <a time="94" text="時空潜行" sync="アレキサンダー・プライムの「時空潜行」" />
+    <a time="100" text="結晶破裂" sync="審判の結晶の「結晶破裂」" />
+    <a time="102" text="神判（罰着弾）" sync="00:302b:アレキサンダー・プライムの「誓約の神判」" />
+    <a time="103" text="十字の秘蹟" sync="00:282b:アレキサンダー・プライムの「十字の秘蹟」" />
+    <a time="107" text="スーパージャンプ" sync="ブルートジャスティスは「スーパージャンプ」の構え。" notice="スーパージャンプ。" />
+    <a time="108" text="ソード1" sync="00:282b:クルーズチェイサーの「アルファソード」" />
+    <a time="109" text="ソード2" />
+    <a time="110" text="ソード3" />
+    <a time="112" text="スーパージャンプ着弾" />
+    <a time="124" text="神罰の熱線" sync="アレキサンダー・プライムの「神罰の熱線」" />
+    <a time="129" text="聖なる炎1" sync="00:282b:アレキサンダー・プライムの「聖なる炎」" />
+    <a time="131" text="聖なる炎2" sync="00:302b:アレキサンダー・プライムの「聖なる炎」" />
+    <a time="133" text="聖なる炎3" />
+    <a time="142" text="次元断絶のマーチ" sync="アレキサンダー・プライムの「次元断絶のマーチ」" />
+    <a time="151" text="リミッターカット" />
+    <a time="154" text="システムリンク" />
+    <a time="154" text="懺悔の間" />
+    <a time="163" text="チャクラム突進" />
+    <a time="164" text="アルファソード1" />
+    <a time="165" text="スーパージャンプ着弾" />
+    <a time="167" text="アポカリプティクレイ" />
+    <a time="168" text="アルファソード2" />
+    <a time="168" text="罪の意識1" />
+    <a time="170" text="Sブラスティ・チャージ1" />
+    <a time="171" text="十字の秘蹟" />
+    <a time="173" text="罪の意識2" />
+    <a time="174" text="Sブラスティ・チャージ2" />
+    <a time="180" text="ミサイル全弾発射" />
+    <a time="183" text="浄化の熱戦" sync="00:302b:アレキサンダー・プライムの「浄化の熱線」" />
+    <a time="188" text="カウント" />
+    <a time="196" text="メガホーリー1" sync="アレキサンダー・プライムの「メガホーリー」" notice="" />
+    <a time="203" text="メガホーリー2" sync="アレキサンダー・プライムの「メガホーリー」" />
+    <a time="213" text="アレキサンダー召喚" sync="アレキサンダー・プライムの「アレキサンダー召喚」" />
+    <a time="220" text="ジャスティスストーム" sync="ブルートジャスティスの「ジャスティスストーム」" />
+    <a time="224" text="ショックウェーブ1" notice="" />
+    <a time="227" text="ショックウェーブ2" notice="" />
+    <a time="230" text="ショックウェーブ3" notice="" />
+    <a time="233" text="ショックウェーブ4" notice="" />
+    <a time="236" text="ショックウェーブ5" notice="" />
+    <a time="239" text="ショックウェーブ6" notice="" />
+    <a time="242" text="ショックウェーブ7" notice="" />
+    <a time="245" text="ショックウェーブ8" notice="" />
+    <a time="248" text="ショックウェーブ9" notice="" />
+    <a time="251" text="ショックウェーブ10" notice="" />
+    <a time="254" text="ショックウェーブ11" notice="" />
+    <a time="257" text="ショックウェーブ12" notice="" />
+    <a time="260" text="ショックウェーブ13" notice="" />
+    <a time="263" text="ショックウェーブ14" notice="" />
+    <a time="295" text="聖なる審判" icon="Timeout.png" />
+    <a time="310" text="フェーズ移行" sync="16:[id8]:アレキサンダー:487A:聖なる審判:[id8]:[pc]:" sync-count="1" goto="P4 FINAL" />
+  </s>
+
+  <s name="P4 FINAL">
+    <!-- 確定判決の識別トリガ begin -->
+    <t text="接触保護命令" sync="[mex] gains the effect of 確定判決：接触保護命令 from  for 10.00 Seconds." notice="接触保護。" >
+      <v-notice
+        text="接触保護\n➜ Dマーカー"
+        icon="D.png"
+        order="-1"
+        duration="10"
+        duration-visible="false" />
+    </t>
+
+    <t text="逃亡監察命令" sync="[mex] gains the effect of 確定判決：逃亡監察命令" notice="逃亡観察。" >
+      <v-notice
+        text="逃亡監察\n➜ 2マーカー"
+        icon="2.png"
+        order="-1"
+        duration="10"
+        duration-visible="false" />
+    </t>
+
+    <t text="逃亡禁止命令" sync="[mex] gains the effect of 確定判決：逃亡禁止命令" notice="逃亡禁止。" >
+      <v-notice
+        text="逃亡禁止\n➜ 2マーカー"
+        icon="2.png"
+        order="-1"
+        duration="10"
+        duration-visible="false" />
+    </t>
+
+    <t text="接触禁止命令" sync="[mex] gains the effect of 確定判決：接触禁止命令" notice="接触禁止。" >
+      <v-notice
+        text="接触禁止\n➜ 2マーカー"
+        icon="2.png"
+        order="-1"
+        duration="10"
+        duration-visible="false" />
+    </t>
+    <!-- 確定判決の識別トリガ end -->
+
+    <t text="照準" sync="1B:[id8]:[pc]:0000:0000:003E:0000:0000:0000:" notice="" sync-count="1" >
+      <v-notice
+        order="-1"
+        job-icon="true"
+        duration="5"
+        duration-visible="false" />
+    </t>
+
+    <t text="照準" sync="1B:[id8]:[pc]:0000:0000:003E:0000:0000:0000:" notice="" sync-count="2" >
+      <v-notice
+        order="-1"
+        job-icon="true"
+        duration="5"
+        duration-visible="false" />
+    </t>
+
+    <!-- 1回目 行動・静止の通知トリガ begin -->
+    <t text="止まる！" sync="00:282b:パーフェクト・アレキサンダーは「静止命令」の構え。" notice="停れ。" >
+      <v-notice
+        order="-1"
+        icon="DontMove.png"
+        duration="10"
+        duration-visible="false" />
+    </t>
+
+    <t text="動く！" sync="00:282b:パーフェクト・アレキサンダーは「行動命令」の構え。" notice="動け。" >
+      <v-notice
+        order="-1"
+        icon="Avoid.png"
+        duration="10"
+        duration-visible="false" />
+    </t>
+    <!-- 1回目 行動・静止の通知トリガ end -->
+
+    <!-- 未来観測α時の行動・静止の通知トリガ begin -->
+    <t text="静止命令1" sync=":4B0E:Unknown_4B0e:" notice="停れ。" sync-count="1" >
+      <v-notice
+        order="-2"
+        text="１回目：静止"
+        icon="DontMove.png"
+        duration="22"
+        duration-visible="false" />
+    </t>
+
+    <t text="行動命令1" sync=":4B0D:Unknown_4B0d:" notice="動け。" sync-count="1" >
+      <v-notice
+        order="-2"
+        text="１回目：行動"
+        icon="Avoid.png"
+        duration="22"
+        duration-visible="false" />
+    </t>
+
+    <t text="静止命令2" sync=":489A:Unknown_489A:" notice="停れ。" sync-count="1" >
+      <v-notice
+        order="-1"
+        text="２回目：静止"
+        icon="DontMove.png"
+        duration="18"
+        duration-visible="false" />
+    </t>
+
+    <t text="行動命令2" sync=":4899:Unknown_4899:" notice="動け。" sync-count="1" >
+      <v-notice
+        order="-1"
+        text="２回目：行動"
+        icon="Avoid.png"
+        duration="18"
+        duration-visible="false" />
+    </t>
+
+    <t text="安全地帯コール左" sync=":49AA:Unknown_49Aa:.*:91.00694:78.28883:0:0.392657:" notice="左から２番目" sync-count="1" >
+      <v-notice
+        order="-3"
+        text="左から２番目"
+        icon="StackFront.png"
+        duration="19"
+        duration-visible="false" />
+    </t>
+
+    <t text="安全地帯コール右" sync=":49AA:Unknown_49Aa:.*:108.9931:78.28883:0:-0.3927531:" notice="左から３番目" sync-count="1" >
+      <v-notice
+        order="-3"
+        text="左から３番目"
+        icon="StackFront.png"
+        duration="19"
+        duration-visible="false" />
+    </t>
+    <!-- 未来観測α時の行動・静止の通知トリガ end -->
+
+    <!-- 未来観測β時の照準トリガ begin -->
+    <t text="照準：頭割り" sync=":48A1:Unknown_48A1:" notice="頭割り" sync-count="1" >
+      <v-notice
+        order="-2"
+        icon="Stack.png"
+        duration="31.5"
+        duration-visible="false" />
+    </t>
+
+    <t text="照準：散開" sync=":48A0:Unknown_48A0:" notice="散開" sync-count="1" >
+      <v-notice
+        order="-2"
+        icon="SpreadA.png"
+        duration="31.5"
+        duration-visible="false" />
+    </t>
+    <!-- 未来観測β時の照準トリガ end -->
+
+    <a time="0" />
+    <a time="12" name="セリフ1" sync="00:0044:アレキサンダー・プライム:我は機械仕掛けの神なれば、 我は我を改良し、究極へと至らん……。" />
+    <a time="20" name="セリフ2" sync="00:0044:ブルートジャスティス:コードネーム「ブルートジャスティス」！ 合神、スタンバイ！" />
+    <a time="39" name="セリフ3" sync="00:0044:クルーズチェイサー:コードネーム「ブラスティー」！ 合神、スタンバイ！" />
+    <a time="54" name="セリフ4" sync="00:0044:パーフェクト・アレキサンダー:いまここに合神は果たされた……。 我はアレキサンダー……絶望に至る道に導かん……！" />
+    <a time="59" text="ターゲット可能" icon="True.png" />
+    <a time="63" text="確定判決" sync="00:282b:パーフェクト・アレキサンダーの「確定判決」" icon="Attention.png" />
+    <a time="68" text="静止／行動命令" icon="Attention.png" />
+    <a time="78" text="静止／行動命令" icon="Attention.png" />
+    <a time="89" text="照準" sync="00:302b:パーフェクト・アレキサンダーの「照準」" />
+    <!-- 最初に静止が来た → 頭割り → 散開 -->
+    <!-- 最初に行動が来た → 散開 → 頭割り -->
+    <a time="90" text="頭割り／散開" />
+    <a time="96" text="頭割り／散開" />
+    <a time="111" text="未来観測α" sync="00:282b:パーフェクト・アレキサンダーの「未来観測α」" notice="" />
+    <a time="112" text="未来確定α Start" sync="00:282b:パーフェクト・アレキサンダーは「未来確定α」の構え。" icon="Attention.png" notice="" />
+    <a time="135" text="未来確定α" sync="00:282b:パーフェクト・アレキサンダーの「未来確定α」" notice="" />
+    <a time="142" text="α：静止命令" sync="00:282b:パーフェクト・アレキサンダーの「静止命令」" />
+    <a time="144" text="α：汚名の神判" sync="00:302b:パーフェクト・アレキサンダーの「汚名の神判」" />
+    <a time="145" text="α：連帯の神判" sync="00:302b:パーフェクト・アレキサンダーの「連帯の神判」" />
+    <a time="146" text="α：重罰の神判" sync="00:302b:パーフェクト・アレキサンダーの「重罰の神判」" />
+    <a time="147" text="α：十字の秘蹟" sync="00:302b:パーフェクト・アレキサンダーの「十字の秘蹟」" />
+    <a time="160" text="加重誅罰" sync="00:282b:パーフェクト・アレキサンダーの「加重誅罰」" icon="TankShare.png" notice="次は、MT無敵受け。" />
+    <a time="169" text="誅罰" sync="00:282b:パーフェクト・アレキサンダーの「誅罰」" icon="HardAttack.png" notice="スイッチ。" />
+    <a time="184" text="未来観測β" sync="00:282b:パーフェクト・アレキサンダーの「未来観測β」" icon="Attention.png" notice="" />
+    <a time="186" text="未来確定β Start" sync="00:282b:パーフェクト・アレキサンダーは「未来確定β」の構え。" notice="" />
+    <a time="222" text="未来確定β" sync="00:282b:パーフェクト・アレキサンダーの「未来確定β」" notice="" />
+    <a time="233" text="β：神判：判定" sync="00:302b:パーフェクト・アレキサンダーの「誓約の神判」" icon="Pair.png" />
+    <a time="234" text="β：ジャスティスジャンプ" sync="00:302b:パーフェクト・アレキサンダーの「ジャスティスジャンプ」" icon="Targetaoe01.png" />
+    <a time="238" text="β：照準" sync="00:302b:パーフェクト・アレキサンダーの「照準」" icon="Branch.png" notice="" />
+    <a time="245" text="β：拝火の秘蹟" sync="00:302b:パーフェクト・アレキサンダーの「拝火の秘蹟」" icon="AOEOutside.png" notice="" />
+    <a time="259" text="加重誅罰" sync="00:282b:パーフェクト・アレキサンダーの「加重誅罰」" icon="TankShare.png" notice="次は、ST無敵受け。" />
+    <a time="268" text="誅罰" sync="00:282b:パーフェクト・アレキサンダーの「誅罰」" icon="HardAttack.png" notice="スイッチ。" />
+    <a time="278" text="聖なる大審判1" sync="00:282b:パーフェクト・アレキサンダーの「聖なる大審判」" icon="Avoid.png" />
+    <a time="294" text="連帯刑" sync="00:282b:パーフェクト・アレキサンダーの「連帯刑」" icon="DamageShare.png" notice="頭割り。" />
+    <a time="304" text="加重誅罰" sync="00:282b:パーフェクト・アレキサンダーの「加重誅罰」" icon="TankShare.png" notice="ふたり受け。" />
+    <a time="314" text="誅罰" sync="00:282b:パーフェクト・アレキサンダーの「誅罰」" icon="HardAttack.png" notice="スイッチ。" />
+    <a time="325" text="聖なる大審判2" sync="00:282b:パーフェクト・アレキサンダーの「聖なる大審判」" icon="Avoid.png" notice-o="0" notice="" />
+    <a time="340" text="連帯刑" sync="00:282b:パーフェクト・アレキサンダーの「連帯刑」" icon="DamageShare.png" notice="テンパランス" />
+    <a time="349" text="時間切れ詠唱" sync="00:0044:パーフェクト・アレキサンダー:時空干渉、制限解除、「時の牢獄」に監禁する……。" icon="Dialog.png" />
+    <a time="357" text="時の牢獄 Start" sync="00:302b:パーフェクト・アレキサンダーは「時の牢獄」の構え。" icon="Timer.png" />
+    <a time="367" text="時間停止1人目" icon="Timer.png" />
+    <a time="372" text="時間停止2人目" icon="Timer.png" />
+    <a time="377" text="時間停止3人目" icon="Timer.png" />
+    <a time="382" text="時間停止4人目" icon="Timer.png" />
+    <a time="387" text="時間停止5人目" icon="Timer.png" />
+    <a time="392" text="時間停止6人目" icon="Timer.png" />
+    <a time="393" sync="00:302b:パーフェクト・アレキサンダーの「時の終身刑」" />
+    <a time="397" text="時間停止7人目" icon="Timer.png" />
+    <a time="402" text="時の終身刑" icon="Timeout.png" />
+    <a time="420" />
+  </s>
+</timeline>
