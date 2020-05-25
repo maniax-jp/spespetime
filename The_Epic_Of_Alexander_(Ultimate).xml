@@ -62,6 +62,75 @@
     </t>
 
     <!-- 頭上マーカ識別用トリガ begin -->
+    <t no="1" name="InsertDiceMarker" sync="^1B:[id8]:[pc]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):">
+      <expressions>
+        <table>
+        {
+            "method":"Insert", "table":"DiceTable",
+            "cols" : [
+              { "name":"marker", "val":"${mark_code}", "key":"true" },
+              { "name":"target", "val":"${_pc}" },
+            ]
+        }
+        </table>
+      </expressions>
+    </t>
+
+    <t no="2" sync="^1B:" sync-count="8" text="１番" notice="一番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][0]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice1.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
+
+    <t no="3" sync="^1B:" sync-count="8" text="２番" notice="二番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][1]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice2.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
+
+    <t no="4" sync="^1B:" sync-count="8" text="３番" notice="三番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][2]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice3.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
+
+    <t no="5" sync="^1B:" sync-count="8" text="４番" notice="四番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][3]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice4.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
+
+    <t no="6" sync="^1B:" sync-count="8" text="５番" notice="五番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][4]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice5.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
+
+    <t no="7" sync="^1B:" sync-count="8" text="６番" notice="六番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][5]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice6.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
+
+    <t no="8" sync="^1B:" sync-count="8" text="７番" notice="七番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][6]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice7.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
+
+    <t no="9" sync="^1B:" sync-count="8" text="８番" notice="八番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][7]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice8.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
 <!--
     <t text="マーカー1番" sync="1B:[id8]:[mex]:0000:[id4]:004F:0000:0000:0000:" notice="いちばん、ソード" >
       <v-notice
@@ -506,6 +575,54 @@ else
     <!-- 時間停止時の確定判決の識別トリガ end -->
     
     <!-- 頭上マーカ識別用トリガ begin -->
+    <t text="マーカー1番" sync="^1B:[id8]:[mex]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):" notice="一番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][0]['marker']" value="${mark_code}" />
+      </expressions>
+      <v-notice icon="Dice1.png" duration="40" duration-visible="false" order="-2" sync-to-hide="アレキサンダー・プライムの「浄化の熱線」" />
+    </t>
+    <t text="マーカー2番" sync="^1B:[id8]:[mex]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):" notice="二番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][1]['marker']" value="${mark_code}" />
+      </expressions>
+      <v-notice icon="Dice2.png" duration="40" duration-visible="false" order="-2" sync-to-hide="アレキサンダー・プライムの「浄化の熱線」" />
+    </t>
+    <t text="マーカー3番" sync="^1B:[id8]:[mex]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):" notice="三番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][2]['marker']" value="${mark_code}" />
+      </expressions>
+      <v-notice icon="Dice3.png" duration="40" duration-visible="false" order="-2" sync-to-hide="アレキサンダー・プライムの「浄化の熱線」" />
+    </t>
+    <t text="マーカー4番" sync="^1B:[id8]:[mex]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):" notice="四番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][3]['marker']" value="${mark_code}" />
+      </expressions>
+      <v-notice icon="Dice4.png" duration="40" duration-visible="false" order="-2" sync-to-hide="アレキサンダー・プライムの「浄化の熱線」" />
+    </t>
+    <t text="マーカー5番" sync="^1B:[id8]:[mex]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):" notice="五番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][4]['marker']" value="${mark_code}" />
+      </expressions>
+      <v-notice icon="Dice5.png" duration="40" duration-visible="false" order="-2" sync-to-hide="アレキサンダー・プライムの「浄化の熱線」" />
+    </t>
+    <t text="マーカー6番" sync="^1B:[id8]:[mex]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):" notice="六番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][5]['marker']" value="${mark_code}" />
+      </expressions>
+      <v-notice icon="Dice6.png" duration="40" duration-visible="false" order="-2" sync-to-hide="アレキサンダー・プライムの「浄化の熱線」" />
+    </t>
+    <t text="マーカー7番" sync="^1B:[id8]:[mex]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):" notice="七番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][6]['marker']" value="${mark_code}" />
+      </expressions>
+      <v-notice icon="Dice7.png" duration="40" duration-visible="false" order="-2" sync-to-hide="アレキサンダー・プライムの「浄化の熱線」" />
+    </t>
+    <t text="マーカー8番" sync="^1B:[id8]:[mex]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):" notice="八番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][7]['marker']" value="${mark_code}" />
+      </expressions>
+      <v-notice icon="Dice8.png" duration="40" duration-visible="false" order="-2" sync-to-hide="アレキサンダー・プライムの「浄化の熱線」" />
+    </t>
 <!-- 
     <t text="マーカー1番" sync="1B:[id8]:[mex]:0000:[id4]:004F:0000:0000:0000:" notice="いちばん" />
     <t text="マーカー2番" sync="1B:[id8]:[mex]:0000:[id4]:0050:0000:0000:0000:" notice="にばん" />
