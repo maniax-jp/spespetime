@@ -15,10 +15,6 @@
   <default target-element="Activity" target-attr="notice-o" value="-3" />
 
   <s name="P1 LIQUID">
-　  <t text="2体フェーズへ" sync="クルーズチェイサー:コードネーム「ブラスティー」！ 階差閉宇宙ヲ、脅カス敵ヲ発見……撃滅スル！" >
-  　　<load target="P2 JUDGEMENT" truncate="true" />
-    </t>
-
     <t text="エンボラス" sync="Added new combatant エンボラス" notice="エンボラス">
       <v-notice
         duration="5"
@@ -53,13 +49,11 @@
   　<a time="121" text="エンボラス出現" icon="Bomb.png" />
     <a time="126" text="ハンド・オブ・ペイン" sync="リキッドハンドは「ハンド・オブ・ペイン」の構え。" notice="" />
     <a time="127" text="スプラッシュ" sync="リビングリキッドの「スプラッシュ」" notice="スプラッシュ。" />
-    <a time="140" text="時間切れ" icon="Timeout.png" />
+    <a time="138.5" text="PHASE2へ" sync="クルーズチェイサー:コードネーム「ブラスティー」！ 階差閉宇宙ヲ、脅カス敵ヲ発見……撃滅スル！" sync-s="-20" goto="P2 JUDGEMENT" />
 　</s>
 
   <s name="P2 JUDGEMENT">
-    <t text="プライムフェーズへ" sync="00:0044:アレキサンダー・プライム:我はアレキサンダー……機械仕掛けの神なり……。 理想郷に到る道を導くため……我が審判を受けよ……。" >
-  　　<load target="P3 PRIME" truncate="true" />
-    </t>
+    <t name="TO PHASE3" sync="アレキサンダー・プライム:我はアレキサンダー……機械仕掛けの神なり……。 理想郷に到る道を導くため……我が審判を受けよ……。" goto="P3 PRIME" />
 
     <!-- 頭上マーカ識別用トリガ begin -->
     <t no="1" name="InsertDiceMarker" sync="^1B:[id8]:[pc]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):">
