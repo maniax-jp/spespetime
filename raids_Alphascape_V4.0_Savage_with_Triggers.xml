@@ -634,6 +634,9 @@
     <a time="203" text="波動砲" sync="オメガは「波動砲」の構え。" notice="波動砲。" icon="Distance" />
     <a time="214" text="標的識別" sync="オメガは「標的識別」の構え。" notice="標的識別。" icon="Marker" />
     <a time="223" text="零式波動砲" sync="オメガの「零式波動砲」" notice="零式波動砲。" icon="TankShare" />
+
+    <a time="239" text="防御指示" notice="防御指示。" notice-o="0" />
+
     <a time="243" text="エンバグ" sync="オメガは「エンバグ」の構え。" notice="エンバグ。" icon="Pair" />
     <a time="249" text="拡散波動砲" sync="オメガは「拡散波動砲」の構え。" notice="拡散波動砲。" icon="Thunder" />
     <a time="257" text="検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="検知式波動砲。" icon="Targetaoe01" />
@@ -671,6 +674,9 @@
     <a time="458" text="波動砲" sync="オメガは「波動砲」の構え。" notice="波動砲。" icon="AOEVertical" />
     <a time="469" text="標的識別" sync="オメガは「標的識別」の構え。" notice="標的識別。" icon="Marker" />
     <a time="477" text="零式波動砲" sync="オメガの「零式波動砲」" notice="零式波動砲。" icon="TankShare" />
+
+    <a time="494" text="防御指示" notice="防御指示。" notice-o="0" />
+
     <a time="498" text="エンバグ" sync="オメガは「エンバグ」の構え。" notice="エンバグ。" icon="Pair" />
     <a time="504" text="拡散波動砲" sync="オメガは「拡散波動砲」の構え。" notice="拡散波動砲。" icon="Thunder" />
     <a time="512" text="検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="検知式波動砲。" icon="Targetaoe01" />
