@@ -4,7 +4,7 @@
   <rev>rev1</rev>
   <description>
     ゾーンに依存せず常に使用するトリガを定義する。
-    スペルやテロップで定義しても同等の機能が得られるがスペスペたいむの通知オーバーレイでまとめて運用した人向け。
+    スペルやテロップで定義しても同等の機能が得られるがスペスペたいむの通知オーバーレイでまとめて運用したい人向け。
   </description>
   <author>anoyetta with Hojoring Forum</author>
   <zone>{GLOBAL}</zone>
@@ -12,183 +12,40 @@
 
   <!-- 初期設定では無効にしてあります -->
   <default target-element="Trigger" target-attr="enabled" value="false" />
-<!--
-@if (Model.Player.InRole("Tank", "Healer")) {
 
-  <t text="@(Model.Player.Name)に@(Model.Player.Job)の@(Model.Player.Role)" sync="Added new combatant 木人\." notice="@(Model.Player.Name)に@(Model.Player.Job)の@(Model.Player.Role)">
-      <expressions>
-        <set name="flag1" value="ディア" />
-      </expressions>
-    <v-notice
-      duration="5"
-      duration-visible="false"
-      icon="Marker.png" />
-  </t>
-}
-  <t text="${_mex}に毛アル" sync=":[mex] starts using ケアル on [pc]\." notice="${_mex}に毛アル">
-      <expressions>
-        <set name="flag1" value="ケアル" />
-      </expressions>
+  <!-- 重要なアクティビティを通知するトリガ begin -->
+  <!--
+  マーカー、マーキングなどはゾーンを問わずに出現するためグローバルゾーンとして定義する。
+  スペル、テロップで定義しても同等であるがスペスペたいむの通知オーバーレイでまとめて運用したい人向け。
+  -->
+  <t text="自分にマーカー" sync="1B:.{8}:[mex]:" notice="自分にマーカー">
     <v-notice
       duration="5"
       duration-visible="false"
       icon="Marker.png" />
   </t>
 
-  <t text="リジェネ" sync="1A:[id8]:[pc] gains the effect of リジェネ from [mex] for [_duration]" notice="ディア後のリジェネ">
-      <expressions>
-        <pre name="flag1" value="ディア" />
-      </expressions>
+  <t text="マーカー\n ➜ ${_nex}" sync="1B:.{8}:[nex]:">
+    <v-notice
+      duration="5"
+      duration-visible="false"
+      style="NOTICE_NORMAL"
+      icon="Marker.png" />
+  </t>
+
+  <t text="自分にマーキング" sync="[mex]に「マーキング」の効果。" notice="自分にマーキング">
     <v-notice
       duration="5"
       duration-visible="false"
       icon="Marker.png" />
   </t>
 
-  <t text="リジェネ" sync="1A:[id8]:[pc] gains the effect of リジェネ from [mex] for [_duration]" notice="毛アル後のリジェネ">
-      <expressions>
-        <pre name="flag1" value="ケアル" />
-      </expressions>
+  <t text="マーキング\n ➜ ${_nex}" sync="[nex]に「マーキング」の効果。">
     <v-notice
       duration="5"
       duration-visible="false"
+      style="NOTICE_NORMAL"
       icon="Marker.png" />
   </t>
--->
-
-
-
-
-    <!-- 最後に付与された仮判決デバフの持ち主のジョブ名を変数に保持するトリガ begin -->
-@foreach (var player in Model.Party)
-{
-  if(player.Job != string.Empty)
-  {
-    <t text="${_@(player.Job)}にケアル" sync=":[mex] starts using ケアル on [@player.Job]\." notice="${_@(player.Job)}にケアル" >
-      <expressions>
-        <set name="debuff_alpha" value="@player.Job" />
-      </expressions>
-    <v-notice
-      duration="5"
-      duration-visible="false"
-      icon="Marker.png" />
-    </t>
-  }
-    <t text="β" sync="1A:[id8]:[@player.Job] gains the effect of 最後の仮判決β from .*? for [0-9\.]+ Seconds\." notice="" >
-      <expressions>
-        <set name="debuff_beta" value="@player.Job" />
-      </expressions>
-    </t>
-
-    <t text="γ" sync="1A:[id8]:[@player.Job] gains the effect of 最後の仮判決γ from .*? for [0-9\.]+ Seconds\." notice="" >
-      <expressions>
-        <set name="debuff_gamma" value="@player.Job" />
-      </expressions>
-    </t>
-
-    <t text="δ" sync="1A:[id8]:[@player.Job] gains the effect of 最後の仮判決δ from .*? for [0-9\.]+ Seconds\." notice="" >
-      <expressions>
-        <set name="debuff_delta" value="@player.Job" />
-      </expressions>
-    </t>
-}
-    <!-- 最後に付与された仮判決デバフの持ち主のジョブ名を変数に保持するトリガ end -->
-
-    <!-- 自分に付与された最後の審判デバフから対応するPCを検索するトリガ begin -->
-@foreach (var player in Model.Party)
-{
-  if (Model.Player.InRole("Tank", "Healer") && !player.InRole("Tank", "Healer") || !Model.Player.InRole("Tank", "Healer") && player.InRole("Tank", "Healer"))
-  {
-    <t text="最後にケアルしたのは@(player.Name)" sync=":[mex] starts using ケアルラ on" notice="最後にケアルしたのは@(player.Name)" >
-      <expressions>
-        <pre name="debuff_alpha" value="@player.Job" />
-      </expressions>
-    <v-notice
-      duration="5"
-      duration-visible="false"
-      icon="Marker.png" />
-    </t>
-
-    <t text="β" sync="1A:[id8]:[mex] gains the effect of 最後の審判：仮判決β" notice="ペアは@(player.Name)" >
-      <expressions>
-        <pre name="debuff_beta" value="@player.Job" />
-      </expressions>
-    </t>
-
-    <t text="γ" sync="1A:[id8]:[mex] gains the effect of 最後の審判：仮判決γ" notice="ペアは@(player.Name)" >
-      <expressions>
-        <pre name="debuff_gamma" value="@player.Job" />
-      </expressions>
-    </t>
-
-    <t text="δ" sync="1A:[id8]:[mex] gains the effect of 最後の審判：仮判決δ" notice="ペアは@(player.Name)" >
-      <expressions>
-        <pre name="debuff_delta" value="@player.Job" />
-      </expressions>
-    </t>
-  }
-}
-    <!-- 自分に付与された最後の審判デバフから対応するPCを検索するトリガ end -->
-
-    <!-- 他人に付与された最後の審判デバフから対応するPCを検索するトリガ begin -->
-@if (Model.Player.InRole("Tank", "Healer"))
-  {
-    <t text="自分が最後にケアルしたのが自分のとき、リジェネがかかったのは${_DPS}" sync="1A:[id8]:[DPS] gains the effect of リジェネ from [mex]" notice="自分が最後にケアルしたのが自分のとき、リジェネがかかったのは${_DPS}" >
-      <expressions>
-        <pre name="debuff_alpha" value="@Model.Player.Job" />
-      </expressions>
-    <v-notice
-      duration="5"
-      duration-visible="false"
-      icon="Marker.png" />
-    </t>
-
-    <t text="β" sync="1A:[id8]:[DPS] gains the effect of 最後の審判：仮判決β" notice="ペアは${_DPS}" >
-      <expressions>
-        <pre name="debuff_beta" value="@Model.Player.Job" />
-      </expressions>
-    </t>
-
-    <t text="γ" sync="1A:[id8]:[DPS] gains the effect of 最後の審判：仮判決γ" notice="ペアは${_DPS}" >
-      <expressions>
-        <pre name="debuff_gamma" value="@Model.Player.Job" />
-      </expressions>
-    </t>
-
-    <t text="δ" sync="1A:[id8]:[DPS] gains the effect of 最後の審判：仮判決δ" notice="ペアは${_DPS}" >
-      <expressions>
-        <pre name="debuff_delta" value="@Model.Player.Job" />
-      </expressions>
-    </t>
-}
-else
-{
-    <t text="α" sync="1A:[id8]:(?&lt;TH&gt;[TANK]|[HEALER]) gains the effect of 最後の審判：仮判決α" notice="ペアは${TH}" >
-      <expressions>
-        <pre name="debuff_alpha" value="@Model.Player.Job" />
-      </expressions>
-    </t>
-
-    <t text="β" sync="1A:[id8]:(?&lt;TH&gt;[TANK]|[HEALER]) gains the effect of 最後の審判：仮判決β" notice="ペアは${TH}" >
-      <expressions>
-        <pre name="debuff_beta" value="@Model.Player.Job" />
-      </expressions>
-    </t>
-
-    <t text="γ" sync="1A:[id8]:(?&lt;TH&gt;[TANK]|[HEALER]) gains the effect of 最後の審判：仮判決γ" notice="ペアは${TH}" >
-      <expressions>
-        <pre name="debuff_gamma" value="@Model.Player.Job" />
-      </expressions>
-    </t>
-
-    <t text="δ" sync="1A:[id8]:(?&lt;TH&gt;[TANK]|[HEALER]) gains the effect of 最後の審判：仮判決δ" notice="ペアは${TH}" >
-      <expressions>
-        <pre name="debuff_delta" value="@Model.Player.Job" />
-      </expressions>
-    </t>
-}
-    <!-- 他人に付与された最後の審判デバフから対応するPCを検索するトリガ end -->
-
-
-
+  <!-- 重要なアクティビティを通知するトリガ end -->
 </timeline>
