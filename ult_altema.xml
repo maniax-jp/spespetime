@@ -10,7 +10,7 @@
 <zone>The Weapon's Refrain (Ultimate)</zone>
 <locale>JA</locale>
 <entry>ガルーダ</entry>
-<start>0039:戦闘開始！</start>
+<start>0039::戦闘開始！</start>
 
 <default target-element="Activity" target-attr="notice-d" value="Both" />
 <default target-element="Activity" target-attr="notice-o" value="-5" />

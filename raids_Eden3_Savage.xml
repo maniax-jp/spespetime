@@ -11,7 +11,7 @@ AquaCatのブログをよろしくお願いします。(https://www.aquacat.work
 <zone>855</zone>
 <locale>JA</locale>
 <entry>P1</entry>
-<start>0039:戦闘開始！</start>
+<start>0039::戦闘開始！</start>
 
 <s name="P1">
 <a time="008" text="タイダルロア" sync="リヴァイアサンは「タイダルロア」を唱えた。" notice="全体攻撃" />

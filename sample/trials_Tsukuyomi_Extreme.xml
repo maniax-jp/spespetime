@@ -9,7 +9,7 @@
   <zone>Castrum Fluminis,The Minstrel's Ballad: Tsukuyomi's Pain</zone>
   <locale>JA</locale>
   <entry>ENTRY</entry>
-  <start>0039:戦闘開始！</start>
+  <start>0039::戦闘開始！</start>
 
   <t text="自分にマーカ" sync="(1B:.{8}:[mex]:|[mex]に「マーキング」の効果。)" notice="自分にマーカー。">
     <v-notice

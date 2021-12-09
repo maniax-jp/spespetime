@@ -10,7 +10,7 @@
   <zone>887,The Epic Of Alexander (Ultimate)</zone>
   <locale>JA</locale>
   <entry>P1 LIQUID</entry>
-  <start>0039:戦闘開始！</start>
+  <start>0039::戦闘開始！</start>
 
   <default target-element="Activity" target-attr="notice-o" value="-3" />
 

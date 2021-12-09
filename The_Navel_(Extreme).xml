@@ -8,7 +8,7 @@
   <zone>The Navel (Extreme)</zone>
   <locale>JA</locale>
   <entry>P1</entry>
-  <start>0039:戦闘開始！</start>
+  <start>0039::戦闘開始！</start>
 
   <default target-element="Activity" target-attr="notice-o" value="-5" />
 
