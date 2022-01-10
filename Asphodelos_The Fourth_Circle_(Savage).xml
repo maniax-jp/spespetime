@@ -14,7 +14,7 @@
   <start>0039::戦闘開始！</start>
   <entry>ENTRY</entry>
 
-  <default target-element="Activity" target-attr="notice-o" value="-4" />
+  <default target-element="Activity" target-attr="notice-o" value="-6" />
 
 
   <!-- 前半/後半識別用のエントリ-->
@@ -31,7 +31,13 @@
 
 <s name="前半">
   <a time="001" sync="ヘスペロス:ク、カカカカカ……待っていたぞ……。 半神「ヘーミテオス」の力、その身で味わえ！！" />
-  <a time="016" text="(全体)デコレーション" sync="ヘスペロスの「デコレーション」" notice="全体攻撃" />
+  <a time="016" text="(全体)デコレーション" sync="ヘスペロスの「デコレーション」" notice="全体攻撃" >
+    <expressions>
+      <!-- フラグ初期化 -->
+      <set name="bloodlake" value="zero" />
+      <set name="tower" value="zero" />
+    </expressions>
+  </a>
   <a time="019" sync="ヘスペロス:お前のエーテルを吸収させてもらおう……。 その力、私が利用させてもらうぞ！！" />
   <a time="019" text="【構】ブラッドレイク" sync="ヘスペロスは「ブラッドレイク」の構え。" notice="線が付くよ" />
   <a time="024" text="1回目ブラッドレイク" sync="ヘスペロスの「ブラッドレイク」" notice="1回目、線が取れない。" />
@@ -206,6 +212,50 @@
       <v-notice
         text="青/雷:安置"
         duration="15" />
+    </t>
+
+  <!--1回目ブラッドレイク-->
+    <t sync="^23:[id8]:[DPS]" notice="タンヒラ線取り" >
+      <expressions>
+        <pre name="bloodlake" value="zero" />
+        <set name="bloodlake" value="one" />
+      </expressions>
+      <v-notice
+        text="タンヒラ線取り"
+        icon="TANK.png"
+        duration="45" />
+    </t>
+    <t sync="^23:[id8]:(?&lt;TH&gt;[TANK]|[HEALER])" notice="DPS線取り" >
+      <expressions>
+        <pre name="bloodlake" value="zero" />
+        <set name="bloodlake" value="one" />
+      </expressions>
+      <v-notice
+        text="DPS線取り"
+        icon="MeleeDPS.png"
+        duration="45" />
+    </t>
+
+  <!--塔＋線取り-->
+    <t sync="^14:69DE" notice="タンヒラ線取り" >
+      <expressions>
+        <pre name="tower" value="zero" />
+        <set name="tower" value="one" />
+      </expressions>
+      <v-notice
+        text="タンヒラ線取り"
+        icon="TANK.png"
+        duration="60" />
+    </t>
+    <t sync="^14:69DF" notice="DPS線取り" >
+      <expressions>
+        <pre name="tower" value="zero" />
+        <set name="tower" value="one" />
+      </expressions>
+      <v-notice
+        text="DPS線取り"
+        icon="MeleeDPS.png"
+        duration="60" />
     </t>
 
   <!--玉取りデバフ検知
