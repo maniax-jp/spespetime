@@ -34,7 +34,7 @@
   <a time="016" text="(全体)デコレーション" sync="ヘスペロスの「デコレーション」" notice="全体攻撃" >
     <expressions>
       <!-- フラグ初期化 -->
-      <set name="bloodlake" value="zero" />
+      <set name="bloodrake" value="zero" />
       <set name="tower" value="zero" />
     </expressions>
   </a>
@@ -217,8 +217,8 @@
   <!--1回目ブラッドレイク-->
     <t sync="^23:[id8]:[DPS]" notice="タンヒラ線取り" >
       <expressions>
-        <pre name="bloodlake" value="zero" />
-        <set name="bloodlake" value="one" />
+        <pre name="bloodrake" value="zero" />
+        <set name="bloodrake" value="one" />
       </expressions>
       <v-notice
         text="タンヒラ線取り"
@@ -227,8 +227,8 @@
     </t>
     <t sync="^23:[id8]:(?&lt;TH&gt;[TANK]|[HEALER])" notice="DPS線取り" >
       <expressions>
-        <pre name="bloodlake" value="zero" />
-        <set name="bloodlake" value="one" />
+        <pre name="bloodrake" value="zero" />
+        <set name="bloodrake" value="one" />
       </expressions>
       <v-notice
         text="DPS線取り"
@@ -348,7 +348,11 @@
   <a time="290" text="シアリングストリーム" sync="ヘスペロスの「シアリングストリーム」" notice="全体攻撃" />
 
   <!--P5-->
-  <a time="294" text="茨の悲劇：終幕" sync="ヘスペロスは「茨の悲劇：終幕」の構え。" notice="茨の悲劇：終幕。" />
+  <a time="294" text="茨の悲劇：終幕" sync="ヘスペロスは「茨の悲劇：終幕」の構え。" notice="茨の悲劇：終幕。" >
+    <expressions> <!-- 変数の初期化 -->
+      <set name="impulse_target_count" value="0" />
+    </expressions>
+  </a>
   <!--a time="299" text="茨の悲劇：終幕" sync="ヘスペロスの「茨の悲劇：終幕」" /-->
   <!--a time="303" text="ソーンヘッジ" sync="ヘスペロスは「ソーンヘッジ」の構え。" notice="ソーンヘッジ。" /-->
   <a time="309" text="ソーンヘッジ" sync="ヘスペロスの「ソーンヘッジ」" notice="線を確認" />
@@ -411,29 +415,14 @@
   <a time="495" text="時間切れ詠唱" sync="ヘスペロスは「アルティメットインパルス」の構え。" notice="時間切れ開始" />
   <a time="505" text="時間切れ" />
 
-<!--第2/4幕用トリガー-->
-  <t sync="^1B:[id8]:[me]:[id4]:[id4]:0207:" notice="紫ついたよ" >
-    <v-notice
-      text="紫:ダージャ"
-      duration="9" />
+  <!-- 後半戦で最初に受けたシアリングストリームからボスのCombatant IDをキャプチャする -->
+  <t name="ボスIDキャプチャ" sync="^16:(?&lt;boss_id&gt;[0-9a-fA-F]{8}):ヘスペロス:6A2D:シアリングストリーム:" sync-count="1" >
+    <expressions>
+      <set name="boss_id" value="0x${boss_id}" />
+    </expressions>
   </t>
-  <t sync="^1B:[id8]:[me]:[id4]:[id4]:0208:" notice="緑ついたよ" >
-    <v-notice
-      text="緑:エアロ"
-      duration="9" />
-  </t>
-  <t sync="^1B:[id8]:[me]:[id4]:[id4]:0209:" notice="赤ついたよ" >
-    <v-notice
-      text="赤:ファイア"
-      duration="9" />
-  </t>
-<!--第4幕用トリガ-->
-  <t sync="^1B:[id8]:[me]:[id4]:[id4]:0206:" notice="青ついたよ" >
-    <v-notice
-      text="青:塔処理"
-      duration="9" />
-  </t>
-<!--遠近のトリガ-->
+
+  <!--遠近のトリガ-->
   @{
     var TANK_NEAR_CALL = Model.Player.InRole("TANK") ? "近づくー。" : "離れるー。";
     var TANK_FAR_CALL = Model.Player.InRole("TANK") ? "離れるー。" : "近づくー。";
@@ -449,5 +438,44 @@
       duration="5" />
   </t>
 
-  </s>
+  <!-- 茨の悲劇：第四幕 判定トリガー -->
+  <t name="Act4-紫(北or北東)" sync="^23:EVAL(VAR['boss_id'] + 38, X8):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り1番" >
+    <v-notice
+      order="-4"
+      text="➜１南西で線を切る"
+      duration="21" />
+  </t>
+  <t name="Act4-紫(東or南東)" sync="^23:EVAL(VAR['boss_id'] + 37, X8):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り2番" >
+    <v-notice
+      order="-3"
+      text="➜２北西で線を切る"
+      duration="26" />
+  </t>
+  <t name="Act4-紫(南or南西)" sync="^23:EVAL(VAR['boss_id'] + 36, X8):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り3番" >
+    <v-notice
+      order="-2"
+      text="➜３北東で線を切る"
+      duration="31" />
+  </t>
+  <t name="Act4-紫(西or北西)" sync="^23:EVAL(VAR['boss_id'] + 35, X8):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り4番" >
+    <v-notice
+      order="-1"
+      text="➜４南東で線を切る"
+      duration="36" />
+  </t>
+
+  <!--終幕用トリガー-->
+  <t no="1" name="インパルス対象カウント" sync="15:[id8]:ヘスペロス:6A1C:フリーティングインパルス:" >
+    <expressions>
+      <set name="impulse_target_count" value="EVAL(VAR['impulse_target_count']+1,N0)" />
+    </expressions>
+  </t>
+  <t no="2" name="何番目にインパルス対象になったかの判定" sync="15:[id8]:ヘスペロス:6A1C:フリーティングインパルス:[id8]:[mex]:" sync-count="1" >
+    <v-notice
+      text="VAR['impulse_target_count']個目の塔"
+      duration="23"
+      icon="塔踏み.png" />
+  </t>
+
+</s>
 </timeline>
