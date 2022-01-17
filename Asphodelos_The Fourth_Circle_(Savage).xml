@@ -305,7 +305,9 @@
   <!--a time="105" text="ダークデザイン" sync="ヘスペロスは「ダークデザイン」の構え。" notice="ダークデザイン。" /-->
   <!--a time="110" text="ヘーミテオス・ダージャ" sync="ヘスペロスの「ヘーミテオス・ダージャ」" notice="ヘーミテオス・ダージャ。" /-->
   <a time="111" text="AoE捨て" sync="ヘスペロスの「ダークデザイン」" notice="AoE捨て" />
+@if (Model.Player.Job == "WHM") {
   <a time="111" text="テンパランス" notice="テンパランス" notice-o="0" />
+}
   <a time="115" text="ファイジャ" sync="ヘスペロスの「ヘーミテオス・ファイジャ」" notice="ファイジャ。" />
   <a time="122" sync="ヘスペロス:我が最大の一撃だ…！" />
   <a time="122" text="ファイジャ" sync="ヘスペロスの「ヘーミテオス・ファイジャ」" notice="ファイジャ。" />
@@ -337,7 +339,9 @@
   <!--a time="233" text="ソーンヘッジ" sync="ヘスペロスの「ソーンヘッジ」" /-->
   <a time="241" text="シアリングストリーム" sync="ヘスペロスの「シアリングストリーム」" notice="全体攻撃" />
   <a time="247" text="塔を踏む" sync="ヘスペロスの「ヘーミテオス・サンダガ」" notice="塔を踏む" />
+@if (Model.Player.Job == "WHM") {
   <a time="256" text="テンパランス" notice="テンパランス" notice-o="0" />
+}
   <a time="256" text="線を切る4" />
   <a time="261" text="線を切る3" />
   <a time="266" text="線を切る2" />
@@ -396,7 +400,9 @@
   <a time="410" text="処理4"  />
   <a time="416" text="処理5"  />
   <a time="418" text="ヘルスティング" sync="ヘスペロスは「ヘルスティング」の構え。" notice="ヘルスティング。" />
+@if (Model.Player.Job == "WHM") {
   <a time="420" text="テンパランス" notice="テンパランス" notice-o="0" />
+}
   <a time="421" text="ヘルスティング" sync="ヘスペロスの「ヘルスティング」" />
   <a time="422" text="処理6"  />
   <a time="424" text="ヘルスティング"  />
