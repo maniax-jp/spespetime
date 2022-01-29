@@ -142,7 +142,32 @@
         text="離れる:青NG"
         duration="5" />
     </t>
-
+<!--
+    <t sync="ヘスペロスは「シフティングストライクN」の構え。" notice="1が安置" >
+      <v-notice
+        text="1でマント"
+        duration="5"
+        icon="1マーカー.png" />
+    </t>
+    <t sync="ヘスペロスは「シフティングストライクS」の構え。" notice="3が安置" >
+      <v-notice
+        text="3でマント"
+        icon="サイコロ3.png"
+        duration="5" />
+    </t>
+    <t sync="ヘスペロスは「シフティングストライクE」の構え。" notice="2が安置" >
+      <v-notice
+        text="2でマント"
+        icon="2マーカー.png"
+        duration="5" />
+    </t>
+    <t sync="ヘスペロスは「シフティングストライクW」の構え。" notice="4が安置" >
+      <v-notice
+        text="4でマント"
+        icon="サイコロ4.png"
+        duration="5" />
+    </t>
+-->
     <t sync="^14:69FD" notice="1でマント" >
       <v-notice
         text="1でマント"
@@ -433,12 +458,12 @@
     var TANK_NEAR_CALL = Model.Player.InRole("TANK") ? "近づくー。" : "離れるー。";
     var TANK_FAR_CALL = Model.Player.InRole("TANK") ? "離れるー。" : "近づくー。";
   }
-  <t sync="^14:6A26" notice="@TANK_NEAR_CALL" >
+  <t sync="ヘスペロスは「近思の魔撃」の構え。" notice="@TANK_NEAR_CALL" >
     <v-notice
       text="近思の魔撃"
       duration="5" />
   </t>
-  <t sync="^14:6A27" notice="@TANK_FAR_CALL" >
+  <t sync="ヘスペロスは「遠見の魔撃」の構え。" notice="@TANK_FAR_CALL" >
     <v-notice
       text="遠見の魔撃"
       duration="5" />
