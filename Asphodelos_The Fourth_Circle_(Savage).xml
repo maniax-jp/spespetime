@@ -452,6 +452,26 @@
       <set name="boss_id" value="0x${boss_id}" />
     </expressions>
   </t>
+  
+  <t no="1" name="InsertId" sync="^23:(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ヘスペロス:[id8]:ヘスペロス:">
+    <expressions>
+      <set name="obj_id" value="0x${obj_id}" />
+    </expressions>
+  </t>
+  <t no="2" name="InsertId-post" sync="^23:[id8]:ヘスペロス:[id8]:ヘスペロス:">
+    <expressions>
+      <table>
+      {
+          "method":"Insert",
+          "table":"IdTable",
+          "cols" : [
+            { "name":"order", "val":"EVAL(4294967295 - VAR['obj_id'], D10)", "key":"true" },
+            { "name":"id", "val":"EVAL(VAR['obj_id'], X8)" },
+          ]
+      }
+      </table>
+    </expressions>
+  </t>
 
   <!--遠近のトリガ-->
   @{
@@ -470,25 +490,37 @@
   </t>
 
   <!-- 茨の悲劇：第四幕 判定トリガー -->
-  <t name="Act4-紫(北or北東)" sync="^23:EVAL(VAR['boss_id'] + 38, X8):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り1番" >
+  <t no="1" name="Act4-紫(北or北東)" sync="^23:(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り1番" >
+    <expressions>
+      <pre name="TABLE['IdTable'][0]['id']" value="${obj_id}" />
+    </expressions>
     <v-notice
       order="-4"
       text="➜１南西で線を切る"
       duration="21" />
   </t>
-  <t name="Act4-紫(東or南東)" sync="^23:EVAL(VAR['boss_id'] + 37, X8):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り2番" >
+  <t no="2" name="Act4-紫(東or南東)" sync="^23:(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り2番" >
+    <expressions>
+      <pre name="TABLE['IdTable'][1]['id']" value="${obj_id}" />
+    </expressions>
     <v-notice
       order="-3"
       text="➜２北西で線を切る"
       duration="26" />
   </t>
-  <t name="Act4-紫(南or南西)" sync="^23:EVAL(VAR['boss_id'] + 36, X8):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り3番" >
+  <t no="3" name="Act4-紫(南or南西)" sync="^23:(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り3番" >
+    <expressions>
+      <pre name="TABLE['IdTable'][2]['id']" value="${obj_id}" />
+    </expressions>
     <v-notice
       order="-2"
       text="➜３北東で線を切る"
       duration="31" />
   </t>
-  <t name="Act4-紫(西or北西)" sync="^23:EVAL(VAR['boss_id'] + 35, X8):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り4番" >
+  <t no="4" name="Act4-紫(西or北西)" sync="^23:(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ヘスペロス:[id8]:[mex]:" sync-count="1" notice="線切り4番" >
+    <expressions>
+      <pre name="TABLE['IdTable'][3]['id']" value="${obj_id}" />
+    </expressions>
     <v-notice
       order="-1"
       text="➜４南東で線を切る"
