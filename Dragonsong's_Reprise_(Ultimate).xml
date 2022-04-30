@@ -244,20 +244,25 @@
   <a time="122" text="移行待ち" />
   <t sync="異邦の詩人:騎神トールダンを討ち果たすも" goto="ニーズP1" />
 
-  <t no="7" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="１ばんまーかー" >
+  <t no="7" sync="^1B:[id8]:[SCH]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="交代" >
     <v-notice
-      text="1B:1番"
+      text="相方に1番"
       duration="15" />
   </t>
-  <t no="8" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" notice="２ばんまーかー" >
+  <t no="8" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" notice="交代" >
     <v-notice
-      text="1B:2番"
+      text="自分に2番"
       duration="15" />
   </t>
 
-  <t no="9" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" notice="隕石対象" >
+  <t no="9" sync="^1B:[id8]:([TANK]|[HEALER]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="タンヒラ外" >
     <v-notice
-      text="隕石対象"
+      text="タンヒラ外"
+      duration="15" />
+  </t>
+  <t no="10" sync="^1B:[id8]:[DPS]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="DPS外" >
+    <v-notice
+      text="DPS外"
       duration="15" />
   </t>
 
