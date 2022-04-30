@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
   <timeline>
     <name>絶竜詩戦争</name>
-    <rev>Draft-3</rev>
+    <rev>Draft-3.1</rev>
     <description>
-      202204270108:ドラフト版。とりあえず。
-      202204280114:聖杖まで。可読性が著しく低下してますが修正予定。Draft-2
       202204300429:人型ニーズまで。Draft-3
-      この先のログ提供者を募集中。
+      202205010212:各種調整。通知のミスを修正Draft-3.1
+      SPECIAL THANKS!!
+      Leila.E
+      K.Aura
       AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
     </description>
     <author>Aqua Cat,RINGS</author>
@@ -156,7 +157,7 @@
   <a time="000" text="セリフ" sync="騎神トールダン:神に抗う光の使徒よ" />
   <a time="004" sync="騎神トールダンは「インビジブル・アスカロンメルシー」の構え。"  />
   <a time="007" text="I,Aメルシー" sync="騎神トールダンの「インビジブル・アスカロンメルシー」" notice="メルシー" />
-  <a time="011" text="Aマイト3" sync="騎神トールダンの「アスカロンマイト」" notice="マイト3連" />
+  <a time="011" text="Aマイト3" sync="騎神トールダンの「アスカロンマイト」" notice="タンク強攻撃" />
   <a time="012" text="Aマイト2" />
   <a time="014" text="Aマイト1" />
   <a time="025" text="蒼天の陣：雷槍" sync="騎神トールダンの「蒼天の陣：雷槍」" />
@@ -191,22 +192,6 @@
       text="1B:青対象"
       duration="15" />
   </t>
-  <!--設定が多すぎてキモいので一旦3つに絞ることに。-->
-  <t sync="^14:63CE:.*(83.73,116.26|99.99,122.97|116.26,116.26)," notice="北側" >
-    <v-notice
-      text="北側"
-      duration="9" />
-  </t>
-  <t sync="^14:63CE:.*(83.73,83.73|99.99,76.98|116.26,83.73)," notice="南側" >
-    <v-notice
-      text="南側"
-      duration="9" />
-  </t>
-  <t sync="^14:63CE:.*(76.98,99.99|122.97,99.99)," notice="東か西" >
-    <v-notice
-      text="東か西"
-      duration="9" />
-  </t>
 </s>
 
 
@@ -231,13 +216,13 @@
   <a time="045.2" text="コメット5" />
   <a time="046.6" text="コメット4" />
   <a time="048" text="コメット3" />
+  <a time="048" text="ノックバック注意" notice="アムレン" />
   <a time="049.4" text="コメット2" />
   <!--時系列おかしいけどとりあえず放置-->
   <a time="051.8" text="コメット1" />
-  <a time="051" text="フェイスアンムーブ" sync="聖騎士グリノーの「フェイスアンムーブ」" notice="アムレン" />
+  <a time="051" text="ノックバック" sync="聖騎士グリノーの「フェイスアンムーブ」" notice="" />
   <a time="054" text="塔発動" sync="聖騎士エルムノストの「コンヴィクション」" notice="" />
   <a time="071" text="アルティメットエンド" sync="騎神トールダンの「アルティメットエンド」" notice="" />
-  <a time="050" text="調査中" />
   <a time="084" text="大振り" sync="騎神トールダンの「大振り」" />
   <a time="093" text="大振り" sync="騎神トールダンの「大振り」" />
   <a time="097" text="時間切れ開始" sync="騎神トールダンは「エーテルバースト」の構え。" notice="" />
@@ -266,6 +251,16 @@
       duration="15" />
   </t>
 
+  <t sync="^14:63C0" notice="右に入る" >
+    <v-notice
+      text="右から大振り"
+      duration="4" />
+  </t>
+  <t sync="^14:63C1" notice="左に入る" >
+    <v-notice
+      text="左から大振り"
+      duration="4" />
+  </t>
 </s>
 
 <s name="ニーズP1">
@@ -280,9 +275,11 @@
   <a time="025" text="堕天のドラゴンダイブ" sync="ニーズヘッグの「堕天のドラゴンダイブ」" />
   <a time="026" text="内外注意" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
   <a time="034" text="連旋" notice="" />
-  <a time="035" text="アイ・オブ・タイラント" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="アイ・オブ・タイラント。" />
-  <a time="038" text="大車輪" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
-  <a time="041" text="大車輪" notice="大車輪" />
+
+  <a time="035" text="頭割り" sync="ニーズヘッグの「アイ・オブ・タイラント」" notice="頭割り" />
+  <a time="038" text="大車輪2" sync="ニーズヘッグの「大車輪・(邪尾|咬牙)」" notice="大車輪" />
+  <a time="039" text="ドラゴンダイブ" notice="ドラゴンダイブ" />
+  <a time="041" text="大車輪1" notice="" />
   <a time="043" text="" sync="ニーズヘッグは「ゲイルスコグル」の構え。" notice="" />
   <a time="048" text="連旋" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
   <a time="048" text="ゲイルスコグル" sync="ニーズヘッグの「ゲイルスコグル」" />
@@ -302,49 +299,49 @@
 <!--ハイジャンプ-->
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" notice="ジャンプいち" >
     <v-notice
-      text="ジャンプ:1"
+      text="塔1:その場,塔踏み:2回目or3回目"
       duration="9" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" notice="ジャンプに" >
     <v-notice
-      text="ジャンプ:2"
+      text="塔2:その場,塔踏み:3回目"
       duration="19" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" notice="ジャンプさん" >
     <v-notice
-      text="ジャンプ:3"
+      text="塔踏み:1回目,塔3:その場"
       duration="30" />
   </t>
 <!--スパインダイブ-->
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" notice="スパインいち" >
     <v-notice
-      text="スパイン:1"
+      text="塔1:前,塔踏み:2回目"
       duration="9" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" notice="スパインに" >
     <v-notice
-      text="スパイン:2"
+      text="塔2:前,塔踏み:3回目"
       duration="19" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" notice="スパインさん" >
     <v-notice
-      text="スパイン:3"
+      text="塔踏み:1回目,塔3:前"
       duration="30" />
   </t>
 <!--イルーシブ-->
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" notice="イルーシブいち" >
     <v-notice
-      text="イルーシブ:1"
+      text="塔1:後ろ,塔踏み:2回目"
       duration="9" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" notice="イルーシブに" >
     <v-notice
-      text="イルーシブ:2"
+      text="塔2:後ろ,塔踏み:3回目"
       duration="19" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" notice="イルーシブさん" >
     <v-notice
-      text="イルーシブ:3"
+      text="塔踏み:1回目,塔3:後ろ"
       duration="30" />
   </t>
 </s>
