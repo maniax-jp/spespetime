@@ -207,20 +207,19 @@
   <a time="026" sync="騎神トールダン:「竜の眼」を喰らいし聖剣アスカロンよ…… この地に眠る、微睡みの神より力を引き出せ！" />
   <a time="028" text="Marking" />
   <a time="036" text="炎設置" sync="聖騎士シャリベルの「ヘヴンステイク」" />
-  <a time="036.6" text="氷設置" sync="^15:[id8]:聖騎士グリノー:63E7:ハイマルストーム:" notice="氷設置" />
+  <a time="036.6" text="氷設置" sync="^15:[id8]:聖騎士グリノー:63E7:ハイマルストーム:" notice="" />
   <a time="038" text="塔発動" sync="^15:[id8]:聖騎士エルムノスト:737B:コンヴィクション:" notice="" />
   <a time="040" text="コンヴィクション" sync="聖騎士エルムノストの「コンヴィクション」" notice="塔を踏む" />
-  <a time="041" text="ホーリーコメット" sync="聖騎士ヌドゥネーの「ホーリーコメット」" notice="コメット開始" />
+  <a time="041" text="ホーリーコメット" sync="聖騎士ヌドゥネーの「ホーリーコメット」" notice="" />
   <a time="042.4" text="コメット7" />
   <a time="043.8" text="コメット6" />
   <a time="045.2" text="コメット5" />
   <a time="046.6" text="コメット4" />
   <a time="048" text="コメット3" />
-  <a time="048" text="ノックバック注意" notice="アムレン" />
   <a time="049.4" text="コメット2" />
   <!--時系列おかしいけどとりあえず放置-->
   <a time="051.8" text="コメット1" />
-  <a time="051" text="ノックバック" sync="聖騎士グリノーの「フェイスアンムーブ」" notice="" />
+  <a time="051" text="ノックバック" sync="聖騎士グリノーの「フェイスアンムーブ」" notice="アムレン" />
   <a time="054" text="塔発動" sync="聖騎士エルムノストの「コンヴィクション」" notice="" />
   <a time="071" text="アルティメットエンド" sync="騎神トールダンの「アルティメットエンド」" notice="" />
   <a time="084" text="大振り" sync="騎神トールダンの「大振り」" />
@@ -240,12 +239,12 @@
       duration="15" />
   </t>
 
-  <t no="9" sync="^1B:[id8]:([TANK]|[HEALER]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="タンヒラ外" >
+  <t no="9" sync="^1B:[id8]:([TANK]|[HEALER]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="タンヒラそと" >
     <v-notice
       text="タンヒラ外"
       duration="15" />
   </t>
-  <t no="10" sync="^1B:[id8]:[DPS]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="DPS外" >
+  <t no="10" sync="^1B:[id8]:[DPS]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="DPSそと" >
     <v-notice
       text="DPS外"
       duration="15" />
