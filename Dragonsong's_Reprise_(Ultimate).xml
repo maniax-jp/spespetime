@@ -197,7 +197,11 @@
 
 <s name="ナイツP2">
   <a time="005" text="セリフ" sync="騎神トールダン:我は人にして、神なり！" />
-  <a time="005" text="蒼天の陣：聖杖" sync="騎神トールダンの「蒼天の陣：聖杖」" />
+  <a time="005" text="蒼天の陣：聖杖" sync="騎神トールダンの「蒼天の陣：聖杖」">
+    <expressions>
+      <set name="tower_found" value="false" />
+    </expressions>
+  </a>
   <a time="018" text="竜の邪眼" sync="騎神トールダンの「竜の邪眼」" />
   <a time="018" text="シャイニングブレード" sync="聖騎士ジャンルヌの「シャイニングブレード」" notice="" />
   <a time="018" text="セイクリッドカット4" sync="聖騎士ゼフィランの「セイクリッドカット」" notice="" />
@@ -211,14 +215,6 @@
   <a time="038" text="塔発動" sync="^15:[id8]:聖騎士エルムノスト:737B:コンヴィクション:" notice="" />
   <a time="040" text="コンヴィクション" sync="聖騎士エルムノストの「コンヴィクション」" notice="塔を踏む" />
   <a time="041" text="ホーリーコメット" sync="聖騎士ヌドゥネーの「ホーリーコメット」" notice="" />
-  <a time="042.4" text="コメット7" />
-  <a time="043.8" text="コメット6" />
-  <a time="045.2" text="コメット5" />
-  <a time="046.6" text="コメット4" />
-  <a time="048" text="コメット3" />
-  <a time="049.4" text="コメット2" />
-  <!--時系列おかしいけどとりあえず放置-->
-  <a time="051.8" text="コメット1" />
   <a time="051" text="ノックバック" sync="聖騎士グリノーの「フェイスアンムーブ」" notice="アムレン" />
   <a time="054" text="塔発動" sync="聖騎士エルムノストの「コンヴィクション」" notice="" />
   <a time="071" text="アルティメットエンド" sync="騎神トールダンの「アルティメットエンド」" notice="" />
@@ -228,12 +224,12 @@
   <a time="122" text="移行待ち" />
   <t sync="異邦の詩人:騎神トールダンを討ち果たすも" goto="ニーズP1" />
 
-  <t no="7" sync="^1B:[id8]:[SCH]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="交代" >
+  <t no="7" sync="^1B:[id8]:[SCH]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="学者と交代" >
     <v-notice
       text="相方に1番"
       duration="15" />
   </t>
-  <t no="8" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" notice="交代" >
+  <t no="8" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" notice="学者と交代" >
     <v-notice
       text="自分に2番"
       duration="15" />
@@ -248,6 +244,63 @@
     <v-notice
       text="DPS外"
       duration="15" />
+  </t>
+
+  <t no="11" name="tower_north_left" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(91\.00,84\.41,0\.00\)" sync-count="1" >
+    <expressions>
+      <set name="tower_north_left" value="exists" />
+    </expressions>
+  </t>
+  <t no="12" name="tower_north_center" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(100\.00,82\.00,0\.00\)" sync-count="1" notice="コメットは真ん中" >
+    <expressions>
+      <pre name="tower_found" value="false" />
+      <set name="tower_north_center" value="exists" />
+      <set name="tower_found" value="true" />
+    </expressions>
+  </t>
+  <t no="13" name="tower_north_right" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(109\.00,84\.41,0\.00\)" sync-count="1" >
+    <expressions>
+      <set name="tower_north_right" value="exists" />
+    </expressions>
+  </t>
+  <t no="14" name="tower_south_left" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(109\.00,115\.59,0\.00\)" sync-count="1" >
+    <expressions>
+      <set name="tower_south_left" value="exists" />
+    </expressions>
+  </t>
+  <t no="15" name="tower_south_center" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(100\.00,118\.00,0\.00\)" sync-count="1" notice="コメットは真ん中" >
+    <expressions>
+      <pre name="tower_found" value="false" />
+      <set name="tower_south_center" value="exists" />
+      <set name="tower_found" value="true" />
+    </expressions>
+  </t>
+  <t no="16" name="tower_south_right" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(91\.00,115\.59,0\.00\)" sync-count="1" >
+    <expressions>
+      <set name="tower_south_right" value="exists" />
+    </expressions>
+  </t>
+  <t no="17" name="tower_call1" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos:" sync-count="8" notice="コメットは左" >
+    <expressions>
+      <pre name="tower_found" value="false" />
+      <pre name="tower_north_left" value="exists" />
+      <pre name="tower_south_left" value="exists" />
+      <set name="tower_found" value="true" />
+    </expressions>
+  </t>
+  <t no="18" name="tower_call2" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos:" sync-count="8" notice="コメットは右" >
+    <expressions>
+      <pre name="tower_found" value="false" />
+      <pre name="tower_north_right" value="exists" />
+      <pre name="tower_south_right" value="exists" />
+      <set name="tower_found" value="true" />
+    </expressions>
+  </t>
+  <t no="19" name="tower_call3" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos:" sync-count="8" notice="コメット糞パターン" >
+    <expressions>
+      <pre name="tower_found" value="false" />
+      <set name="tower_found" value="true" />
+    </expressions>
   </t>
 
   <t sync="^14:63C0" notice="右に入る" >
