@@ -246,7 +246,7 @@
       duration="15" />
   </t>
 
-  <t no="12" name="tower_callA" notice="コメット担当は塔真ん中" >
+  <t no="12" name="tower_callA" notice="コメット担当は塔真ん中" notice-o="2" >
     <expressions>
       <pre name="tower_found" value="false" />
       <set name="tower_found" value="true" />
@@ -258,7 +258,7 @@
       text="コメット担当は塔真ん中"
       duration="15" />
   </t>
-  <t no="15" name="tower_callB" notice="コメット担当は塔真ん中" >
+  <t no="15" name="tower_callB" notice="コメット担当は塔真ん中" notice-o="2" >
     <expressions>
       <pre name="tower_found" value="false" />
       <set name="tower_found" value="true" />
@@ -270,7 +270,7 @@
       text="コメット担当は塔真ん中"
       duration="15" />
   </t>
-  <t no="17" name="tower_call1" notice="コメット担当は塔左" >
+  <t no="17" name="tower_call1" notice="コメット担当は塔左" notice-o="2" >
     <expressions>
       <pre name="tower_found" value="false" />
       <set name="tower_found" value="true" />
@@ -283,7 +283,7 @@
       text="コメット担当は塔左"
       duration="15" />
   </t>
-  <t no="18" name="tower_call2" notice="コメット担当は塔右" >
+  <t no="18" name="tower_call2" notice="コメット担当は塔右" notice-o="2" >
     <expressions>
       <pre name="tower_found" value="false" />
       <set name="tower_found" value="true" />
@@ -296,7 +296,7 @@
       text="コメット担当は塔右"
       duration="15" />
   </t>
-  <t no="19" name="tower_call3" sync="聖騎士オムリクは「ハイマルストーム」を唱えた。" sync-count="1" notice="コメット担当は塔糞パターン" >
+  <t no="19" name="tower_call3" sync="聖騎士オムリクは「ハイマルストーム」を唱えた。" sync-count="1" notice="コメット担当は塔糞パターン" notice-o="2" >
     <expressions>
       <pre name="tower_found" value="false" />
       <set name="tower_found" value="true" />
@@ -326,7 +326,7 @@
   <a time="014" text="攻撃" />
   <a time="018" text="攻撃" />
   <a time="019" sync="ニーズヘッグ:殺す、殺す、殺す！" />
-  <a time="019" text="マーカー" sync="ニーズヘッグは「堕天のドラゴンダイブ」の構え。" notice="マーカーつくよ" />
+  <a time="019" text="マーカー" sync="ニーズヘッグは「堕天のドラゴンダイブ」の構え。" notice="" />
   <a time="025" text="堕天のドラゴンダイブ" sync="ニーズヘッグの「堕天のドラゴンダイブ」" />
   <a time="026" text="内外注意" sync="ニーズヘッグは「(尾牙|牙尾)の連旋」の構え。" notice="" />
   <a time="034" text="連旋" notice="" />
@@ -340,12 +340,12 @@
   <a time="048" text="ゲイルスコグル" sync="ニーズヘッグの「ゲイルスコグル」" />
   <a time="049" text="ゲイルスコグル"  />
 
-  <t sync="^14:6712" notice="外から内" >
+  <t sync="^14:6712" notice="外からウチ" >
     <v-notice
       text="チャリ→ダイナモ"
       duration="10" />
   </t>
-  <t sync="^14:6713" notice="内から外" >
+  <t sync="^14:6713" notice="ウチから外" >
     <v-notice
       text="ダイナモ→チャリ"
       duration="10" />
