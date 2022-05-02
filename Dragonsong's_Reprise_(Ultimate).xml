@@ -246,75 +246,63 @@
       duration="15" />
   </t>
 
-  <t no="11" name="tower_north_left" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(91\.00,84\.41,0\.00\)" sync-count="1" >
-    <expressions>
-      <set name="tower_north_left" value="exists" />
-    </expressions>
-  </t>
-  <t no="12" name="tower_north_center" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(100\.00,82\.00,0\.00\)" sync-count="1" notice="コメットは真ん中" >
+  <t no="12" name="tower_callA" notice="コメット担当は塔真ん中" >
     <expressions>
       <pre name="tower_found" value="false" />
-      <set name="tower_north_center" value="exists" />
       <set name="tower_found" value="true" />
     </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士エルムノスト" X="23.50" Y="23.14" Z="0" tolerance="0.01" />
+    </p-sync>
     <v-notice
-      text="コメットは真ん中"
+      text="コメット担当は塔真ん中"
       duration="15" />
   </t>
-  <t no="13" name="tower_north_right" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(109\.00,84\.41,0\.00\)" sync-count="1" >
-    <expressions>
-      <set name="tower_north_right" value="exists" />
-    </expressions>
-  </t>
-  <t no="14" name="tower_south_left" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(109\.00,115\.59,0\.00\)" sync-count="1" >
-    <expressions>
-      <set name="tower_south_left" value="exists" />
-    </expressions>
-  </t>
-  <t no="15" name="tower_south_center" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(100\.00,118\.00,0\.00\)" sync-count="1" notice="コメットは真ん中" >
+  <t no="15" name="tower_callB" notice="コメット担当は塔真ん中" >
     <expressions>
       <pre name="tower_found" value="false" />
-      <set name="tower_south_center" value="exists" />
       <set name="tower_found" value="true" />
     </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士エルムノスト" X="23.50" Y="23.86" Z="0" tolerance="0.01" />
+    </p-sync>
     <v-notice
-      text="コメットは真ん中"
+      text="コメット担当は塔真ん中"
       duration="15" />
   </t>
-  <t no="16" name="tower_south_right" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos: \(91\.00,115\.59,0\.00\)" sync-count="1" >
-    <expressions>
-      <set name="tower_south_right" value="exists" />
-    </expressions>
-  </t>
-  <t no="17" name="tower_call1" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos:" sync-count="8" notice="コメットは左" >
+  <t no="17" name="tower_call1" notice="コメット担当は塔左" >
     <expressions>
       <pre name="tower_found" value="false" />
-      <pre name="tower_north_left" value="exists" />
-      <pre name="tower_south_left" value="exists" />
       <set name="tower_found" value="true" />
     </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士エルムノスト" X="23.32" Y="23.19" Z="0" tolerance="0.01" />
+      <combatant name="聖騎士エルムノスト" X="23.68" Y="23.81" Z="0" tolerance="0.01" />
+    </p-sync>
     <v-notice
-      text="コメットは左"
+      text="コメット担当は塔左"
       duration="15" />
   </t>
-  <t no="18" name="tower_call2" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos:" sync-count="8" notice="コメットは右" >
+  <t no="18" name="tower_call2" notice="コメット担当は塔右" >
     <expressions>
       <pre name="tower_found" value="false" />
-      <pre name="tower_north_right" value="exists" />
-      <pre name="tower_south_right" value="exists" />
       <set name="tower_found" value="true" />
     </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士エルムノスト" X="23.68" Y="23.19" Z="0" tolerance="0.01" />
+      <combatant name="聖騎士エルムノスト" X="23.32" Y="23.81" Z="0" tolerance="0.01" />
+    </p-sync>
     <v-notice
-      text="コメットは右"
+      text="コメット担当は塔右"
       duration="15" />
   </t>
-  <t no="19" name="tower_call3" sync="聖騎士エルムノスト starts using コンヴィクション on \. Duration: 11\.70 Pos:" sync-count="8" notice="コメット糞パターン" >
+  <t no="19" name="tower_call3" sync="聖騎士オムリクは「ハイマルストーム」を唱えた。" sync-count="1" notice="コメット担当は塔糞パターン" >
     <expressions>
       <pre name="tower_found" value="false" />
       <set name="tower_found" value="true" />
     </expressions>
     <v-notice
-      text="コメット糞パターン"
+      text="コメット担当は塔糞パターン"
       duration="15" />
   </t>
 
