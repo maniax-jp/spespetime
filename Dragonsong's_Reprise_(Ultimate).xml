@@ -342,13 +342,13 @@
 
   <t sync="^14:6712" notice="外からウチ" >
     <v-notice
-      text="チャリ→ダイナモ"
-      duration="10" />
+      text="外から内"
+      duration="15" />
   </t>
   <t sync="^14:6713" notice="ウチから外" >
     <v-notice
-      text="ダイナモ→チャリ"
-      duration="10" />
+      text="内から外"
+      duration="15" />
   </t>
 
 <!--ハイジャンプ-->
