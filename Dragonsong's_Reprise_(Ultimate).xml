@@ -68,11 +68,13 @@
   <t sync="聖騎士グリノーは「エンプティディメンション」の構え。" notice="ダイナモ" >
     <v-notice
       text="ダイナモ:足元へ"
+      icon="AOEOutside.png"
       duration="5" />
   </t>
   <t sync="聖騎士グリノーは「フルディメンション」の構え。" notice="チャリオット" >
     <v-notice
       text="チャリオット:離れる"
+      icon="AOEInside.png"
       duration="5" />
   </t>
 
@@ -90,24 +92,28 @@
   -->
 
 <!--試作。通知間違ってるかも。-->
-  <t sync="^14:62D4:.*100.00,78.00," notice="Cへ" >
+  <t sync="^14:62D4:.*100.00,78.00," notice="Aにでたよ" >
     <v-notice
-      text="南安置:Cへ"
+      text="Aにでたよ"
+      icon="A.png"
       duration="5" />
   </t>
-  <t sync="^14:62D4:.*78.00,100.00," notice="Bへ" >
+  <t sync="^14:62D4:.*78.00,100.00," notice="Dにでたよ" >
     <v-notice
-      text="西安置:Bへ"
+      text="Dにでたよ"
+      icon="D.png"
       duration="5" />
   </t>
-  <t sync="^14:62D4:.*122.00,100.00," notice="Dへ" >
+  <t sync="^14:62D4:.*122.00,100.00," notice="Bにでたよ" >
     <v-notice
-      text="東安置:Dへ"
+      text="Bにでたよ"
+      icon="B.png"
       duration="5" />
   </t>
-  <t sync="^14:62D4:.*100.00,122.00," notice="Aへ" >
+  <t sync="^14:62D4:.*100.00,122.00," notice="Cにでたよ" >
     <v-notice
-      text="北安置:Aへ"
+      text="Cにでたよ"
+      icon="C.png"
       duration="5" />
   </t>
 
@@ -119,22 +125,26 @@
   </t>
   <t no="2" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 47, X4):" notice="" >
     <v-notice
-      text="まるまーかー"
+      text="○まーかー"
+      icon="Circle.png"
       duration="15" />
   </t>
   <t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 48, X4):" notice="" >
     <v-notice
-      text="ばつマーカー"
+      text="✕マーカー"
+      icon="Cross.png"
       duration="15" />
   </t>
   <t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 49, X4):" notice="" >
     <v-notice
-      text="しかくまーかー"
+      text="□まーかー"
+      icon="Dice4.png"
       duration="15" />
   </t>
   <t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 50, X4):" notice="" >
     <v-notice
-      text="さんかくまーかー"
+      text="▽まーかー"
+      icon="Dice3.png"
       duration="15" />
   </t>
 </s>
@@ -142,15 +152,16 @@
 <s name="教皇庁P2">
   <a time="001" text="蒼天の光翼" sync="聖騎士アデルフェルの「蒼天の光翼」" notice="" />
   <a time="007" text="オルシュファン:危ないッ！" sync="オルシュファン:危ないッ！" />
-  <!--a time="010.0" sync="聖騎士ゼフィラン:喰らえッ！" /-->
-  <a time="010.0" text="スピア・オブ・ハルオーネ" sync="聖騎士ゼフィランの「スピア・オブ・ハルオーネ」" />
-  <a time="016" text="光翼閃4" sync="^15:[id8]:聖騎士シャリベル:6319:光翼閃:[id8]:[pc]:" />
+  <!--a time="010" sync="聖騎士ゼフィラン:喰らえッ！" /-->
+  <a time="010" text="スピア" sync="聖騎士ゼフィランの「スピア・オブ・ハルオーネ」" />
+  <a time="016" text="光翼閃4" sync="聖騎士シャリベルの「光翼閃」" sync-count="1" />
   <a time="021" text="光翼閃3" />
   <a time="026" text="光翼閃2" />
   <a time="031" text="光翼閃1"  />
-  <a time="032" text="調査中" />
   <a time="050" text="移行待ち" />
   <t sync="騎神トールダン:神に抗う光の使徒よ" goto="ナイツP1" />
+  <t sync="オルシュファン:無事…だったのだな…" goto="偽典P1" />
+  <t sync="^1A:[id8]:[me] gains the effect of 蒼天の刻印" notice="移動" notice-o="5" />
 </s>
 
 <s name="ナイツP1">
@@ -212,6 +223,7 @@
     </p-sync>
     <v-notice
       text="A-C"
+      icon="A.png"
       duration="10" />
   </t>
     }
@@ -232,6 +244,7 @@
     </p-sync>
     <v-notice
       text="1-3"
+      icon="1.png"
       duration="10" />
   </t>
     }
@@ -252,6 +265,7 @@
     </p-sync>
     <v-notice
       text="B-D"
+      icon="B.png"
       duration="10" />
   </t>
     }
@@ -272,6 +286,7 @@
     </p-sync>
     <v-notice
       text="2-4"
+      icon="2.png"
       duration="10" />
   </t>
     }
@@ -288,6 +303,7 @@
     </p-sync>
     <v-notice
       text="トールダンA"
+      icon="A.png"
       duration="15" />
   </t>
   <t no="7" name="knight_call_1" notice="トールダン1" >
@@ -300,6 +316,7 @@
     </p-sync>
     <v-notice
       text="トールダン1"
+      icon="1.png"
       duration="15" />
   </t>
   <t no="8" name="knight_call_B" notice="トールダンB" >
@@ -312,6 +329,7 @@
     </p-sync>
     <v-notice
       text="トールダンB"
+      icon="B.png"
       duration="15" />
   </t>
   <t no="9" name="knight_call_2" notice="トールダン2" >
@@ -324,6 +342,7 @@
     </p-sync>
     <v-notice
       text="トールダン2"
+      icon="2.png"
       duration="15" />
   </t>
   <t no="10" name="knight_call_C" notice="トールダンC" >
@@ -336,6 +355,7 @@
     </p-sync>
     <v-notice
       text="トールダンC"
+      icon="C.png"
       duration="15" />
   </t>
   <t no="11" name="knight_call_3" notice="トールダン3" >
@@ -348,6 +368,7 @@
     </p-sync>
     <v-notice
       text="トールダン3"
+      icon="Dice3.png"
       duration="15" />
   </t>
   <t no="12" name="knight_call_D" notice="トールダンD" >
@@ -360,6 +381,7 @@
     </p-sync>
     <v-notice
       text="トールダンD"
+      icon="D.png"
       duration="15" />
   </t>
   <t no="13" name="knight_call_4" notice="トールダン4" >
@@ -372,13 +394,15 @@
     </p-sync>
     <v-notice
       text="トールダン4"
+      icon="Dice4.png"
       duration="15" />
   </t>
 
 
   <t no="14" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 96, X4):" notice="" >
     <v-notice
-      text="1B:青対象"
+      text="青マーカー"
+      icon="Marker.png"
       duration="15" />
   </t>
 </s>
@@ -424,6 +448,7 @@
     </p-sync>
     <v-notice
       text="反時計回り"
+      icon="TurnL.png"
       duration="15" />
   </t>
   <t no="16" name="knight_call_clock" notice="時計回り" notice-o="4" >
@@ -436,28 +461,33 @@
     </p-sync>
     <v-notice
       text="時計回り"
+      icon="TurnR.png"
       duration="15" />
   </t>
 
   <t no="17" sync="^1B:[id8]:[SCH]:0000:[id4]:EVAL(VAR['marker_origin'] - 184, X4):" notice="学者と交代" >
     <v-notice
       text="学者と交代"
+      icon="SCH.png"
       duration="15" />
   </t>
   <t no="18" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 183, X4):" notice="学者と交代" >
     <v-notice
       text="学者と交代"
+      icon="SCH.png"
       duration="15" />
   </t>
 
   <t no="19" sync="^1B:[id8]:([TANK]|[HEALER]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="タンヒラそと" >
     <v-notice
       text="タンヒラ外"
+      icon="TANK.png"
       duration="15" />
   </t>
   <t no="20" sync="^1B:[id8]:[DPS]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="DPSそと" >
     <v-notice
       text="DPS外"
+      icon="MeleeDPS.png"
       duration="15" />
   </t>
 
@@ -471,6 +501,7 @@
     </p-sync>
     <v-notice
       text="コメット担当は塔真ん中"
+      icon="Arrow1.png"
       duration="15" />
   </t>
   <t no="22" name="tower_callB" notice="コメット担当は塔真ん中" notice-o="2" >
@@ -483,6 +514,7 @@
     </p-sync>
     <v-notice
       text="コメット担当は塔真ん中"
+      icon="Arrow1.png"
       duration="15" />
   </t>
   <t no="23" name="tower_call1" notice="コメット担当は塔左" notice-o="2" >
@@ -496,6 +528,7 @@
     </p-sync>
     <v-notice
       text="コメット担当は塔左"
+      icon="Arrow8.png"
       duration="15" />
   </t>
   <t no="24" name="tower_call2" notice="コメット担当は塔右" notice-o="2" >
@@ -509,6 +542,7 @@
     </p-sync>
     <v-notice
       text="コメット担当は塔右"
+      icon="Arrow2.png"
       duration="15" />
   </t>
   <t no="25" name="tower_call3" sync="聖騎士オムリクは「ハイマルストーム」を唱えた。" sync-count="1" notice="コメット担当は塔糞パターン" notice-o="2" >
@@ -518,17 +552,20 @@
     </expressions>
     <v-notice
       text="コメット担当は塔糞パターン"
+      icon="Free.png"
       duration="15" />
   </t>
 
   <t sync="^14:63C0" notice="右に入る" >
     <v-notice
       text="右から大振り"
+      icon="Arrow2.png"
       duration="4" />
   </t>
   <t sync="^14:63C1" notice="左に入る" >
     <v-notice
       text="左から大振り"
+      icon="Arrow8.png"
       duration="4" />
   </t>
 </s>
@@ -574,60 +611,71 @@
   <t sync="^14:6712" notice="外からウチ" notice-o="6" >
     <v-notice
       text="外から内"
+      icon="AOEInside.png"
       duration="15" />
   </t>
   <t sync="^14:6713" notice="ウチから外" notice-o="6" >
     <v-notice
       text="内から外"
+      icon="AOEOutside.png"
       duration="15" />
   </t>
 
 <!--ハイジャンプ-->
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" notice="ジャンプいち" >
     <v-notice
-      text="塔1:その場,塔踏み:2回目or3回目"
-      duration="9" />
+      text="塔1設置\n塔2踏み+誘導+頭割り\nCのみ塔3踏み"
+      icon="Dice1.png"
+      duration="30" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" notice="ジャンプに" >
     <v-notice
-      text="塔2:その場,塔踏み:3回目"
-      duration="19" />
+      text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
+      icon="Dice2.png"
+      duration="30" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" notice="ジャンプさん" >
     <v-notice
-      text="塔踏み:1回目,塔3:その場"
+      text="頭割り\n塔1踏み+誘導\n塔3設置"
+      icon="Dice3.png"
       duration="30" />
   </t>
 <!--スパインダイブ-->
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" notice="スパインいち" >
     <v-notice
-      text="塔1:前,塔踏み:2回目"
-      duration="9" />
+      text="塔1設置\n塔2踏み+誘導+頭割り"
+      icon="Dice1.png"
+      duration="30" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" notice="スパインに" >
     <v-notice
-      text="塔2:前,塔踏み:3回目"
-      duration="19" />
+      text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
+      icon="Dice2.png"
+      duration="30" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" notice="スパインさん" >
     <v-notice
-      text="塔踏み:1回目,塔3:前"
+      text="頭割り\n塔1踏み+誘導\n塔3設置"
+      icon="Dice3.png"
       duration="30" />
   </t>
 <!--イルーシブ-->
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" notice="イルーシブいち" >
     <v-notice
-      text="塔1:後ろ,塔踏み:2回目"
-      duration="9" />
+      text="塔1設置\n塔2踏み+誘導+頭割り"
+      icon="Dice1.png"
+      duration="30" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" notice="イルーシブに" >
     <v-notice
-      text="塔2:後ろ,塔踏み:3回目"
-      duration="19" />
+      text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
+      icon="Dice2.png"
+      duration="30" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" notice="イルーシブさん" >
     <v-notice
-      text="塔踏み:1回目,塔3:後ろ"
+      text="頭割り\n塔1踏み+誘導\n塔3設置"
+      icon="Dice3.png"
       duration="30" />
   </t>
 </s>
@@ -711,14 +759,16 @@
   <!--a time="119" text="カータライズ" sync="ダークスケールの「カータライズ」" /-->
   <a time="119" text="スピア" sync="聖騎士ゼフィランの「スピア・オブ・ハルオーネ」" />
 
-  <t sync="^1A:[id8]:[me] gains the effect of サンダーウィング" notice="サンダー注意" >
+  <t sync="^1A:[id8]:[me] gains the effect of サンダーウィング" notice="サンダーくるよ" >
     <v-notice
       text="サンダー対象"
+      icon="Thunder.png"
       duration="15" />
   </t>
   <t sync="^1A:[id8]:[me] gains the effect of 死の宣告" notice="死の宣告" >
     <v-notice
       text="死の宣告"
+      icon="Free.png"
       duration="29" />
   </t>
 </s>
