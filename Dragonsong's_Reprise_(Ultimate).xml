@@ -179,7 +179,7 @@
   </a>
   <a time="025" sync="騎神トールダン:王の栄光をここに！" />
   <a time="031" text="◇外周POP◇" sync="聖騎士イニアセルは「スパイラルスラスト」の構え。" notice="" />
-  <a time="037" text="百雷" sync="騎神トールダンの「百雷」" notice="百雷" />
+  <a time="037" text="百雷" sync="騎神トールダンの「百雷」" notice="" />
   <a time="038" text="スパイラルスラスト" sync="聖騎士イニアセルの「スパイラルスラスト」" />
   <a time="039" text="◇範囲誘導◇" sync="騎神トールダンは「インビジブル・アスカロンメルシー」の構え。" />
   <a time="043" text="I,Aメルシー" sync="騎神トールダンの「インビジブル・アスカロンメルシー」" notice="メルシー" />
@@ -293,7 +293,7 @@
   }
 }
 
-  <t no="6" name="knight_call_A" notice="トールダンA" >
+  <t no="6" name="knight_call_A" notice="トールダンA" notice-o="5">
     <expressions>
       <pre name="knight_found" value="false" />
       <set name="knight_found" value="true" />
@@ -306,7 +306,7 @@
       icon="A.png"
       duration="15" />
   </t>
-  <t no="7" name="knight_call_1" notice="トールダン1" >
+  <t no="7" name="knight_call_1" notice="トールダン1" notice-o="5" >
     <expressions>
       <pre name="knight_found" value="false" />
       <set name="knight_found" value="true" />
@@ -319,7 +319,7 @@
       icon="1.png"
       duration="15" />
   </t>
-  <t no="8" name="knight_call_B" notice="トールダンB" >
+  <t no="8" name="knight_call_B" notice="トールダンB" notice-o="5" >
     <expressions>
       <pre name="knight_found" value="false" />
       <set name="knight_found" value="true" />
@@ -332,7 +332,7 @@
       icon="B.png"
       duration="15" />
   </t>
-  <t no="9" name="knight_call_2" notice="トールダン2" >
+  <t no="9" name="knight_call_2" notice="トールダン2" notice-o="5" >
     <expressions>
       <pre name="knight_found" value="false" />
       <set name="knight_found" value="true" />
@@ -345,7 +345,7 @@
       icon="2.png"
       duration="15" />
   </t>
-  <t no="10" name="knight_call_C" notice="トールダンC" >
+  <t no="10" name="knight_call_C" notice="トールダンC" notice-o="5" >
     <expressions>
       <pre name="knight_found" value="false" />
       <set name="knight_found" value="true" />
@@ -358,7 +358,7 @@
       icon="C.png"
       duration="15" />
   </t>
-  <t no="11" name="knight_call_3" notice="トールダン3" >
+  <t no="11" name="knight_call_3" notice="トールダン3" notice-o="5" >
     <expressions>
       <pre name="knight_found" value="false" />
       <set name="knight_found" value="true" />
@@ -371,7 +371,7 @@
       icon="Dice3.png"
       duration="15" />
   </t>
-  <t no="12" name="knight_call_D" notice="トールダンD" >
+  <t no="12" name="knight_call_D" notice="トールダンD" notice-o="5" >
     <expressions>
       <pre name="knight_found" value="false" />
       <set name="knight_found" value="true" />
@@ -384,7 +384,7 @@
       icon="D.png"
       duration="15" />
   </t>
-  <t no="13" name="knight_call_4" notice="トールダン4" >
+  <t no="13" name="knight_call_4" notice="トールダン4" notice-o="5" >
     <expressions>
       <pre name="knight_found" value="false" />
       <set name="knight_found" value="true" />
