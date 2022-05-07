@@ -622,57 +622,57 @@
   </t>
 
 <!--ハイジャンプ-->
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" notice="ジャンプいち" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" notice="いちジャンプ" >
     <v-notice
       text="塔1設置\n塔2踏み+誘導+頭割り\nCのみ塔3踏み"
       icon="Dice1.png"
       duration="30" />
   </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" notice="ジャンプに" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" notice="にジャンプ" >
     <v-notice
       text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
       icon="Dice2.png"
       duration="30" />
   </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" notice="ジャンプさん" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" notice="さんジャンプ" >
     <v-notice
       text="頭割り\n塔1踏み+誘導\n塔3設置"
       icon="Dice3.png"
       duration="30" />
   </t>
 <!--スパインダイブ-->
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" notice="スパインいち" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" notice="いちスパイン" >
     <v-notice
       text="塔1設置\n塔2踏み+誘導+頭割り"
       icon="Dice1.png"
       duration="30" />
   </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" notice="スパインに" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" notice="にスパイン" >
     <v-notice
       text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
       icon="Dice2.png"
       duration="30" />
   </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" notice="スパインさん" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" notice="さんスパイン" >
     <v-notice
       text="頭割り\n塔1踏み+誘導\n塔3設置"
       icon="Dice3.png"
       duration="30" />
   </t>
 <!--イルーシブ-->
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" notice="イルーシブいち" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" notice="いちイルーシブ" >
     <v-notice
       text="塔1設置\n塔2踏み+誘導+頭割り"
       icon="Dice1.png"
       duration="30" />
   </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" notice="イルーシブに" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" notice="にイルーシブ" >
     <v-notice
       text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
       icon="Dice2.png"
       duration="30" />
   </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" notice="イルーシブさん" >
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" notice="さんイルーシブ" >
     <v-notice
       text="頭割り\n塔1踏み+誘導\n塔3設置"
       icon="Dice3.png"
@@ -701,8 +701,8 @@
   <a time="058" text="ダイブ3" notice="ダイブ2回目" />
   <a time="063" text="ダイブ2" notice="ダイブ3回目" />
   <a time="068" text="ダイブ1" notice="ダイブ4回目" />
-  <a time="078" text="憤怒の波動" sync="邪竜の左眼の「憤怒の波動」" notice="憤怒の波動" />
-  <a time="085" text="影の侵食" sync="邪竜の左眼の「影の侵食」" notice="影の侵食。" />
+  <a time="078" text="憤怒の波動" sync="邪竜の左眼の「憤怒の波動」" notice="" />
+  <a time="085" text="影の侵食" sync="邪竜の左眼の「影の侵食」" notice="" />
   <a time="100" text="調査中" />
   <t sync="聖騎士ゼフィランは「スピア・オブ・ハルオーネ」の構え。" goto="教皇庁P2" />
 </s>
@@ -716,13 +716,13 @@
   <a time="027" text="攻撃" sync="騎神トールダンの「攻撃」" />
   <a time="030" text="攻撃" />
   <a time="033" text="" sync="騎神トールダン:来たれ！ 我が騎士、我が竜よ！" />
-  <a time="036" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="ナイツ・オブ・ラウンド。" />
+  <a time="036" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="" />
   <a time="042" text="至天の陣：風槍" sync="騎神トールダンの「至天の陣：風槍」" />
   <a time="042" sync="騎神トールダン:王の栄光をここに！" />
   <a time="047" text="" sync="ヴェズルフェルニルは「ツイスターダイブ」の構え。" notice="" />
-  <a time="051" text="チェインライトニング" sync="ダークスケールの「チェインライトニング」" notice="チェインライトニング" />
+  <a time="051" text="チェインライトニング" sync="ダークスケールの「チェインライトニング」" notice="" />
   <!--a time="053" text="スカイワードリープ" sync="聖騎士ポールクランの「スカイワードリープ」" notice="スカイワードリープ。" /-->
-  <a time="053" text="ツイスターダイブ" sync="ヴェズルフェルニルの「ツイスターダイブ」" notice="ツイスターダイブ" />
+  <a time="053" text="ツイスターダイブ" sync="ヴェズルフェルニルの「ツイスターダイブ」" notice="" />
   <!--a time="054" text="スパイラルピアス" sync="聖騎士ヴェルギーンの「スパイラルピアス」" notice="スパイラルピアス。" />
   <a time="054" text="スパイラルピアス" sync="聖騎士イニアセルの「スパイラルピアス」" notice="スパイラルピアス。" />-->
   <a time="055" text="ツイスター" sync="ヴェズルフェルニルの「ツイスター」" notice="ツイスター。" />
@@ -735,27 +735,27 @@
   <a time="065" text="ヘブンリキッド1" />
   <a time="067" text="カータライズ" sync="ダークスケールの「カータライズ」" notice="" />
   <!--a time="067" text="カータライズ" sync="ヴィゾーヴニルの「カータライズ」" /-->
-  <a time="067" text="チェインライトニング" sync="ダークスケールの「チェインライトニング」" notice="チェインライトニング。" />
+  <a time="067" text="チェインライトニング" sync="ダークスケールの「チェインライトニング」" notice="" />
   <a time="067" text="エンプティD" sync="聖騎士グリノーの「エンプティディメンション」" notice="" />
   <a time="074" text="全体攻撃" sync="騎神トールダンの「エンシェントクエイガ」" notice="全体攻撃" />
   <a time="077" sync="騎神トールダン:さて、光の使徒よ、ここで問おう。 貴様はいかにして、この千年戦争を終わらせようというのだ？" />
-  <a time="078" text="攻撃" sync="騎神トールダンの「攻撃」" notice="攻撃。" />
-  <a time="080" text="タンク交代" sync="騎神トールダンは「ヘヴンリーヒール」の構え。" notice="タンクスイッチ" />
+  <a time="078" text="攻撃" sync="騎神トールダンの「攻撃」" notice="" />
+  <a time="080" text="タンク交代" sync="騎神トールダンは「ヘヴンリーヒール」の構え。" notice="タンク強攻撃" />
 
-  <a time="084" text="ヘヴンリーヒール" sync="騎神トールダンの「ヘヴンリーヒール」" notice="強攻撃" />
-  <a time="088" text="Aマイト3" sync="騎神トールダンの「アスカロンマイト」" notice="マイト3連" sync-count="1" />
+  <a time="084" text="ヘヴンリーヒール" sync="騎神トールダンの「ヘヴンリーヒール」" notice="" />
+  <a time="088" text="Aマイト3" sync="騎神トールダンの「アスカロンマイト」" notice="" sync-count="1" />
   <a time="089" text="Aマイト2" />
   <a time="091" text="Aマイト1" />
 
   <a time="093" sync="騎神トールダン:来たれ！ 我が騎士、我が竜よ！" />
-  <a time="096" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="ナイツ・オブ・ラウンド。" />
+  <a time="096" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="" />
   <a time="102" text="至天の陣：死刻" sync="騎神トールダンの「至天の陣：死刻」" />
   <a time="102" sync="騎神トールダン:我は人にして、神なり！" />
-  <a time="109" text="デスストーム" sync="ダークスケールの「デスストーム」" notice="デスストーム。" />
-  <a time="116" text="ヘヴィインパクト" sync="聖騎士ゲリックの「ヘヴィインパクト」" notice="ヘヴィインパクト" />
+  <a time="109" text="デスストーム" sync="ダークスケールの「デスストーム」" notice="" />
+  <a time="116" text="ヘヴィインパクト" sync="聖騎士ゲリックの「ヘヴィインパクト」" notice="" />
   <a time="118" text="サルヴェーションウィング" sync="ヴィゾーヴニルの「サルヴェーションウィング」" notice="" />
   <a time="118" text="百雷" sync="騎神トールダンの「百雷」" />
-  <a time="119" text="ツイスターダイブ" sync="ヴェズルフェルニルの「ツイスターダイブ」" notice="ツイスターダイブ" />
+  <a time="119" text="ツイスターダイブ" sync="ヴェズルフェルニルの「ツイスターダイブ」" notice="" />
   <!--a time="119" text="カータライズ" sync="ダークスケールの「カータライズ」" /-->
   <a time="119" text="スピア" sync="聖騎士ゼフィランの「スピア・オブ・ハルオーネ」" />
 
