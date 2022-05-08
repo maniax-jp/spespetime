@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
   <timeline>
     <name>絶竜詩戦争</name>
-    <rev>Draft-3.1</rev>
+    <rev>Draft-5</rev>
     <description>
       202204300429:人型ニーズまで。Draft-3
       202205010212:各種調整。通知のミスを修正Draft-3.1
+      202205011843:両目フェーズまで。Draft-4
+      202205041734:死刻途中まで。Draft-5
       SPECIAL THANKS!!
       Leila.E
       K.Aura
+      SlayDoll(https://www.twitch.tv/ta_kun0813)
+      zett (https://twitter.com/zettnotfound)
       AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
     </description>
     <author>Aqua Cat,RINGS</author>
@@ -572,7 +576,12 @@
 
 <s name="ニーズP1">
   <a time="005" sync="ニーズヘッグ:これぞ終焉の竜詩よ！" />
-  <a time="006" text="終焉の竜詩" sync="ニーズヘッグの「終焉の竜詩」" notice="終焉の竜詩。" />
+  <a time="006" text="終焉の竜詩" sync="ニーズヘッグの「終焉の竜詩」" notice="終焉の竜詩。" >
+    <expressions>
+      <set name="dice_marker" value="none" />
+      <set name="position_found" value="false" />
+    </expressions>
+  </a>
   <a time="011" sync="ニーズヘッグ:我が竜詩を耐えるというのか……！ フレースヴェルグの力を使いこなしていると！？" />
   <a time="019" sync="ニーズヘッグ:殺す、殺す、殺す！" />
   <a time="019" text="マーカー" sync="ニーズヘッグは「堕天のドラゴンダイブ」の構え。" notice="" />
@@ -621,63 +630,142 @@
       duration="15" />
   </t>
 
-<!--ハイジャンプ-->
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" notice="いちジャンプ" >
+  <t sync="[mex]に「ファーストターゲット」の効果。">
+    <expressions>
+      <pre name="dice_marker" value="none" />
+      <set name="dice_marker" value="one" />
+    </expressions>
+  </t>
+  <t sync="[mex]に「セカンドターゲット」の効果。">
+    <expressions>
+      <pre name="dice_marker" value="none" />
+      <set name="dice_marker" value="two" />
+    </expressions>
+  </t>
+  <t sync="[mex]に「サードターゲット」の効果。">
+    <expressions>
+      <pre name="dice_marker" value="none" />
+      <set name="dice_marker" value="three" />
+    </expressions>
+  </t>
+<!--ファーストターゲット-->
+  <t no="1" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" notice="1-B" >
+    <expressions>
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
+    <v-notice
+      text="塔1設置\n塔2踏み+誘導+頭割り"
+      icon="B.png"
+      duration="30" />
+  </t>
+  <t no="2" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" notice="1-D" >
+    <expressions>
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
+    <v-notice
+      text="塔1設置\n塔2踏み+誘導+頭割り"
+      icon="D.png"
+      duration="30" />
+  </t>
+  <t no="3" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 9.00 Seconds" notice="1-予定通り" sync-count="3" >
+    <expressions>
+      <pre name="dice_marker" value="one" />
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
     <v-notice
       text="塔1設置\n塔2踏み+誘導+頭割り\nCのみ塔3踏み"
       icon="Dice1.png"
       duration="30" />
   </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" notice="にジャンプ" >
+  <t no="4" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダーク.* from  for 9.00 Seconds" notice="1-C" sync-count="3" >
+    <expressions>
+      <pre name="dice_marker" value="one" />
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
+    <v-notice
+      text="塔1設置\n頭割り\n塔3踏み+誘導"
+      icon="C.png"
+      duration="30" />
+  </t>
+<!--セカンドターゲット-->
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" notice="2-B" >
+    <expressions>
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
+    <v-notice
+      text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
+      icon="B.png"
+      duration="30" />
+  </t>
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" notice="2-D" >
+    <expressions>
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
+    <v-notice
+      text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
+      icon="D.png"
+      duration="30" />
+  </t>
+  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 19.00 Seconds" notice="2-予定通り" >
+    <expressions>
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
     <v-notice
       text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
       icon="Dice2.png"
       duration="30" />
   </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" notice="さんジャンプ" >
+<!--サードターゲット-->
+  <t no="1" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" notice="3-B" >
+    <expressions>
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
+    <v-notice
+      text="頭割り\n塔1踏み+誘導\n塔3設置"
+      icon="B.png"
+      duration="30" />
+  </t>
+  <t no="2" sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" notice="3-D" >
+    <expressions>
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
+    <v-notice
+      text="頭割り\n塔1踏み+誘導\n塔3設置"
+      icon="D.png"
+      duration="30" />
+  </t>
+  <t no="3" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダークハイジャンプ from  for 30.00 Seconds" notice="3-予定通り" sync-count="3" >
+    <expressions>
+      <pre name="dice_marker" value="three" />
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
     <v-notice
       text="頭割り\n塔1踏み+誘導\n塔3設置"
       icon="Dice3.png"
       duration="30" />
   </t>
-<!--スパインダイブ-->
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 9.00 Seconds" notice="いちスパイン" >
-    <v-notice
-      text="塔1設置\n塔2踏み+誘導+頭割り"
-      icon="Dice1.png"
-      duration="30" />
-  </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 19.00 Seconds" notice="にスパイン" >
-    <v-notice
-      text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
-      icon="Dice2.png"
-      duration="30" />
-  </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークスパインダイブ from  for 30.00 Seconds" notice="さんスパイン" >
+  <t no="4" sync="^1A:[id8]:[pc] gains the effect of ターゲッティング：ダーク.* from  for 30.00 Seconds" notice="3-C" sync-count="3" >
+    <expressions>
+      <pre name="dice_marker" value="three" />
+      <pre name="position_found" value="false" />
+      <set name="position_found" value="true" />
+    </expressions>
     <v-notice
       text="頭割り\n塔1踏み+誘導\n塔3設置"
-      icon="Dice3.png"
+      icon="C.png"
       duration="30" />
   </t>
-<!--イルーシブ-->
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 9.00 Seconds" notice="いちイルーシブ" >
-    <v-notice
-      text="塔1設置\n塔2踏み+誘導+頭割り"
-      icon="Dice1.png"
-      duration="30" />
-  </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 19.00 Seconds" notice="にイルーシブ" >
-    <v-notice
-      text="頭割り\n塔2設置+頭割り\n塔3踏み+誘導"
-      icon="Dice2.png"
-      duration="30" />
-  </t>
-  <t sync="^1A:[id8]:[me] gains the effect of ターゲッティング：ダークイルーシブジャンプ from  for 30.00 Seconds" notice="さんイルーシブ" >
-    <v-notice
-      text="頭割り\n塔1踏み+誘導\n塔3設置"
-      icon="Dice3.png"
-      duration="30" />
-  </t>
+
 </s>
 
 <s name="ニーズP2">
