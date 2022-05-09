@@ -617,15 +617,15 @@
   <a time="113" text="時間切れ開始" sync="ニーズヘッグは「最期の咆哮」の構え。" notice="" />
   <t sync="アルフィノ:エスティニアン殿！" goto="ニーズP2" />
 
-  <t sync="^14:6712" notice="外からウチ" notice-o="6" >
+  <t sync="^14:6712" notice="外からナカ" notice-o="6" >
     <v-notice
-      text="外から内"
+      text="外から中"
       icon="AOEInside.png"
       duration="15" />
   </t>
-  <t sync="^14:6713" notice="ウチから外" notice-o="6" >
+  <t sync="^14:6713" notice="ナカから外" notice-o="6" >
     <v-notice
-      text="内から外"
+      text="中から外"
       icon="AOEOutside.png"
       duration="15" />
   </t>
