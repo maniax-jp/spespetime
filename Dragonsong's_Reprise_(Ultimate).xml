@@ -766,6 +766,125 @@
       duration="30" />
   </t>
 
+<!--線取り正順-->
+  <t sync="^23:(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:">
+    <expressions>
+      <table>
+      {
+          "method":"Insert",
+          "table":"IdTable",
+          "cols" : [
+            { "name":"id", "val":"ID-${obj_id}", "key":"true" },
+          ]
+      }
+      </table>
+    </expressions>
+  </t>
+  <t sync="^(15|16):(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:ダークドラゴンダイブ:[id8]:[pc]:.*:92\.00:92\.00:" notice="線左上" sync-count="1" >
+    <expressions>
+      <pre name="TABLE['IdTable'][1]['id']" value="ID-${obj_id}" />
+    </expressions>
+    <v-notice
+      text="線左上"
+      icon="Arrow8.png"
+      duration="10" />
+  </t>
+  <t sync="^(15|16):(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:ダークドラゴンダイブ:[id8]:[pc]:.*:92\.00:108\.00:" notice="線左下" sync-count="1" >
+    <expressions>
+      <pre name="TABLE['IdTable'][1]['id']" value="ID-${obj_id}" />
+    </expressions>
+    <v-notice
+      text="線左下"
+      icon="Arrow6.png"
+      duration="10" />
+  </t>
+  <t sync="^(15|16):(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:ダークドラゴンダイブ:[id8]:[pc]:.*:108\.00:92\.00:" notice="線右上" sync-count="1" >
+    <expressions>
+      <pre name="TABLE['IdTable'][1]['id']" value="ID-${obj_id}" />
+    </expressions>
+    <v-notice
+      text="線右上"
+      icon="Arrow2.png"
+      duration="10" />
+  </t>
+  <t sync="^(15|16):(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:ダークドラゴンダイブ:[id8]:[pc]:.*:108\.00:108\.00:" notice="線右下" sync-count="1" >
+    <expressions>
+      <pre name="TABLE['IdTable'][1]['id']" value="ID-${obj_id}" />
+    </expressions>
+    <v-notice
+      text="線右下"
+      icon="Arrow4.png"
+      duration="10" />
+  </t>
+<!--線取り逆順-->
+  <t sync="^(15|16):(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:ダークドラゴンダイブ:[id8]:[pc]:.*:92\.00:92\.00:" sync-count="1" >
+    <expressions>
+      <table>
+      {
+          "method":"Insert",
+          "table":"InvertIdTable",
+          "cols" : [
+            { "name":"id", "val":"ID-${obj_id}", "key":"true" },
+            { "name":"pos", "val":"線左上" },
+          ]
+      }
+      </table>
+    </expressions>
+  </t>
+  <t sync="^(15|16):(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:ダークドラゴンダイブ:[id8]:[pc]:.*:92\.00:108\.00:" sync-count="1" >
+    <expressions>
+      <table>
+      {
+          "method":"Insert",
+          "table":"InvertIdTable",
+          "cols" : [
+            { "name":"id", "val":"ID-${obj_id}", "key":"true" },
+            { "name":"pos", "val":"線左下" },
+          ]
+      }
+      </table>
+    </expressions>
+  </t>
+  <t sync="^(15|16):(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:ダークドラゴンダイブ:[id8]:[pc]:.*:108\.00:92\.00:" sync-count="1" >
+    <expressions>
+      <table>
+      {
+          "method":"Insert",
+          "table":"InvertIdTable",
+          "cols" : [
+            { "name":"id", "val":"ID-${obj_id}", "key":"true" },
+            { "name":"pos", "val":"線右上" },
+          ]
+      }
+      </table>
+    </expressions>
+  </t>
+  <t sync="^(15|16):(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:[id4]:ダークドラゴンダイブ:[id8]:[pc]:.*:108\.00:108\.00:" sync-count="1" >
+    <expressions>
+      <table>
+      {
+          "method":"Insert",
+          "table":"InvertIdTable",
+          "cols" : [
+            { "name":"id", "val":"ID-${obj_id}", "key":"true" },
+            { "name":"pos", "val":"線右下" },
+          ]
+      }
+      </table>
+    </expressions>
+  </t>
+@for (int i = 0; i < 4; i++) {
+  <t sync="^23:(?&lt;obj_id&gt;[0-9a-fA-F]{8}):ニーズヘッグ:" notice="TABLE['InvertIdTable'][@i]['pos']">
+    <expressions>
+      <pre name="TABLE['InvertIdTable'][@i]['id']" value="ID-${obj_id}" />
+    </expressions>
+    <v-notice
+      text="TABLE['InvertIdTable'][@i]['pos']"
+      icon="Pair.png"
+      duration="10" />
+  </t>
+}
+
 </s>
 
 <s name="ニーズP2">
