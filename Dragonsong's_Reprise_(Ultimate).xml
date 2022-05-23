@@ -133,7 +133,7 @@
       icon="Circle.png"
       duration="15" />
   </t>
-  <t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 48, X4):" notice="" >
+  <t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 50, X4):" notice="" >
     <v-notice
       text="✕マーカー"
       icon="Cross.png"
@@ -145,7 +145,7 @@
       icon="Dice4.png"
       duration="15" />
   </t>
-  <t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 50, X4):" notice="" >
+  <t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 48, X4):" notice="" >
     <v-notice
       text="▽まーかー"
       icon="Dice3.png"
@@ -873,8 +873,8 @@
   <a time="054" text="スパイラルピアス" sync="聖騎士イニアセルの「スパイラルピアス」" notice="スパイラルピアス。" />-->
   <a time="055" text="ツイスター" sync="ヴェズルフェルニルの「ツイスター」" notice="" />
   <a time="055" text="範囲誘導" sync="騎神トールダンは「レベレーション・アスカロンメルシー」の構え。" notice="" />
-  <a time="059" text="R,Aメルシー" sync="騎神トールダンの「レベレーション・アスカロンメルシー」" notice="メルシー" />
-  <a time="060" text="ヘブンリキッド5" sync="ヴェズルフェルニルの「ヘブンリキッド」" notice="リキッド5連" sync-count="1" />
+  <a time="059" text="R,Aメルシー" sync="騎神トールダンの「レベレーション・アスカロンメルシー」" notice="" />
+  <a time="060" text="ヘブンリキッド5" sync="ヴェズルフェルニルの「ヘブンリキッド」" notice="" sync-count="1" />
   <a time="061" text="ヘブンリキッド4" />
   <a time="063" text="ヘブンリキッド3" />
   <a time="064" text="ヘブンリキッド2" />
@@ -926,12 +926,25 @@
   <a time="205" text="2%待ち" sync="騎神トールダン:負けを…認めよう… ゆえに、命だけは…頼む…" />
   <t sync="異邦の詩人:ひとつの命が 歴史の流れを変えてゆく" goto="2竜P1" />
 
+@foreach (var player in Model.Party)
+{
+  <t sync="^1A:[id8]:[@(player.Job)] gains the effect of サンダーウィング" notice="@(player.Name)" notice-sync="true" >
+    <v-notice
+      text="サンダーウィング"
+      order="-2"
+      duration="20"
+      icon="@(player.Job).png"
+      sync-to-hide="騎神トールダンの「エンシェントクエイガ」" />
+  </t>
+}
+<!--
   <t sync="^1A:[id8]:[me] gains the effect of サンダーウィング" notice="サンダーくるよ" >
     <v-notice
       text="サンダー対象"
       icon="Thunder.png"
       duration="15" />
   </t>
+-->
   <t sync="^1A:[id8]:[me] gains the effect of 死の宣告" notice="死の宣告" >
     <v-notice
       text="死の宣告"
@@ -944,6 +957,7 @@
   </t>
 
   <!--調査中。-->
+<!--
   <t sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 220, X4):" notice="範囲対象" >
     <v-notice
       text="範囲対象:左上へ"
@@ -954,6 +968,7 @@
       text="ダイブ誘導:下側へ"
       duration="15" />
   </t>
+-->
 
   <t sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 47, X4):" notice="左右担当" >
     <v-notice
