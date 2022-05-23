@@ -928,7 +928,7 @@
 
 @foreach (var player in Model.Party)
 {
-  <t sync="^1A:[id8]:[@(player.Job)] gains the effect of サンダーウィング" notice="@(player.Name)" notice-sync="true" >
+  <t name="サンダーウィング@(player.Job)" sync="^1A:[id8]:[@(player.Job)] gains the effect of サンダーウィング" notice="@(player.Name)" notice-sync="true" >
     <v-notice
       text="サンダーウィング"
       order="-2"
