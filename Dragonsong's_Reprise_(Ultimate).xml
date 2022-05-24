@@ -482,13 +482,13 @@
       duration="15" />
   </t>
 
-  <t no="19" sync="^1B:[id8]:([TANK]|[HEALER]):0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="タンヒラそと" >
+  <t no="19" sync="([TANK]|[HEALER])に「マーキング」の効果。" sync-count="1" notice="タンヒラそと" >
     <v-notice
       text="タンヒラ外"
       icon="TANK.png"
       duration="15" />
   </t>
-  <t no="20" sync="^1B:[id8]:[DPS]:0000:[id4]:EVAL(VAR['marker_origin'] + 51, X4):" sync-count="1" notice="DPSそと" >
+  <t no="20" sync="[DPS]に「マーキング」の効果。" sync-count="1" notice="DPSそと" >
     <v-notice
       text="DPS外"
       icon="MeleeDPS.png"
@@ -617,13 +617,13 @@
   <a time="113" text="時間切れ開始" sync="ニーズヘッグは「最期の咆哮」の構え。" notice="" />
   <t sync="アルフィノ:エスティニアン殿！" goto="ニーズP2" />
 
-  <t sync="^14:6712" notice="外からナカ" notice-o="6" >
+  <t sync="ニーズヘッグは「牙尾の連旋」の構え。" notice="外からナカ" notice-o="6" >
     <v-notice
       text="外から中"
       icon="AOEInside.png"
       duration="15" />
   </t>
-  <t sync="^14:6713" notice="ナカから外" notice-o="6" >
+  <t sync="ニーズヘッグは「尾牙の連旋」の構え。" notice="ナカから外" notice-o="6" >
     <v-notice
       text="中から外"
       icon="AOEOutside.png"
@@ -860,6 +860,7 @@
     <!--死の宣告フラグを初期化-->
     <expressions>
       <set name="3mark" value="false" />
+      <set name="geric_found" value="false" />
     </expressions>
   </a>
   <a time="036" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="" />
@@ -928,7 +929,7 @@
 
 @foreach (var player in Model.Party)
 {
-  <t name="サンダーウィング@(player.Job)" sync="^1A:[id8]:[@(player.Job)] gains the effect of サンダーウィング" notice="@(player.Name)" notice-sync="true" >
+  <t name="サンダーウィング@(player.Job)" sync="[@(player.Job)]に「サンダーウィング」の効果。" notice="@(player.Name)" notice-sync="true" >
     <v-notice
       text="サンダーウィング"
       order="-2"
@@ -945,7 +946,7 @@
       duration="15" />
   </t>
 -->
-  <t sync="^1A:[id8]:[me] gains the effect of 死の宣告" notice="死の宣告" >
+  <t sync="[mex]に「死の宣告」の効果。" notice="死の宣告" >
     <v-notice
       text="死の宣告"
       icon="Free.png"
@@ -954,6 +955,59 @@
       <expressions>
         <set name="3mark" value="true" />
       </expressions>
+  </t>
+
+  <t name="geric" notice="ゲリックA" >
+    <expressions>
+      <pre name="geric_found" value="false" />
+      <set name="geric_found" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士ゲリック" X="23.50" Y="23.32" Z="0" tolerance="0.01" />
+    </p-sync>
+    <v-notice
+      text="ゲリックA"
+      icon="A.png"
+      duration="30" />
+  </t>
+  <t name="geric" notice="ゲリックB" >
+    <expressions>
+      <pre name="geric_found" value="false" />
+      <set name="geric_found" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士ゲリック" X="23.68" Y="23.50" Z="0" tolerance="0.01" />
+    </p-sync>
+    <v-notice
+      text="ゲリックB"
+      icon="B.png"
+      duration="30" />
+  </t>
+  <t name="geric" notice="ゲリックC" >
+    <expressions>
+      <pre name="geric_found" value="false" />
+      <set name="geric_found" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士ゲリック" X="23.50" Y="23.68" Z="0" tolerance="0.01" />
+    </p-sync>
+    <v-notice
+      text="ゲリックC"
+      icon="C.png"
+      duration="30" />
+  </t>
+  <t name="geric" notice="ゲリックD" >
+    <expressions>
+      <pre name="geric_found" value="false" />
+      <set name="geric_found" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士ゲリック" X="23.32" Y="23.50" Z="0" tolerance="0.01" />
+    </p-sync>
+    <v-notice
+      text="ゲリックD"
+      icon="D.png"
+      duration="30" />
   </t>
 
   <!--調査中。-->
