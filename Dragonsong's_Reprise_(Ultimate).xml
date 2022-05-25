@@ -859,8 +859,9 @@
   <a time="033" text="" sync="騎神トールダン:来たれ！ 我が騎士、我が竜よ！" >
     <!--死の宣告フラグを初期化-->
     <expressions>
+      <set name="grinnaux_found" value="false" />
       <set name="3mark" value="false" />
-      <set name="geric_found" value="false" />
+      <set name="guerrique_found" value="false" />
     </expressions>
   </a>
   <a time="036" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="" />
@@ -897,17 +898,17 @@
   <a time="096" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="" />
   <a time="102" text="至天の陣：死刻" sync="騎神トールダンの「至天の陣：死刻」" />
   <a time="102" text="" sync="騎神トールダン:我は人にして、神なり！" />
-  <a time="109" text="デスストーム" sync="ダークスケールの「デスストーム」" notice="デスストーム。" />
-  <a time="116" text="ヘヴィインパクト" sync="聖騎士ゲリックの「ヘヴィインパクト」" notice="ヘヴィインパクト" />
+  <a time="109" text="デスストーム" sync="ダークスケールの「デスストーム」" notice="" />
+  <a time="116" text="ヘヴィインパクト" sync="聖騎士ゲリックの「ヘヴィインパクト」" notice="" />
   <a time="118" text="サルヴェーション" sync="ヴィゾーヴニルの「サルヴェーションウィング」" notice="" />
   <a time="118" text="百雷" sync="騎神トールダンの「百雷」" notice="百雷" />
-  <a time="119" text="ツイスターダイブ" sync="ヴェズルフェルニルの「ツイスターダイブ」" notice="ツイスターダイブ" />
+  <a time="119" text="ツイスターダイブ" sync="ヴェズルフェルニルの「ツイスターダイブ」" notice="" />
   <!--a time="119" text="カータライズ" sync="ダークスケールの「カータライズ」" /-->
   <a time="119" text="スピア" sync="聖騎士ゼフィランの「スピア・オブ・ハルオーネ」" />
   <!--a time="132" text="竜の邪眼" sync="騎神トールダンの「竜の邪眼」" /-->
   <a time="132" text="邪竜の眼光" sync="騎神トールダンの「邪竜の眼光」" notice="視線攻撃" />
   <!--a time="132" text="フェイスアンムーブ" sync="聖騎士グリノーの「フェイスアンムーブ」" /-->
-  <a time="134" text="ヘヴンフレイム" sync="聖騎士シャリベルの「ヘヴンフレイム」" notice="ヘヴンフレイム" />
+  <a time="134" text="ヘヴンフレイム" sync="聖騎士シャリベルの「ヘヴンフレイム」" notice="" />
 
   <!--メテオ-->
   <a time="136" text="ホーリーメテオ" sync="聖騎士ヌドゥネーの「ホーリーメテオ」" notice="メテオ" />
@@ -926,6 +927,59 @@
   <a time="198" text="時間切れ詠唱" sync="騎神トールダンは「エーテルバースト」の構え。" notice="" />
   <a time="205" text="2%待ち" sync="騎神トールダン:負けを…認めよう… ゆえに、命だけは…頼む…" />
   <t sync="異邦の詩人:ひとつの命が 歴史の流れを変えてゆく" goto="2竜P1" />
+
+  <t notice="グリノーA" >
+    <expressions>
+      <pre name="grinnaux_found" value="false" />
+      <set name="grinnaux_found" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士グリノー" X="23.50" Y="23.32" Z="0" tolerance="0.01" />
+    </p-sync>
+    <v-notice
+      text="グリノーA"
+      icon="A.png"
+      duration="30" />
+  </t>
+  <t notice="グリノーB" >
+    <expressions>
+      <pre name="grinnaux_found" value="false" />
+      <set name="grinnaux_found" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士グリノー" X="23.68" Y="23.50" Z="0" tolerance="0.01" />
+    </p-sync>
+    <v-notice
+      text="グリノーB"
+      icon="B.png"
+      duration="30" />
+  </t>
+  <t notice="グリノーC" >
+    <expressions>
+      <pre name="grinnaux_found" value="false" />
+      <set name="grinnaux_found" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士グリノー" X="23.50" Y="23.68" Z="0" tolerance="0.01" />
+    </p-sync>
+    <v-notice
+      text="グリノーC"
+      icon="C.png"
+      duration="30" />
+  </t>
+  <t notice="グリノーD" >
+    <expressions>
+      <pre name="grinnaux_found" value="false" />
+      <set name="grinnaux_found" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="聖騎士グリノー" X="23.32" Y="23.50" Z="0" tolerance="0.01" />
+    </p-sync>
+    <v-notice
+      text="グリノーD"
+      icon="D.png"
+      duration="30" />
+  </t>
 
 @foreach (var player in Model.Party)
 {
@@ -957,10 +1011,10 @@
       </expressions>
   </t>
 
-  <t name="geric" notice="ゲリックA" >
+  <t notice="ゲリックA" >
     <expressions>
-      <pre name="geric_found" value="false" />
-      <set name="geric_found" value="true" />
+      <pre name="guerrique_found" value="false" />
+      <set name="guerrique_found" value="true" />
     </expressions>
     <p-sync interval="120">
       <combatant name="聖騎士ゲリック" X="23.50" Y="23.32" Z="0" tolerance="0.01" />
@@ -970,10 +1024,10 @@
       icon="A.png"
       duration="30" />
   </t>
-  <t name="geric" notice="ゲリックB" >
+  <t notice="ゲリックB" >
     <expressions>
-      <pre name="geric_found" value="false" />
-      <set name="geric_found" value="true" />
+      <pre name="guerrique_found" value="false" />
+      <set name="guerrique_found" value="true" />
     </expressions>
     <p-sync interval="120">
       <combatant name="聖騎士ゲリック" X="23.68" Y="23.50" Z="0" tolerance="0.01" />
@@ -983,10 +1037,10 @@
       icon="B.png"
       duration="30" />
   </t>
-  <t name="geric" notice="ゲリックC" >
+  <t notice="ゲリックC" >
     <expressions>
-      <pre name="geric_found" value="false" />
-      <set name="geric_found" value="true" />
+      <pre name="guerrique_found" value="false" />
+      <set name="guerrique_found" value="true" />
     </expressions>
     <p-sync interval="120">
       <combatant name="聖騎士ゲリック" X="23.50" Y="23.68" Z="0" tolerance="0.01" />
@@ -996,10 +1050,10 @@
       icon="C.png"
       duration="30" />
   </t>
-  <t name="geric" notice="ゲリックD" >
+  <t notice="ゲリックD" >
     <expressions>
-      <pre name="geric_found" value="false" />
-      <set name="geric_found" value="true" />
+      <pre name="guerrique_found" value="false" />
+      <set name="guerrique_found" value="true" />
     </expressions>
     <p-sync interval="120">
       <combatant name="聖騎士ゲリック" X="23.32" Y="23.50" Z="0" tolerance="0.01" />
