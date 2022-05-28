@@ -1014,7 +1014,7 @@
 {
   <t name="サンダーウィング@(player.Job)" sync="[@(player.Job)]に「サンダーウィング」の効果。" notice="@(player.Name)" notice-sync="true" >
     <v-notice
-      text="サンダーウィング"
+      text="サンダーウィング@(player.Job)"
       duration="20"
       icon="@(player.Job).png"
       sync-to-hide="騎神トールダンの「エンシェントクエイガ」" />
