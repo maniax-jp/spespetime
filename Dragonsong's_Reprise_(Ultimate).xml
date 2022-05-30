@@ -1027,14 +1027,23 @@
       duration="15" />
   </t>
 -->
-  <t sync="[mex]に「死の宣告」の効果。" notice="死の宣告 南" >
+  <t no="1" sync="[mex]に「死の宣告」の効果。" notice="死の宣告 南" >
     <v-notice
       text="死の宣告"
-      icon="Free.png"
+      icon="Timer.png"
       duration="29" />
       <!--死の宣告フラグをセット-->
       <expressions>
         <set name="3mark" value="true" />
+      </expressions>
+  </t>
+  <t no="2" sync="[nex]に「死の宣告」の効果。" notice="無職 北" sync-count="4" >
+    <v-notice
+      text="無職"
+      icon="Free.png"
+      duration="29" />
+      <expressions>
+        <pre name="3mark" value="false" />
       </expressions>
   </t>
 
