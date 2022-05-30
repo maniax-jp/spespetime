@@ -881,12 +881,8 @@
 
   <!--至天の陣1-->
   <a time="033" text="" sync="騎神トールダン:来たれ！ 我が騎士、我が竜よ！" >
-    <!--死の宣告フラグを初期化-->
     <expressions>
       <set name="grinnaux_found" value="false" />
-      <set name="3mark" value="false" />
-      <set name="guerrique_found" value="false" />
-      <set name="eyes_found" value="false" />
     </expressions>
   </a>
   <a time="036" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="" />
@@ -919,7 +915,13 @@
   <a time="091" text="Aマイト1" />
 
   <!--至天の陣2-->
-  <a time="093" text="" sync="騎神トールダン:来たれ！ 我が騎士、我が竜よ！" />
+  <a time="093" text="" sync="騎神トールダン:来たれ！ 我が騎士、我が竜よ！" >
+    <expressions>
+      <set name="3mark" value="false" />
+      <set name="guerrique_found" value="none" />
+      <set name="thordan_found" value="none" />
+    </expressions>
+  </a>
   <a time="096" text="ナイツ・オブ・ラウンド" sync="騎神トールダンの「ナイツ・オブ・ラウンド」" notice="" />
   <a time="102" text="至天の陣：死刻" sync="騎神トールダンの「至天の陣：死刻」" />
   <a time="102" text="" sync="騎神トールダン:我は人にして、神なり！" />
@@ -1049,8 +1051,8 @@
 
   <t notice="ゲリックA" >
     <expressions>
-      <pre name="guerrique_found" value="false" />
-      <set name="guerrique_found" value="true" />
+      <pre name="guerrique_found" value="none" />
+      <set name="guerrique_found" value="A" />
     </expressions>
     <p-sync interval="120">
       <combatant name="聖騎士ゲリック" X="23.50" Y="23.32" Z="0" tolerance="0.01" />
@@ -1063,8 +1065,8 @@
   </t>
   <t notice="ゲリックB" >
     <expressions>
-      <pre name="guerrique_found" value="false" />
-      <set name="guerrique_found" value="true" />
+      <pre name="guerrique_found" value="none" />
+      <set name="guerrique_found" value="B" />
     </expressions>
     <p-sync interval="120">
       <combatant name="聖騎士ゲリック" X="23.68" Y="23.50" Z="0" tolerance="0.01" />
@@ -1077,8 +1079,8 @@
   </t>
   <t notice="ゲリックC" >
     <expressions>
-      <pre name="guerrique_found" value="false" />
-      <set name="guerrique_found" value="true" />
+      <pre name="guerrique_found" value="none" />
+      <set name="guerrique_found" value="C" />
     </expressions>
     <p-sync interval="120">
       <combatant name="聖騎士ゲリック" X="23.50" Y="23.68" Z="0" tolerance="0.01" />
@@ -1091,8 +1093,8 @@
   </t>
   <t notice="ゲリックD" >
     <expressions>
-      <pre name="guerrique_found" value="false" />
-      <set name="guerrique_found" value="true" />
+      <pre name="guerrique_found" value="none" />
+      <set name="guerrique_found" value="D" />
     </expressions>
     <p-sync interval="120">
       <combatant name="聖騎士ゲリック" X="23.32" Y="23.50" Z="0" tolerance="0.01" />
@@ -1103,6 +1105,104 @@
       icon="D.png"
       duration="30" />
   </t>
+
+@{
+  string[] pos_t_a = {"23.50", "23.00", "0"};
+  string[] pos_t_1 = {"23.85", "23.15", "0"};
+  string[] pos_t_b = {"24.00", "23.50", "0"};
+  string[] pos_t_2 = {"23.85", "23.85", "0"};
+  string[] pos_t_c = {"23.50", "24.00", "0"};
+  string[] pos_t_3 = {"23.15", "23.85", "0"};
+  string[] pos_t_d = {"23.00", "23.50", "0"};
+  string[] pos_t_4 = {"23.15", "23.15", "0"};
+  string[] label_a = {"A"};
+  string[] label_1 = {"1"};
+  string[] label_b = {"B"};
+  string[] label_2 = {"2"};
+  string[] label_c = {"C"};
+  string[] label_3 = {"3"};
+  string[] label_d = {"D"};
+  string[] label_4 = {"4"};
+  string[] label_1a = {"1A間"};
+  string[] label_1b = {"1B間"};
+  string[] label_2b = {"2B間"};
+  string[] label_2c = {"2C間"};
+  string[] label_3c = {"3C間"};
+  string[] label_3d = {"3D間"};
+  string[] label_4d = {"4D間"};
+  string[] label_4a = {"4A間"};
+  string[] label_unk = {"わからん"};
+
+  string[,][] reg_th_pos = {
+    {pos_t_a, label_a},
+    {pos_t_1, label_1},
+    {pos_t_b, label_b},
+    {pos_t_2, label_2},
+    {pos_t_c, label_c},
+    {pos_t_3, label_3},
+    {pos_t_d, label_d},
+    {pos_t_4, label_4},
+  };
+  string[,][] safe = {
+    // ゲリック, トールダン, 視線アンチ
+    {label_a, label_a, label_4d},
+    {label_a, label_1, label_4a},
+    {label_a, label_b, label_1a},
+    {label_a, label_2, label_1b},
+    {label_a, label_c, label_unk},
+    {label_a, label_3, label_4d},
+    {label_a, label_d, label_4a},
+    {label_a, label_4, label_1a},
+    {label_b, label_a, label_1b},
+    {label_b, label_1, label_2b},
+    {label_b, label_b, label_1a},
+    {label_b, label_2, label_1b},
+    {label_b, label_c, label_2b},
+    {label_b, label_3, label_2c},
+    {label_b, label_d, label_unk},
+    {label_b, label_4, label_1a},
+    {label_c, label_a, label_unk},
+    {label_c, label_1, label_2b},
+    {label_c, label_b, label_2c},
+    {label_c, label_2, label_3c},
+    {label_c, label_c, label_2b},
+    {label_c, label_3, label_2c},
+    {label_c, label_d, label_3c},
+    {label_c, label_4, label_3d},
+    {label_d, label_a, label_4d},
+    {label_d, label_1, label_4a},
+    {label_d, label_b, label_unk},
+    {label_d, label_2, label_3c},
+    {label_d, label_c, label_3d},
+    {label_d, label_3, label_4d},
+    {label_d, label_d, label_3c},
+    {label_d, label_4, label_3d},
+  };
+}
+@for (int i = 0; i < reg_th_pos.GetLength(0); i++) {
+  <t name="トールダン@(reg_th_pos[i,1][0])" >
+    <expressions>
+      <pre name="thordan_found" value="none" />
+      <set name="thordan_found" value="@(reg_th_pos[i,1][0])" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="騎神トールダン" X="@reg_th_pos[i,0][0]" Y="@reg_th_pos[i,0][1]" Z="@reg_th_pos[i,0][2]" tolerance="0.01" />
+    </p-sync>
+  </t>
+}
+@for (int i = 0; i < safe.GetLength(0); i++) {
+  <t sync="騎神トールダンの「百雷」" notice="@(safe[i,0][0])北基準 視線アンチ@(safe[i,2][0])" >
+    <expressions>
+      <pre name="guerrique_found" value="@(safe[i,0][0])" />
+      <pre name="thordan_found" value="@(safe[i,1][0])" />
+    </expressions>
+    <v-notice
+      text="@(safe[i,2][0])"
+      order="-1"
+      icon="Eye.png"
+      duration="30" />
+  </t>
+}
 
   <!--調査中。-->
 <!--
