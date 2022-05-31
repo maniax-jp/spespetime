@@ -918,6 +918,7 @@
   <a time="093" text="" sync="騎神トールダン:来たれ！ 我が騎士、我が竜よ！" >
     <expressions>
       <set name="3mark" value="false" />
+      <set name="doom_count" count="0" />
       <set name="guerrique_found" value="none" />
       <set name="thordan_found" value="none" />
     </expressions>
@@ -1029,82 +1030,102 @@
       duration="15" />
   </t>
 -->
-  <t no="1" sync="[mex]に「死の宣告」の効果。" notice="死の宣告 南" >
-    <v-notice
-      text="死の宣告"
-      icon="Timer.png"
-      duration="29" />
-      <!--死の宣告フラグをセット-->
-      <expressions>
-        <set name="3mark" value="true" />
-      </expressions>
+
+@{
+  string[] priority_death = {"SCH", "WHM", "GNB", "DRK", "DRG", "NIN", "BRD", "SMN"};
+  int my_priority = Array.IndexOf(priority_death, Model.Player.Job);
+}
+@for (int i = 0; i < my_priority; i++)
+{
+  <t no="1" name="死の宣告@(priority_death[i])" sync="[@(priority_death[i])]に「死の宣告」の効果。" >
+    <expressions>
+      <set name="doom_count" count="+1" />
+    </expressions>
   </t>
-  <t no="2" sync="[nex]に「死の宣告」の効果。" notice="無職 北" sync-count="4" >
+}
+  <t no="1" sync="[mex]に「死の宣告」の効果。" >
+    <expressions>
+      <set name="3mark" value="true" />
+    </expressions>
+  </t>
+
+@{
+  string[] label_a = {"A"};
+  string[] label_1 = {"1"};
+  string[] label_b = {"B"};
+  string[] label_2 = {"2"};
+  string[] label_c = {"C"};
+  string[] label_3 = {"3"};
+  string[] label_d = {"D"};
+  string[] label_4 = {"4"};
+  string[] label_L = {"左"};
+  string[] label_R = {"右"};
+
+  string[,][] doom_ptn = {
+    // ゲリック, 左右
+    {label_a, label_L},
+    {label_b, label_L},
+    {label_c, label_R},
+    {label_d, label_R},
+  };
+  int doom_max = 4;
+}
+@for (int i = 0; i < doom_ptn.GetLength(0); i++) {
+  for (int j = 1; j <= doom_max; j++) {
+  <t no="2" sync="[pc]に「死の宣告」の効果。" notice="無職 北 @(doom_ptn[i,1][0])から@(j)番目" sync-count="4" >
+    <expressions>
+      <pre name="3mark" value="false" />
+      <pre name="guerrique_found" value="@(doom_ptn[i,0][0])" />
+      <pre name="doom_count" count="@(my_priority-j+1)" />
+    </expressions>
     <v-notice
       text="無職"
       icon="Free.png"
       duration="29" />
-      <expressions>
-        <pre name="3mark" value="false" />
-      </expressions>
   </t>
+  <t no="2" sync="[pc]に「死の宣告」の効果。" notice="死の宣告 南 @(doom_ptn[i,1][0])から@(j)番目" sync-count="4" >
+    <expressions>
+      <pre name="3mark" value="true" />
+      <pre name="guerrique_found" value="@(doom_ptn[i,0][0])" />
+      <pre name="doom_count" count="@(j-1)" />
+    </expressions>
+    <v-notice
+      text="死の宣告"
+      icon="Timer.png"
+      duration="29" />
+  </t>
+  }
+}
 
-  <t notice="ゲリックA" >
+@{
+  string[] pos_g_a = {"23.50", "23.32", "0"};
+  string[] pos_g_b = {"23.68", "23.50", "0"};
+  string[] pos_g_c = {"23.50", "23.68", "0"};
+  string[] pos_g_d = {"23.32", "23.50", "0"};
+
+  string[,][] reg_guerrique_pos = {
+    {pos_g_a, label_a},
+    {pos_g_b, label_b},
+    {pos_g_c, label_c},
+    {pos_g_d, label_d},
+  };
+}
+@for (int i = 0; i < reg_guerrique_pos.GetLength(0); i++) {
+  <t notice="ゲリック@(reg_guerrique_pos[i,1][0])" >
     <expressions>
       <pre name="guerrique_found" value="none" />
-      <set name="guerrique_found" value="A" />
+      <set name="guerrique_found" value="@(reg_guerrique_pos[i,1][0])" />
     </expressions>
     <p-sync interval="120">
-      <combatant name="聖騎士ゲリック" X="23.50" Y="23.32" Z="0" tolerance="0.01" />
+      <combatant name="聖騎士ゲリック" X="@(reg_guerrique_pos[i,0][0])" Y="@(reg_guerrique_pos[i,0][1])" Z="@(reg_guerrique_pos[i,0][2])" tolerance="0.01" />
     </p-sync>
     <v-notice
-      text="ゲリックA"
+      text="ゲリック@(reg_guerrique_pos[i,1][0])"
       order="-2"
-      icon="A.png"
+      icon="@(reg_guerrique_pos[i,1][0]).png"
       duration="30" />
   </t>
-  <t notice="ゲリックB" >
-    <expressions>
-      <pre name="guerrique_found" value="none" />
-      <set name="guerrique_found" value="B" />
-    </expressions>
-    <p-sync interval="120">
-      <combatant name="聖騎士ゲリック" X="23.68" Y="23.50" Z="0" tolerance="0.01" />
-    </p-sync>
-    <v-notice
-      text="ゲリックB"
-      order="-2"
-      icon="B.png"
-      duration="30" />
-  </t>
-  <t notice="ゲリックC" >
-    <expressions>
-      <pre name="guerrique_found" value="none" />
-      <set name="guerrique_found" value="C" />
-    </expressions>
-    <p-sync interval="120">
-      <combatant name="聖騎士ゲリック" X="23.50" Y="23.68" Z="0" tolerance="0.01" />
-    </p-sync>
-    <v-notice
-      text="ゲリックC"
-      order="-2"
-      icon="C.png"
-      duration="30" />
-  </t>
-  <t notice="ゲリックD" >
-    <expressions>
-      <pre name="guerrique_found" value="none" />
-      <set name="guerrique_found" value="D" />
-    </expressions>
-    <p-sync interval="120">
-      <combatant name="聖騎士ゲリック" X="23.32" Y="23.50" Z="0" tolerance="0.01" />
-    </p-sync>
-    <v-notice
-      text="ゲリックD"
-      order="-2"
-      icon="D.png"
-      duration="30" />
-  </t>
+}
 
 @{
   string[] pos_t_a = {"23.50", "23.00", "0"};
@@ -1115,14 +1136,6 @@
   string[] pos_t_3 = {"23.15", "23.85", "0"};
   string[] pos_t_d = {"23.00", "23.50", "0"};
   string[] pos_t_4 = {"23.15", "23.15", "0"};
-  string[] label_a = {"A"};
-  string[] label_1 = {"1"};
-  string[] label_b = {"B"};
-  string[] label_2 = {"2"};
-  string[] label_c = {"C"};
-  string[] label_3 = {"3"};
-  string[] label_d = {"D"};
-  string[] label_4 = {"4"};
   string[] label_1a = {"1A間"};
   string[] label_1b = {"1B間"};
   string[] label_2b = {"2B間"};
