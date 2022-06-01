@@ -1283,7 +1283,11 @@
 
 <s name="2竜P1">
   <!--a time="005.0" sync="異邦の詩人:ひとつの命が 歴史の流れを変えてゆく" /-->
-  <a time="010" text="同期待ち" sync="ニーズヘッグ:穢らわしいヒトどもめ！" />
+  <a time="010" text="同期待ち" sync="ニーズヘッグ:穢らわしいヒトどもめ！" >
+    <expressions>
+      <set name="twin_dragon" value="false" />
+    </expressions>
+  </a>
   <a time="014" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" notice="" sync-count="1" />
   <a time="017" text="AA"  />
   <a time="019" text="(開始)竜の息吹" sync="ニーズヘッグは「邪竜の息吹」の構え。" />
@@ -1306,7 +1310,11 @@
   <a time="075" text="邪念の炎" sync="ニーズヘッグの「邪念の炎」" notice="邪念の炎" />
   <!--a time="076" text="アク・モーン" sync="ニーズヘッグは「アク・モーン」の構え。" notice="アク・モーン。" /-->
   <a time="079" text="カータ確認" sync="フレースヴェルグは「カータライズ」の構え。" />
-  <a time="085" text="アク・モーン4" sync="ニーズヘッグの「アク・モーン」" notice="アク・モーン4連" sync-count="1" />
+  <a time="085" text="アク・モーン4" sync="ニーズヘッグの「アク・モーン」" notice="アク・モーン4連" sync-count="1" >
+    <expressions>
+      <set name="twin_dragon" value="false" />
+    </expressions>
+  </a>
   <a time="085" text="カータライズ" sync="フレースヴェルグの「カータライズ」" notice=""  />
   <a time="087" text="アク・モーン3" />
   <a time="088" text="アク・モーン2"  />
@@ -1325,7 +1333,7 @@
   <a time="121" text="【予兆】テイルorウィング" sync="ニーズヘッグは「ヒート(ウィング|テイル)」の構え。" />
   <a time="127" text="Wウィング" sync="フレースヴェルグの「ホーリーウィング」" />
   <a time="130" text="【ロット予告】" notice="ロット交換インターバル" />
-  <a time="132" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" nsync-count="1" />
+  <a time="132" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" sync-count="1" />
   <a time="135" text="AA"  />
   <a time="136" text="ロット3回目" sync="ニーズヘッグの「滅殺の誓い」" notice="滅殺の誓い、3回目" />
   <a time="138" text="AA" />
@@ -1340,15 +1348,31 @@
   <a time="193" text="時間切れ" sync="ニーズヘッグの「最期の咆哮」" notice="" />
   <t sync="騎神トールダン:ハハハハハ！" goto="騎竜神P" />
 
-<!--逆の場合は修正してください、上がフレース持ちに強攻撃-->
-  <t sync="^14:6D33" notice="" >
+  <t no="1" sync="^14:6D32" notice="MT強攻撃" >
+    <expressions>
+      <pre name="twin_dragon" value="false" />
+      <set name="twin_dragon" value="true" />
+    </expressions>
+    <v-notice
+      text="MT強攻撃"
+      duration="10" />
+  </t>
+  <t no="1" sync="^14:6D34" notice="ST強攻撃" >
+    <expressions>
+      <pre name="twin_dragon" value="false" />
+      <set name="twin_dragon" value="true" />
+    </expressions>
     <v-notice
       text="ST強攻撃"
       duration="10" />
   </t>
-  <t sync="^14:6D35" notice="" >
+  <t no="2" sync="^14:(6D32|6D33|6D34|6D35)" notice="タンク頭割り" sync-count="2,4" >
+    <expressions>
+      <pre name="twin_dragon" value="false" />
+      <set name="twin_dragon" value="true" />
+    </expressions>
     <v-notice
-      text="MT強攻撃"
+      text="タンク頭割り"
       duration="10" />
   </t>
 
