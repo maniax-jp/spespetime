@@ -1290,27 +1290,27 @@
   </a>
   <a time="014" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" notice="" sync-count="1" />
   <a time="017" text="AA"  />
-  <a time="019" text="(開始)竜の息吹" sync="ニーズヘッグは「邪竜の息吹」の構え。" />
-  <a time="026" text="竜の息吹" sync="ニーズヘッグの「邪竜の息吹」" notice="竜の息吹。" />
+  <a time="019" text="(開始)竜の息吹" sync="ニーズヘッグは「邪竜の息吹」の構え。" notice="竜の息吹" />
+  <a time="026" text="竜の息吹" sync="ニーズヘッグの「邪竜の息吹」" notice="" />
   <a time="027" text="オーブ＆ブレス" sync="ニーズヘッグの「ダークオーブ」" notice="" />
   <a time="030" text="AA" />
   <a time="033" text="AA"  />
 
-  <a time="035" text="滅殺の誓い付与" sync="ニーズヘッグの「滅殺の誓い」" notice="滅殺の誓い。" />
+  <a time="035" text="滅殺の誓い付与" sync="ニーズヘッグの「滅殺の誓い」" notice="タンヒラ中央" notice-o="-8" />
   <!--a time="037" sync="フレースヴェルグ:我はシヴァに誓ったのだ…… 決して人を殺めはしないと……頼む……！" /-->
-  <a time="046" text="アク・アファー" sync="ニーズヘッグの「アク・アファー」" notice="2組頭割り" />
-  <a time="051" text="【予兆】ウィング" sync="フレースヴェルグは「ホーリーウィング」の構え。" />
+  <a time="046" text="アク・アファー" sync="ニーズヘッグの「アク・アファー」" notice="よんよん頭割り" notice-o="-10" />
+  <a time="051" text="【予兆】ウィング" sync="フレースヴェルグは「ホーリーウィング」の構え。" notice="フレースに注目" />
   <a time="054" text="【予兆】カータライズ" sync="ニーズヘッグは「カータライズ」の構え。"  />
   <a time="059" text="ホーリーウィング" sync="フレースヴェルグの「ホーリーウィング」" notice="" />
-  <a time="060" text="カータライズ" sync="ニーズヘッグの「カータライズ」" notice="カータライズ" />
-  <a time="063" text="【ロット予告】" notice="ロット交換インターバル" />
-  <a time="065" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" sync-count="1" />
+  <a time="060" text="カータライズ" sync="ニーズヘッグの「カータライズ」" notice="" />
+  <a time="063" text="【ロット予告】" notice="もうすぐST受け渡し" />
+  <a time="065" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" sync-count="5" />
   <a time="068" text="AA" />
-  <a time="068" text="ロット1回目" sync="ニーズヘッグの「滅殺の誓い」" notice="滅殺の誓い、1回目" />
-  <a time="075" text="邪念の炎" sync="ニーズヘッグの「邪念の炎」" notice="邪念の炎" />
+  <a time="068" text="ロット1回目" sync="ニーズヘッグの「滅殺の誓い」" notice="" />
+  <a time="075" text="邪念の炎" sync="ニーズヘッグの「邪念の炎」" notice="ニーズに注目" />
   <!--a time="076" text="アク・モーン" sync="ニーズヘッグは「アク・モーン」の構え。" notice="アク・モーン。" /-->
   <a time="079" text="カータ確認" sync="フレースヴェルグは「カータライズ」の構え。" />
-  <a time="085" text="アク・モーン4" sync="ニーズヘッグの「アク・モーン」" notice="アク・モーン4連" sync-count="1" >
+  <a time="085" text="アク・モーン4" sync="ニーズヘッグの「アク・モーン」" notice="テンパベル" sync-count="1" notice-o="-5" >
     <expressions>
       <set name="twin_dragon" value="false" />
     </expressions>
@@ -1320,31 +1320,31 @@
   <a time="088" text="アク・モーン2"  />
   <a time="090" text="アク・モーン1" />
   <a time="091" text="テイルorウィング確認" sync="ニーズヘッグは「ヒート(ウィング|テイル)」の構え。"  />
-  <a time="095" text="!整列・デバフ確認!" notice="並びを確認" />
+  <a time="091" text="!整列・デバフ確認!" notice="デバフ確認" />
   <a time="097" text="テイルorウィング" sync="ニーズヘッグの「ヒート(ウィング|テイル)」" />
-  <a time="098" text="炎発動" sync="ニーズヘッグの「(復讐の炎|道連れの炎)」" notice="デバフが発動" />
-  <a time="099" text="【ロット予告】" notice="ロット交換インターバル" />
+  <a time="097" text="【ロット予告】" notice="もうすぐMT受け渡し" />
+  <a time="098" text="炎発動" sync="ニーズヘッグの「(復讐の炎|道連れの炎)」" notice="" />
   <a time="101" text="AA" />
-  <a time="102" text="ロット2回目" sync="ニーズヘッグの「滅殺の誓い」" notice="滅殺の誓い、2回目" />
+  <a time="102" text="ロット2回目" sync="ニーズヘッグの「滅殺の誓い」" notice="" />
   <a time="104" text="AA" />
-  <a time="115" text="アク・アファー" sync="ニーズヘッグの「アク・アファー」" notice="2組頭割り" />
+  <a time="115" text="アク・アファー" sync="ニーズヘッグの「アク・アファー」" notice="よんよん頭割り" notice-o="-10" />
   <!--テイルとウィングの通知はID取れたらトリガにて通知する予定。-->
-  <a time="119" text="【予兆】ウィング" sync="フレースヴェルグは「ホーリーウィング」の構え。" notice="" />
+  <a time="119" text="【予兆】ウィング" sync="フレースヴェルグは「ホーリーウィング」の構え。" notice="フレースに注目" />
   <a time="121" text="【予兆】テイルorウィング" sync="ニーズヘッグは「ヒート(ウィング|テイル)」の構え。" />
   <a time="127" text="Wウィング" sync="フレースヴェルグの「ホーリーウィング」" />
-  <a time="130" text="【ロット予告】" notice="ロット交換インターバル" />
-  <a time="132" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" sync-count="1" />
+  <a time="131" text="【ロット予告】" notice="もうすぐ近接受け渡し" />
+  <a time="132" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" sync-count="7" />
   <a time="135" text="AA"  />
-  <a time="136" text="ロット3回目" sync="ニーズヘッグの「滅殺の誓い」" notice="滅殺の誓い、3回目" />
+  <a time="136" text="ロット3回目" sync="ニーズヘッグの「滅殺の誓い」" notice="" />
   <a time="138" text="AA" />
-  <a time="140" text="【予兆】竜の息吹" sync="ニーズヘッグは「邪竜の息吹」の構え。" />
-  <a time="147" text="竜の息吹" sync="ニーズヘッグの「邪竜の息吹」" notice="竜の息吹。" />
+  <a time="140" text="【予兆】竜の息吹" sync="ニーズヘッグは「邪竜の息吹」の構え。" notice="竜の息吹" />
+  <a time="147" text="竜の息吹" sync="ニーズヘッグの「邪竜の息吹」" notice="" />
   <a time="151" text="AA" />
-  <a time="154" text="" sync="ニーズヘッグは「カータライズ」の構え。" notice="" />
-  <a time="160" text="カータライズ" sync="ニーズヘッグの「カータライズ」" notice="カータライズ。"  />
-  <a time="166" text="タッチダウン" sync="ニーズヘッグの「タッチダウン」" notice="タッチダウン。" />
-  <a time="167" text="【ロット予告】" notice="ロット交換インターバル" />
-  <a time="170" text="ロット4回目" sync="ニーズヘッグの「滅殺の誓い」" notice="滅殺の誓い、4回目" />
+  <a time="154" text="" sync="ニーズヘッグは「カータライズ」の構え。" notice="カータライズ" />
+  <a time="160" text="カータライズ" sync="ニーズヘッグの「カータライズ」" notice=""  />
+  <a time="165" text="【ロット予告】" notice="もうすぐD3受け渡し" />
+  <a time="166" text="タッチダウン" sync="ニーズヘッグの「タッチダウン」" notice="" />
+  <a time="170" text="ロット4回目" sync="ニーズヘッグの「滅殺の誓い」" notice="" />
   <a time="193" text="時間切れ" sync="ニーズヘッグの「最期の咆哮」" notice="" />
   <t sync="騎神トールダン:ハハハハハ！" goto="騎竜神P" />
 
@@ -1376,62 +1376,62 @@
       duration="10" />
   </t>
 
-  <t sync="^14:(6D2B|6D2C)" notice="内側へ" >
+  <t sync="ニーズヘッグは「ヒートウィング」の構え。" notice="うちアンチ" notice-sync="true" >
     <v-notice
       text="ウィング:内側安置"
       duration="10" />
   </t>
-  <t sync="^14:(6D2D|6D2E)" notice="外側へ" >
+  <t sync="ニーズヘッグは「ヒートテイル」の構え。" notice="外アンチ" notice-sync="true" >
     <v-notice
       text="テイル:外側安置"
       duration="10" />
   </t>
   <!--ホーリーウィング6D23~6D28は調査中。-->
-  <t sync="^14:6D23" notice="北安置、近くに誘導" >
+  <t sync="^14:6D23" notice="DPS離れる" notice-sync="true" >
     <v-notice
       text="北安置、誘導:近づく"
       duration="10" />
   </t>
-  <t sync="^14:6D24" notice="北安置、遠くに誘導" >
+  <t sync="^14:6D24" notice="DPS近づく" notice-sync="true" >
     <v-notice
       text="北安置、誘導:離れる"
       duration="10" />
   </t>
-  <t sync="^14:6D26" notice="南安置、近くに誘導" >
+  <t sync="^14:6D26" notice="DPS離れる" notice-sync="true" >
     <v-notice
       text="南安置、誘導:近づく"
       duration="10" />
   </t>
-  <t sync="^14:6D27" notice="南安置、遠くに誘導" >
+  <t sync="^14:6D27" notice="DPS近づく" notice-sync="true" >
     <v-notice
       text="南安置、誘導:離れる"
       duration="10" />
   </t>
 
 <!--ニーズカータ109は予測値-->
-  <t sync="^14:6D3E:.*89.00,66.00," notice="右安置" >
+  <t sync="^14:6D3E:.*(89.00,66.00|89.00,134.00)," notice="まえアンチ" notice-sync="true" >
     <v-notice
       text="Bマーカー安置"
       duration="9" />
   </t>
-  <t sync="^14:6D3E:.*109.00,66.00," notice="左安置" >
+  <t sync="^14:6D3E:.*(111.00,66.00|111.00,134.00)," notice="後ろアンチ" notice-sync="true" >
     <v-notice
       text="Dマーカー安置"
       duration="9" />
   </t>
 
 <!--フレースカータ-->
-  <t sync="^14:6D3F:.*(90.00,66.00|90.00,134.00)," notice="B側へ" >
+  <t sync="^14:6D3F:.*(90.00,66.00|90.00,134.00)," notice="後ろアンチ" >
     <v-notice
       text="Bマーカー安置"
       duration="9" />
   </t>
-  <t sync="^14:6D3F:.*(110.00,66.00|110.00,134.00)," notice="D側へ" >
+  <t sync="^14:6D3F:.*(110.00,66.00|110.00,134.00)," notice="まえアンチ" >
     <v-notice
       text="Dマーカー安置"
       duration="9" />
   </t>
-  <t sync="^14:6D3F:.*(100.00,66.00|100.00,134.00)," notice="中央カータ" >
+  <t sync="^14:6D3F:.*(100.00,66.00|100.00,134.00)," notice="まえアンチ" >
     <v-notice
       text="BD安置"
       duration="9" />
