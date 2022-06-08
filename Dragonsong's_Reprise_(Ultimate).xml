@@ -1421,12 +1421,12 @@
   </t>
 
 <!--フレースカータ-->
-  <t sync="^14:6D3F:.*(90.00,66.00|90.00,134.00)," notice="後ろアンチ" >
+  <t sync="^14:6D3F:.*(89.00,66.00|89.00,134.00)," notice="後ろアンチ" >
     <v-notice
       text="Bマーカー安置"
       duration="9" />
   </t>
-  <t sync="^14:6D3F:.*(110.00,66.00|110.00,134.00)," notice="まえアンチ" >
+  <t sync="^14:6D3F:.*(111.00,66.00|111.00,134.00)," notice="まえアンチ" >
     <v-notice
       text="Dマーカー安置"
       duration="9" />
@@ -1516,12 +1516,12 @@
   <a time="255" text="騎竜剣モーン・アファー" />
   <a time="258" text="騎竜剣モーン・アファー" />
 
-  <t sync="^14:6D93" notice="内側へ" >
+  <t sync="^1A:[id8]:.* gains the effect of Unknown_808 .* BuffID: 0808-12B" notice="内側へ" >
     <v-notice
       text="氷:内側安置"
       duration="10" />
   </t>
-  <t sync="^14:6D9B" notice="外側へ" >
+  <t sync="^1A:[id8]:.* gains the effect of Unknown_808 .* BuffID: 0808-12A" notice="外側へ" >
     <v-notice
       text="炎:外側安置"
       duration="10" />
