@@ -1287,6 +1287,7 @@
     <expressions>
       <set name="twin_dragon" value="false" />
       <set name="nidhogg_cauterize" value="false" />
+      <set name="hraesvelgr_cauterize" value="false" />
     </expressions>
   </a>
   <a time="014" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" notice="" sync-count="1" />
@@ -1447,20 +1448,59 @@
   </t>
 
 <!--フレースカータ-->
-  <t sync="^14:6D3F:.*(89.00,66.00|89.00,134.00)," notice="後ろアンチ" >
-    <v-notice
-      text="Bマーカー安置"
-      duration="9" />
+  <t name="フレースカータ1" notice="後ろアンチ" notice-sync="true" >
+    <expressions>
+      <pre name="hraesvelgr_cauterize" value="false" />
+      <set name="hraesvelgr_cauterize" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="フレースヴェルグ" X="23.28" Y="22.82" Z="0" tolerance="0.01" />
+    </p-sync>
   </t>
-  <t sync="^14:6D3F:.*(111.00,66.00|111.00,134.00)," notice="まえアンチ" >
-    <v-notice
-      text="Dマーカー安置"
-      duration="9" />
+  <t name="フレースカータ2" notice="後ろアンチ" notice-sync="true" >
+    <expressions>
+      <pre name="hraesvelgr_cauterize" value="false" />
+      <set name="hraesvelgr_cauterize" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="フレースヴェルグ" X="23.28" Y="24.18" Z="0" tolerance="0.01" />
+    </p-sync>
   </t>
-  <t sync="^14:6D3F:.*(100.00,66.00|100.00,134.00)," notice="まえアンチ" >
-    <v-notice
-      text="BD安置"
-      duration="9" />
+  <t name="フレースカータ3" notice="まえアンチ" notice-sync="true" >
+    <expressions>
+      <pre name="hraesvelgr_cauterize" value="false" />
+      <set name="hraesvelgr_cauterize" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="フレースヴェルグ" X="23.72" Y="22.82" Z="0" tolerance="0.01" />
+    </p-sync>
+  </t>
+  <t name="フレースカータ4" notice="まえアンチ" notice-sync="true" >
+    <expressions>
+      <pre name="hraesvelgr_cauterize" value="false" />
+      <set name="hraesvelgr_cauterize" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="フレースヴェルグ" X="23.72" Y="24.18" Z="0" tolerance="0.01" />
+    </p-sync>
+  </t>
+  <t name="フレースカータ5" notice="まえアンチ" notice-sync="true" >
+    <expressions>
+      <pre name="hraesvelgr_cauterize" value="false" />
+      <set name="hraesvelgr_cauterize" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="フレースヴェルグ" X="23.50" Y="22.82" Z="0" tolerance="0.01" />
+    </p-sync>
+  </t>
+  <t name="フレースカータ6" notice="まえアンチ" notice-sync="true" >
+    <expressions>
+      <pre name="hraesvelgr_cauterize" value="false" />
+      <set name="hraesvelgr_cauterize" value="true" />
+    </expressions>
+    <p-sync interval="120">
+      <combatant name="フレースヴェルグ" X="23.50" Y="24.18" Z="0" tolerance="0.01" />
+    </p-sync>
   </t>
 
   <t sync="^1A:[id8]:[me] gains the effect of _rsv_2896_-1_0_C0_0Status" notice="ロットついたよ" >
