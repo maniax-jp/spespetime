@@ -1507,6 +1507,28 @@
     </p-sync>
   </t>
 
+<!--真紅の珠-->
+  <t no="1" sync="^03:[id8]:Added new combatant 真紅の珠\. .* Pos: \(.*,81\.00,0\.00\)">
+    <expressions>
+      <set name="red_orb" value="right" />
+    </expressions>
+  </t>
+  <t no="1" sync="^03:[id8]:Added new combatant 真紅の珠\. .* Pos: \(.*,119\.00,0\.00\)">
+    <expressions>
+      <set name="red_orb" value="left" />
+    </expressions>
+  </t>
+  <t no="2" sync="^03:[id8]:Added new combatant 真紅の珠" sync-count="6" notice="左アンチ" notice-sync="true" >
+    <expressions>
+      <pre name="red_orb" value="right" />
+    </expressions>
+  </t>
+  <t no="2" sync="^03:[id8]:Added new combatant 真紅の珠" sync-count="6" notice="右アンチ" notice-sync="true" >
+    <expressions>
+      <pre name="red_orb" value="left" />
+    </expressions>
+  </t>
+
   <t sync="^1A:[id8]:[me] gains the effect of _rsv_2896_-1_0_C0_0Status" notice="ロットついたよ" >
     <v-notice
       text="滅殺の誓い"
