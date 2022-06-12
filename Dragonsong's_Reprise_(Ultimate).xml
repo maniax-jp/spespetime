@@ -1288,6 +1288,10 @@
       <set name="twin_dragon" value="false" />
       <set name="nidhogg_cauterize" value="false" />
       <set name="hraesvelgr_cauterize" value="false" />
+      <set name="spreading_count" count="0" />
+      <set name="entangled_count" count="0" />
+      <set name="spreading" value="false" />
+      <set name="entangled" value="false" />
     </expressions>
   </a>
   <a time="014" text="AA" sync="ニーズヘッグの「ウィルムクロウ」" notice="" sync-count="1" />
@@ -1508,6 +1512,76 @@
       text="滅殺の誓い"
       duration="34" />
   </t>
+
+<!--復讐の炎/道連れの炎-->
+@{
+  string[] priority_wroth = {"GNB", "DRK", "WHM", "SCH", "DRG", "NIN", "BRD", "SMN"};
+  int my_priority2 = Array.IndexOf(priority_wroth, Model.Player.Job);
+}
+@for (int i = 0; i < my_priority2; i++)
+{
+  <t no="1" name="復讐の炎@(priority_wroth[i])" sync="[@(priority_wroth[i])]に「復讐の炎」の効果。" >
+    <expressions>
+      <set name="spreading_count" count="+1" />
+    </expressions>
+  </t>
+  <t no="1" name="道連れの炎@(priority_wroth[i])" sync="[@(priority_wroth[i])]に「道連れの炎」の効果。" >
+    <expressions>
+      <set name="entangled_count" count="+1" />
+    </expressions>
+  </t>
+}
+  <t no="1" sync="[mex]に「復讐の炎」の効果。" >
+    <expressions>
+      <set name="spreading" value="true" />
+    </expressions>
+  </t>
+  <t no="1" sync="[mex]に「道連れの炎」の効果。" >
+    <expressions>
+      <set name="entangled" value="true" />
+    </expressions>
+  </t>
+@for (int i = 0; i <= 3 && i <= my_priority2; i++) {
+  <t no="2" sync="[pc]に「(復讐の炎|道連れの炎)」の効果。" notice="ひとり受け @(i+1)番目" sync-count="6" notice-o="15" notice-sync="true" >
+    <expressions>
+      <pre name="spreading" value="true" />
+      <pre name="spreading_count" count="@(i)" />
+    </expressions>
+    <v-notice
+      text="ひとり受け"
+      icon="AOE.png"
+      duration="25" />
+  </t>
+}
+@for (int i = 0; i <= 1 && i <= my_priority2; i++) {
+  <t no="2" sync="[pc]に「(復讐の炎|道連れの炎)」の効果。" notice="ふたり受け @(i+1)番目" sync-count="6" notice-o="15" notice-sync="true" >
+    <expressions>
+      <pre name="entangled" value="true" />
+      <pre name="entangled_count" count="@(i)" />
+    </expressions>
+    <v-notice
+      text="ふたり受け"
+      icon="DamageShare.png"
+      duration="25" />
+  </t>
+}
+@for (int i = 0; i <= 1 && i <= my_priority2; i++) {
+  for (int j = 0; j <= 4 && j <= my_priority2; j++) {
+  <t no="2" sync="[pc]に「(復讐の炎|道連れの炎)」の効果。" notice="ふたり受け @(i+1)番目" sync-count="6" notice-o="15" notice-sync="true" >
+    <expressions>
+      <pre name="spreading" value="false" />
+      <pre name="entangled" value="false" />
+      <pre name="spreading_count" count="@(j)" />
+      <pre name="entangled_count" count="@(my_priority2 - i - j)" />
+    </expressions>
+    <v-notice
+      text="ふたり受け"
+      icon="DamageShare.png"
+      duration="25" />
+  </t>
+  }
+}
+
 </s>
 
 <s name="騎竜神P">
