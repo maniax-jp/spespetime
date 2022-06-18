@@ -1394,22 +1394,22 @@
   <!--ホーリーウィング6D23~6D28は調査中。-->
   <t sync="^14:6D23" notice="タンク近づく" notice-sync="true" >
     <v-notice
-      text="北安置、誘導:近づく"
+      text="タンク近づく"
       duration="10" />
   </t>
   <t sync="^14:6D24" notice="タンク離れる" notice-sync="true" >
     <v-notice
-      text="北安置、誘導:離れる"
+      text="タンク離れる"
       duration="10" />
   </t>
   <t sync="^14:6D26" notice="タンク近づく" notice-sync="true" >
     <v-notice
-      text="南安置、誘導:近づく"
+      text="タンク近づく"
       duration="10" />
   </t>
   <t sync="^14:6D27" notice="タンク離れる" notice-sync="true" >
     <v-notice
-      text="南安置、誘導:離れる"
+      text="タンク離れる"
       duration="10" />
   </t>
 
