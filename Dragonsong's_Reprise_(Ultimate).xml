@@ -1285,7 +1285,7 @@
   <a time="010" text="同期待ち" sync="ニーズヘッグ:穢らわしいヒトどもめ！" >
     <expressions>
       <set name="twin_dragon" value="false" />
-      <set name="nidhogg_cauterize" value="false" />
+      <set name="nidhogg_cauterize" value="none" />
       <set name="hraesvelgr_cauterize" value="false" />
       <set name="spreading_count" count="0" />
       <set name="entangled_count" count="0" />
@@ -1383,67 +1383,159 @@
 
   <t sync="ニーズヘッグは「ヒートウィング」の構え。" notice="うちアンチ" notice-sync="true" >
     <v-notice
-      text="ウィング:内側安置"
+      text="内側安置"
       duration="10" />
   </t>
   <t sync="ニーズヘッグは「ヒートテイル」の構え。" notice="外アンチ" notice-sync="true" >
     <v-notice
-      text="テイル:外側安置"
-      duration="10" />
-  </t>
-  <!--ホーリーウィング6D23~6D28は調査中。-->
-  <t sync="^14:6D23" notice="タンク近づく" notice-sync="true" >
-    <v-notice
-      text="タンク近づく"
-      duration="10" />
-  </t>
-  <t sync="^14:6D24" notice="タンク離れる" notice-sync="true" >
-    <v-notice
-      text="タンク離れる"
-      duration="10" />
-  </t>
-  <t sync="^14:6D26" notice="タンク近づく" notice-sync="true" >
-    <v-notice
-      text="タンク近づく"
-      duration="10" />
-  </t>
-  <t sync="^14:6D27" notice="タンク離れる" notice-sync="true" >
-    <v-notice
-      text="タンク離れる"
+      text="外側安置"
       duration="10" />
   </t>
 
-  <t name="ニーズカータ1" notice="まえアンチ" notice-sync="true" >
+  <t no="1" sync="^14:6D23" notice="タンク近づく" notice-sync="true" >
     <expressions>
-      <pre name="nidhogg_cauterize" value="false" />
-      <set name="nidhogg_cauterize" value="true" />
+      <pre name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="タンク近づく"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:6D23" notice="左前 タンク近づく" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="backward" />
+      <set name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="左前 タンク近づく"
+      icon="Arrow8.png"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:6D23" notice="左後ろ タンク近づく" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="forward" />
+      <set name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="左後ろ タンク近づく"
+      icon="Arrow6.png"
+      duration="10" />
+  </t>
+  <t no="1" sync="^14:6D24" notice="タンク離れる" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="タンク離れる"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:6D24" notice="左前 タンク離れる" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="backward" />
+      <set name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="左前 タンク離れる"
+      icon="Arrow8.png"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:6D24" notice="左後ろ タンク離れる" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="forward" />
+      <set name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="左後ろ タンク離れる"
+      icon="Arrow6.png"
+      duration="10" />
+  </t>
+  <t no="1" sync="^14:6D26" notice="タンク近づく" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="タンク近づく"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:6D26" notice="右前 タンク近づく" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="backward" />
+      <set name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="右前 タンク近づく"
+      icon="Arrow2.png"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:6D26" notice="右後ろ タンク近づく" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="forward" />
+      <set name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="右後ろ タンク近づく"
+      icon="Arrow4.png"
+      duration="10" />
+  </t>
+  <t no="1" sync="^14:6D27" notice="タンク離れる" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="タンク離れる"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:6D27" notice="右前 タンク離れる" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="backward" />
+      <set name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="右前 タンク離れる"
+      icon="Arrow2.png"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:6D27" notice="右後ろ タンク離れる" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="forward" />
+      <set name="nidhogg_cauterize" value="none" />
+    </expressions>
+    <v-notice
+      text="右後ろ タンク離れる"
+      icon="Arrow4.png"
+      duration="10" />
+  </t>
+
+  <t name="ニーズカータ1" notice="まえ" notice-sync="true" >
+    <expressions>
+      <pre name="nidhogg_cauterize" value="none" />
+      <set name="nidhogg_cauterize" value="backward" />
     </expressions>
     <p-sync interval="120">
       <combatant name="ニーズヘッグ" X="23.28" Y="22.82" Z="0" tolerance="0.01" />
     </p-sync>
   </t>
-  <t name="ニーズカータ2" notice="まえアンチ" notice-sync="true" >
+  <t name="ニーズカータ2" notice="まえ" notice-sync="true" >
     <expressions>
-      <pre name="nidhogg_cauterize" value="false" />
-      <set name="nidhogg_cauterize" value="true" />
+      <pre name="nidhogg_cauterize" value="none" />
+      <set name="nidhogg_cauterize" value="backward" />
     </expressions>
     <p-sync interval="120">
       <combatant name="ニーズヘッグ" X="23.28" Y="24.18" Z="0" tolerance="0.01" />
     </p-sync>
   </t>
-  <t name="ニーズカータ3" notice="後ろアンチ" notice-sync="true" >
+  <t name="ニーズカータ3" notice="後ろ" notice-sync="true" >
     <expressions>
-      <pre name="nidhogg_cauterize" value="false" />
-      <set name="nidhogg_cauterize" value="true" />
+      <pre name="nidhogg_cauterize" value="none" />
+      <set name="nidhogg_cauterize" value="forward" />
     </expressions>
     <p-sync interval="120">
       <combatant name="ニーズヘッグ" X="23.72" Y="22.82" Z="0" tolerance="0.01" />
     </p-sync>
   </t>
-  <t name="ニーズカータ4" notice="後ろアンチ" notice-sync="true" >
+  <t name="ニーズカータ4" notice="後ろ" notice-sync="true" >
     <expressions>
-      <pre name="nidhogg_cauterize" value="false" />
-      <set name="nidhogg_cauterize" value="true" />
+      <pre name="nidhogg_cauterize" value="none" />
+      <set name="nidhogg_cauterize" value="forward" />
     </expressions>
     <p-sync interval="120">
       <combatant name="ニーズヘッグ" X="23.72" Y="24.18" Z="0" tolerance="0.01" />
@@ -1570,7 +1662,6 @@
     </expressions>
     <v-notice
       text="ひとり受け"
-      icon="AOE.png"
       duration="25" />
   </t>
 }
@@ -1582,7 +1673,6 @@
     </expressions>
     <v-notice
       text="ふたり受け"
-      icon="DamageShare.png"
       duration="25" />
   </t>
 }
@@ -1597,7 +1687,6 @@
     </expressions>
     <v-notice
       text="ふたり受け"
-      icon="DamageShare.png"
       duration="25" />
   </t>
   }
@@ -1612,64 +1701,49 @@
   <a time="035" sync="騎竜神トールダン:眼を喰らいし聖剣よ！" />
   <!--エクサ1回目-->
   <a time="035" text="【予兆】エクサフレア" sync="騎竜神トールダンは「騎竜剣エクサフレア」の構え。"  />
-  <a time="042" text="騎竜剣エクサフレア" sync="騎竜神トールダンの「騎竜剣エクサフレア」" notice="エクサフレア。" />
+  <a time="042" text="騎竜剣エクサフレア" sync="騎竜神トールダンの「騎竜剣エクサフレア」" notice="エクサフレア" />
   <a time="042" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-  <a time="050" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+  <a time="050" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="" sync-count="1" />
   <a time="054" text="トリニティ" />
   <!--a time="056" sync="騎竜神トールダン:眼を喰らいし聖剣よ！ その怨念の輝きで、死の底に叩き落とせ！" /-->
   <a time="056" text="【予兆】アク・モーン" sync="騎竜神トールダンは「騎竜剣アク・モーン」の構え。" />
-  <a time="063" text="アク・モーン5" sync="騎竜神トールダンの「騎竜剣アク・モーン」" notice="アク・モーン。" />
+  <a time="063" text="アク・モーン1" sync="騎竜神トールダンの「騎竜剣アク・モーン」" notice="アクモーン" />
   <!--チャリダイナモ　アイスがダイナモ-->
   <a time="063" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-  <a time="065" text="アク・モーン4" />
-  <a time="066" text="アク・モーン3" />
-  <a time="067" text="アク・モーン2" />
-  <a time="068" text="アク・モーン1" />
-  <a time="074" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+  <a time="074" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="" sync-count="1" />
   <a time="078" text="トリニティ" />
-  <a time="090" text="ギガフレア" sync="騎竜神トールダンの「騎竜剣ギガフレア」" notice="ギガフレア。" />
+  <a time="090" text="ギガフレア" sync="騎竜神トールダンの「騎竜剣ギガフレア」" notice="ギガフレア" />
   <a time="090" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-  <a time="108" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+  <a time="108" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="" sync-count="1" />
   <a time="112" text="トリニティ" />
 
   <!--エクサ2回目-->
   <a time="114" text="【予兆】エクサフレア" sync="騎竜神トールダンは「騎竜剣エクサフレア」の構え。" />
   <a time="121" text="エクサフレア" sync="騎竜神トールダンの「騎竜剣エクサフレア」" notice="エクサフレア" sync-count="1" />
   <a time="121" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-  <a time="129" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+  <a time="129" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="" sync-count="1" />
   <a time="133" text="トリニティ" />
   <a time="135" text="【予兆】アク・モーン" sync="騎竜神トールダンは「騎竜剣アク・モーン」の構え。" notice="" />
-  <a time="142" text="アク・モーン6" sync="騎竜神トールダンの「騎竜剣アク・モーン」" notice="アク・モーン" sync-count="1" />
+  <a time="142" text="アク・モーン2" sync="騎竜神トールダンの「騎竜剣アク・モーン」" notice="アクモーン" sync-count="1" />
   <a time="142" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-  <a time="144" text="アク・モーン5" />
-  <a time="145" text="アク・モーン4" />
-  <a time="146" text="アク・モーン3" />
-  <a time="147" text="アク・モーン2" />
-  <a time="148" text="アク・モーン1" />
-  <a time="154" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+  <a time="154" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="" sync-count="1" />
   <a time="158" text="トリニティ" />
-  <a time="160" text="ギガフレア" sync="騎竜神トールダンは「騎竜剣ギガフレア」の構え。" notice="騎竜剣ギガフレア。" />
+  <a time="160" text="ギガフレア" sync="騎竜神トールダンは「騎竜剣ギガフレア」の構え。" notice="ギガフレア" />
   <a time="169" text="騎竜剣ギガフレア" sync="騎竜神トールダンの「騎竜剣ギガフレア」" />
   <a time="170" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-  <a time="188" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+  <a time="188" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="" sync-count="1" />
   <a time="192" text="トリニティ" />
 
   <!--エクサ3回目-->
   <a time="194" text="【予兆】エクサフレア" sync="騎竜神トールダンは「騎竜剣エクサフレア」の構え。" />
-  <a time="201" text="エクサフレア" sync="騎竜神トールダンの「騎竜剣エクサフレア」" notice="騎竜剣エクサフレア。"  />
+  <a time="201" text="エクサフレア" sync="騎竜神トールダンの「騎竜剣エクサフレア」" notice="エクサフレア"  />
   <a time="201" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-  <a time="209" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+  <a time="209" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="" sync-count="1" />
   <a time="213" text="トリニティ" />
   <a time="215" text="【予兆】アク・モーン" sync="騎竜神トールダンは「騎竜剣アク・モーン」の構え。" />
-  <a time="222" text="アク・モーン7" sync="騎竜神トールダンの「騎竜剣アク・モーン」" notice="アク・モーン。"  />
+  <a time="222" text="アク・モーン3" sync="騎竜神トールダンの「騎竜剣アク・モーン」" notice="アクモーン"  />
   <a time="222" text="(フレイム|アイス)・オブ・アスカロン" sync="騎竜神トールダンの「(フレイム|アイス)・オブ・アスカロン」" notice="" />
-  <a time="224" text="アク・モーン6" />
-  <a time="225" text="アク・モーン5" />
-  <a time="226" text="アク・モーン4" />
-  <a time="227" text="アク・モーン3" />
-  <a time="228" text="アク・モーン2" />
-  <a time="229" text="アク・モーン1" />
-  <a time="235" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="トリニティ" sync-count="1" />
+  <a time="235" text="トリニティ" sync="騎竜神トールダンの「トリニティ」" notice="" sync-count="1" />
   <a time="239" text="トリニティ" />
   <!--a time="241" sync="騎竜神トールダン:そろそろ終いだ……！ すべての眼よ、永遠の死をここに……！" /-->
   <a time="241" text="最終詠唱" sync="騎竜神トールダンは「騎竜剣モーン・アファー」の構え。" notice="" />
@@ -1679,12 +1753,12 @@
 
   <t sync="^1A:[id8]:.* gains the effect of Unknown_808 .* BuffID: 0808-12B" notice="内側へ" >
     <v-notice
-      text="氷:内側安置"
+      text="内側安置"
       duration="10" />
   </t>
   <t sync="^1A:[id8]:.* gains the effect of Unknown_808 .* BuffID: 0808-12A" notice="外側へ" >
     <v-notice
-      text="炎:外側安置"
+      text="外側安置"
       duration="10" />
   </t>
 
