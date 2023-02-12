@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>絶オメガ</name>
+  <rev>TEST11</rev>
+  <description>
+    20220203:TEST6 ブルスクまで。エラー情報を収集しています。0%完了
+    20220204:TEST7 動作調整
+    202202050133:TEST8 波動砲連打部分の修正 8.1記述ミス修正
+    202202090029:TEST9EX 検知式波動砲の試作
+    202202120049:TEST11 P5入りまで。検知に大幅トリガ追加
+    注意:作成途中の為、予期しない動作をすることがあります。
+    AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
+  </description>
+  <author>Aqua Cat,RINGS</author>
+  <license>CC BY-SA</license>
+  <zone>The Omega Protocol (Ultimate)</zone>
+  <locale>JA</locale>
+  <start>0039::戦闘開始！</start>
+  <entry>P1</entry>
+
+  <default target-element="Activity" target-attr="notice-o" value="-3" />
+
+  <s name="P1">
+  <a time="001" text="セリフ" sync="オメガ:アナタはアルファであり、ワタシはオメガである。" />
+  <a time="015" text="サークルプログラム" sync="オメガの「サークルプログラム」" notice="サークル開始" />
+  <a time="021" text="3番線取り" sync="オメガは「ブラスター」の構え。" notice="3番線取り" />
+  <a time="030" text="ブラスター1" sync="オメガの「ブラスター」$" sync-s="-5" sync-e="3" />
+  <a time="031" text="4番線取り" notice="4番線取り" notice-o="-1" />
+  <a time="039" text="ブラスター2" sync="オメガの「ブラスター」$" sync-s="-5" sync-e="3" />
+  <a time="040" text="1番線取り" notice="1番線取り" notice-o="-1" />
+  <a time="048" text="ブラスター3" sync="オメガの「ブラスター」$" sync-s="-5" sync-e="3" />
+  <a time="049" text="2番線取り" notice="2番線取り" notice-o="-1" />
+  <a time="057" text="ブラスター4" sync="オメガの「ブラスター」$" sync-s="-5" sync-e="3" />
+  <a time="064" text="【詠唱】パンクラ" sync="オメガは「パントクラトル」の構え。" notice="パントクラトル開始" sync-o="20" />
+  <a time="069" text="パントクラトル" sync="オメガの「パントクラトル」" notice="デバフを確認" />
+  <a time="082" text="頭割り1" />
+  <a time="088" text="頭割り2" />
+  <a time="094" text="頭割り3" />
+  <a time="100" text="頭割り4" >
+    <!--インスタンスの1B基準を取得する-->
+    <expressions>
+      <set name="get_origin" value="true" />
+    </expressions>
+  </a>
+  <a time="109" text="拡散波動砲P5" sync="^15:[id8]:オメガ:[id4]:拡散波動砲P:[id8]:" sync-count="1" />
+  <a time="111" text="拡散波動砲P4" />
+  <a time="113" text="拡散波動砲P3" />
+  <a time="115" text="拡散波動砲P2" />
+  <a time="117" text="拡散波動砲P1" >
+    <expressions>
+      <set name="get_origin" value="false" />
+    </expressions>
+  </a>
+  <a time="122" text="時間切れ開始" sync="オメガは「アトミックレイ」の構え。" />
+  <a time="128" text="時間切れ" />
+  <a time="140" text="移行待ち" />
+  <t sync="オメガM:ワタシはオメガであり、アルファである" goto="P2" />
+
+<!--以下P1トリガ-->
+  <t no="1" sync="^1B:[id8]:[pc]:0000:[id4]:(?&lt;marker&gt;[0-9a-fA-F]{4}):" >
+    <expressions><!--1回目フラグ起動時のみ稼働。-->
+      <pre name="get_origin" value="true" />
+      <set name="marker_origin" value="0x${marker}" scope="CurrentZone" />
+    </expressions>
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ファーストターゲット" notice="塔踏み" notice-o="12" >
+    <v-notice text="1番" duration="16" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of セカンドターゲット" notice="塔踏み" notice-o="21" >
+    <v-notice text="2番" duration="25" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of サードターゲット" notice="塔踏み" notice-o="30" >
+    <v-notice text="3番" duration="34" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of フォースターゲット" notice="塔踏み" notice-o="39" >
+    <v-notice text="4番" duration="43" />
+  </t>
+</s>
+
+<s name="P2">
+  <a time="003" text="同期待ち" sync="オメガMは「ガードプログラム」の構え。" />
+  <a time="007" text="ガードプログラム" sync="オメガMの「ガードプログラム」" notice="ガードプログラム" />
+  <a time="015" text="ソーラレイ" sync="オメガMの「ソーラレイ」" notice="ソーラーレイ" />
+  <a time="031" text="連携プログラムPT" sync="オメガMの「連携プログラムPT」" notice="連携プログラムPT" />
+  <a time="042" text="コンボX" />
+  <a time="049" text="オプチカルレーザー" notice="オプチカルレーザー" />
+  <a time="056" text="ノックバック" sync="オメガFの「ディスチャージャー」" notice="ノックバック" />
+  <a time="060" text="ソードアクション" sync="オメガMの「ソードアクション」" sync-s="-3" sync-e="3" />
+  <a time="077" text="オプション" sync="オメガMの「シールドオプション」" />
+  <a time="083" text="連携プログラムLB" sync="オメガFの「連携プログラムLB」" notice="連携プログラムLB" />
+  <a time="088" text="線取り注意+弓確定" sync="オメガMは「サジタリウスアロー・オメガ」の構え。" notice="線取り注意" />
+  <a time="097" text="ブレードダンス" sync="オメガMの「ブレードダンス・オメガ」" />
+  <a time="099" text="アロー" sync="オメガMの「サジタリウスアロー・オメガ」" notice="アロー" />
+  <a time="111" text="盾/メテオ着弾" sync="オメガMの「パイルピッチ」" notice="パイルピッチ。" />
+  <a time="120" text="全体攻撃" sync="オメガFの「コスモメモリー」" notice="全体攻撃" />
+  <a time="148" text="時間切れ" sync="オメガFの「レーザーシャワー」" notice="時間切れ" />
+  <t sync="オメガ:判定……ヒトの姿や行動を模倣することは" goto="P3" />
+
+<!--以下P2トリガ-->
+  <t no="6" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 77, X4):" notice="頭割り対象" >
+    <v-notice
+      text="頭割り対象"
+      duration="8" />
+  </t>
+  <t no="7" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] - 323, X4):" notice="メテオ対象" >
+    <v-notice
+      text="メテオ対象"
+      duration="8" />
+  </t>
+  <!--グリッチの通知-->
+  <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" >
+    <v-notice text="グリッチ：ミドル" duration="30" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" >
+    <v-notice text="グリッチ：ファー" duration="30" />
+  </t>
+  <!--詠唱時間短すぎどうなってるねん-->
+  <t sync="^14:7B25" notice="足元" >
+    <v-notice text="M:足元" duration="4" />
+  </t>
+  <t sync="^14:7B26" notice="離れる" >
+    <v-notice text="M:離れる" duration="4" />
+  </t>
+
+  <t sync="^14:7B2A" notice="中央安置" >
+    <v-notice text="F:中央安置" duration="4" notice-o="0.2" />
+  </t>
+  <t sync="^14:7B2D" notice="左右安置" >
+    <v-notice text="F:左右安置" duration="4" notice-o="0.2" />
+  </t>
+
+  <!--スペスペで101を検知できないないので下記は動作しないので注意。-->
+  <t sync="101:[id8]:00020001:01" notice="北" >
+    <v-notice text="北に目" duration="5" />
+  </t>
+  <t sync="101:[id8]:00020001:02" notice="北東" >
+    <v-notice text="北東に目" duration="10" />
+  </t>
+  <t sync="101:[id8]:00020001:03" notice="東" >
+    <v-notice text="東に目" duration="10" />
+  </t>
+  <t sync="101:[id8]:00020001:04" notice="南東" >
+    <v-notice text="南東に目" duration="10" />
+  </t>
+  <t sync="101:[id8]:00020001:05" notice="南" >
+    <v-notice text="南に目" duration="10" />
+  </t>
+  <t sync="101:[id8]:00020001:06" notice="南西" >
+    <v-notice text="南西に目" duration="10" />
+  </t>
+  <t sync="101:[id8]:00020001:07" notice="西" >
+    <v-notice text="西に目" duration="10" />
+  </t>
+  <t sync="101:[id8]:00020001:08" notice="北西" >
+    <v-notice text="北西に目" duration="10" />
+  </t>
+
+  <t sync="^14:7B33:.*?(122.00,100.00,|100.00,122.00,)" notice="上下" >
+    <v-notice text="上下サジタリウス" duration="30" />
+  </t>
+  <t sync="^14:7B33:.*?(100.00,78.00,|78.00,100.00,)" notice="左右" >
+    <v-notice text="左右サジタリウス" duration="30" />
+  </t>
+  <t sync="^14:7B33:.*?(119.05,89.00,|111.00,80.95,|89.00,119.05,|80.95,111.00,)" notice="斜め" >
+    <v-notice text="／サジタリウス" duration="30" />
+  </t>
+  <t sync="^14:7B33:.*?(119.05,111.00,|111.00,119.05,|89.00,80.95,|80.95,89.00,)" notice="斜め" >
+    <v-notice text="＼サジタリウス" duration="30" />
+  </t>
+</s>
+
+<s name="P3">
+  <a time="004" text="デバフつくよ" notice="デバフ付与" notice-o="-1" />
+  <a time="006" text="セリフ3" sync="オメガ:最終解析……戦略戦術ロジックを大幅に変更" />
+  <a time="012" text="セリフ2" sync="オメガ:ガガガガガガガガガ" notice="内に入る" notice-o="0" />
+  <a time="014" notice="外に出る" notice-o="0" />
+  <a time="020" text="セリフ1" sync="オメガ:検証は成就した" />
+  <a time="021" text="コロッサスブロー" sync="レフトアームユニットの「コロッサスブロー」" notice="内に入る" notice-o="-1" />
+  <a time="024" text="着弾+ブロー" sync="オメガの「狙撃式波動砲」" />
+  <a time="030" sync="オメガ:ガガガガ……次元ハザマはえねるぎいヲ不要ですカ" >
+    <expressions>
+      <set name="P3-HW" value="true" />
+    </expressions>
+  </a>
+  <a time="036" text="ハロー・ワールド" sync="オメガの「ハロー・ワールド」" />
+
+    <!--以下無職用スタートタイムライン-->
+    <!--act1-->
+    <a time="047" text="無職用タイムライン" >
+      <expressions>
+        <set name="P3-HW" value="false" />
+      </expressions>
+    </a>
+    <a time="049" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="050" text="シェア受ける" notice="シェア受ける" >
+      <v-notice text="シェア受ける,エンバグ担当" duration="19" />
+    </a>
+    <a time="060" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="064" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="067" text="エンバグ処理2" />
+    <!--act2-->
+    <a time="070" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="071" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
+      <v-notice text="床踏み+シェア渡す" duration="19" />
+    </a>
+    <a time="080" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="085" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="088" text="担当外エンバグ2" />
+    <!--act3-->
+    <a time="091" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="092" text="サークル受ける" notice="サークル受ける" >
+      <v-notice text="サークル受ける,エンバグ担当" duration="19" />
+    </a>
+    <a time="102" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="106" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="109" text="エンバグ処理2" />
+    <!--act4-->
+    <a time="112" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="113" text="サークル１人受け" notice="サークル１人受け" >
+      <v-notice text="床踏み+サークルソロ受け" duration="19" />
+    </a>
+    <a time="123" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+    <a time="122" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="128" text="担当外エンバグ2" />
+    <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
+
+    <!--シェア向けタイムラインへ-->
+    <t sync="^1A:[id8]:[mex] gains the effect of クリティカルバグ：シェア from" sync-count="1">
+      <expressions>
+        <pre name="P3-HW" value="true" />
+      </expressions>
+      <load target="P3-S" truncate="true"/>
+    </t>
+    <!--サークル向けタイムラインへ-->
+    <t sync="^1A:[id8]:[mex] gains the effect of クリティカルバグ：サークル from" sync-count="1">
+      <expressions>
+        <pre name="P3-HW" value="true" />
+      </expressions>
+      <load target="P3-C" truncate="true"/>
+    </t>
+    <!--レイテント向けタイムラインへ-->
+    <t sync="^1A:[id8]:[mex] gains the effect of レイテントバグ from" sync-count="1">
+      <expressions>
+        <pre name="P3-HW" value="true" />
+      </expressions>
+      <load target="P3-L" truncate="true"/>
+    </t>
+
+  <t sync="^1A:[id8]:[mex] gains the effect of 狙撃式高出力波動砲" >
+    <v-notice text="頭割り対象" duration="19" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of 狙撃式波動砲" >
+    <v-notice text="単体対象" duration="19" />
+  </t>
+</s>
+  <!--シェア用タイムライン-->
+  <s name="P3-S">
+    <!--act1-->
+    <a time="012" text="シェア用タイムライン" >
+      <expressions>
+        <set name="P3-HW" value="false" />
+      </expressions>
+    </a>
+    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="015" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
+      <v-notice text="床踏み+シェア渡す" duration="19" />
+    </a>
+    <a time="025" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="029" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="032" text="担当外エンバグ2" />
+    <!--act2-->
+    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="036" text="サークル受ける" notice="サークル受ける" >
+      <v-notice text="サークル受ける,エンバグ担当" duration="19" />
+    </a>
+    <a time="045" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+    <a time="050" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="053" text="エンバグ処理2" />
+    <!--act3-->
+    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="057" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
+      <v-notice text="床踏み+サークル渡す" duration="19" />
+    </a>
+    <a time="067" text="サークル発動" sync="オメガの「クリティカルバグ：サークル」" />
+    <a time="071" text="担当外エンバグ" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="074" text="担当外エンバグ" />
+    <!--act4-->
+    <a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="078" text="シェア受ける" notice="シェア受ける" >
+      <v-notice text="床踏み+シェア受ける,エンバグ担当" duration="19" />
+    </a>
+    <a time="088" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="087" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="093" text="エンバグ処理" />
+    <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
+  </s>
+
+  <!--サークル用タイムライン-->
+  <s name="P3-C">
+    <!--act1-->
+    <a time="012" text="サークル用タイムライン" >
+      <expressions>
+        <set name="P3-HW" value="false" />
+      </expressions>
+    </a>
+    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="015" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
+      <v-notice text="床踏み+サークル渡す" duration="19" />
+    </a>
+    <a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+    <a time="029" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="032" text="担当外エンバグ2" />
+    <!--act2-->
+    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="036" text="シェア受ける" notice="シェア受ける" >
+      <v-notice text="シェア受ける,エンバグ担当" duration="19" />
+    </a>
+    <a time="045" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="050" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="053" text="エンバグ処理2" />
+    <!--act3-->
+    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="057" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
+      <v-notice text="床踏み+シェア渡す" duration="19" />
+    </a>
+    <a time="067" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="071" text="担当外エンバグ" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="074" text="担当外エンバグ" />
+    <!--act4-->
+    <a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="078" text="サークル避ける" notice="サークル避ける" >
+      <v-notice text="サークル避ける,エンバグ担当" duration="19" />
+    </a>
+    <a time="088" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+    <a time="087" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="093" text="エンバグ処理" />
+    <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
+  </s>
+
+  <s name="P3-L">
+    <!--レイテント用タイムライン-->
+    <!--act1-->
+    <a time="012" text="レイテント用タイムライン" >
+      <expressions>
+        <set name="P3-HW" value="false" />
+      </expressions>
+    </a>
+    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="015" text="サークル受ける" notice="サークル受ける" >
+      <v-notice text="サークル受ける,エンバグ担当" duration="19" />
+    </a>
+    <a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+    <a time="029" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="032" text="エンバグ処理2" />
+    <!--act2-->
+    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="036" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
+      <v-notice text="床踏み+サークル渡す" duration="19" />
+    </a>
+    <a time="045" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
+    <a time="050" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="053" text="担当外エンバグ2" />
+    <!--act3-->
+    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="057" text="シェア受ける" notice="シェア受ける" >
+      <v-notice text="シェア受ける,エンバグ担当" duration="19" />
+    </a>
+    <a time="067" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="071" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="074" text="エンバグ処理2" />
+    <!--act4-->
+    <a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="078" text="シェア渡す" notice="シェア渡す" >
+      <v-notice text="床踏み+シェア渡す" duration="19" />
+    </a>
+    <a time="088" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
+    <a time="087" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
+    <a time="093" text="担当外エンバグ2" />
+    <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
+  </s>
+
+
+  <s name="P3-2">
+    <!--検知式波動砲のフラグを初期化-->
+    <a time="009" text="クリティカルエラー" sync="オメガの「クリティカルエラー」" >
+      <expressions>
+        <set name="P3SW" value="false" />
+      </expressions>
+    </a>
+    <a time="021" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="デバフ確認" />
+    <a time="031" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲。" />
+    <a time="037" text="時間切れ開始" sync="オメガは「イオンエフラクス」の構え。" notice="時間切れ開始" />
+    <a time="046" text="時間切れ" sync="オメガの「イオンエフラクス」" />
+    <t sync="オメガ:ビープ……システム強制リブート…… これより、" goto="P4" />
+
+    <!--検知対象の場合、フラグをセット-->
+    <t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" >
+      <expressions>
+        <set name="P3SW" value="true" />
+      </expressions>
+    </t>
+
+    <!--検知対象なら行き先を通知する-->
+    <t sync="^14:7B6B" notice="検知対象、左側へ" >
+      <v-notice text="左側へ検知対象" duration="10" />
+        <expressions>
+          <pre name="P3SW" value="true" />
+        </expressions>
+    </t>
+    <t sync="^14:7B6C" notice="検知対象、右側へ" >
+      <v-notice text="右側へ検知対象" duration="10" />
+        <expressions>
+          <pre name="P3SW" value="true" />
+        </expressions>
+    </t>
+
+    <!--検知対象外ならボスの手の向きを通知-->
+    <t sync="^14:7B6B" notice="ボス右手検知" >
+      <v-notice text="ボス右手検知" duration="10" />
+        <expressions>
+          <pre name="P3SW" value="false" />
+        </expressions>
+    </t>
+    <t sync="^14:7B6C" notice="ボス左手検知" >
+      <v-notice text="ボス左手検知" duration="10" />
+        <expressions>
+          <pre name="P3SW" value="false" />
+        </expressions>
+    </t>
+  </s>
+
+  <s name="P4">
+    <a time="010" text="【構え】波動砲" sync="オメガは「波動砲」の構え。" />
+    <a time="015" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
+    <a time="021" text="【頭割】波動砲" sync="オメガの「波動砲」" notie="頭割り" sync-s="-3" sync-e="3" />
+    <a time="023" text="外に出る" notice="そとにでる" notice-o="0" />
+    <a time="025" text="内に入る" notice="うちはいる" notice-o="0" />
+    <a time="026" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
+    <a time="027" text="1床" />
+    <a time="029" text="2床" />
+    <a time="031" text="【頭割】波動砲" sync="オメガの「波動砲」" notice="頭割り" sync-s="-3" sync-e="3" />
+    <!--a time="035" sync="オメガ:ガガガ……ハードウェア、耐久限界を超越…… そうだとしても……強く……もっと強く……！" /-->
+    <a time="036" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
+    <a time="038" text="外に出る" notice="そとにでる" notice-o="0" />
+    <a time="041" text="3床" />
+    <a time="041" text="【頭割り】波動砲" sync="オメガの「波動砲」" notice="頭割り" sync-s="-3" sync-e="3" />
+    <a time="043" text="内入る" notice="うちはいる" notice-o="0" />
+    <a time="045" text="4床" />
+    <a time="047" text="5床" />
+    <!--a time="047" sync="オメガ:ガガガ……ハードウェア、崩壊開始を確認…… そうだとしても……前へ……さらに前へ……！" /-->
+    <a time="048" text="時間切れ開始" sync="オメガは「ブルースクリーン」の構え。" />
+    <a time="057" text="時間切れ" sync="オメガの「ブルースクリーン」" />
+    <t sync="オメガF:ガガ……ガガガガ……この力は、いったい" goto="P5" />
+  </s>
+
+  <s name="P5">
+    <a time="010" text="同期待ち" sync="オメガMは「ソーラレイ」の構え。" />
+    <a time="015" text="タンク強攻撃1" sync="オメガMの「ソーラレイ」" notice="タンク攻撃" sync-interval="5" />
+    <a time="018" text="タンク強攻撃2" sync="オメガMの「ソーラレイ」" />
+    <a time="032" text="【デルタ】" sync="オメガMの「コード：＊＊＊ミ＊【デルタ】」" notice="デュナミス、デルタ" />
+    <a time="042" text="プリントアウト" sync="オメガの「プリントアウト」" notice="プリントアウト。" />
+    <a time="045" text="アーカイブアーム" sync="オメガの「アーカイブアーム」" notice="アーカイブアーム。" />
+    <a time="055" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="検知確認" />
+    <a time="055" text="オプチカルレーザーF" />
+    <a time="060" text="シールドコンボS" />
+    <a time="065" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲。" />
+
+    <t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニアー" >
+      <v-notice text="ニア対象。検知誘導に注意" duration="60" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ファー" >
+      <v-notice text="ファー対象。頭割りに注意" duration="60" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" >
+      <v-notice text="ハロワ：ニア対象" duration="60" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" >
+      <v-notice text="ハロワ：ファー対象" duration="60" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" notice="検知対象" >
+      <v-notice text="検知対象" duration="20" />
+    </t>
+
+  </s>
+
+<!--プレステマーカーの検知。今後の為グローバルトリガへ移動-->
+  <t no="2" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 393, X4):" notice="まる" >
+    <v-notice text="○マーカー" duration="30" />
+  </t>
+  <t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 394, X4):" notice="さんかく" >
+    <v-notice text="△マーカー" duration="30" />
+  </t>
+  <t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 395, X4):" notice="しかく" >
+    <v-notice text="□マーカー" duration="30" />
+  </t>
+  <t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" >
+    <v-notice text="×マーカー" duration="30" />
+  </t>
+</timeline>
