@@ -120,12 +120,12 @@
       duration="8" />
   </t>
   <!--グリッチの通知-->
-  <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" >
+  <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" notice-o="7" >
     <v-notice text="グリッチ：ミドル"
      icon="Approach.png"
      duration="30" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" >
+  <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" notice-o="7" >
     <v-notice text="グリッチ：ファー"
      icon="DontApproach.png"
      duration="30" />
@@ -159,6 +159,7 @@
   <t no="2" sync="^14:7B25" notice="男の下" >
     <expressions>
       <pre name="pt_flag" value="F-outside" />
+      <set name="pt_flag" value="done" />
     </expressions>
     <v-notice
       text="男の下"
@@ -167,6 +168,7 @@
   <t no="2" sync="^14:7B25" notice="男の横" >
     <expressions>
       <pre name="pt_flag" value="F-inside" />
+      <set name="pt_flag" value="done" />
     </expressions>
     <v-notice
       text="男の横"
@@ -175,6 +177,7 @@
   <t no="2" sync="^14:7B26" notice="女の下" >
     <expressions>
       <pre name="pt_flag" value="F-outside" />
+      <set name="pt_flag" value="done" />
     </expressions>
     <v-notice
       text="女の下"
@@ -183,6 +186,7 @@
   <t no="2" sync="^14:7B26" notice="離れる" >
     <expressions>
       <pre name="pt_flag" value="F-inside" />
+      <set name="pt_flag" value="done" />
     </expressions>
     <v-notice
       text="離れる"
@@ -191,6 +195,7 @@
   <t no="2" sync="^14:7B2A" notice="男の下" >
     <expressions>
       <pre name="pt_flag" value="M-dynamo" />
+      <set name="pt_flag" value="done" />
     </expressions>
     <v-notice
       text="男の下"
@@ -199,6 +204,7 @@
   <t no="2" sync="^14:7B2A" notice="女の下" >
     <expressions>
       <pre name="pt_flag" value="M-chariot" />
+      <set name="pt_flag" value="done" />
     </expressions>
     <v-notice
       text="女の下"
@@ -207,6 +213,7 @@
   <t no="2" sync="^14:7B2D" notice="男の横" >
     <expressions>
       <pre name="pt_flag" value="M-dynamo" />
+      <set name="pt_flag" value="done" />
     </expressions>
     <v-notice
       text="男の横"
@@ -215,6 +222,7 @@
   <t no="2" sync="^14:7B2D" notice="離れる" >
     <expressions>
       <pre name="pt_flag" value="M-chariot" />
+      <set name="pt_flag" value="done" />
     </expressions>
     <v-notice
       text="離れる"
@@ -576,22 +584,22 @@
   </s>
 
 <!--プレステマーカーの検知。今後の為グローバルトリガへ移動-->
-  <t no="2" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 393, X4):" notice="まる" >
+  <t no="2" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 393, X4):" notice="まる" notice-o="5" >
     <v-notice text="○マーカー"
      icon="Circle.png"
      duration="30" />
   </t>
-  <t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 394, X4):" notice="さんかく" >
+  <t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 394, X4):" notice="さんかく" notice-o="5" >
     <v-notice text="△マーカー"
      icon="Dice3.png"
      duration="30" />
   </t>
-  <t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 395, X4):" notice="しかく" >
+  <t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 395, X4):" notice="しかく" notice-o="5" >
     <v-notice text="□マーカー"
      icon="Dice4.png"
      duration="30" />
   </t>
-  <t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" >
+  <t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" notice-o="5" >
     <v-notice text="×マーカー"
      icon="Cross.png"
      duration="30" />
