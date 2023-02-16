@@ -64,21 +64,33 @@
     </expressions>
   </t>
   <t sync="^1A:[id8]:[mex] gains the effect of ファーストターゲット" notice="塔踏み" notice-o="12" >
-    <v-notice text="1番" duration="16" />
+    <v-notice text="1番"
+     icon="1.png"
+     duration="43" />
   </t>
   <t sync="^1A:[id8]:[mex] gains the effect of セカンドターゲット" notice="塔踏み" notice-o="21" >
-    <v-notice text="2番" duration="25" />
+    <v-notice text="2番"
+     icon="2.png"
+     duration="43" />
   </t>
   <t sync="^1A:[id8]:[mex] gains the effect of サードターゲット" notice="塔踏み" notice-o="30" >
-    <v-notice text="3番" duration="34" />
+    <v-notice text="3番"
+     icon="Dice3.png"
+     duration="43" />
   </t>
   <t sync="^1A:[id8]:[mex] gains the effect of フォースターゲット" notice="塔踏み" notice-o="39" >
-    <v-notice text="4番" duration="43" />
+    <v-notice text="4番"
+     icon="Dice4.png"
+     duration="43" />
   </t>
 </s>
 
 <s name="P2">
-  <a time="003" text="同期待ち" sync="オメガMは「ガードプログラム」の構え。" />
+  <a time="003" text="同期待ち" sync="オメガMは「ガードプログラム」の構え。">
+    <expressions>
+      <set name="pt_flag" value="none" />
+    </expressions>
+  </a>
   <a time="007" text="ガードプログラム" sync="オメガMの「ガードプログラム」" notice="ガードプログラム" />
   <a time="015" text="ソーラレイ" sync="オメガMの「ソーラレイ」" notice="ソーラーレイ" />
   <a time="031" text="連携プログラムPT" sync="オメガMの「連携プログラムPT」" notice="連携プログラムPT" />
@@ -109,24 +121,104 @@
   </t>
   <!--グリッチの通知-->
   <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" >
-    <v-notice text="グリッチ：ミドル" duration="30" />
+    <v-notice text="グリッチ：ミドル"
+     icon="Approach.png"
+     duration="30" />
   </t>
   <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" >
-    <v-notice text="グリッチ：ファー" duration="30" />
+    <v-notice text="グリッチ：ファー"
+     icon="DontApproach.png"
+     duration="30" />
   </t>
   <!--詠唱時間短すぎどうなってるねん-->
-  <t sync="^14:7B25" notice="足元" >
-    <v-notice text="M:足元" duration="4" />
+  <t no="1" sync="^14:7B25">
+    <expressions>
+      <pre name="pt_flag" value="none" />
+      <set name="pt_flag" value="M-dynamo" />
+    </expressions>
   </t>
-  <t sync="^14:7B26" notice="離れる" >
-    <v-notice text="M:離れる" duration="4" />
+  <t no="1" sync="^14:7B26">
+    <expressions>
+      <pre name="pt_flag" value="none" />
+      <set name="pt_flag" value="M-chariot" />
+    </expressions>
+  </t>
+  <t no="1" sync="^14:7B2A">
+    <expressions>
+      <pre name="pt_flag" value="none" />
+      <set name="pt_flag" value="F-outside" />
+    </expressions>
+  </t>
+  <t no="1" sync="^14:7B2D">
+    <expressions>
+      <pre name="pt_flag" value="none" />
+      <set name="pt_flag" value="F-inside" />
+    </expressions>
   </t>
 
-  <t sync="^14:7B2A" notice="中央安置" >
-    <v-notice text="F:中央安置" duration="4" notice-o="0.2" />
+  <t no="2" sync="^14:7B25" notice="男の下" >
+    <expressions>
+      <pre name="pt_flag" value="F-outside" />
+    </expressions>
+    <v-notice
+      text="男の下"
+      duration="10" />
   </t>
-  <t sync="^14:7B2D" notice="左右安置" >
-    <v-notice text="F:左右安置" duration="4" notice-o="0.2" />
+  <t no="2" sync="^14:7B25" notice="男の横" >
+    <expressions>
+      <pre name="pt_flag" value="F-inside" />
+    </expressions>
+    <v-notice
+      text="男の横"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:7B26" notice="女の下" >
+    <expressions>
+      <pre name="pt_flag" value="F-outside" />
+    </expressions>
+    <v-notice
+      text="女の下"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:7B26" notice="離れる" >
+    <expressions>
+      <pre name="pt_flag" value="F-inside" />
+    </expressions>
+    <v-notice
+      text="離れる"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:7B2A" notice="男の下" >
+    <expressions>
+      <pre name="pt_flag" value="M-dynamo" />
+    </expressions>
+    <v-notice
+      text="男の下"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:7B2A" notice="女の下" >
+    <expressions>
+      <pre name="pt_flag" value="M-chariot" />
+    </expressions>
+    <v-notice
+      text="女の下"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:7B2D" notice="男の横" >
+    <expressions>
+      <pre name="pt_flag" value="M-dynamo" />
+    </expressions>
+    <v-notice
+      text="男の横"
+      duration="10" />
+  </t>
+  <t no="2" sync="^14:7B2D" notice="離れる" >
+    <expressions>
+      <pre name="pt_flag" value="M-chariot" />
+    </expressions>
+    <v-notice
+      text="離れる"
+      duration="10" />
   </t>
 
   <!--スペスペで101を検知できないないので下記は動作しないので注意。-->
@@ -485,15 +577,23 @@
 
 <!--プレステマーカーの検知。今後の為グローバルトリガへ移動-->
   <t no="2" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 393, X4):" notice="まる" >
-    <v-notice text="○マーカー" duration="30" />
+    <v-notice text="○マーカー"
+     icon="Circle.png"
+     duration="30" />
   </t>
   <t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 394, X4):" notice="さんかく" >
-    <v-notice text="△マーカー" duration="30" />
+    <v-notice text="△マーカー"
+     icon="Dice3.png"
+     duration="30" />
   </t>
   <t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 395, X4):" notice="しかく" >
-    <v-notice text="□マーカー" duration="30" />
+    <v-notice text="□マーカー"
+     icon="Dice4.png"
+     duration="30" />
   </t>
   <t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" >
-    <v-notice text="×マーカー" duration="30" />
+    <v-notice text="×マーカー"
+     icon="Cross.png"
+     duration="30" />
   </t>
 </timeline>
