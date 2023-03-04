@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <timeline>
   <name>絶オメガ</name>
-  <rev>TEST11</rev>
+  <rev>TEST12</rev>
   <description>
     20220203:TEST6 ブルスクまで。エラー情報を収集しています。0%完了
     20220204:TEST7 動作調整
     202202050133:TEST8 波動砲連打部分の修正 8.1記述ミス修正
     202202090029:TEST9EX 検知式波動砲の試作
     202202120049:TEST11 P5入りまで。検知に大幅トリガ追加
+    202202130113:TEST12 P5デルタを作成。動作未チェック
     注意:作成途中の為、予期しない動作をすることがあります。
     AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
   </description>
@@ -20,6 +21,73 @@
 
   <default target-element="Activity" target-attr="notice-o" value="-3" />
 
+    <!-- 優先の定義 -->
+    <!--ナ:PLD,戦:WAR,暗:DRK,ガ:GNB,白:WHM,学:SCH,占:AST,賢:SGE,モ:MNK,竜:DRG,忍:NIN,侍:SAM,リ:RPR,詩:BRD,機:MCH,踊:DNC,召:SMN,赤:RDM,黒:BLM,　を参考に各PTで書き直してください-->
+
+    <!-- 1P線・塔・パンクラ -->
+    <!-- 12時時計　＞　"[SCH]","[SMN]","[MCH]","[NIN]","[DRG]","[GNB]","[DRK]","[AST]"　＞　11時半時計　で記載　 -->
+    @{
+    var line_order = new[]
+    {
+    new {job="[WHM]", jp="白", eng="WHM"},
+    new {job="[DRK]", jp="暗", eng="DRK"},
+    new {job="[GNB]", jp="ガ", eng="GNB"},
+    new {job="[MNK]", jp="モ", eng="MNK"},
+    new {job="[DRG]", jp="竜", eng="DRG"},
+    new {job="[DNC]", jp="踊", eng="DNC"},
+    new {job="[SMN]", jp="召", eng="SMN"},
+    new {job="[SGE]", jp="賢", eng="SGE"},
+    };
+    }
+
+    <!-- 2Pサイコロ -->
+    <!-- 左　＞　"[DRK]","[AST]","[DRG]","[MCH]","[SMN]","[NIN]","[SCH]","[GNB]"　＞　右　で記載　 -->
+    @{
+    var daice_order = new[]
+    {
+    new {job="[DRK]", jp="暗", eng="DRK"},
+    new {job="[WHM]", jp="白", eng="WHM"},
+    new {job="[MNK]", jp="モ", eng="MNK"},
+    new {job="[DNC]", jp="踊", eng="DNC"},
+    new {job="[SMN]", jp="召", eng="SMN"},
+    new {job="[DRG]", jp="竜", eng="DRG"},
+    new {job="[SGE]", jp="賢", eng="SGE"},
+    new {job="[GNB]", jp="ガ", eng="GNB"},
+    };
+    }
+
+    <!-- P3狙撃式波動砲 -->
+    <!-- 右　＞　"[SCH]","[SMN]","[MCH]","[NIN]","[DRG]","[GNB]","[DRK]","[AST]"　＞　左　　で記載　 -->
+    @{
+    var sogeki_order = new[]
+    {
+    new {job="[WHM]", jp="白", eng="WHM"},
+    new {job="[SMN]", jp="召", eng="SMN"},
+    new {job="[DNC]", jp="踊", eng="DNC"},
+    new {job="[MNK]", jp="モ", eng="MNK"},
+    new {job="[DRG]", jp="竜", eng="DRG"},
+    new {job="[GNB]", jp="ガ", eng="GNB"},
+    new {job="[DRK]", jp="暗", eng="DRK"},
+    new {job="[SGE]", jp="賢", eng="SGE"},
+    };
+    }
+
+    <!-- P4検知式波動砲 -->
+    <!-- A　＞　"[DRK]","[GNB]","[NIN]","[DRG]","[MCH]","[SMN]","[AST]","[SCH]"　＞　C　　で記載　 -->
+    @{
+    var kenchi_order = new[]
+    {
+    new {job="[DRK]", jp="暗", eng="DRK"},
+    new {job="[GNB]", jp="ガ", eng="GNB"},
+    new {job="[MNK]", jp="モ", eng="MNK"},
+    new {job="[DRG]", jp="竜", eng="DRG"},
+    new {job="[DNC]", jp="踊", eng="DNC"},
+    new {job="[SMN]", jp="召", eng="SMN"},
+    new {job="[WHM]", jp="白", eng="WHM"},
+    new {job="[SGE]", jp="賢", eng="SGE"},
+    };
+    }
+
   <s name="P1">
   <a time="001" text="セリフ" sync="オメガ:アナタはアルファであり、ワタシはオメガである。" />
   <a time="015" text="サークルプログラム" sync="オメガの「サークルプログラム」" notice="サークル開始" />
@@ -31,58 +99,94 @@
   <a time="048" text="ブラスター3" sync="オメガの「ブラスター」$" sync-s="-5" sync-e="3" />
   <a time="049" text="2番線取り" notice="2番線取り" notice-o="-1" />
   <a time="057" text="ブラスター4" sync="オメガの「ブラスター」$" sync-s="-5" sync-e="3" />
-  <a time="064" text="【詠唱】パンクラ" sync="オメガは「パントクラトル」の構え。" notice="パントクラトル開始" sync-o="20" />
-  <a time="069" text="パントクラトル" sync="オメガの「パントクラトル」" notice="デバフを確認" />
-  <a time="082" text="頭割り1" />
-  <a time="088" text="頭割り2" />
-  <a time="094" text="頭割り3" />
-  <a time="100" text="頭割り4" >
-    <!--インスタンスの1B基準を取得する-->
-    <expressions>
-      <set name="get_origin" value="true" />
-    </expressions>
-  </a>
-  <a time="109" text="拡散波動砲P5" sync="^15:[id8]:オメガ:[id4]:拡散波動砲P:[id8]:" sync-count="1" />
-  <a time="111" text="拡散波動砲P4" />
-  <a time="113" text="拡散波動砲P3" />
-  <a time="115" text="拡散波動砲P2" />
-  <a time="117" text="拡散波動砲P1" >
-    <expressions>
-      <set name="get_origin" value="false" />
-    </expressions>
-  </a>
-  <a time="122" text="時間切れ開始" sync="オメガは「アトミックレイ」の構え。" />
-  <a time="128" text="時間切れ" />
-  <a time="140" text="移行待ち" />
-  <t sync="オメガM:ワタシはオメガであり、アルファである" goto="P2" />
+  <t sync="オメガは「パントクラトル」の構え。" goto="P1_2" />
 
-<!--以下P1トリガ-->
-  <t no="1" sync="^1B:[id8]:[pc]:0000:[id4]:(?&lt;marker&gt;[0-9a-fA-F]{4}):" >
-    <expressions><!--1回目フラグ起動時のみ稼働。-->
-      <pre name="get_origin" value="true" />
-      <set name="marker_origin" value="0x${marker}" scope="CurrentZone" />
-    </expressions>
-  </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ファーストターゲット" notice="塔踏み" notice-o="12" >
+  <!--以下P1トリガ-->
+  <t sync="[mex]に「ファーストターゲット」の効果。" notice="次、塔に入る" notice-o="1" >
     <v-notice text="1番"
      icon="1.png"
      duration="43" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of セカンドターゲット" notice="塔踏み" notice-o="21" >
+  <t sync="[mex]に「ファーストターゲット」の効果。" notice="次、線とる" notice-o="18" notice-sync="true" />
+  <t sync="[mex]に「セカンドターゲット」の効果。" notice="次、塔に入る" notice-o="9" >
     <v-notice text="2番"
      icon="2.png"
      duration="43" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of サードターゲット" notice="塔踏み" notice-o="30" >
+  <t sync="[mex]に「セカンドターゲット」の効果。" notice="次、線とる" notice-o="27" notice-sync="true" />
+  <t sync="[mex]に「サードターゲット」の効果。" notice="次、塔に入る" notice-o="18" >
     <v-notice text="3番"
      icon="Dice3.png"
      duration="43" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of フォースターゲット" notice="塔踏み" notice-o="39" >
+  <t sync="[mex]に「サードターゲット」の効果。" notice="線とる" notice-o="0" notice-sync="true" />
+  <t sync="[mex]に「フォースターゲット」の効果。" notice="次、塔に入る" notice-o="27" >
     <v-notice text="4番"
      icon="Dice4.png"
      duration="43" />
   </t>
+  <t sync="[mex]に「フォースターゲット」の効果。" notice="次、線とる" notice-o="9" notice-sync="true" />
+</s>
+
+<!--オメガパントクラトル-->
+<s name="P1_2">
+    <a time="5" text="パントクラトル" sync="00:282B::オメガの「パントクラトル」" notice="パントクラトル。サイコロ確認" />
+    <a time="11" text="火炎放射" sync="00:302B::オメガの「火炎放射」" notice="1番移動" notice-o="-1" />
+    <a time="17" text="高出力波動砲P" sync="00:302B::オメガの「高出力波動砲P」" notice="2番移動" notice-o="0" />
+    <a time="23" text="高出力波動砲P" notice="3番移動" notice-o="0" />
+    <a time="29" text="高出力波動砲P" notice="4番移動" notice-o="0" />
+    <a time="35" text="高出力波動砲P" notice="定位置に散開" notice-o="-2" >
+      <!--インスタンスの1B基準を取得する-->
+      <expressions>
+        <set name="get_origin" value="true" />
+      </expressions>
+    </a>
+    <a time="44" text="波動砲P" sync="00:302B::オメガの「波動砲P」" notice="波動砲P。マーカー確認、タンク離れる。" />
+    <a time="44" text="拡散波動砲P" />
+    <a time="46" text="拡散波動砲P" />
+    <a time="48" text="拡散波動砲P" />
+    <a time="50" text="拡散波動砲P" />
+    <a time="52" text="拡散波動砲P" />
+    <a time="53" text="波動砲P" notice="波動砲P。マーカー確認" >
+      <expressions>
+        <set name="get_origin" value="false" />
+      </expressions>
+    </a>
+    <a time="65" text="アトミックレイ" sync="00:282B::オメガの「アトミックレイ」" notice="アトミックレイ。時間切れ" />
+    <t sync="オメガM:ワタシはオメガであり、アルファである" goto="P2" />
+
+    <!-- トリガー -->
+    <t no="1" sync="^1B:[id8]:[pc]:0000:[id4]:(?&lt;marker&gt;[0-9a-fA-F]{4}):" >
+      <expressions><!--1回目フラグ起動時のみ稼働。-->
+        <pre name="get_origin" value="true" />
+        <set name="marker_origin" value="0x${marker}" scope="CurrentZone" />
+      </expressions>
+    </t>
+
+    <t sync="[mex]に「ファーストターゲット」の効果。" notice="1番、すぐに移動">
+      <v-notice text="1番"
+        icon="1.png"
+        duration="43" />
+    </t>
+    <t sync="[mex]に「セカンドターゲット」の効果。" notice="2番">
+      <v-notice text="2番"
+      icon="2.png"
+      duration="43" />
+    </t>
+    <t sync="[mex]に「セカンドターゲット」の効果。" notice="次、移動" notice-o="10" />
+    <t sync="[mex]に「サードターゲット」の効果。" notice="3番">
+      <v-notice text="3番"
+      icon="Dice3.png"
+      duration="43" />
+    </t>
+    <t sync="[mex]に「サードターゲット」の効果。" notice="次、移動" notice-o="16" />
+    <t sync="[mex]に「フォースターゲット」の効果。" notice="4番">
+      <v-notice text="4番"
+      icon="Dice4.png"
+      duration="43" />
+    </t>
+    <t sync="[mex]に「フォースターゲット」の効果。" notice="次、移動" notice-o="22" />
+
 </s>
 
 <s name="P2">
@@ -120,139 +224,75 @@
       duration="8" />
   </t>
   <!--グリッチの通知-->
-  <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" notice-o="7" >
+  <t sync="[mex]に「グリッチ：ミドル」の効果。" notice="ミドル" notice-o="7" notice-sync="true" >
     <v-notice text="グリッチ：ミドル"
      icon="Approach.png"
      duration="30" />
+    <expressions>
+        <set name="grich" value="middle" />
+        <set name="grich_call" value="90度" />
+        <set name="grich_call_position" value="ミドル、近寄る" />
+    </expressions>
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" notice-o="7" >
+  <t sync="[mex]に「グリッチ：ファー」の効果。" notice="ファー" notice-o="7" notice-sync="true" >
     <v-notice text="グリッチ：ファー"
      icon="DontApproach.png"
      duration="30" />
-  </t>
-  <!--詠唱時間短すぎどうなってるねん-->
-  <t no="1" sync="^14:7B25">
     <expressions>
-      <pre name="pt_flag" value="none" />
-      <set name="pt_flag" value="M-dynamo" />
-    </expressions>
-  </t>
-  <t no="1" sync="^14:7B26">
-    <expressions>
-      <pre name="pt_flag" value="none" />
-      <set name="pt_flag" value="M-chariot" />
-    </expressions>
-  </t>
-  <t no="1" sync="^14:7B2A">
-    <expressions>
-      <pre name="pt_flag" value="none" />
-      <set name="pt_flag" value="F-outside" />
-    </expressions>
-  </t>
-  <t no="1" sync="^14:7B2D">
-    <expressions>
-      <pre name="pt_flag" value="none" />
-      <set name="pt_flag" value="F-inside" />
+        <set name="grich" value="far" />
+        <set name="grich_call" value="横並び" />
+        <set name="grich_call_position" value="ファー、離れる" />
     </expressions>
   </t>
 
-  <t no="2" sync="^14:7B25" notice="男の下" >
-    <expressions>
-      <pre name="pt_flag" value="F-outside" />
-      <set name="pt_flag" value="done" />
-    </expressions>
-    <v-notice
-      text="男の下"
-      duration="10" />
+  <!-- 目 -->
+  <t sync-count="1" notice="Aに目" notice-o="3">
+      <v-notice order="3" text="目：AAA" duration="60" duration-visible="false" icon="A.png" />
+      <p-sync interval="30">
+          <combatant name="オプチカルユニット" X="23.50" Y="22.60" Z="0.00" tolerance="0.01" />
+      </p-sync>
   </t>
-  <t no="2" sync="^14:7B25" notice="男の横" >
-    <expressions>
-      <pre name="pt_flag" value="F-inside" />
-      <set name="pt_flag" value="done" />
-    </expressions>
-    <v-notice
-      text="男の横"
-      duration="10" />
+  <t sync-count="1" notice="Bに目" notice-o="3">
+      <v-notice order="3" text="目：BBB" duration="60" duration-visible="false" icon="B.png" />
+      <p-sync interval="30">
+          <combatant name="オプチカルユニット" X="24.40" Y="23.50" Z="0.00" tolerance="0.01" />
+      </p-sync>
   </t>
-  <t no="2" sync="^14:7B26" notice="女の下" >
-    <expressions>
-      <pre name="pt_flag" value="F-outside" />
-      <set name="pt_flag" value="done" />
-    </expressions>
-    <v-notice
-      text="女の下"
-      duration="10" />
+  <t sync-count="1" notice="Cに目" notice-o="3">
+      <v-notice order="3" text="目：CCC" duration="60" duration-visible="false" icon="C.png" />
+      <p-sync interval="30">
+          <combatant name="オプチカルユニット" X="23.500" Y="24.40" Z="0.00" tolerance="0.01" />
+      </p-sync>
   </t>
-  <t no="2" sync="^14:7B26" notice="離れる" >
-    <expressions>
-      <pre name="pt_flag" value="F-inside" />
-      <set name="pt_flag" value="done" />
-    </expressions>
-    <v-notice
-      text="離れる"
-      duration="10" />
+  <t sync-count="1" notice="Dに目" notice-o="3">
+      <v-notice order="3" text="目：DDD" duration="60" duration-visible="false" icon="D.png" />
+      <p-sync interval="30">
+          <combatant name="オプチカルユニット" X="22.60" Y="23.50" Z="0.00" tolerance="0.01" />
+      </p-sync>
   </t>
-  <t no="2" sync="^14:7B2A" notice="男の下" >
-    <expressions>
-      <pre name="pt_flag" value="M-dynamo" />
-      <set name="pt_flag" value="done" />
-    </expressions>
-    <v-notice
-      text="男の下"
-      duration="10" />
+  <t sync-count="1" notice="1に目" notice-o="3">
+      <v-notice order="3" text="目：111" duration="60" duration-visible="false" icon="1.png" />
+      <p-sync interval="30">
+          <combatant name="オプチカルユニット" X="24.14" Y="22.86" Z="0.00" tolerance="0.01" />
+      </p-sync>
   </t>
-  <t no="2" sync="^14:7B2A" notice="女の下" >
-    <expressions>
-      <pre name="pt_flag" value="M-chariot" />
-      <set name="pt_flag" value="done" />
-    </expressions>
-    <v-notice
-      text="女の下"
-      duration="10" />
+  <t sync-count="1" notice="2に目" notice-o="3">
+      <v-notice order="3" text="目：222" duration="60" duration-visible="false" icon="2.png" />
+      <p-sync interval="30">
+          <combatant name="オプチカルユニット" X="24.14" Y="24.14" Z="0.00" tolerance="0.01" />
+      </p-sync>
   </t>
-  <t no="2" sync="^14:7B2D" notice="男の横" >
-    <expressions>
-      <pre name="pt_flag" value="M-dynamo" />
-      <set name="pt_flag" value="done" />
-    </expressions>
-    <v-notice
-      text="男の横"
-      duration="10" />
+  <t sync-count="1" notice="3に目" notice-o="3">
+      <v-notice order="3" text="目：333" duration="60" duration-visible="false" icon="Dice3.png" />
+      <p-sync interval="30">
+          <combatant name="オプチカルユニット" X="22.86" Y="24.14" Z="0.00" tolerance="0.01" />
+      </p-sync>
   </t>
-  <t no="2" sync="^14:7B2D" notice="離れる" >
-    <expressions>
-      <pre name="pt_flag" value="M-chariot" />
-      <set name="pt_flag" value="done" />
-    </expressions>
-    <v-notice
-      text="離れる"
-      duration="10" />
-  </t>
-
-  <!--スペスペで101を検知できないないので下記は動作しないので注意。-->
-  <t sync="101:[id8]:00020001:01" notice="北" >
-    <v-notice text="北に目" duration="5" />
-  </t>
-  <t sync="101:[id8]:00020001:02" notice="北東" >
-    <v-notice text="北東に目" duration="10" />
-  </t>
-  <t sync="101:[id8]:00020001:03" notice="東" >
-    <v-notice text="東に目" duration="10" />
-  </t>
-  <t sync="101:[id8]:00020001:04" notice="南東" >
-    <v-notice text="南東に目" duration="10" />
-  </t>
-  <t sync="101:[id8]:00020001:05" notice="南" >
-    <v-notice text="南に目" duration="10" />
-  </t>
-  <t sync="101:[id8]:00020001:06" notice="南西" >
-    <v-notice text="南西に目" duration="10" />
-  </t>
-  <t sync="101:[id8]:00020001:07" notice="西" >
-    <v-notice text="西に目" duration="10" />
-  </t>
-  <t sync="101:[id8]:00020001:08" notice="北西" >
-    <v-notice text="北西に目" duration="10" />
+  <t sync-count="1" notice="4に目" notice-o="3">
+      <v-notice order="3" text="目：444" duration="60" duration-visible="false" icon="Dice4.png" />
+      <p-sync interval="30">
+          <combatant name="オプチカルユニット" X="22.86" Y="22.86" Z="0.00" tolerance="0.01" />
+      </p-sync>
   </t>
 
   <t sync="^14:7B33:.*?(122.00,100.00,|100.00,122.00,)" notice="上下" >
@@ -270,7 +310,7 @@
 </s>
 
 <s name="P3">
-  <a time="004" text="デバフつくよ" notice="デバフ付与" notice-o="-1" />
+  <a time="004" text="デバフつくよ" notice="" notice-o="-1" />
   <a time="006" text="セリフ3" sync="オメガ:最終解析……戦略戦術ロジックを大幅に変更" />
   <a time="012" text="セリフ2" sync="オメガ:ガガガガガガガガガ" notice="内に入る" notice-o="0" />
   <a time="014" notice="外に出る" notice-o="0" />
@@ -292,7 +332,7 @@
       </expressions>
     </a>
     <a time="049" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="050" text="シェア受ける" notice="シェア受ける" >
+    <a time="050" text="シェア受ける" notice="" >
       <v-notice text="シェア受ける,エンバグ担当" duration="19" />
     </a>
     <a time="060" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
@@ -362,7 +402,7 @@
       </expressions>
     </a>
     <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="015" text="床踏み+シェア渡す" notice="床踏みとシェア渡す" >
+    <a time="015" text="床踏み+シェア渡す" notice="" >
       <v-notice text="床踏み+シェア渡す" duration="19" />
     </a>
     <a time="025" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
@@ -404,7 +444,7 @@
       </expressions>
     </a>
     <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="015" text="床踏み+サークル渡す" notice="床踏みとサークル渡す" >
+    <a time="015" text="床踏み+サークル渡す" notice="" >
       <v-notice text="床踏み+サークル渡す" duration="19" />
     </a>
     <a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
@@ -446,7 +486,7 @@
       </expressions>
     </a>
     <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="015" text="サークル受ける" notice="サークル受ける" >
+    <a time="015" text="サークル受ける" notice="" >
       <v-notice text="サークル受ける,エンバグ担当" duration="19" />
     </a>
     <a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
@@ -550,36 +590,50 @@
     <!--a time="047" sync="オメガ:ガガガ……ハードウェア、崩壊開始を確認…… そうだとしても……前へ……さらに前へ……！" /-->
     <a time="048" text="時間切れ開始" sync="オメガは「ブルースクリーン」の構え。" />
     <a time="057" text="時間切れ" sync="オメガの「ブルースクリーン」" />
-    <t sync="オメガF:ガガ……ガガガガ……この力は、いったい" goto="P5" />
+    <t sync="オメガF:ガガ……ガガガガ……この力は、いったい" goto="P5D" />
   </s>
 
-  <s name="P5">
+  <s name="P5D">
     <a time="010" text="同期待ち" sync="オメガMは「ソーラレイ」の構え。" />
-    <a time="015" text="タンク強攻撃1" sync="オメガMの「ソーラレイ」" notice="タンク攻撃" sync-interval="5" />
-    <a time="018" text="タンク強攻撃2" sync="オメガMの「ソーラレイ」" />
+    <a time="015" text="タンク強攻撃1" notice="タンク攻撃" />
+    <a time="018" text="タンク強攻撃2" />
     <a time="032" text="【デルタ】" sync="オメガMの「コード：＊＊＊ミ＊【デルタ】」" notice="デュナミス、デルタ" />
     <a time="042" text="プリントアウト" sync="オメガの「プリントアウト」" notice="プリントアウト。" />
     <a time="045" text="アーカイブアーム" sync="オメガの「アーカイブアーム」" notice="アーカイブアーム。" />
+    <a time="052" text="エンバグ開始" />
     <a time="055" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="検知確認" />
     <a time="055" text="オプチカルレーザーF" />
-    <a time="060" text="シールドコンボS" />
-    <a time="065" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲。" />
+    <a time="061" text="シールドコンボS" sync="オメガMの「シールドコンボS」" />
+    <a time="063" text="腕パルス開始" sync="レフトアームユニットの「ハイパーパルス」" sync-count="1" />
+    <a time="065" text="検知式+頭割り" sync="オメガの「検知式波動砲」" notice="検知式波動砲" />
+    <!--a time="066.0" text="パイルピッチ" sync="オメガMの「パイルピッチ」" notice="次は、パイルピッチ。" /-->
+    <a time="068" text="【構え】旋回式波動砲" sync="オメガは「旋回式波動砲」の構え。" />
+    <a time="078" text="旋回式波動砲" sync="オメガの「旋回式波動砲」" notice="旋回式波動砲。" />
+    <a time="092" sync="オメガMは「ソーラレイ」の構え。" />
+    <a time="097" text="ソーラレイ" notice="タンク攻撃" />
+    <a time="101" text="ソーラレイ" />
+    <t sync="オメガM:この力の増幅は、リミッターカットでは説明不能" goto="P5S" />
 
-    <t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニアー" >
-      <v-notice text="ニア対象。検知誘導に注意" duration="60" />
+    <t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニア" >
+      <v-notice text="ニア対象。検知誘導" duration="45" />
     </t>
     <t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ファー" >
-      <v-notice text="ファー対象。頭割りに注意" duration="60" />
+      <v-notice text="ファー対象。シールド誘導+頭割り" duration="45" />
     </t>
     <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" >
-      <v-notice text="ハロワ：ニア対象" duration="60" />
+      <v-notice text="ハロワ：ニア対象" duration="45" />
     </t>
     <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" >
-      <v-notice text="ハロワ：ファー対象" duration="60" />
+      <v-notice text="ハロワ：ファー対象" duration="45" />
     </t>
     <t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" notice="検知対象" >
-      <v-notice text="検知対象" duration="20" />
+      <v-notice text="検知対象　頭割り注意" duration="11" />
     </t>
+  </s>
+
+  <s name="P5S">
+    <a time="001" text="同期待ち" sync="オメガMは「コード：＊＊＊ミ＊【シグマ】」の構え。" />
+    <a time="006" text="【シグマ】" sync="オメガMの「コード：＊＊＊ミ＊【シグマ】」" notice="デュナミス、シグマ" />
 
   </s>
 
@@ -588,20 +642,32 @@
     <v-notice text="○マーカー"
      icon="Circle.png"
      duration="30" />
+    <expressions>
+        <set name="daice" value="1" />
+    </expressions>
   </t>
   <t no="3" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 394, X4):" notice="さんかく" notice-o="5" >
     <v-notice text="△マーカー"
      icon="Dice3.png"
      duration="30" />
+    <expressions>
+        <set name="daice" value="3" />
+    </expressions>
   </t>
   <t no="4" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 395, X4):" notice="しかく" notice-o="5" >
     <v-notice text="□マーカー"
      icon="Dice4.png"
      duration="30" />
+    <expressions>
+        <set name="daice" value="4" />
+    </expressions>
   </t>
   <t no="5" sync="^1B:[id8]:[mex]:0000:[id4]:EVAL(VAR['marker_origin'] + 396, X4):" notice="ばつ" notice-o="5" >
     <v-notice text="×マーカー"
      icon="Cross.png"
      duration="30" />
+    <expressions>
+        <set name="daice" value="2" />
+    </expressions>
   </t>
 </timeline>
