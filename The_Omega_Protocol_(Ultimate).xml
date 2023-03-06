@@ -541,13 +541,13 @@
     </t>
 
     <!--検知対象なら行き先を通知する-->
-    <t sync="^14:7B6B" notice="検知対象、左側へ" >
+    <t sync="^14:7B6B" notice="" >
       <v-notice text="左側へ検知対象" duration="10" />
         <expressions>
           <pre name="P3SW" value="true" />
         </expressions>
     </t>
-    <t sync="^14:7B6C" notice="検知対象、右側へ" >
+    <t sync="^14:7B6C" notice="" >
       <v-notice text="右側へ検知対象" duration="10" />
         <expressions>
           <pre name="P3SW" value="true" />
@@ -555,13 +555,13 @@
     </t>
 
     <!--検知対象外ならボスの手の向きを通知-->
-    <t sync="^14:7B6B" notice="ボス右手検知" >
+    <t sync="^14:7B6B" notice="" >
       <v-notice text="ボス右手検知" duration="10" />
         <expressions>
           <pre name="P3SW" value="false" />
         </expressions>
     </t>
-    <t sync="^14:7B6C" notice="ボス左手検知" >
+    <t sync="^14:7B6C" notice="" >
       <v-notice text="ボス左手検知" duration="10" />
         <expressions>
           <pre name="P3SW" value="false" />
