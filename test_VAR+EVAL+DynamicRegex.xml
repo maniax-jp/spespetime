@@ -25,35 +25,7 @@
         duration="5" />
     </a>
 
-    <t no="10" name="hoge" notice="ぴーしんく" >
-      <expressions>
-        <pre name="impulse_target_count" value="hoge" />
-        <set name="impulse_target_count" value="fuga" />
-      </expressions>
-      <p-sync interval="30">
-        <combatant name="メラシディアン・シャドウ" X="30.5" Y="21.2" Z="0" tolerance="0.1" />
-      </p-sync>
-      <v-notice
-        text="DEBUG-C"
-        duration="23" />
-      <dump target="Position" />
-    </t>
-
-    <t no="8" name="hoge2" notice="ぴーしんく2" >
-      <expressions>
-        <pre name="impulse_target_count" value="hoge" />
-        <set name="impulse_target_count" value="fuga" />
-      </expressions>
-      <p-sync interval="30">
-        <combatant name="メラシディアン・シャドウ" X="30.5" Y="21.2" Z="0" tolerance="0.1" />
-      </p-sync>
-      <v-notice
-        text="DEBUG-C2"
-        duration="23" />
-      <dump target="Position" />
-    </t>
-
-    <t no="3" name="hoge3" notice="ぴーしんく3" >
+    <t no="10" name="hoge3" notice="ぴーしんく3" exec="python.exe" args="keyboard.py ctrl f3" exec-hidden="true" >
       <expressions>
         <pre name="impulse_target_count" value="hoge" />
         <set name="impulse_target_count" value="fuga" />
@@ -67,7 +39,35 @@
       <dump target="Position" />
     </t>
 
-    <t no="7" name="hoge4" notice="ぴーしんく4" >
+    <t no="8" name="hoge2" notice="ぴーしんく2" exec="python.exe" args="keyboard.py ctrl f2" exec-hidden="true" >
+      <expressions>
+        <pre name="impulse_target_count" value="hoge" />
+        <set name="impulse_target_count" value="fuga" />
+      </expressions>
+      <p-sync interval="30">
+        <combatant name="メラシディアン・シャドウ" X="30.5" Y="21.2" Z="0" tolerance="0.1" />
+      </p-sync>
+      <v-notice
+        text="DEBUG-C2"
+        duration="23" />
+      <dump target="Position" />
+    </t>
+
+    <t no="3" name="hoge1" notice="ぴーしんく1" exec="python.exe" args="keyboard.py ctrl f1" exec-hidden="true" >
+      <expressions>
+        <pre name="impulse_target_count" value="hoge" />
+        <set name="impulse_target_count" value="fuga" />
+      </expressions>
+      <p-sync interval="30">
+        <combatant name="メラシディアン・シャドウ" X="30.5" Y="21.2" Z="0" tolerance="0.1" />
+      </p-sync>
+      <v-notice
+        text="DEBUG-C1"
+        duration="23" />
+      <dump target="Position" />
+    </t>
+
+    <t no="7" name="hoge4" notice="ぴーしんく4" exec="python.exe" args="keyboard.py ctrl f4" exec-hidden="true" >
       <expressions>
         <pre name="impulse_target_count" value="hoge" />
         <set name="impulse_target_count" value="fuga" />
@@ -81,7 +81,7 @@
       <dump target="Position" />
     </t>
 
-    <t no="9" name="hoge5" notice="ぴーしんく5" >
+    <t no="9" name="hoge5" notice="ぴーしんく5" exec="python.exe" args="keyboard.py ctrl f5" exec-hidden="true" >
       <expressions>
         <pre name="impulse_target_count" value="hoge" />
         <set name="impulse_target_count" value="fuga" />
