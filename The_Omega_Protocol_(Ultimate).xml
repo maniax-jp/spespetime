@@ -26,72 +26,87 @@
 
   <default target-element="Activity" target-attr="notice-o" value="-3" />
 
-    <!-- 優先の定義 -->
-    <!--ナ:PLD,戦:WAR,暗:DRK,ガ:GNB,白:WHM,学:SCH,占:AST,賢:SGE,モ:MNK,竜:DRG,忍:NIN,侍:SAM,リ:RPR,詩:BRD,機:MCH,踊:DNC,召:SMN,赤:RDM,黒:BLM,　を参考に各PTで書き直してください-->
+  <!-- 優先の定義 -->
+  <!--ナ:PLD,戦:WAR,暗:DRK,ガ:GNB,白:WHM,学:SCH,占:AST,賢:SGE,モ:MNK,竜:DRG,忍:NIN,侍:SAM,リ:RPR,詩:BRD,機:MCH,踊:DNC,召:SMN,赤:RDM,黒:BLM,　を参考に各PTで書き直してください-->
 
-    <!-- 1P線・塔・パンクラ -->
-    <!-- 12時時計　＞　"[SCH]","[SMN]","[MCH]","[NIN]","[DRG]","[GNB]","[DRK]","[AST]"　＞　11時半時計　で記載　 -->
-    @{
+  <!-- 1P線・塔・パンクラ -->
+  <!-- 12時時計　＞　"[SCH]","[SMN]","[MCH]","[NIN]","[DRG]","[GNB]","[DRK]","[AST]"　＞　11時半時計　で記載　 -->
+  @{
     var line_order = new[]
     {
     new {job="[WHM]", jp="白", eng="WHM"},
     new {job="[DRK]", jp="暗", eng="DRK"},
     new {job="[GNB]", jp="ガ", eng="GNB"},
-    new {job="[MNK]", jp="モ", eng="MNK"},
+    new {job="[NIN]", jp="忍", eng="NIN"},
     new {job="[DRG]", jp="竜", eng="DRG"},
     new {job="[DNC]", jp="踊", eng="DNC"},
     new {job="[SMN]", jp="召", eng="SMN"},
     new {job="[SGE]", jp="賢", eng="SGE"},
     };
-    }
+  }
 
-    <!-- 2Pサイコロ -->
-    <!-- 左　＞　"[DRK]","[AST]","[DRG]","[MCH]","[SMN]","[NIN]","[SCH]","[GNB]"　＞　右　で記載　 -->
-    @{
+  <!-- 2Pサイコロ -->
+  <!-- 左　＞　"[DRK]","[AST]","[DRG]","[MCH]","[SMN]","[NIN]","[SCH]","[GNB]"　＞　右　で記載　 -->
+  @{
     var daice_order = new[]
     {
     new {job="[DRK]", jp="暗", eng="DRK"},
     new {job="[WHM]", jp="白", eng="WHM"},
-    new {job="[MNK]", jp="モ", eng="MNK"},
+    new {job="[NIN]", jp="忍", eng="NIN"},
     new {job="[DNC]", jp="踊", eng="DNC"},
     new {job="[SMN]", jp="召", eng="SMN"},
     new {job="[DRG]", jp="竜", eng="DRG"},
     new {job="[SGE]", jp="賢", eng="SGE"},
     new {job="[GNB]", jp="ガ", eng="GNB"},
     };
-    }
+  }
 
-    <!-- P3狙撃式波動砲 -->
-    <!-- 右　＞　"[SCH]","[SMN]","[MCH]","[NIN]","[DRG]","[GNB]","[DRK]","[AST]"　＞　左　　で記載　 -->
-    @{
+  <!-- P3狙撃式波動砲 -->
+  <!-- 右　＞　"[SCH]","[SMN]","[MCH]","[NIN]","[DRG]","[GNB]","[DRK]","[AST]"　＞　左　　で記載　 -->
+  @{
     var sogeki_order = new[]
     {
+    new {job="[DRK]", jp="暗", eng="DRK"},
+    new {job="[GNB]", jp="ガ", eng="GNB"},
     new {job="[WHM]", jp="白", eng="WHM"},
+    new {job="[SGE]", jp="賢", eng="SGE"},
     new {job="[SMN]", jp="召", eng="SMN"},
     new {job="[DNC]", jp="踊", eng="DNC"},
-    new {job="[MNK]", jp="モ", eng="MNK"},
     new {job="[DRG]", jp="竜", eng="DRG"},
-    new {job="[GNB]", jp="ガ", eng="GNB"},
-    new {job="[DRK]", jp="暗", eng="DRK"},
-    new {job="[SGE]", jp="賢", eng="SGE"},
+    new {job="[NIN]", jp="忍", eng="NIN"},
     };
-    }
+  }
 
-    <!-- P4検知式波動砲 -->
-    <!-- A　＞　"[DRK]","[GNB]","[NIN]","[DRG]","[MCH]","[SMN]","[AST]","[SCH]"　＞　C　　で記載　 -->
-    @{
+  <!-- P4検知式波動砲 -->
+  <!-- A　＞　"[DRK]","[GNB]","[NIN]","[DRG]","[MCH]","[SMN]","[AST]","[SCH]"　＞　C　　で記載　 -->
+  @{
     var kenchi_order = new[]
     {
     new {job="[DRK]", jp="暗", eng="DRK"},
     new {job="[GNB]", jp="ガ", eng="GNB"},
-    new {job="[MNK]", jp="モ", eng="MNK"},
+    new {job="[NIN]", jp="忍", eng="NIN"},
     new {job="[DRG]", jp="竜", eng="DRG"},
     new {job="[DNC]", jp="踊", eng="DNC"},
     new {job="[SMN]", jp="召", eng="SMN"},
     new {job="[WHM]", jp="白", eng="WHM"},
     new {job="[SGE]", jp="賢", eng="SGE"},
     };
-    }
+  }
+
+  <!-- P5デュナミス -->
+  @{
+    var dynamis_order = new[]
+    {
+    new {job="[DRK]", jp="暗", eng="DRK"},
+    new {job="[GNB]", jp="ガ", eng="GNB"},
+    new {job="[WHM]", jp="白", eng="WHM"},
+    new {job="[SGE]", jp="賢", eng="SGE"},
+    new {job="[NIN]", jp="忍", eng="NIN"},
+    new {job="[DRG]", jp="竜", eng="DRG"},
+    new {job="[DNC]", jp="踊", eng="DNC"},
+    new {job="[SMN]", jp="召", eng="SMN"},
+    };
+  }
 
   <s name="P1">
   <a time="001" text="セリフ" sync="オメガ:アナタはアルファであり、ワタシはオメガである。" />
@@ -580,7 +595,16 @@
     <a time="010" text="同期待ち" sync="オメガMは「ソーラレイ」の構え。" />
     <a time="015" text="タンク強攻撃1" notice="タンク攻撃" />
     <a time="018" text="タンク強攻撃2" />
-    <a time="032" text="【デルタ】" sync="オメガMの「コード：＊＊＊ミ＊【デルタ】」" notice="デュナミス、デルタ" />
+    <a time="032" text="【デルタ】" sync="オメガMの「コード：＊＊＊ミ＊【デルタ】」" notice="デュナミス、デルタ">
+      <!--デュナミスのカウントを初期化-->
+      <set name="dynamis_count" value="00" />
+
+@foreach (var player in Model.Party)
+{
+      <set name="dynamis_count_@(player.Job)" value="00" />
+}
+
+    </a>
     <a time="042" text="プリントアウト" sync="オメガの「プリントアウト」" notice="プリントアウト。" />
     <a time="045" text="アーカイブアーム" sync="オメガの「アーカイブアーム」" notice="アーカイブアーム。" />
     <a time="052" text="エンバグ開始" />
@@ -632,8 +656,7 @@
   <s name="P5S">
     <a time="001" text="同期待ち" sync="オメガMは「コード：＊＊＊ミ＊【シグマ】」の構え。" />
     <a time="006" text="【シグマ】" sync="オメガMの「コード：＊＊＊ミ＊【シグマ】」" notice="デュナミス、シグマ" >
-      <!--デュナミスとハロワのカウントを初期化-->
-      <set name="dynamis_count" value="00" />
+      <!--ハロワのカウントを初期化-->
       <set name="P5S-HWN" value="false" />
       <set name="P5S-HWF" value="false" />
     </a>
@@ -910,9 +933,18 @@
   </t>
 <!--デュナミスのカウンタ-->
   <t sync="^1A:[id8]:[mex] gains the effect of デュナミスの高揚 .*(?&lt;dynamis_num&gt;(01|02|03))" >
-    <v-notice text="デュナミス-${dynamis_num}" duration="10" />
     <expressions>
       <set name="dynamis_count" value="${dynamis_num}" />
     </expressions>
   </t>
+
+@foreach (var player in Model.Party)
+{
+  <t sync="^1A:[id8]:[@(player.Job)] gains the effect of デュナミスの高揚 .*(?&lt;dynamis_num&gt;(01|02|03))" >
+    <expressions>
+      <set name="dynamis_count_@(player.Job)" value="${dynamis_num}" />
+    </expressions>
+  </t>
+}
+
 </timeline>
