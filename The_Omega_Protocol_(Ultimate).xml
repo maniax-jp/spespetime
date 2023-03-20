@@ -77,22 +77,6 @@
     };
   }
 
-  <!-- P4検知式波動砲 -->
-  <!-- A　＞　"[DRK]","[GNB]","[NIN]","[DRG]","[MCH]","[SMN]","[AST]","[SCH]"　＞　C　　で記載　 -->
-  @{
-    var kenchi_order = new[]
-    {
-    new {job="[DRK]", jp="暗", eng="DRK"},
-    new {job="[GNB]", jp="ガ", eng="GNB"},
-    new {job="[NIN]", jp="忍", eng="NIN"},
-    new {job="[DRG]", jp="竜", eng="DRG"},
-    new {job="[DNC]", jp="踊", eng="DNC"},
-    new {job="[SMN]", jp="召", eng="SMN"},
-    new {job="[WHM]", jp="白", eng="WHM"},
-    new {job="[SGE]", jp="賢", eng="SGE"},
-    };
-  }
-
   <!-- P5デュナミス -->
   @{
     var dynamis_order = new[]
@@ -523,6 +507,7 @@
     <a time="009" text="クリティカルエラー" sync="オメガの「クリティカルエラー」" >
       <expressions>
         <set name="P3SW" value="false" />
+        <set name="owc_count" count="0" />
       </expressions>
     </a>
     <a time="021" text="【構え】検知式波動砲" sync="オメガは「検知式波動砲」の構え。" notice="デバフ確認" />
@@ -531,40 +516,46 @@
     <a time="046" text="時間切れ" sync="オメガの「イオンエフラクス」" />
     <t sync="オメガ:ビープ……システム強制リブート…… これより、" goto="P4" />
 
-    <!--検知対象の場合、フラグをセット-->
-    <t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" >
+@{
+  string[] priority_owc = {"DRK", "GNB", "NIN", "DRG", "DNC", "SMN", "WHM", "SGE"};
+  int my_priority = Array.IndexOf(priority_owc, Model.Player.Job);
+}
+@for (int i = 0; i < my_priority; i++)
+{
+    <t sync="[@(priority_owc[i])]に「検知式波動砲」の効果。" >
+      <expressions>
+        <set name="owc_count" count="+1" />
+      </expressions>
+    </t>
+}
+    <t sync="[mex]に「検知式波動砲」の効果。" >
       <expressions>
         <set name="P3SW" value="true" />
       </expressions>
     </t>
+@for (int j = 0; j <= 3; j++) {
+    <t sync="オメガは「検知式波動砲」の構え。" notice="検知 @(j+1)番目" >
+      <expressions>
+        <pre name="P3SW" value="true" />
+        <pre name="owc_count" count="@(j)" />
+      </expressions>
+      <v-notice
+        text="検知"
+        icon="Lightning.png"
+        duration="10" />
+    </t>
+    <t sync="オメガは「検知式波動砲」の構え。" notice="無職 @(my_priority-j+1)番目" >
+      <expressions>
+        <pre name="P3SW" value="false" />
+        <pre name="owc_count" count="@(j)" />
+      </expressions>
+      <v-notice
+        text="無職"
+        icon="Free.png"
+        duration="10" />
+    </t>
+}
 
-    <!--検知対象なら行き先を通知する-->
-    <t sync="^14:7B6B" notice="" >
-      <v-notice text="左側へ検知対象" duration="10" />
-        <expressions>
-          <pre name="P3SW" value="true" />
-        </expressions>
-    </t>
-    <t sync="^14:7B6C" notice="" >
-      <v-notice text="右側へ検知対象" duration="10" />
-        <expressions>
-          <pre name="P3SW" value="true" />
-        </expressions>
-    </t>
-
-    <!--検知対象外ならボスの手の向きを通知-->
-    <t sync="^14:7B6B" notice="" >
-      <v-notice text="ボス右手検知" duration="10" />
-        <expressions>
-          <pre name="P3SW" value="false" />
-        </expressions>
-    </t>
-    <t sync="^14:7B6C" notice="" >
-      <v-notice text="ボス左手検知" duration="10" />
-        <expressions>
-          <pre name="P3SW" value="false" />
-        </expressions>
-    </t>
   </s>
 
   <s name="P4">
