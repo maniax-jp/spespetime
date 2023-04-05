@@ -228,49 +228,49 @@
   </t>
 
   <!-- 目 -->
-  <t sync-count="1" notice="Aに目" notice-o="3">
+  <t sync-count="1" notice="Aに目" notice-o="4">
       <v-notice order="3" text="目：AAA" duration="60" duration-visible="false" icon="A.png" />
       <p-sync interval="30">
           <combatant name="オプチカルユニット" X="23.50" Y="22.60" Z="0.00" tolerance="0.01" />
       </p-sync>
   </t>
-  <t sync-count="1" notice="Bに目" notice-o="3">
+  <t sync-count="1" notice="Bに目" notice-o="4">
       <v-notice order="3" text="目：BBB" duration="60" duration-visible="false" icon="B.png" />
       <p-sync interval="30">
           <combatant name="オプチカルユニット" X="24.40" Y="23.50" Z="0.00" tolerance="0.01" />
       </p-sync>
   </t>
-  <t sync-count="1" notice="Cに目" notice-o="3">
+  <t sync-count="1" notice="Cに目" notice-o="4">
       <v-notice order="3" text="目：CCC" duration="60" duration-visible="false" icon="C.png" />
       <p-sync interval="30">
           <combatant name="オプチカルユニット" X="23.500" Y="24.40" Z="0.00" tolerance="0.01" />
       </p-sync>
   </t>
-  <t sync-count="1" notice="Dに目" notice-o="3">
+  <t sync-count="1" notice="Dに目" notice-o="4">
       <v-notice order="3" text="目：DDD" duration="60" duration-visible="false" icon="D.png" />
       <p-sync interval="30">
           <combatant name="オプチカルユニット" X="22.60" Y="23.50" Z="0.00" tolerance="0.01" />
       </p-sync>
   </t>
-  <t sync-count="1" notice="1に目" notice-o="3">
+  <t sync-count="1" notice="1に目" notice-o="4">
       <v-notice order="3" text="目：111" duration="60" duration-visible="false" icon="1.png" />
       <p-sync interval="30">
           <combatant name="オプチカルユニット" X="24.14" Y="22.86" Z="0.00" tolerance="0.01" />
       </p-sync>
   </t>
-  <t sync-count="1" notice="2に目" notice-o="3">
+  <t sync-count="1" notice="2に目" notice-o="4">
       <v-notice order="3" text="目：222" duration="60" duration-visible="false" icon="2.png" />
       <p-sync interval="30">
           <combatant name="オプチカルユニット" X="24.14" Y="24.14" Z="0.00" tolerance="0.01" />
       </p-sync>
   </t>
-  <t sync-count="1" notice="3に目" notice-o="3">
+  <t sync-count="1" notice="3に目" notice-o="4">
       <v-notice order="3" text="目：333" duration="60" duration-visible="false" icon="Dice3.png" />
       <p-sync interval="30">
           <combatant name="オプチカルユニット" X="22.86" Y="24.14" Z="0.00" tolerance="0.01" />
       </p-sync>
   </t>
-  <t sync-count="1" notice="4に目" notice-o="3">
+  <t sync-count="1" notice="4に目" notice-o="4">
       <v-notice order="3" text="目：444" duration="60" duration-visible="false" icon="Dice4.png" />
       <p-sync interval="30">
           <combatant name="オプチカルユニット" X="22.86" Y="22.86" Z="0.00" tolerance="0.01" />
