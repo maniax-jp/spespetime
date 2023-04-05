@@ -374,6 +374,25 @@
   <t sync="[mex]に「狙撃式波動砲」の効果。" notice="黒デバフ" >
     <v-notice text="単体対象" duration="19" />
   </t>
+  
+  <t sync="[pc]に「コードスメール：サークル」の効果。" sync-count="1">
+    <expressions>
+      <set name="P3-circle" value="${_pc}" />
+    </expressions>
+  </t>
+  <t sync="[pc]に「コードスメール：パフォーマンス」の効果。" notice="青サークル">
+    <expressions>
+      <pre name="P3-circle" value="${_pc}" />
+      <set name="P3-circle-red" value="false" />
+    </expressions>
+  </t>
+  <t sync="[pc]に「コードスメール：デグレード」の効果。" notice="赤サークル">
+    <expressions>
+      <pre name="P3-circle" value="${_pc}" />
+      <set name="P3-circle-red" value="true" />
+    </expressions>
+  </t>
+
 </s>
   <!--シェア用タイムライン-->
   <s name="P3-S">
