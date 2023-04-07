@@ -633,19 +633,19 @@
     <t sync="オメガM:この力の増幅は、リミッターカットでは説明不能" goto="P5S" />
 
     <!--以下P5デルタ用トリガ-->
-    <t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ニア" notice="ニア対象" >
+    <t sync="[mex]に「コードスメール：ニアー」の効果。" notice="ニア" >
       <v-notice text="ニア対象。検知誘導" duration="20" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of コードスメール：ファー " notice="ファー対象" >
+    <t sync="[mex]に「コードスメール：ファー」の効果。" notice="ファー" >
       <v-notice text="ファー対象。シールド誘導+頭割り" duration="20" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" notice-o="2" >
+    <t sync="[mex]に「ハローワールド：ニア」の効果。" notice="ハロニア" notice-o="33" >
       <v-notice text="ハロワ：ニア対象" duration="45" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" notice-o="2" >
+    <t sync="[mex]に「ハローワールド：ファー」の効果。" notice="ハロファー" notice-o="33" >
       <v-notice text="ハロワ：ファー対象" duration="45" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of 検知式波動砲" notice="検知対象" >
+    <t sync="[mex]に「検知式波動砲」の効果。" notice="検知対象" >
       <v-notice text="検知対象　頭割り注意" duration="11" />
     </t>
     <!--通知が多すぎるのでオミット
@@ -655,10 +655,10 @@
     <t sync="^14:7B97:" notice="ボス左手検知" >
       <v-notice text="ボス左手検知" duration="11" />
     </t>-->
-    <t sync="^14:7B94:" notice="ボス見て右安置" >
+    <t sync="^14:7B94:" notice="右安置" >
       <v-notice text="ボス見て右安置" duration="11" />
     </t>
-    <t sync="^14:7B95:" notice="ボスみて左安置" >
+    <t sync="^14:7B95:" notice="左安置" >
       <v-notice text="ボス見て左安置" duration="11" />
     </t>
   </s>
