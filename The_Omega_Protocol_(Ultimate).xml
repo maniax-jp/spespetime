@@ -581,7 +581,6 @@
     <a time="010" text="【構え】波動砲" sync="オメガは「波動砲」の構え。" />
     <a time="015" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
     <a time="021" text="【頭割】波動砲" sync="オメガの「波動砲」" notice="頭割り" sync-s="-3" sync-e="3" />
-    <a time="023" text="外に出る" notice="そとにでる" notice-o="0" />
     <a time="025" text="内に入る" notice="うちはいる" notice-o="0" />
     <a time="026" text="【散会】波動砲" sync="オメガの「波動砲」" notice="散会" sync-s="-3" sync-e="3" />
     <a time="027" text="1床" />
@@ -645,7 +644,7 @@
     <t sync="[mex]に「ハローワールド：ファー」の効果。" notice="ハロファー" notice-o="33" >
       <v-notice text="ハロワ：ファー対象" duration="45" />
     </t>
-    <t sync="[mex]に「検知式波動砲」の効果。" notice="検知対象" >
+    <t sync="[mex]に「検知式波動砲」の効果。" notice=" " >
       <v-notice text="検知対象　頭割り注意" duration="11" />
     </t>
     <!--通知が多すぎるのでオミット
