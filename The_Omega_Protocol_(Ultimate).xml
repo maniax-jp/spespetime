@@ -605,14 +605,16 @@
     <a time="015" text="タンク強攻撃1" notice="タンク攻撃" />
     <a time="018" text="タンク強攻撃2" />
     <a time="032" text="【デルタ】" sync="オメガMの「コード：＊＊＊ミ＊【デルタ】」" notice="デュナミス、デルタ">
-      <!--デュナミスのカウントを初期化-->
-      <set name="dynamis_count" value="00" />
+      <expressions>
+        <!--デュナミスのカウントを初期化-->
+        <set name="dynamis_count" value="00" />
 
-@foreach (var player in Model.Party)
-{
-      <set name="dynamis_count_@(player.Job)" value="00" />
-}
+  @foreach (var player in Model.Party)
+  {
+        <set name="dynamis_count_@(player.Job)" value="00" />
+  }
 
+      </expressions>
     </a>
     <a time="042" text="プリントアウト" sync="オメガの「プリントアウト」" notice="プリントアウト。" />
     <a time="045" text="アーカイブアーム" sync="オメガの「アーカイブアーム」" notice="アーカイブアーム。" />
@@ -623,9 +625,18 @@
     <a time="063" text="腕パルス開始" sync="レフトアームユニットの「ハイパーパルス」" sync-count="1" />
     <a time="065" text="検知式+頭割り" sync="オメガの「検知式波動砲」" notice="検知式波動砲" />
     <!--a time="066.0" text="パイルピッチ" sync="オメガMの「パイルピッチ」" notice="次は、パイルピッチ。" /-->
+    <a time="067" text="デバフ確認" notice="デバフ確認" notice-o="0" />
     <a time="068" text="【構え】旋回式波動砲" sync="オメガは「旋回式波動砲」の構え。" />
+    <a time="069" text="3" notice="3" notice-o="0" />
+    <a time="070" text="2" notice="2" notice-o="0" />
+    <a time="071" text="1" notice="1" notice-o="0" />
+    <a time="072" text="ニア切る" notice="ニア切る" notice-o="0" />
     <a time="078" text="旋回式波動砲" sync="オメガの「旋回式波動砲」" notice="旋回式波動砲。" />
-    <a time="080" text="着弾確認" notice="着弾見てから" notice-o="0" />
+    <a time="080" text="デバフ確認" notice="デバフ確認" notice-o="0" />
+    <a time="082" text="3" notice="3" notice-o="0" />
+    <a time="083" text="2" notice="2" notice-o="0" />
+    <a time="084" text="1" notice="1" notice-o="0" />
+    <a time="085" text="ニア切る" notice="ニア切る" notice-o="0" />
     <a time="092" sync="オメガMは「ソーラレイ」の構え。" />
     <a time="097" text="ソーラレイ" notice="タンク攻撃" />
     <a time="101" text="ソーラレイ" />
@@ -665,86 +676,127 @@
   <s name="P5S">
     <a time="001" text="同期待ち" sync="オメガMは「コード：＊＊＊ミ＊【シグマ】」の構え。" />
     <a time="006" text="【シグマ】" sync="オメガMの「コード：＊＊＊ミ＊【シグマ】」" notice="デュナミス、シグマ" >
-      <!--ハロワのカウントを初期化-->
-      <set name="P5S-HWN" value="false" />
-      <set name="P5S-HWF" value="false" />
+      <expressions>
+        <!--ハロワのカウントを初期化-->
+        <set name="P5S-HWN" value="false" />
+        <set name="P5S-HWF" value="false" />
+      </expressions>
     </a>
     <a time="024" text="トランスフォームF" sync="オメガMの「トランスフォームF」" />
-    <a time="025" text="サークルプログラム" sync="オメガの「サークルプログラム」" notice="サークルプログラム。" />
-    <a time="028" text="波動砲" sync="オメガの「波動砲」" notice="波動砲" />
+    <a time="025" text="サークルプログラム" sync="オメガの「サークルプログラム」" />
+    <a time="028" text="波動砲" sync="オメガの「波動砲」" />
     <!--a time="028" text="ハイパーパルス" sync="ライトアームユニットの「ハイパーパルス」" notice="次は、ハイパーパルス。" /-->
     <a time="037" text="ノックバック" sync="オメガFの「ディスチャージャー」" notice="ノックバック" />
-    <a time="052" text="【構え】リアレーザー" sync="リアユニットは「リアレーザー」の構え。" notice="リアレーザー確認" />
+    <a time="052" text="【構え】リアレーザー" sync="リアユニットは「リアレーザー」の構え。" />
     <a time="055" text="リアレーザー開始" />
-    <a time="056" text="オメガ確認" sync="オメガFは「(ブリザガ・オメガ|)」の構え。" notice="オメガ確認" />
+    <a time="056" text="オメガ確認" sync="オメガFは「(ブリザガ・オメガ|)」の構え。" />
     <a time="059" text="氷or刃" sync="オメガFの「(ブリザガ・オメガ|)」" />
     <a time="063" text="リアレーザー終了" />
-    <a time="065" text="ハイパーパルス" sync="ライトアームユニットの「ハイパーパルス」" notice="ハイパーパルス。" />
+    <a time="065" text="ハイパーパルス" sync="ライトアームユニットの「ハイパーパルス」" />
     <a time="073" sync="オメガFは「ソーラレイ」の構え。" />
     <a time="079" text="ソーラレイ" notice="タンク攻撃" />
     <a time="082" text="ソーラレイ" />
     <t sync="オメガF:仮説……ヒトのリミットブレイク現象が" goto="P5O" />
 
-    <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" >
-      <v-notice text="グリッチ:ミドル" duration="45" />
+    <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" notice-o="13" >
+      <v-notice text="グリッチ:ミドル" duration="45" icon="Approach.png" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" >
-      <v-notice text="グリッチ:ファー" duration="45" />
+    <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" notice-o="13" >
+      <v-notice text="グリッチ:ファー" duration="45" icon="DontApproach.png" />
     </t>
 
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" notice="ハロワ・ニア" notice-o="3" >
-      <v-notice text="ハロワ：ニア対象" duration="10" />
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" >
+      <v-notice text="ハロワ：ニア対象" duration="56" />
       <expressions>
         <set name="P5S-HWN" value="true" />
       </expressions>
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" notice="ハロワ・ファー" notice-o="3" >
-      <v-notice text="ハロワ：ファー対象" duration="10" />
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" >
+      <v-notice text="ハロワ：ファー対象" duration="56" />
       <expressions>
         <set name="P5S-HWF" value="true" />
       </expressions>
     </t>
 
-<!--固定向け通知の為、オミット
-    <!-ハロワニア->
-    <t sync="オメガFの「ディスチャージャー」" notice="ニア担当。南から追従" >
+@foreach (var player in Model.Party)
+{
+    <t sync="^1A:[id8]:[@(player.Job)] gains the effect of ハローワールド：ニア" >
+      <expressions>
+        <set name="P5S-HWN_@(player.Job)" value="true" />
+      </expressions>
+    </t>
+    <t sync="^1A:[id8]:[@(player.Job)] gains the effect of ハローワールド：ファー" >
+      <expressions>
+        <set name="P5S-HWF_@(player.Job)" value="true" />
+      </expressions>
+    </t>
+}
+
+@{
+  string[] priority_hws = {"DRK", "GNB", "WHM", "SGE", "NIN", "DRG", "DNC", "SMN"};
+}
+@for (int i = 0; i < priority_hws.Length; i++)
+{
+    <t no="@(i)" sync="オメガFの「ディスチャージャー」" >
+      <expressions>
+        <pre name="P5S-HWN_@(priority_hws[i])" value="false" />
+        <pre name="dynamis_count_@(priority_hws[i])" value="01" />
+        <table>
+        {
+          "method":"Insert",
+          "table":"P5S-HWN-chain",
+          "cols" : [
+            { "name":"job", "val":"@(priority_hws[i])" },
+            { "name":"chain", "val":"true" },
+          ]
+        }
+        </table>
+      </expressions>
+    </t>
+}
+
+    <!--ハロワニア-->
+    <t sync="オメガFの「ディスチャージャー」" notice="ハロニア" >
       <v-notice text="ニア:南から中央左右へ" duration="27" />
       <expressions>
         <pre name="P5S-HWN" value="true" />
       </expressions>
     </t>
-    <!-ハロワファー->
-    <t sync="オメガFの「ディスチャージャー」" notice="ファー担当。北のオメガ足元へ" >
+    <!--ハロワファー-->
+    <t sync="オメガFの「ディスチャージャー」" notice="ハロファー" >
       <v-notice text="ファー:北オメガ足元" duration="27" />
       <expressions>
         <pre name="P5S-HWF" value="true" />
       </expressions>
     </t>
-    <!-ハロワ無し、デュナミス1->
+    <!--ハロワ無し、デュナミス1-->
     <t sync="オメガFの「ディスチャージャー」" notice="誘導担当" >
       <v-notice text="誘導担当" duration="27" />
       <expressions>
         <pre name="dynamis_count" value="01" />
-        <pre name="P5S-HWF" value="false" />
+        <pre name="P5S-HWN" value="false" />
         <pre name="P5S-HWF" value="false" />
       </expressions>
     </t>
-    <!-デュナミス無し->
-    <t sync="オメガFの「ディスチャージャー」" notice="無職担当、南へ" >
+    <!--デュナミス無し-->
+    <t sync="オメガFの「ディスチャージャー」" notice="無職担当" >
       <v-notice text="無職担当。南へ" duration="27" />
       <expressions>
         <pre name="dynamis_count" value="00" />
+        <pre name="P5S-HWN" value="false" />
+        <pre name="P5S-HWF" value="false" />
       </expressions>
     </t>
-  -->
 
   </s>
 
   <s name="P5O">
     <a time="006" text="コード：＊＊＊ミ＊【オメガ】" sync="オメガFの「コード：＊＊＊ミ＊【オメガ】」" >
-      <!--セカンド、ファーストの初期化-->
-      <set name="P5O-HW-1" value="false" />
-      <set name="P5O-HW-2" value="false" />
+      <expressions>
+        <!--セカンド、ファーストの初期化-->
+        <set name="P5O-HW-1" value="false" />
+        <set name="P5O-HW-2" value="false" />
+      </expressions>
     </a>
 
     <a time="014" text="【構え】拡散波動砲" sync="オメガは「拡散波動砲」の構え。" />
