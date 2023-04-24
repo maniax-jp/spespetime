@@ -678,8 +678,16 @@
     <a time="006" text="【シグマ】" sync="オメガMの「コード：＊＊＊ミ＊【シグマ】」" notice="デュナミス、シグマ" >
       <expressions>
         <!--ハロワのカウントを初期化-->
-        <set name="P5S-HWN" value="false" />
-        <set name="P5S-HWF" value="false" />
+        <set name="P5S-chain" count="0" />
+        
+@foreach (var player in Model.Party)
+{
+        <set name="P5S-HWN_@(player.Job)" value="false" />
+        <set name="P5S-HWF_@(player.Job)" value="false" />
+        <set name="P5S-chain_@(player.Job)" value="false" />
+        <set name="P5S-mark_@(player.Job)" value="false" />
+}
+
       </expressions>
     </a>
     <a time="024" text="トランスフォームF" sync="オメガMの「トランスフォームF」" />
@@ -698,34 +706,28 @@
     <a time="082" text="ソーラレイ" />
     <t sync="オメガF:仮説……ヒトのリミットブレイク現象が" goto="P5O" />
 
-    <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ミドル" notice="ミドル" notice-o="13" >
+    <t sync="[mex]に「グリッチ：ミドル」の効果。" notice="ミドル" notice-o="13" >
       <v-notice text="グリッチ:ミドル" duration="45" icon="Approach.png" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of グリッチ：ファー" notice="ファー" notice-o="13" >
+    <t sync="[mex]に「グリッチ：ファー」の効果。" notice="ファー" notice-o="13" >
       <v-notice text="グリッチ:ファー" duration="45" icon="DontApproach.png" />
     </t>
 
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア" >
+    <t sync="[mex]に「ハローワールド：ニア」の効果。" notice="ハロニア" notice-o="33" >
       <v-notice text="ハロワ：ニア対象" duration="56" />
-      <expressions>
-        <set name="P5S-HWN" value="true" />
-      </expressions>
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー" >
+    <t sync="[mex]に「ハローワールド：ファー」の効果。" notice="ハロファー" notice-o="33" >
       <v-notice text="ハロワ：ファー対象" duration="56" />
-      <expressions>
-        <set name="P5S-HWF" value="true" />
-      </expressions>
     </t>
 
 @foreach (var player in Model.Party)
 {
-    <t sync="^1A:[id8]:[@(player.Job)] gains the effect of ハローワールド：ニア" >
+    <t sync="[@(player.Job)]に「ハローワールド：ニア」の効果。" >
       <expressions>
         <set name="P5S-HWN_@(player.Job)" value="true" />
       </expressions>
     </t>
-    <t sync="^1A:[id8]:[@(player.Job)] gains the effect of ハローワールド：ファー" >
+    <t sync="[@(player.Job)]に「ハローワールド：ファー」の効果。" >
       <expressions>
         <set name="P5S-HWF_@(player.Job)" value="true" />
       </expressions>
@@ -735,58 +737,29 @@
 @{
   string[] priority_hws = {"DRK", "GNB", "WHM", "SGE", "NIN", "DRG", "DNC", "SMN"};
 }
-@for (int i = 0; i < priority_hws.Length; i++)
-{
-    <t no="@(i)" sync="オメガFの「ディスチャージャー」" >
+@for (int i = 0; i < priority_hws.Length; i++) {
+  for (int j = 0; j < 3; j++) {
+    <t no="@(i+1)" sync="オメガの「波動砲」" exec="python.exe" args="keyboard.py ctrl f@(i+1)" exec-hidden="true" >
       <expressions>
+        <pre name="P5S-chain" count="@(j)" />
+        <pre name="P5S-chain_@(priority_hws[i])" value="false" />
         <pre name="P5S-HWN_@(priority_hws[i])" value="false" />
+        <pre name="P5S-HWF_@(priority_hws[i])" value="false" />
         <pre name="dynamis_count_@(priority_hws[i])" value="01" />
-        <table>
-        {
-          "method":"Insert",
-          "table":"P5S-HWN-chain",
-          "cols" : [
-            { "name":"job", "val":"@(priority_hws[i])" },
-            { "name":"chain", "val":"true" },
-          ]
-        }
-        </table>
+        <set name="P5S-chain" count="+1" />
+        <set name="P5S-chain_@(priority_hws[i])" value="true" />
+      </expressions>
+    </t>
+  }
+    <t no="@(i+1)" sync="オメガFの「ディスチャージャー」" exec="python.exe" args="keyboard.py alt f@(i+1)" exec-hidden="true" >
+      <expressions>
+        <pre name="P5S-chain_@(priority_hws[i])" value="false" />
+        <pre name="P5S-HWN_@(priority_hws[i])" value="false" />
+        <pre name="P5S-HWF_@(priority_hws[i])" value="false" />
+        <set name="P5S-mark_@(priority_hws[i])" value="true" />
       </expressions>
     </t>
 }
-
-    <!--ハロワニア-->
-    <t sync="オメガFの「ディスチャージャー」" notice="ハロニア" >
-      <v-notice text="ニア:南から中央左右へ" duration="27" />
-      <expressions>
-        <pre name="P5S-HWN" value="true" />
-      </expressions>
-    </t>
-    <!--ハロワファー-->
-    <t sync="オメガFの「ディスチャージャー」" notice="ハロファー" >
-      <v-notice text="ファー:北オメガ足元" duration="27" />
-      <expressions>
-        <pre name="P5S-HWF" value="true" />
-      </expressions>
-    </t>
-    <!--ハロワ無し、デュナミス1-->
-    <t sync="オメガFの「ディスチャージャー」" notice="誘導担当" >
-      <v-notice text="誘導担当" duration="27" />
-      <expressions>
-        <pre name="dynamis_count" value="01" />
-        <pre name="P5S-HWN" value="false" />
-        <pre name="P5S-HWF" value="false" />
-      </expressions>
-    </t>
-    <!--デュナミス無し-->
-    <t sync="オメガFの「ディスチャージャー」" notice="無職担当" >
-      <v-notice text="無職担当。南へ" duration="27" />
-      <expressions>
-        <pre name="dynamis_count" value="00" />
-        <pre name="P5S-HWN" value="false" />
-        <pre name="P5S-HWF" value="false" />
-      </expressions>
-    </t>
 
   </s>
 
