@@ -25,7 +25,20 @@
         duration="5" />
     </a>
 
-    <t no="10" name="hoge3" notice="ぴーしんく3" exec="python.exe" args="keyboard.py ctrl f3" exec-hidden="true" >
+    <t sync="hoge" exec="python.exe" args="keyboard.py 1 ctrl f3" exec-hidden="true" >
+    </t>
+    <t sync="hoge" exec="python.exe" args="keyboard.py 2 alt f3" exec-hidden="true" >
+    </t>
+    <t sync="hoge" exec="python.exe" args="keyboard.py 3 ctrl f3" exec-hidden="true" >
+    </t>
+    <t sync="hoge" exec="python.exe" args="keyboard.py 4 alt f3" exec-hidden="true" >
+    </t>
+    <t sync="hoge" exec="python.exe" args="keyboard.py 5 ctrl f3" exec-hidden="true" >
+    </t>
+    <t sync="hoge" exec="python.exe" args="keyboard.py 6 alt f3" exec-hidden="true" >
+    </t>
+
+    <t no="10" name="hoge3" notice="ぴーしんく3" exec="python.exe" args="keyboard.py 1 ctrl f3" exec-hidden="true" >
       <expressions>
         <pre name="impulse_target_count" value="hoge" />
         <set name="impulse_target_count" value="fuga" />
@@ -39,7 +52,7 @@
       <dump target="Position" />
     </t>
 
-    <t no="8" name="hoge2" notice="ぴーしんく2" exec="python.exe" args="keyboard.py ctrl f2" exec-hidden="true" >
+    <t no="8" name="hoge2" notice="ぴーしんく2" exec="python.exe" args="keyboard.py 1 alt f3" exec-hidden="true" >
       <expressions>
         <pre name="impulse_target_count" value="hoge" />
         <set name="impulse_target_count" value="fuga" />
@@ -53,7 +66,7 @@
       <dump target="Position" />
     </t>
 
-    <t no="3" name="hoge1" notice="ぴーしんく1" exec="python.exe" args="keyboard.py ctrl f1" exec-hidden="true" >
+    <t no="3" name="hoge1" notice="ぴーしんく1" exec="python.exe" args="keyboard.py 1 ctrl f1" exec-hidden="true" >
       <expressions>
         <pre name="impulse_target_count" value="hoge" />
         <set name="impulse_target_count" value="fuga" />
@@ -67,7 +80,7 @@
       <dump target="Position" />
     </t>
 
-    <t no="7" name="hoge4" notice="ぴーしんく4" exec="python.exe" args="keyboard.py ctrl f4" exec-hidden="true" >
+    <t no="7" name="hoge4" notice="ぴーしんく4" exec="python.exe" args="keyboard.py 1 ctrl f4" exec-hidden="true" >
       <expressions>
         <pre name="impulse_target_count" value="hoge" />
         <set name="impulse_target_count" value="fuga" />
@@ -81,7 +94,7 @@
       <dump target="Position" />
     </t>
 
-    <t no="9" name="hoge5" notice="ぴーしんく5" exec="python.exe" args="keyboard.py ctrl f5" exec-hidden="true" >
+    <t no="9" name="hoge5" notice="ぴーしんく5" exec="python.exe" args="keyboard.py 1 ctrl f5" exec-hidden="true" >
       <expressions>
         <pre name="impulse_target_count" value="hoge" />
         <set name="impulse_target_count" value="fuga" />
