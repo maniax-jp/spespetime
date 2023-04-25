@@ -739,7 +739,7 @@
 }
 @for (int i = 0; i < priority_hws.Length; i++) {
   for (int j = 0; j < 3; j++) {
-    <t no="@(i+1)" sync="オメガの「波動砲」" exec="python.exe" args="keyboard.py @(i) ctrl f@(i+1)" exec-hidden="true" >
+    <t no="@(i+1)" sync="オメガの「波動砲」" exec="python.exe" args="keyboard.py @(0.7*i) ctrl f@(i+1)" exec-hidden="true" >
       <expressions>
         <pre name="P5S-chain" count="@(j)" />
         <pre name="P5S-chain_@(priority_hws[i])" value="false" />
@@ -751,7 +751,7 @@
       </expressions>
     </t>
   }
-    <t no="@(i+1)" sync="オメガFの「ディスチャージャー」" exec="python.exe" args="keyboard.py @(i) alt f@(i+1)" exec-hidden="true" >
+    <t no="@(i+1)" sync="オメガFの「ディスチャージャー」" exec="python.exe" args="keyboard.py @(0.7*i) alt f@(i+1)" exec-hidden="true" >
       <expressions>
         <pre name="P5S-chain_@(priority_hws[i])" value="false" />
         <pre name="P5S-HWN_@(priority_hws[i])" value="false" />

@@ -25,18 +25,12 @@
         duration="5" />
     </a>
 
-    <t sync="hoge" exec="python.exe" args="keyboard.py 1 ctrl f3" exec-hidden="true" >
+@for (int i = 0; i < 8; i++) {
+    <t sync="hoge" exec="python.exe" args="keyboard.py @(1.4*i) ctrl f3" exec-hidden="true" >
     </t>
-    <t sync="hoge" exec="python.exe" args="keyboard.py 2 alt f3" exec-hidden="true" >
+    <t sync="hoge" exec="python.exe" args="keyboard.py @(0.7+1.4*i) alt f3" exec-hidden="true" >
     </t>
-    <t sync="hoge" exec="python.exe" args="keyboard.py 3 ctrl f3" exec-hidden="true" >
-    </t>
-    <t sync="hoge" exec="python.exe" args="keyboard.py 4 alt f3" exec-hidden="true" >
-    </t>
-    <t sync="hoge" exec="python.exe" args="keyboard.py 5 ctrl f3" exec-hidden="true" >
-    </t>
-    <t sync="hoge" exec="python.exe" args="keyboard.py 6 alt f3" exec-hidden="true" >
-    </t>
+}
 
     <t no="10" name="hoge3" notice="ぴーしんく3" exec="python.exe" args="keyboard.py 1 ctrl f3" exec-hidden="true" >
       <expressions>
