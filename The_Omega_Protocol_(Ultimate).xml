@@ -625,14 +625,12 @@
     <a time="063" text="腕パルス開始" sync="レフトアームユニットの「ハイパーパルス」" sync-count="1" />
     <a time="065" text="検知式+頭割り" sync="オメガの「検知式波動砲」" notice="検知式波動砲" />
     <!--a time="066.0" text="パイルピッチ" sync="オメガMの「パイルピッチ」" notice="次は、パイルピッチ。" /-->
-    <a time="067" text="デバフ確認" notice="デバフ確認" notice-o="0" />
     <a time="068" text="【構え】旋回式波動砲" sync="オメガは「旋回式波動砲」の構え。" />
     <a time="069" text="3" notice="3" notice-o="0" />
     <a time="070" text="2" notice="2" notice-o="0" />
     <a time="071" text="1" notice="1" notice-o="0" />
     <a time="072" text="ニア切る" notice="ニア切る" notice-o="0" />
     <a time="078" text="旋回式波動砲" sync="オメガの「旋回式波動砲」" notice="旋回式波動砲。" />
-    <a time="080" text="デバフ確認" notice="デバフ確認" notice-o="0" />
     <a time="082" text="3" notice="3" notice-o="0" />
     <a time="083" text="2" notice="2" notice-o="0" />
     <a time="084" text="1" notice="1" notice-o="0" />
@@ -650,10 +648,10 @@
       <v-notice text="ファー対象。シールド誘導+頭割り" duration="20" />
     </t>
     <t sync="[mex]に「ハローワールド：ニア」の効果。" notice="ハロニア" notice-o="33" >
-      <v-notice text="ハロワ：ニア対象" duration="45" />
+      <v-notice text="ハロワ：ニア対象" duration="45" icon="Touch.png" />
     </t>
     <t sync="[mex]に「ハローワールド：ファー」の効果。" notice="ハロファー" notice-o="33" >
-      <v-notice text="ハロワ：ファー対象" duration="45" />
+      <v-notice text="ハロワ：ファー対象" duration="45" icon="DontTouch.png" />
     </t>
     <t sync="[mex]に「検知式波動砲」の効果。" notice=" " >
       <v-notice text="検知対象　頭割り注意" duration="11" />
@@ -714,10 +712,10 @@
     </t>
 
     <t sync="[mex]に「ハローワールド：ニア」の効果。" notice="ハロニア" notice-o="33" >
-      <v-notice text="ハロワ：ニア対象" duration="56" />
+      <v-notice text="ハロワ：ニア対象" duration="56" icon="Touch.png" />
     </t>
     <t sync="[mex]に「ハローワールド：ファー」の効果。" notice="ハロファー" notice-o="33" >
-      <v-notice text="ハロワ：ファー対象" duration="56" />
+      <v-notice text="ハロワ：ファー対象" duration="56" icon="DontTouch.png" />
     </t>
 
 @foreach (var player in Model.Party)
@@ -788,26 +786,26 @@
     <t sync="アルファオメガ:ワタシはオメガであり、アルファとともに歩む者" goto="P6" />
 
     <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 32.00 Seconds" notice="ハロワ・ニアいちばん" >
-      <v-notice text="ニア:1番" duration="32" />
+      <v-notice text="ニア:1番" duration="32" icon="Touch.png" />
       <expressions>
         <set name="P5O-HW-1" value="true" />
       </expressions>
     </t>
     <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 32.00 Seconds" notice="ハロワ・ファーいちばん" >
-      <v-notice text="ファー:1番" duration="32" />
+      <v-notice text="ファー:1番" duration="32" icon="DontTouch.png" />
       <expressions>
         <set name="P5O-HW-1" value="true" />
       </expressions>
     </t>
 
     <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 50.00 Seconds" notice="ハロワ・ニアにばん" >
-      <v-notice text="ニア:2番" duration="50" />
+      <v-notice text="ニア:2番" duration="50" icon="Touch.png" />
       <expressions>
         <set name="P5O-HW-2" value="true" />
       </expressions>
     </t>
     <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 50.00 Seconds" notice="ハロワ・ファーにばん" >
-      <v-notice text="ファー:2番" duration="50" />
+      <v-notice text="ファー:2番" duration="50" icon="DontTouch.png" />
       <expressions>
         <set name="P5O-HW-2" value="true" />
       </expressions>
