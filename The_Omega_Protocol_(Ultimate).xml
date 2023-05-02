@@ -705,10 +705,10 @@
     <t sync="オメガF:仮説……ヒトのリミットブレイク現象が" goto="P5O" />
 
     <t sync="[mex]に「グリッチ：ミドル」の効果。" notice="ミドル" notice-o="13" >
-      <v-notice text="グリッチ:ミドル" duration="45" icon="Approach.png" />
+      <v-notice text="グリッチ:ミドル" duration="33" icon="Approach.png" />
     </t>
     <t sync="[mex]に「グリッチ：ファー」の効果。" notice="ファー" notice-o="13" >
-      <v-notice text="グリッチ:ファー" duration="45" icon="DontApproach.png" />
+      <v-notice text="グリッチ:ファー" duration="33" icon="DontApproach.png" />
     </t>
 
     <t sync="[mex]に「ハローワールド：ニア」の効果。" notice="ハロニア" notice-o="33" >
