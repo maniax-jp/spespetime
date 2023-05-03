@@ -711,10 +711,10 @@
       <v-notice text="グリッチ:ファー" duration="33" icon="DontApproach.png" />
     </t>
 
-    <t sync="[mex]に「ハローワールド：ニア」の効果。" notice="ハロニア" notice-o="33" >
+    <t sync="[mex]に「ハローワールド：ニア」の効果。" notice="ハロニア 南" notice-o="33" >
       <v-notice text="ハロワ：ニア対象" duration="56" icon="Touch.png" />
     </t>
-    <t sync="[mex]に「ハローワールド：ファー」の効果。" notice="ハロファー" notice-o="33" >
+    <t sync="[mex]に「ハローワールド：ファー」の効果。" notice="ハロファー 北" notice-o="33" >
       <v-notice text="ハロワ：ファー対象" duration="56" icon="DontTouch.png" />
     </t>
 
