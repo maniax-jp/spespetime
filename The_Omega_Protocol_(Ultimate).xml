@@ -699,7 +699,7 @@
     <a time="059" text="氷or刃" sync="オメガFの「(ブリザガ・オメガ|)」" />
     <a time="063" text="リアレーザー終了" />
     <a time="065" text="ハイパーパルス" sync="ライトアームユニットの「ハイパーパルス」" />
-    <a time="073" sync="オメガFは「ソーラレイ」の構え。" />
+    <a time="073" sync="オメガFは「ソーラレイ」の構え。" exec="python.exe" args="keyboard.py 0 f9" exec-hidden="true" />
     <a time="079" text="ソーラレイ" notice="タンク攻撃" />
     <a time="082" text="ソーラレイ" />
     <t sync="オメガF:仮説……ヒトのリミットブレイク現象が" goto="P5O" />
