@@ -785,49 +785,35 @@
     <a time="151" text="移行待ち" />
     <t sync="アルファオメガ:ワタシはオメガであり、アルファとともに歩む者" goto="P6" />
 
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 32.00 Seconds" notice="ハロワ・ニアいちばん" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 32.00 Seconds" notice="ハロニアいちばん" notice-o="22" >
       <v-notice text="ニア:1番" duration="32" icon="Touch.png" />
       <expressions>
         <set name="P5O-HW-1" value="true" />
       </expressions>
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 32.00 Seconds" notice="ハロワ・ファーいちばん" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 32.00 Seconds" notice="ハロファーいちばん" notice-o="22" >
       <v-notice text="ファー:1番" duration="32" icon="DontTouch.png" />
       <expressions>
         <set name="P5O-HW-1" value="true" />
       </expressions>
     </t>
 
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 50.00 Seconds" notice="ハロワ・ニアにばん" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 50.00 Seconds" notice="ハロニアにばん" notice-o="40" >
       <v-notice text="ニア:2番" duration="50" icon="Touch.png" />
       <expressions>
         <set name="P5O-HW-2" value="true" />
       </expressions>
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 50.00 Seconds" notice="ハロワ・ファーにばん" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 50.00 Seconds" notice="ハロファーにばん" notice-o="40" >
       <v-notice text="ファー:2番" duration="50" icon="DontTouch.png" />
       <expressions>
         <set name="P5O-HW-2" value="true" />
       </expressions>
     </t>
 
-<!--同梱トリガの動作チェック中
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：(ニア|ファー) from  for 32.00 Seconds" >
-      <expressions>
-        <set name="P5O-HW-1" value="true" />
-      </expressions>
-    </t>
-
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：(ニア|ファー) from  for 50.00 Seconds" >
-      <expressions>
-        <set name="P5O-HW-2" value="true" />
-      </expressions>
-    </t>
-  -->
-
     <!--デュナミス1の時は誘導を意識させる-->
-    <t sync="オメガは「拡散波動砲」の構え。" notice="2回誘導" notice-o="2" >
-      <v-notice text="2回誘導" duration="27" />
+    <t sync="オメガは「拡散波動砲」の構え。" notice="2回とも誘導" notice-o="14" >
+      <v-notice text="2回とも誘導" duration="27" />
       <expressions>
         <pre name="dynamis_count" value="01" />
         <pre name="P5O-HW-1" value="false" />
@@ -835,15 +821,15 @@
       </expressions>
     </t>
     <!--1回目ハロワ対象の時の通知-->
-    <t sync="オメガは「拡散波動砲」の構え。" notice="ハロワ対象" notice-o="2" >
+    <t sync="オメガは「拡散波動砲」の構え。" notice="ハロワ対象" notice-o="14" >
       <v-notice text="ハロワ対象" duration="27" />
       <expressions>
         <pre name="P5O-HW-1" value="true" />
       </expressions>
     </t>
     <!--1回目デュナミス2の時は検知を意識させる-->
-    <t sync="オメガは「拡散波動砲」の構え。" notice="検知対象を確認" notice-o="2" >
-      <v-notice text="検知対象を確認" duration="27" />
+    <t sync="オメガは「拡散波動砲」の構え。" notice="検知かも" notice-o="14" >
+      <v-notice text="検知かも" duration="27" />
       <expressions>
         <pre name="dynamis_count" value="02" />
         <pre name="P5O-HW-1" value="false" />
@@ -851,7 +837,7 @@
       </expressions>
     </t>
     <!--1回目デュナミス2+セカンドの時は検知を確定させる。14IDを調査すること-->
-    <t sync="オメガは「拡散波動砲」の構え。" notice="検知受ける" notice-o="2" >
+    <t sync="オメガは「拡散波動砲」の構え。" notice="検知受ける" notice-o="14" >
       <v-notice text="検知確定" duration="27" />
       <expressions>
         <pre name="dynamis_count" value="02" />
@@ -866,8 +852,8 @@
       </expressions>
     </t>
     <!--2回目でデュナミス2がついていた場合-->
-    <t sync="オメガは「ブラスター」の構え。" notice="ハロワ誘導担当" >
-      <v-notice text="ハロワ誘導担当" duration="27" />
+    <t sync="オメガは「ブラスター」の構え。" notice="ハロワ誘導" >
+      <v-notice text="ハロワ誘導" duration="27" />
       <expressions>
         <pre name="dynamis_count" value="02" />
         <pre name="P5O-HW-2" value="false" />
