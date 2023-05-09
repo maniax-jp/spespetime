@@ -773,10 +773,10 @@
     <a time="014" text="【構え】拡散波動砲" sync="オメガは「拡散波動砲」の構え。" />
     <a time="023" text="AoE1回目" />
     <a time="027" text="AoE2回目" />
-    <a time="030" text="【構え】検知" sync="オメガは「検知式波動砲」の構え。" notice="検知を確認" />
-    <a time="041" text="検知式波動砲" sync="オメガの「検知式波動砲」" notice="検知式波動砲" />
-    <a time="044" text="【構え】ブラスター" sync="オメガは「ブラスター」の構え。" notice="デュナミス3がブラスター" />
-    <a time="057" text="ブラスター" sync="オメガの「ブラスター」" notice="ブラスター" />
+    <a time="030" text="【構え】検知" sync="オメガは「検知式波動砲」の構え。" />
+    <a time="041" text="検知式波動砲" sync="オメガの「検知式波動砲」" />
+    <a time="044" text="【構え】ブラスター" sync="オメガは「ブラスター」の構え。" />
+    <a time="057" text="ブラスター" sync="オメガの「ブラスター」" />
     <a time="067" sync="オメガFは「ソーラレイ」の構え。" />
     <a time="072" text="ソーラレイ" notice="タンク攻撃" />
     <a time="076" text="ソーラレイ" />
@@ -785,26 +785,26 @@
     <a time="151" text="移行待ち" />
     <t sync="アルファオメガ:ワタシはオメガであり、アルファとともに歩む者" goto="P6" />
 
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 32.00 Seconds" notice="ハロニアいちばん" notice-o="22" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 32.00 Seconds" notice="ハロニア 検知の逆" notice-o="22" >
       <v-notice text="ニア:1番" duration="32" icon="Touch.png" />
       <expressions>
         <set name="P5O-HW-1" value="true" />
       </expressions>
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 32.00 Seconds" notice="ハロファーいちばん" notice-o="22" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 32.00 Seconds" notice="ハロファー 南 4本目" notice-o="22" >
       <v-notice text="ファー:1番" duration="32" icon="DontTouch.png" />
       <expressions>
         <set name="P5O-HW-1" value="true" />
       </expressions>
     </t>
 
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 50.00 Seconds" notice="ハロニアにばん" notice-o="40" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 50.00 Seconds" notice="ハロニア 西" notice-o="40" >
       <v-notice text="ニア:2番" duration="50" icon="Touch.png" />
       <expressions>
         <set name="P5O-HW-2" value="true" />
       </expressions>
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 50.00 Seconds" notice="ハロファーにばん" notice-o="40" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 50.00 Seconds" notice="ハロファー 南 4本目" notice-o="40" >
       <v-notice text="ファー:2番" duration="50" icon="DontTouch.png" />
       <expressions>
         <set name="P5O-HW-2" value="true" />
