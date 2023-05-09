@@ -812,19 +812,12 @@
     </t>
 
     <!--デュナミス1の時は誘導を意識させる-->
-    <t sync="オメガは「拡散波動砲」の構え。" notice="2回とも誘導" notice-o="14" >
+    <t sync="オメガは「拡散波動砲」の構え。" notice="ハロワ誘導" notice-o="14" >
       <v-notice text="2回とも誘導" duration="27" />
       <expressions>
         <pre name="dynamis_count" value="01" />
         <pre name="P5O-HW-1" value="false" />
         <pre name="P5O-HW-2" value="false" />
-      </expressions>
-    </t>
-    <!--1回目ハロワ対象の時の通知-->
-    <t sync="オメガは「拡散波動砲」の構え。" notice="ハロワ対象" notice-o="14" >
-      <v-notice text="ハロワ対象" duration="27" />
-      <expressions>
-        <pre name="P5O-HW-1" value="true" />
       </expressions>
     </t>
     <!--1回目デュナミス2の時は検知を意識させる-->
@@ -841,13 +834,6 @@
       <v-notice text="検知確定" duration="27" />
       <expressions>
         <pre name="dynamis_count" value="02" />
-        <pre name="P5O-HW-2" value="true" />
-      </expressions>
-    </t>
-    <!--2回目でハロワがついていた場合-->
-    <t sync="オメガは「ブラスター」の構え。" notice="ハロワ確認" >
-      <v-notice text="ハロワ対象" duration="27" />
-      <expressions>
         <pre name="P5O-HW-2" value="true" />
       </expressions>
     </t>
