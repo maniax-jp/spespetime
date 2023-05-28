@@ -607,11 +607,11 @@
     <a time="032" text="【デルタ】" sync="オメガMの「コード：＊＊＊ミ＊【デルタ】」" notice="デュナミス、デルタ">
       <expressions>
         <!--デュナミスのカウントを初期化-->
-        <set name="dynamis_count" value="00" />
+        <set name="dynamis_count" count="0" />
 
   @foreach (var player in Model.Party)
   {
-        <set name="dynamis_count_@(player.Job)" value="00" />
+        <set name="dynamis_count_@(player.Job)" count="0" />
   }
 
       </expressions>
@@ -743,7 +743,7 @@
         <pre name="P5S-chain_@(priority_hws[i])" value="false" />
         <pre name="P5S-HWN_@(priority_hws[i])" value="false" />
         <pre name="P5S-HWF_@(priority_hws[i])" value="false" />
-        <pre name="dynamis_count_@(priority_hws[i])" value="01" />
+        <pre name="dynamis_count_@(priority_hws[i])" count="1" />
         <set name="P5S-chain" count="+1" />
         <set name="P5S-chain_@(priority_hws[i])" value="true" />
       </expressions>
@@ -815,7 +815,7 @@
     <t sync="オメガは「拡散波動砲」の構え。" notice="ハロワ誘導" notice-o="14" >
       <v-notice text="ハロワ誘導" duration="24" />
       <expressions>
-        <pre name="dynamis_count" value="01" />
+        <pre name="dynamis_count" count="1" />
         <pre name="P5O-HW-1" value="false" />
       </expressions>
     </t>
@@ -823,7 +823,7 @@
     <t sync="オメガは「拡散波動砲」の構え。" notice="検知かも" notice-o="14" >
       <v-notice text="検知かも" duration="24" />
       <expressions>
-        <pre name="dynamis_count" value="02" />
+        <pre name="dynamis_count" count="2" />
         <pre name="P5O-HW-1" value="false" />
         <pre name="P5O-HW-2" value="false" />
       </expressions>
@@ -832,7 +832,7 @@
     <t sync="オメガは「拡散波動砲」の構え。" notice="検知受ける" notice-o="14" >
       <v-notice text="検知確定" duration="24" />
       <expressions>
-        <pre name="dynamis_count" value="02" />
+        <pre name="dynamis_count" count="2" />
         <pre name="P5O-HW-2" value="true" />
       </expressions>
     </t>
@@ -840,7 +840,7 @@
     <t sync="オメガは「ブラスター」の構え。" notice="ハロワ誘導" >
       <v-notice text="ハロワ誘導" duration="18" />
       <expressions>
-        <pre name="dynamis_count" value="02" />
+        <pre name="dynamis_count" count="2" />
         <pre name="P5O-HW-2" value="false" />
       </expressions>
     </t>
@@ -848,7 +848,7 @@
     <t sync="オメガは「ブラスター」の構え。" notice="ブラスター担当" >
       <v-notice text="ブラスター担当" duration="18" />
       <expressions>
-        <pre name="dynamis_count" value="03" />
+        <pre name="dynamis_count" count="3" />
       </expressions>
     </t>
   </s>
@@ -935,17 +935,17 @@
     <v-notice text="×マーカー" duration="30" icon="Cross.png" />
   </t>
 <!--デュナミスのカウンタ-->
-  <t sync="^1A:[id8]:[mex] gains the effect of デュナミスの高揚 .*(?&lt;dynamis_num&gt;(01|02|03))" >
+  <t sync="[mex]に「デュナミスの高揚」の効果。" >
     <expressions>
-      <set name="dynamis_count" value="${dynamis_num}" />
+      <set name="dynamis_count" count="+1" />
     </expressions>
   </t>
 
 @foreach (var player in Model.Party)
 {
-  <t sync="^1A:[id8]:[@(player.Job)] gains the effect of デュナミスの高揚 .*(?&lt;dynamis_num&gt;(01|02|03))" >
+  <t sync="[@(player.Job)]に「デュナミスの高揚」の効果。" >
     <expressions>
-      <set name="dynamis_count_@(player.Job)" value="${dynamis_num}" />
+      <set name="dynamis_count_@(player.Job)" count="+1" />
     </expressions>
   </t>
 }
