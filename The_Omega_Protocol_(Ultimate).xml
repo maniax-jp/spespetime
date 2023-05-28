@@ -767,6 +767,8 @@
         <!--セカンド、ファーストの初期化-->
         <set name="P5O-HW-1" value="false" />
         <set name="P5O-HW-2" value="false" />
+        <set name="P5O-HW-N" value="false" />
+        <set name="P5O-HW-F" value="false" />
       </expressions>
     </a>
 
@@ -785,29 +787,53 @@
     <a time="151" text="移行待ち" />
     <t sync="アルファオメガ:ワタシはオメガであり、アルファとともに歩む者" goto="P6" />
 
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 32.00 Seconds" notice="ハロニア 検知の逆" notice-o="22" >
-      <v-notice text="ニア:1番" duration="32" icon="Touch.png" />
+    <t no="1" sync="[mex]に「ファーストターゲット」の効果。" >
       <expressions>
         <set name="P5O-HW-1" value="true" />
       </expressions>
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 32.00 Seconds" notice="ハロファー 南 4本目" notice-o="22" >
-      <v-notice text="ファー:1番" duration="32" icon="DontTouch.png" />
+    <t no="1" sync="[mex]に「セカンドターゲット」の効果。" >
       <expressions>
-        <set name="P5O-HW-1" value="true" />
+        <set name="P5O-HW-2" value="true" />
+      </expressions>
+    </t>
+    <t no="1" sync="[mex]に「ハローワールド：ニア」の効果。" >
+      <expressions>
+        <set name="P5O-HW-N" value="true" />
+      </expressions>
+    </t>
+    <t no="1" sync="[mex]に「ハローワールド：ファー」の効果。" >
+      <expressions>
+        <set name="P5O-HW-F" value="true" />
       </expressions>
     </t>
 
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ニア from  for 50.00 Seconds" notice="ハロニア 西" notice-o="40" >
-      <v-notice text="ニア:2番" duration="50" icon="Touch.png" />
+    <t no="2" sync="[mex]に「(ファーストターゲット|セカンドターゲット|ハローワールド：ニア|ハローワールド：ファー)」の効果。" sync-count="2" notice="ハロニア 検知の逆" notice-o="22" >
+      <v-notice text="ニア:1番" duration="32" icon="Touch.png" />
       <expressions>
-        <set name="P5O-HW-2" value="true" />
+        <pre name="P5O-HW-1" value="true" />
+        <pre name="P5O-HW-N" value="true" />
       </expressions>
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of ハローワールド：ファー from  for 50.00 Seconds" notice="ハロファー 南 4本目" notice-o="40" >
+    <t no="2" sync="[mex]に「(ファーストターゲット|セカンドターゲット|ハローワールド：ニア|ハローワールド：ファー)」の効果。" sync-count="2" notice="ハロファー 南 4本目" notice-o="22" >
+      <v-notice text="ファー:1番" duration="32" icon="DontTouch.png" />
+      <expressions>
+        <pre name="P5O-HW-1" value="true" />
+        <pre name="P5O-HW-F" value="true" />
+      </expressions>
+    </t>
+    <t no="2" sync="[mex]に「(ファーストターゲット|セカンドターゲット|ハローワールド：ニア|ハローワールド：ファー)」の効果。" sync-count="2" notice="ハロニア 西" notice-o="40" >
+      <v-notice text="ニア:2番" duration="50" icon="Touch.png" />
+      <expressions>
+        <pre name="P5O-HW-2" value="true" />
+        <pre name="P5O-HW-N" value="true" />
+      </expressions>
+    </t>
+    <t no="2" sync="[mex]に「(ファーストターゲット|セカンドターゲット|ハローワールド：ニア|ハローワールド：ファー)」の効果。" sync-count="2" notice="ハロファー 南 4本目" notice-o="40" >
       <v-notice text="ファー:2番" duration="50" icon="DontTouch.png" />
       <expressions>
-        <set name="P5O-HW-2" value="true" />
+        <pre name="P5O-HW-2" value="true" />
+        <pre name="P5O-HW-F" value="true" />
       </expressions>
     </t>
 
