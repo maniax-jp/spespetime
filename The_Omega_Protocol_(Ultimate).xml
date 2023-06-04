@@ -341,6 +341,9 @@
   <t sync="[mex]に「狙撃式波動砲」の効果。" notice="黒デバフ" >
     <v-notice text="単体対象" duration="19" />
   </t>
+  <t sync="[nex]に「(狙撃式高出力波動砲|狙撃式波動砲)」の効果。" notice="無職" sync-count="6" >
+    <v-notice text="無職" duration="19" />
+  </t>
   
   <t sync="[pc]に「コードスメール：サークル」の効果。" sync-count="1">
     <expressions>
