@@ -306,73 +306,43 @@
   </a>
   <a time="036" text="ハロー・ワールド" sync="オメガの「ハロー・ワールド」" />
 
-    <!--以下無職用スタートタイムライン-->
-    <!--act1-->
-    <a time="047" text="無職用タイムライン" >
-      <expressions>
-        <set name="P3-HW" value="false" />
-      </expressions>
-    </a>
-    <a time="049" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="050" text="シェア受ける" notice="塔の間" notice-o="-5" >
-      <v-notice text="シェア受ける,エンバグ担当" duration="19" />
-    </a>
-    <a time="060" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="064" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="067" text="エンバグ処理2" />
-    <!--act2-->
-    <a time="070" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="071" text="床踏み+シェア渡す" notice="塔で頭割り" >
-      <v-notice text="床踏み+シェア渡す" duration="19" />
-    </a>
-    <a time="080" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="085" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="088" text="担当外エンバグ2" />
-    <!--act3-->
-    <a time="091" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="092" text="サークル受ける" notice="塔の外" >
-      <v-notice text="サークル受ける,エンバグ担当" duration="19" />
-    </a>
-    <a time="102" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="106" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="109" text="エンバグ処理2" />
-    <!--act4-->
-    <a time="112" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="113" text="サークル１人受け" notice="塔でサークル" >
-      <v-notice text="床踏み+サークルソロ受け" duration="19" />
-    </a>
-    <a time="123" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-    <a time="122" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="128" text="担当外エンバグ2" />
-    <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
-
-    <!--シェア向けタイムラインへ-->
-    <t sync="[mex]に「クリティカルバグ：シェア」の効果。" sync-count="1">
-      <expressions>
-        <pre name="P3-HW" value="true" />
-      </expressions>
-      <load target="P3-S" truncate="true"/>
-    </t>
-    <!--サークル向けタイムラインへ-->
-    <t sync="[mex]に「クリティカルバグ：サークル」の効果。" sync-count="1">
-      <expressions>
-        <pre name="P3-HW" value="true" />
-      </expressions>
-      <load target="P3-C" truncate="true"/>
-    </t>
-    <!--レイテント向けタイムラインへ-->
-    <t sync="[mex]に「レイテントバグ」の効果。" sync-count="1">
-      <expressions>
-        <pre name="P3-HW" value="true" />
-      </expressions>
-      <load target="P3-L" truncate="true"/>
-    </t>
+  <!--無職向けタイムラインへ-->
+  <t sync="[nex]に「(クリティカルバグ：シェア|クリティカルバグ：サークル|レイテントバグ)」の効果。" sync-count="6">
+    <expressions>
+      <pre name="P3-HW" value="true" />
+    </expressions>
+    <load target="P3-N" truncate="true"/>
+  </t>
+  <!--シェア向けタイムラインへ-->
+  <t sync="[mex]に「クリティカルバグ：シェア」の効果。" sync-count="1">
+    <expressions>
+      <pre name="P3-HW" value="true" />
+    </expressions>
+    <load target="P3-S" truncate="true"/>
+  </t>
+  <!--サークル向けタイムラインへ-->
+  <t sync="[mex]に「クリティカルバグ：サークル」の効果。" sync-count="1">
+    <expressions>
+      <pre name="P3-HW" value="true" />
+    </expressions>
+    <load target="P3-C" truncate="true"/>
+  </t>
+  <!--レイテント向けタイムラインへ-->
+  <t sync="[mex]に「レイテントバグ」の効果。" sync-count="1">
+    <expressions>
+      <pre name="P3-HW" value="true" />
+    </expressions>
+    <load target="P3-L" truncate="true"/>
+  </t>
 
   <t sync="[mex]に「狙撃式高出力波動砲」の効果。" notice="白デバフ" >
     <v-notice text="頭割り対象" duration="19" />
   </t>
   <t sync="[mex]に「狙撃式波動砲」の効果。" notice="黒デバフ" >
     <v-notice text="単体対象" duration="19" />
+  </t>
+  <t sync="[nex]に「(狙撃式高出力波動砲|狙撃式波動砲)」の効果。" notice="無職" sync-count="6" >
+    <v-notice text="無職" duration="19" />
   </t>
   
   <t sync="[pc]に「コードスメール：サークル」の効果。" sync-count="1">
@@ -402,37 +372,56 @@
         <set name="P3-HW" value="false" />
       </expressions>
     </a>
-    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="015" text="床踏み+シェア渡す" notice="塔で頭割り" notice-o="-5" >
-      <v-notice text="床踏み+シェア渡す" duration="19" />
+    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" notice="1回目" notice-o="5" />
+    <a time="015" text="青塔で頭割り" notice="青塔で頭割り" notice-o="-4" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="025" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="029" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="032" text="担当外エンバグ2" />
+    <a time="015" text="赤塔で頭割り" notice="赤塔で頭割り" notice-o="-4" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="024" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act2-->
-    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="036" text="サークル受ける" notice="塔の外" >
-      <v-notice text="サークル受ける,エンバグ担当" duration="19" />
+    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" notice="2回目" notice-o="5" />
+    <a time="036" text="赤塔の外" notice="赤塔の外" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="045" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-    <a time="050" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="053" text="エンバグ処理2" />
+    <a time="036" text="青塔の外" notice="青塔の外" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="045" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act3-->
-    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="057" text="床踏み+サークル渡す" notice="塔でサークル" >
-      <v-notice text="床踏み+サークル渡す" duration="19" />
+    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" notice="3回目" notice-o="5" />
+    <a time="057" text="赤塔でサークル" notice="赤塔でサークル" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="067" text="サークル発動" sync="オメガの「クリティカルバグ：サークル」" />
-    <a time="071" text="担当外エンバグ" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="074" text="担当外エンバグ" />
+    <a time="057" text="青塔でサークル" notice="青塔でサークル" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="066" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act4-->
     <a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="078" text="シェア受ける" notice="塔の間" >
-      <v-notice text="床踏み+シェア受ける,エンバグ担当" duration="19" />
+    <a time="078" text="青塔の間" notice="青塔の間" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="088" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="087" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="093" text="エンバグ処理" />
+    <a time="078" text="赤塔の間" notice="赤塔の間" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
     <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
   </s>
 
@@ -444,79 +433,178 @@
         <set name="P3-HW" value="false" />
       </expressions>
     </a>
-    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="015" text="床踏み+サークル渡す" notice="塔でサークル" notice-o="-5" >
-      <v-notice text="床踏み+サークル渡す" duration="19" />
+    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" notice="1回目" notice-o="5" />
+    <a time="015" text="赤塔でサークル" notice="赤塔でサークル" notice-o="-4" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-    <a time="029" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="032" text="担当外エンバグ2" />
+    <a time="015" text="青塔でサークル" notice="青塔でサークル" notice-o="-4" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="024" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act2-->
-    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="036" text="シェア受ける" notice="塔の間" >
-      <v-notice text="シェア受ける,エンバグ担当" duration="19" />
+    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" notice="2回目" notice-o="5" />
+    <a time="036" text="青塔の間" notice="青塔の間" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="045" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="050" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="053" text="エンバグ処理2" />
+    <a time="036" text="赤塔の間" notice="赤塔の間" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="045" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act3-->
-    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="057" text="床踏み+シェア渡す" notice="塔で頭割り" >
-      <v-notice text="床踏み+シェア渡す" duration="19" />
+    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" notice="3回目" notice-o="5" />
+    <a time="057" text="青塔で頭割り" notice="青塔で頭割り" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="067" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="071" text="担当外エンバグ" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="074" text="担当外エンバグ" />
+    <a time="057" text="赤塔で頭割り" notice="赤塔で頭割り" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="066" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act4-->
     <a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="078" text="サークル避ける" notice="塔の間" >
-      <v-notice text="サークル避ける,エンバグ担当" duration="19" />
+    <a time="078" text="青塔の間" notice="青塔の間" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="088" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-    <a time="087" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="093" text="エンバグ処理" />
+    <a time="078" text="赤塔の間" notice="赤塔の間" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
     <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
   </s>
 
+  <!--レイテント用タイムライン-->
   <s name="P3-L">
-    <!--レイテント用タイムライン-->
     <!--act1-->
     <a time="012" text="レイテント用タイムライン" >
       <expressions>
         <set name="P3-HW" value="false" />
       </expressions>
     </a>
-    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="015" text="サークル受ける" notice="塔の外" notice-o="-5" >
-      <v-notice text="サークル受ける,エンバグ担当" duration="19" />
+    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" notice="1回目" notice-o="5" />
+    <a time="015" text="赤塔の外" notice="赤塔の外" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="025" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-    <a time="029" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="032" text="エンバグ処理2" />
+    <a time="015" text="青塔の外" notice="青塔の外" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="024" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act2-->
-    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="036" text="床踏み+サークル渡す" notice="塔でサークル" >
-      <v-notice text="床踏み+サークル渡す" duration="19" />
+    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" notice="2回目" notice-o="5" />
+    <a time="036" text="赤塔でサークル" notice="赤塔でサークル" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="045" text="サークル着弾" sync="オメガの「クリティカルバグ：サークル」" />
-    <a time="050" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="053" text="担当外エンバグ2" />
+    <a time="036" text="青塔でサークル" notice="青塔でサークル" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="045" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act3-->
-    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="057" text="シェア受ける" notice="塔の間" >
-      <v-notice text="シェア受ける,エンバグ担当" duration="19" />
+    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" notice="3回目" notice-o="5" />
+    <a time="057" text="青塔の間" notice="青塔の間" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="067" text="シェア発動" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="071" text="エンバグ処理1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="074" text="エンバグ処理2" />
+    <a time="057" text="赤塔の間" notice="赤塔の間" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="066" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
     <!--act4-->
     <a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
-    <a time="078" text="シェア渡す" notice="塔で頭割り" >
-      <v-notice text="床踏み+シェア渡す" duration="19" />
+    <a time="078" text="青塔で頭割り" notice="青塔で頭割り" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
     </a>
-    <a time="088" text="シェア着弾" sync="オメガの「クリティカルバグ：シェア」" />
-    <a time="087" text="担当外エンバグ1" sync="オメガの「エンバグ」" sync-count="1" />
-    <a time="093" text="担当外エンバグ2" />
+    <a time="078" text="赤塔で頭割り" notice="赤塔で頭割り" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
+  </s>
+
+  <!--無職用タイムライン-->
+  <s name="P3-N">
+    <!--act1-->
+    <a time="012" text="無職用タイムライン" >
+      <expressions>
+        <set name="P3-HW" value="false" />
+      </expressions>
+    </a>
+    <a time="014" text="アクション1開始" sync="オメガは「レイテントバグ」の構え。" notice="1回目" notice-o="5" />
+    <a time="015" text="青塔の間" notice="青塔の間" notice-o="-4" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
+    </a>
+    <a time="015" text="赤塔の間" notice="赤塔の間" notice-o="-4" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="024" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
+    <!--act2-->
+    <a time="035" text="アクション2開始" sync="オメガは「レイテントバグ」の構え。" notice="2回目" notice-o="5" />
+    <a time="036" text="青塔で頭割り" notice="青塔で頭割り" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
+    </a>
+    <a time="036" text="赤塔で頭割り" notice="赤塔で頭割り" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="045" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
+    <!--act3-->
+    <a time="056" text="アクション3開始" sync="オメガは「レイテントバグ」の構え。" notice="3回目" notice-o="5" />
+    <a time="057" text="赤塔の外" notice="赤塔の外" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
+    </a>
+    <a time="057" text="青塔の外" notice="青塔の外" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
+    <a time="066" text="受け渡し" sync="オメガの「レイテントバグ」" notice="受け渡し" notice-o="0" />
+    <!--act4-->
+    <a time="077" text="アクション4開始" sync="オメガは「レイテントバグ」の構え。" />
+    <a time="078" text="赤塔でサークル" notice="赤塔でサークル" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="true" />
+      </expressions>
+    </a>
+    <a time="078" text="青塔でサークル" notice="青塔でサークル" notice-o="-1" >
+      <expressions>
+        <pre name="P3-circle-red" value="false" />
+      </expressions>
+    </a>
     <t sync="オメガは「クリティカルエラー」の構え。" goto="P3-2" />
   </s>
 
