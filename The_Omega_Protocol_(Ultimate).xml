@@ -558,7 +558,7 @@
     <t sync="オメガ:ビープ……システム強制リブート…… これより、" goto="P4" />
 
 @{
-  string[] priority_owc = {"DRK", "GNB", "NIN", "DRG", "DNC", "SMN", "WHM", "SGE"};
+  string[] priority_owc = {"WAR", "PLD", "DRG", "NIN", "DNC", "BLM", "WHM", "SCH"};
   int my_priority = Array.IndexOf(priority_owc, Model.Player.Job);
 }
 @for (int i = 0; i < my_priority; i++)
@@ -755,7 +755,7 @@
 }
 
 @{
-  string[] priority_hws = {"DRK", "GNB", "WHM", "SGE", "NIN", "DRG", "DNC", "SMN"};
+  string[] priority_hws = {"WAR", "PLD", "WHM", "SCH", "DRG", "NIN", "DNC", "BLM"};
 }
 @for (int i = 0; i < priority_hws.Length; i++) {
   for (int j = 0; j < 3; j++) {
