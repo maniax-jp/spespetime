@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>アルカディアLH級:4層</name>
+  <rev>TEST4</rev>
+  <description>
+    20240802:TEST0 試作品 ノーチェックです。巨大化まで
+    202408022110:TEST2 トリガーを追加。
+    202408030130:TES4 リップシンクのデフォルトを指定。時間切れまで記述。
+    AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
+  </description>
+  <author>Aqua Cat</author>
+  <license>CC BY-SA</license>
+  <zone>AAC Light-heavyweight M4 (Savage)</zone>
+  <locale>JA</locale>
+  <start>0039::戦闘開始！</start>
+  <entry>前半</entry>
+
+  <default target-element="Activity" target-attr="notice-o" value="-4" />
+  <!--リップシンクを±5へ変更。指定が毎回面倒だし今後これでいくか・・・？-->
+  <default target-element="Activity" target-attr="sync-s" value="-5" />
+  <default target-element="Activity" target-attr="sync-e" value="5" />
+
+<s name="前半">
+  <a time="005.0" sync="メテムの実況:「ウィケッドサンダー」がリングに帰ってきました！" />
+  <a time="016.0" text="全体攻撃" sync="ウィケッドサンダーの「ラス・オブ・ゼウス」" notice="全体攻撃" />
+  <a time="023.0" sync="ウィケッドサンダー:変幻自在、翼がなければ造ればいい……！" />
+  <a time="030.0" sync="メテムの実況:エレクトロープが大きな翼に！ なんと神々しい！" />
+  <a time="039.0" text="安置を確認" sync="ウィケッドサンダーの「フライングウィッチ」" notice="" />
+  <a time="050.0" text="誘導対象者を確認" sync="ウィケッドサンダーの「ライトニング・ウィッチハント」" notice="" />
+  <a time="052.0" text="誘導遠近を確認" sync="ウィケッドサンダーは「ウィッチハント」の構え。" />
+  <a time="059.0" text="ウィッチハント" sync="ウィケッドサンダーの「ウィッチハント」" />
+  <a time="076.0" text="円輪/輪円" sync="ウィケッドサンダーの「輪円式ウィッチハント」" />
+  <a time="076.0" text="1回目" sync="ウィケッドサンダーの幻影の「ウィッチハント」" sync-s="-2" sync-e="1" />
+  <a time="080.0" text="2回目" sync="ウィケッドサンダーの幻影の「ウィッチハント」" sync-s="-2" sync-e="0" />
+  <a time="083.0" text="3回目" sync="ウィケッドサンダーの幻影の「ウィッチハント」" sync-s="-2" sync-e="0" />
+  <a time="087.0" text="4回目" sync="ウィケッドサンダーの幻影の「ウィッチハント」" sync-s="-2" sync-e="0" />
+  <a time="100.0" text="全体攻撃" sync="ウィケッドサンダーの「ラス・オブ・ゼウス」" notice="全体攻撃" />
+  <a time="107.0" sync="ウィケッドサンダー:これも、エレクトロープの可能性だ……！" />
+  <a time="112.0" text="エレクトロープ展開" sync="ウィケッドサンダーの「エレクトロープ展開」" notice="展開1回目" />
+  <a time="119.0" text="シャインスパーク開始" sync="ウィケッドサンダーの「シャインスパーク」"  sync-interval="5" />
+  <a time="126.0" text="ファンタスティックシンフォニー" sync="ウィケッドサンダーの「ファンタスティックシンフォニー」" />
+  <!--POSで安置判断が可能か。下記は右下安置　左上安置　ちんぽにゃ！！！
+  <a time="129.0" text="スパーク" sync="エレクトリックマインは「スパーク」を唱えた。" notice="次は、スパーク。" />
+  <a time="129.0" text="スパークII" sync="エレクトリックマインは「スパークII」を唱えた。" notice="次は、スパークII。" />
+  <a time="129.0" text="サイドスパーク" sync="ウィケッドサンダーは「サイドスパーク」の構え。" notice="次は、サイドスパーク。" />
+  <a enabled="false" time="129.4" text="effect Unknown_B9A" sync="^1A:4002036A:ウィケッドサンダー gains the effect of Unknown_B9A from  for 6.00 Seconds. BuffID: 0B9A-2F1" />
+  <a time="129.5" text="_rsv_38345_-1_0_0_0_SE2DC5B04_EE2DC5B04" sync="14:95C9:エレクトリックマイン starts using _rsv_38345_-1_0_0_0_SE2DC5B04_EE2DC5B04 on エレクトリックマイン. Duration: 6.700 Pos: (115.00,115.00,0.00) Heading: 0.00" notice="次は、_rsv_38345_-1_0_0_0_SE2DC5B04_EE2DC5B04。" />
+  <a time="129.5" text="_rsv_38346_-1_0_0_0_SE2DC5B04_EE2DC5B04" sync="14:95CA:エレクトリックマイン starts using _rsv_38346_-1_0_0_0_SE2DC5B04_EE2DC5B04 on エレクトリックマイン. Duration: 6.700 Pos: (85.00,115.00,0.00) Heading: 0.00" notice="次は、_rsv_38346_-1_0_0_0_SE2DC5B04_EE2DC5B04。" />
+  <a time="129.5" text="_rsv_38346_-1_0_0_0_SE2DC5B04_EE2DC5B04" sync="14:95CA:エレクトリックマイン starts using _rsv_38346_-1_0_0_0_SE2DC5B04_EE2DC5B04 on エレクトリックマイン. Duration: 6.700 Pos: (115.00,85.00,0.00) Heading: 0.00" notice="次は、_rsv_38346_-1_0_0_0_SE2DC5B04_EE2DC5B04。" />
+  <a time="129.5" text="_rsv_38345_-1_0_0_0_SE2DC5B04_EE2DC5B04" sync="14:95C9:エレクトリックマイン starts using _rsv_38345_-1_0_0_0_SE2DC5B04_EE2DC5B04 on エレクトリックマイン. Duration: 6.700 Pos: (85.00,85.00,0.00) Heading: 0.00" notice="次は、_rsv_38345_-1_0_0_0_SE2DC5B04_EE2DC5B04。" />
+-->
+  <a time="136.0" text="スパーク" sync="ウィケッドサンダーの「サイドスパーク」" />
+  <a time="145.0" text="強攻撃" sync="ウィケッドサンダーの「ウィケッドジョルト」" notice="タンク強攻撃" sync-interval="5" />
+  <a time="148.0" text="強攻撃2" />
+  <a time="160.0" text="エレクトロープ展開" sync="ウィケッドサンダーの「エレクトロープ展開」" notice="展開2回目、基本散開" />
+  <a time="162.0" sync="ウィケッドサンダー:これでどうだ！" />
+  <a time="162.0" text="被弾を数える" sync="ウィケッドサンダーは「シャインスパーク」を唱えた。" notice="被弾を数える" />
+  <a time="166.0" text="4" />
+  <a time="167.0" text="3" />
+  <a time="169.0" text="2" />
+  <a time="170.0" text="1" />
+  <a time="182.0" text="1回目発動" sync="ウィケッドサンダーの「スパークII」" notice="" />
+  <a time="192.0" text="サイドスパーク" sync="ウィケッドサンダーの「サイドスパーク」" />
+  <a time="202.0" text="2回目発動" sync="ウィケッドサンダーの「スパークII」" notice="" />
+  <a time="204.0" sync="ウィケッドサンダー:喰らえ！" />
+  <a time="209.0" text="連続頭割り" sync="ウィケッドサンダーの「ウィケッドボルト」" notice="連続頭割り" />
+  <a time="212.0" text="タンク誘導" notice="" />
+  <a time="221.0" text="イオンクラスター" sync="ウィケッドサンダーの「イオンクラスター」" />
+  <a time="225.0" text="セリフ" sync="ウィケッドサンダー:エレクトロープの使い方を教えてやる……！" />
+  <a time="232.0" text="セリフ2" sync="メテムの実況:エレクトロープが巨大な大砲に！ その力は健在のようだァ！" />
+  <a time="234.0" text="移動" sync="ウィケッドサンダーは「カノンスタンピード」の構え。" notice="移動" />
+  <a time="246.0" sync="ウィケッドサンダー:消し飛べ！" />
+  <a time="252.0" text="エレクトロンストリーム1" sync="ウィケッドサンダーの「エレクトロンストリーム」" />
+  <a time="265.0" text="エレクトロンストリーム2" sync="ウィケッドサンダーの「エレクトロンストリーム」" />
+  <a time="278.0" text="エレクトロンストリーム3" sync="ウィケッドサンダーの「エレクトロンストリーム」" />
+  <a time="293.0" text="強攻撃" sync="ウィケッドサンダーの「ウィケッドジョルト」" notice="タンク強攻撃" sync-interval="5" />
+  <a time="296.0" text="ウィケッドジョルト" sync="ウィケッドサンダーの「ウィケッドジョルト」" />
+  <a time="317.0" text="エレクトロープ移植" sync="ウィケッドサンダーの「エレクトロープ移植」" />
+  <a time="337.0" text="円着弾" sync="ウィケッドサンダーの「ライトニングポイント」" notice="円着弾" />
+  <a time="340.0" text="ビーム注意" sync="ウィケッドサンダーの「ライトニングカレント」" notice="ビーム注意" />
+  <a time="342.0" text="最後に移動" notice="もういちど移動" />
+  <a time="356.0" text="2回目開始" sync="メテムの実況:身体から何か生えてきました！ これは、いったい……" />
+  <a time="363.0" text="円着弾" sync="ウィケッドサンダーの「ライトニングポイント」" notice="円着弾" />
+  <a time="366.0" text="ビーム注意" sync="ウィケッドサンダーの「ライトニングカレント」" notice="ビーム注意" />
+  <a time="368.0" text="最後に移動" sync="ウィケッドサンダーの「ライトニングカレント」" notice="もういちど移動" />
+  <a time="370.0" sync="ウィケッドサンダー:私の身体……最後まで保ってくれよ！！" />
+  <a time="379.0" text="全体3" sync="ウィケッドサンダーの「ソウルショック」"  />
+  <a time="382.0" text="全体2" sync="ウィケッドサンダーの「衝撃」" sync-interval="5" />
+  <a time="385.0" text="全体1" />
+  <a time="387.0" text="吹飛ばし" sync="ウィケッドサンダーの「キャノンボルト」" notice="吹飛ばし" />
+  <!--a time="394.0" text="移行待ち" sync="ウィケッドサンダー:さあ、これからが本番だよ！" sync-o="-30" /-->
+  <a time="420.0" text="移行待ち" sync="ウィケッドサンダー:さあ、これからが本番だよ！" sync-s="-50" goto="後半" />
+
+  <!--トリガーは全て試験運用(ていううかタイムラインも未完成だし試験運用版)-->
+  <!--サイドスパーク-->
+    <t sync="^14:95EC" notice="左安置" >
+      <v-notice text="左安置" duration="7" />
+    </t>
+    <t sync="^14:95ED" notice="右安置" >
+      <v-notice text="右安置" duration="7" />
+    </t>
+  <!--サイドスパーク-->
+    <t sync="^14:95E0" notice="外側スタート" >
+      <v-notice text="外側スタート" duration="7" />
+    </t>
+    <t sync="^14:95E1" notice="内側スタート" >
+      <v-notice text="内側スタート" duration="7" />
+    </t>
+  <!--キャノン　なぜか動作しない。-->
+  <!--
+    <t sync="^14:95D6" notice="北にあおいろ組" >
+      <v-notice text="北に青組" duration="7" />
+    </t>
+    <t sync="^14:95D7" notice="北にきいろ組" >
+      <v-notice text="北に黄組" duration="7" />
+    </t>
+  -->
+  <!--遠近エフェクト-->
+  <!--
+    <t sync="^1A:[id8]:ウィケッドサンダー.*0B9A-2F6$$" notice="誘導近づく" >
+      <v-notice text="誘導近づく" duration="8" />
+    </t>
+    <t sync="^1A:[id8]:ウィケッドサンダー.*0B9A-2F7$$" notice="誘導離れる" >
+      <v-notice text="誘導離れる" duration="8" />
+    </t>
+  -->
+  <!--球エフェクト-->
+    <t sync="^1A:[id8]:ウィケッドサンダー.*0B9A-2F0$$" notice="頭割り" notice-o="2" >
+      <v-notice text="頭割り" duration="8" />
+    </t>
+    <t sync="^1A:[id8]:ウィケッドサンダー.*0B9A-2F1$$" notice="散開" notice-o="2" >
+      <v-notice text="散開" duration="8" />
+    </t>
+  <!--爆弾付与-->
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_3999.*for 22.00 Seconds" notice="先に散開" >
+      <v-notice text="先に散開" duration="45" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_3999.*for 42.00 Seconds" notice="後で散開" >
+      <v-notice text="後で散開" duration="45" />
+    </t>
+  <!--キャノンデバフ-->
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_(4002|4003)" notice="矢印担当" >
+      <v-notice text="矢印担当" duration="5" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_(4004|4005)" notice="円担当" >
+      <v-notice text="円担当" duration="5" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4006" notice="むらさき担当" >
+      <v-notice text="紫担当" duration="5" />
+    </t>
+</s>
+
+<!--ここまで見てくれた人へ
+予測ではありますが爆発するマインはPOSとアクションで安置の判断
+先後とフラグとカウンタを利用して誘導(デバフ)などできるかもしれません
+
+後半戦に関してですが幻影の詠唱は0.7秒なので役に立たず、生成時に15のエフェクトIDを見つけられませんでした。
+生成時にギミックは既に決まっているので何らかの方法は取れそう。ここに関しては良い方法を模索中です。
+(上記は完全に個人の感想です)
+上記時間があれば作ろうと思います。A.C
+-->
+
+<s name="後半">
+  <!--剣の範囲-->
+    <t sync="^14:9610" notice="よこ安置" >
+      <v-notice text="よこ安置" duration="7" />
+    </t>
+    <t sync="^14:9612" notice="中央安置" >
+      <v-notice text="中央安置" duration="7" />
+    </t>
+  <!--尾の範囲-->
+    <t sync="^14:9606" notice="右前安置" >
+      <v-notice text="赤:右前安置" duration="7" />
+    </t>
+    <t sync="^14:9608" notice="左前安置" >
+      <v-notice text="赤:左前安置" duration="7" />
+    </t>
+    <t sync="^14:9607" notice="左からノックバック" >
+      <v-notice text="青:左からノックバック" duration="7" />
+    </t>
+    <t sync="^14:9609" notice="右からノックバック" >
+      <v-notice text="青:右からノックバック" duration="7" />
+    </t>
+    <!--ブラスターの通知-->
+    <t sync="^14:962B" notice="頭割りから" >
+      <v-notice text="頭割→散開" duration="7" />
+    </t>
+    <t sync="^14:962C" notice="散開から" >
+      <v-notice text="散開→頭割" duration="7" />
+    </t>
+    <!--ブラックサバト三回目-->
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4000.*for 23.00 Seconds" notice="先に銃。あおいろを誘導" >
+      <v-notice text="青銃誘導→塔" duration="40" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4000.*for 38.00 Seconds" notice="先に塔。あおいろを誘導" >
+      <v-notice text="塔→青銃誘導" duration="40" />
+    </t>
+
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4001.*for 23.00 Seconds" notice="先に銃。きいろを誘導" >
+      <v-notice text="黄銃誘導→塔" duration="40" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4001.*for 38.00 Seconds" notice="先に塔。きいろを誘導" >
+      <v-notice text="塔→黄銃誘導" duration="40" />
+    </t>
+
+  <a time="005.0" text="同期待ち" sync="メテムの実況:エレクトロープが体内に！ 新たな魔物の魂も注入したようだァ～！" />
+  <a time="013.0" text="ｵﾘｬｱｱｱ!" sync="ウィケッドサンダー:おりゃアアア！" notice="" />
+  <a time="019.0" text="クロステイル・スペシャル" sync="ウィケッドサンダーの「クロステイル・スペシャル」" notice="強全体攻撃" />
+  <a time="031.0" text="安置を確認" sync="ウィケッドサンダーは「ウィケッドブレイズ」を唱えた。" notice="" />
+  <a time="037.0" text="頭割り4連" sync="ウィケッドサンダーの「ウィケッドブレイズ」" notice="頭割り、4連" />
+  <a time="047.0" text="ボス予兆" sync="ウィケッドサンダーの「ウィケッドスペシャル」" />
+  <a time="054.0" text="タンク線取り" sync="ウィケッドサンダーは「マスタードボム」を唱えた。" notice="タンク線取り" />
+  <a time="063.0" text="着弾" sync="ウィケッドサンダーの「マスタードボム」" />
+  <a time="066.0" text="デバフ処理" notice="デバフを処理" />
+  <a time="073.0" text="セリフ" sync="ウィケッドサンダー:エレクトロープなら、属性の変換だって……！" />
+  <!--発動時に検知できたのでここでは何もしない。-->
+  <a time="082.0" text="属性変換" sync="ウィケッドサンダーの「属性変換」" />
+  <a time="090.0" text="テイル1" sync="ウィケッドサンダーの「テイルスラスト」" sync-s="-2" sync-e="1" />
+  <a time="094.0" text="テイル2" sync="ウィケッドサンダーの「テイルスラスト」" sync-s="-2" sync-e="1" />
+  <a time="112.0" text="全体攻撃" sync="ウィケッドサンダーの「アズールサンダー」" notice="全体攻撃" />
+  <a time="114.0" sync="ウィケッドサンダー:これでも喰らえ！" />
+  <!--ブラックサバト1回目-->
+  <a time="118.0" text="ブラックサバト【日没】" sync="ウィケッドサンダーの「ブラックサバト【日没】」" notice="日没" />
+  <a time="121.0" text="中央集合" sync="ウィケッドサンダーは「ウィケッドファイア」を唱えた。" notice="中央集合" />
+  <a time="126.0" text="AoE捨て" sync="ウィケッドサンダーの「ウィケッドファイア」" notice="" />
+  <a time="129.0" text="処理1" sync="ウィケッドサンダーの幻影の「サイドスパーク」" notice="" />
+  <a time="137.0" text="ボス予兆" sync="ウィケッドサンダーの「ウィケッドスペシャル」" />
+  <a time="137.0" text="処理2" sync="ウィケッドサンダーの幻影の「サイドスパーク」" notice="" />
+  <!--ブラックサバト2回目-->
+  <a time="148.0" text="ブラックサバト【夜半】" sync="ウィケッドサンダーの「ブラックサバト【夜半】」" notice="夜半" />
+  <a time="151.0" text="集散/集散を確認" sync="ウィケッドサンダーは「(集散|散集)式ブラスター」を唱えた。" />
+  <a time="158.0" text="処理1" sync="ウィケッドサンダーの幻影の「リングサンダー」" notice="1回目" sync-s="-2" sync-e="1" />
+  <a time="162.0" text="処理2" sync="ウィケッドサンダーの幻影の「リングサンダー」" notice="2回目" sync-s="-2" sync-e="1" />
+  <a time="167.0" text="ボス予兆" sync="ウィケッドサンダーの「ウィケッドスペシャル」" />
+  <a time="175.0" text="全体攻撃" sync="ウィケッドサンダーの「ウィケッドサンダー」" notice="全体攻撃" />
+  <a time="186.0" text="属性変換" sync="ウィケッドサンダーの「属性変換」" />
+  <a time="195.0" text="火炎斬り" sync="ウィケッドサンダーの「火炎斬り」" notice="左右散開" />
+  <a time="198.0" text="塔踏がPOP" sync="ウィケッドサンダーは「剣の雨」の構え。" notice="塔踏み" />
+  <a time="200.0" text="剣の雨" sync="ウィケッドサンダーの「剣の雨」" />
+  <!--チェインライトニング-->
+  <a time="205.0" text="予兆を確認" sync="ウィケッドサンダーは「チェインライトニング」の構え。" notice="予兆を確認" />
+  <a time="222.0" text="チェイン開始" sync="ウィケッドサンダーの「チェインライトニング」" notice="グ。" />
+  <a time="248.0" text="テイル1" sync="ウィケッドサンダーの「テイルスラスト」" sync-s="-2" sync-e="1" />
+  <a time="252.0" text="テイル2" sync="ウィケッドサンダーの「テイルスラスト」" sync-s="-2" sync-e="1" />
+  <a time="255.0" text="タンク線取り" sync="ウィケッドサンダーは「マスタードボム」を唱えた。" notice="タンク線取り" />
+  <a time="264.0" text="着弾" sync="ウィケッドサンダーの「マスタードボム」" />
+  <a time="267.0" text="デバフを処理" notice="デバフを処理" />
+  <a time="282.0" text="属性変換" sync="ウィケッドサンダーの「属性変換」" />
+  <a time="291.0" text="全体攻撃" sync="ウィケッドサンダーの「アズールサンダー」" notice="全体攻撃" />
+  <!--ブラックサバト3回目トリガーで指示を行うので通知なし-->
+  <a time="296.0" text="デバフ付与" sync="ウィケッドサンダーの「イオンクラスター」" />
+  <a time="303.0" text="ブラックサバト【日出】" sync="ウィケッドサンダーの「ブラックサバト【日出】」" notice="日出" />
+  <a time="316.0" text="処理1" sync="ウィケッドサンダーの幻影の「フライング・ソウルプレス」" notice="1回目" />
+  <a time="323.0" text="ボス予兆" sync="ウィケッドサンダーの「ウィケッドスペシャル」" />
+  <a time="333.0" text="処理2" sync="ウィケッドサンダーの幻影の「フライング・ソウルプレス」" notice="2回目" />
+  <a time="339.0" text="テイル1" sync="ウィケッドサンダーの「テイルスラスト」" sync-s="-2" sync-e="1" />
+  <a time="343.0" text="テイル2" sync="ウィケッドサンダーの「テイルスラスト」" sync-s="-2" sync-e="1" />
+  <a time="349.0" sync="ウィケッドサンダー:刃よ踊り、斬り刻め……「剣の舞」！" />
+  <a time="356.0" text="剣の舞" sync="ウィケッドサンダーの「剣の舞」" sync-interval="" />
+  <a time="373.0" text="剣の舞" sync="ウィケッドサンダーの「剣の舞」" />
+  <a time="384.0" sync="ウィケッドサンダー:全力だアアア！" />
+  <a time="384.0" text="時間切れ開始" sync="ウィケッドサンダーは「剣の舞」の構え。" />
+  <a time="391.0" text="時間切れ？" notice="時間切れ" />
+</s>
+</timeline>
