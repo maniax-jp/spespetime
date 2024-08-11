@@ -132,20 +132,20 @@
       <v-notice text="散開" duration="8" />
     </t>
   <!--爆弾付与-->
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_3999.*for 22.00 Seconds" notice="先に散開" >
+    <t sync="^1A:[id8]:[mex] gains the effect of 蓄雷装置 from .* for 22.00 Seconds" notice="先に散開" >
       <v-notice text="先に散開" duration="45" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_3999.*for 42.00 Seconds" notice="後で散開" >
+    <t sync="^1A:[id8]:[mex] gains the effect of 蓄雷装置 from .* for 42.00 Seconds" notice="後で散開" >
       <v-notice text="後で散開" duration="45" />
     </t>
   <!--キャノンデバフ-->
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_(4002|4003)" notice="矢印担当" >
+    <t sync="^1A:[id8]:[mex] gains the effect of 導雷" notice="矢印担当" >
       <v-notice text="矢印担当" duration="5" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_(4004|4005)" notice="円担当" >
+    <t sync="^1A:[id8]:[mex] gains the effect of 帯雷" notice="円担当" >
       <v-notice text="円担当" duration="5" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4006" notice="むらさき担当" >
+    <t sync="^1A:[id8]:[mex] gains the effect of 過剰蓄雷" notice="むらさき担当" >
       <v-notice text="紫担当" duration="5" />
     </t>
 </s>
@@ -189,17 +189,17 @@
       <v-notice text="散開→頭割" duration="7" />
     </t>
     <!--ブラックサバト三回目-->
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4000.*for 23.00 Seconds" notice="先に銃。あおいろを誘導" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ポジトロン from .* for 23.00 Seconds" notice="先に銃。あおいろを誘導" >
       <v-notice text="青銃誘導→塔" duration="40" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4000.*for 38.00 Seconds" notice="先に塔。あおいろを誘導" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ポジトロン from .* for 38.00 Seconds" notice="先に塔。あおいろを誘導" >
       <v-notice text="塔→青銃誘導" duration="40" />
     </t>
 
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4001.*for 23.00 Seconds" notice="先に銃。きいろを誘導" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ネガトロン from .* for 23.00 Seconds" notice="先に銃。きいろを誘導" >
       <v-notice text="黄銃誘導→塔" duration="40" />
     </t>
-    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4001.*for 38.00 Seconds" notice="先に塔。きいろを誘導" >
+    <t sync="^1A:[id8]:[mex] gains the effect of ネガトロン from .* for 38.00 Seconds" notice="先に塔。きいろを誘導" >
       <v-notice text="塔→黄銃誘導" duration="40" />
     </t>
 
