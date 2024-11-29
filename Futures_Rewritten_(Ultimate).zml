@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>絶エデン</name>
+  <rev>draft.3</rev>
+  <description>
+    202411280208:ドラフト1
+    202411290045:ドラフト2
+    AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
+  </description>
+  <author>Aqua Cat</author>
+  <license>CC BY-SA</license>
+  <zone>Futures Rewritten (Ultimate)</zone>
+  <locale>JA</locale>
+  <start>0039::戦闘開始！</start>
+  <entry>P1</entry>
+
+  <default target-element="Activity" target-attr="notice-o" value="-4" />
+  <default target-element="Activity" target-attr="sync-s" value="-3" />
+  <default target-element="Activity" target-attr="sync-e" value="3" />
+
+<s name="P1">
+  <a time="001.0" sync="フェイトブレイカー:今こそ誓いを果たす時……" >
+    <expressions> <!--カウンタを初期化 -->
+      <set name="count" value="0" />
+    </expressions>
+  </a>
+  <a time="014.0" text="8方向散開" sync="フェイトブレイカーの「サイクロニックブレイク」" notice="8方向散開" notice-o="-8" />
+  <a time="025.0" text="爆印刻" sync="フェイトブレイカーの「連鎖爆印刻」" notice="強攻撃" />
+  <a time="036.0" text="楽園絶技" sync="フェイトブレイカーの「楽園絶技」" />
+  <a time="040.0" text="爆印" sync="フェイトブレイカーの「爆印」" />
+  <a time="050.0" text="ブラスティングゾーン" sync="フェイトブレイカーの幻影の「ブラスティングゾーン」" />
+  <a time="056.0" text="8方向散開" sync="フェイトブレイカーの幻影の「サイクロニックブレイク」" notice="8方向散開" notice-o="-8" />
+  <a time="064.0" text="転輪召" sync="フェイトブレイカーの幻影の「転輪召」" />
+  <a time="065.0" text="ストライク1" sync="フェイトブレイカーの幻影の「バーンストライク」" />
+  <a time="071.0" text="ストライク2" sync="フェイトブレイカーの幻影の「バーンストライク」" />
+  <a time="073.0" text="ノックバック" sync="フェイトブレイカーの幻影の「バーンブラスト」" />
+  <a time="075.0" text="光炎" sync="雷の光輪の「光炎」" />
+  <a time="079.0" text="2組頭割り" sync="フェイトブレイカーの幻影の「チャージスラスト」" notice="2組頭割り" />
+  <a time="087.0" text="全体攻撃" sync="フェイトブレイカーの「光焔光背」" notice="全体攻撃" />
+  <a time="106.0" text="チャージ1" sync="フェイトブレイカーの「チャージスラスト」"  />
+  <a time="109.0" text="チャージ2" sync="フェイトブレイカーの幻影の「チャージスラスト」" sync-interval="10" />
+  <a time="111.0" text="チャージ3" />
+  <a time="114.0" text="チャージ4" />
+  <a time="122.0" text="全体攻撃" sync="フェイトブレイカーの「光焔光背」" notice="全体攻撃" />
+  <a time="131.0" text="爆印刻" sync="フェイトブレイカーの「連鎖爆印刻」" notice="強攻撃" />
+  <a time="142.0" text="バーンストライク" sync="フェイトブレイカーの「バーンストライク」" />
+  <a time="146.0" text="爆発" sync="フェイトブレイカーの「爆発」" notice="爆発" />
+  <a time="151.0" sync="フェイトブレイカー:今度こそ間違わない……。" />
+  <a time="151.0" text="最終詠唱" sync="フェイトブレイカーは「光焔光背」の構え。" />
+  <a time="161.0" text="時間切れ" />
+  <t sync="シヴァ・ミトロン:あくまで静寂を乱そうというのか……。" goto="P2" />
+  <!--８方向散開からの分岐-->
+  <t sync="^14:(9CD0|9D89):" notice="ペア" >
+    <v-notice text="炎:ペア" duration="7" notice-o="3" />
+  </t>
+  <t sync="^14:(9CD4|9D8A):" notice="散開" notice-o="3" >
+    <v-notice text="雷:散開" duration="7" />
+  </t>
+  
+  <!--インビジの分岐-->
+  <t sync="^14:9CDA:" notice="頭割" notice-o="10" >
+    <v-notice text="頭割" duration="15" />
+  </t>
+  <t sync="^14:9CDB:" notice="散開" notice-o="10" >
+    <v-notice text="散開" duration="15" />
+  </t>
+  
+  <!--転輪召の安置通知-->
+  <t sync="^14:9CD6:" notice="青安置" notice-o="6" >
+    <v-notice text="青安置" duration="15" />
+  </t>
+  <t sync="^14:9CD7:" notice="赤安置" notice-o="6" >
+    <v-notice text="赤安置" duration="15" />
+  </t>
+  
+  <!--連続で線が付くところの通知-->
+  <t no="1" name="炎線" sync="^14:9CC9:" >
+    <v-notice text="VAR['count']回目:炎" duration="23" />
+    <expressions><!--カウントを+1する-->
+      <set name="count" value="EVAL(VAR['count']+1,N0)" />
+    </expressions>
+  </t>
+  <t no="2" name="雷線" sync="^14:9CCC:" >
+    <v-notice text="VAR['count']回目:雷" duration="23" />
+    <expressions><!--カウントを+1する-->
+      <set name="count" value="EVAL(VAR['count']+1,N0)" />
+    </expressions>
+  </t>
+  
+  <!--塔踏み前の炎or雷-->
+  <t sync="^14:9CC1:" notice="ノックバック" >
+    <v-notice text="ノックバック" duration="5" />
+  </t>
+  <t sync="^14:9CC5:" notice="離れる" >
+    <v-notice text="離れる" duration="5" />
+  </t>
+</s>
+
+<s name="P2">
+  <a time="000.0" sync="シヴァ・ミトロン:あくまで静寂を乱そうというのか……。" />
+  <a time="012.0" text="クアドラスラップ" sync="シヴァ・ミトロンの「クアドラスラップ」" />
+  <a time="016.0" text="クアドラスラップ" sync="シヴァ・ミトロンの「クアドラスラップ」" />
+  <a time="026.0" text="鏡写し" sync="シヴァ・ミトロンの「鏡写し」" />
+  <a time="033.0" text="ダイアモンドダスト" sync="シヴァ・ミトロンの「ダイアモンドダスト」" />
+  <a time="042.0" text="キック" sync="巫女の鏡像の「(アクス|サイス)キック」" />
+  <t sync="^14:9D0A:" notice="外処理" >
+    <v-notice text="外処理" duration="5" />
+  </t>
+  <t sync="^14:9CC1:" notice="内処理" >
+    <v-notice text="内処理" duration="5" />
+  </t>
+  <a time="049.0" text="ノックバック" sync="シヴァ・ミトロンの「ヘヴンリーストライク」" notice="ノックバック" />
+  <a time="052.0" text="AoE捨て" sync="巫女の鏡像の「シンホーリー」" notice="頭割り。AoE捨て" />
+  <a time="055.0" text="視線注意" sync="シヴァ・ミトロン:光によりて、静寂を！" notice="視線注意" />
+  <a time="060.0" text="アーマー" sync="シヴァ・ミトロンの「ブライトアーマー」" />
+  <a time="063.0" sync="巫女の鏡像:静寂に凍てつけ！" />
+  <a time="067.0" text="双剣技" sync="巫女の鏡像の「静寂の双剣技」" sync-interval="5" />
+  <a time="070.0" text="双剣技" />
+    <t sync="^14:9D01:" notice="後ろから" >
+      <v-notice text="後→前" duration="5" />
+    </t>
+    <t sync="^14:9D02:" notice="前から" >
+      <v-notice text="前→後" duration="5" />
+    </t>
+
+  <a time="081.0" text="頭割り" sync="シヴァ・ミトロンの「ホーリーレイ」" notice="頭割り" />
+  <a time="086.0" text="誘導注意" sync="シヴァ・ミトロンは「鏡の国」の構え。" notice="誘導に注意" />
+  <a time="090.0" text="鏡の国" sync="シヴァ・ミトロンの「鏡の国」" />
+  <a time="104.0" text="サイスキック" sync="シヴァ・ミトロンの「サイスキック」" notice="1回目"/>
+  <a time="114.0" text="ミラーキック" sync="氷面鏡の「ミラーリング・サイスキック」" notice="2回目" />
+  <a time="120.0" text="バニシュガ" sync="シヴァ・ミトロンの「バニシュガ」" />
+    <t sync="^14:9D1C:" notice="ペア" >
+      <v-notice text="ペア" duration="5" />
+    </t>
+    <t sync="^14:9D1D:" notice="散開" >
+      <v-notice text="散開" duration="5" />
+    </t>
+    <a time="124.0" text="整列" sync="シヴァ・ミトロンは「光の暴走」の構え。" notice="整列注意" />
+    <a time="130.0" text="光の暴走" sync="シヴァ・ミトロンの「光の暴走」" notice="光の暴走" />
+</s>
+</timeline>
