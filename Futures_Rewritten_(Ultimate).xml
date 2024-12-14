@@ -26,7 +26,7 @@
     </expressions>
   </a>
   <a time="014.0" text="8方向散開" sync="フェイトブレイカーの「サイクロニックブレイク」" notice="8方向散開" notice-o="-8" />
-  <a time="025.0" text="爆印刻" sync="フェイトブレイカーの「連鎖爆印刻」" notice="強攻撃" />
+  <a time="025.0" text="爆印刻" sync="フェイトブレイカーの「連鎖爆印刻」" notice="タンク強攻撃" />
   <a time="036.0" text="楽園絶技" sync="フェイトブレイカーの「楽園絶技」" />
   <a time="040.0" text="爆印" sync="フェイトブレイカーの「爆印」" />
   <a time="050.0" text="ブラスティングゾーン" sync="フェイトブレイカーの幻影の「ブラスティングゾーン」" />
@@ -36,14 +36,14 @@
   <a time="071.0" text="ストライク2" sync="フェイトブレイカーの幻影の「バーンストライク」" />
   <a time="073.0" text="ノックバック" sync="フェイトブレイカーの幻影の「バーンブラスト」" />
   <a time="075.0" text="光炎" sync="雷の光輪の「光炎」" />
-  <a time="079.0" text="2組頭割り" sync="フェイトブレイカーの幻影の「チャージスラスト」" notice="2組頭割り" />
+  <a time="079.0" text="2組頭割り" sync="フェイトブレイカーの幻影の「チャージスラスト」" notice="" />
   <a time="087.0" text="全体攻撃" sync="フェイトブレイカーの「光焔光背」" notice="全体攻撃" />
   <a time="106.0" text="チャージ1" sync="フェイトブレイカーの「チャージスラスト」"  />
   <a time="109.0" text="チャージ2" sync="フェイトブレイカーの幻影の「チャージスラスト」" sync-interval="10" />
   <a time="111.0" text="チャージ3" />
   <a time="114.0" text="チャージ4" />
   <a time="122.0" text="全体攻撃" sync="フェイトブレイカーの「光焔光背」" notice="全体攻撃" />
-  <a time="131.0" text="爆印刻" sync="フェイトブレイカーの「連鎖爆印刻」" notice="強攻撃" />
+  <a time="131.0" text="爆印刻" sync="フェイトブレイカーの「連鎖爆印刻」" notice="タンク強攻撃" />
   <a time="142.0" text="バーンストライク" sync="フェイトブレイカーの「バーンストライク」" />
   <a time="146.0" text="爆発" sync="フェイトブレイカーの「爆発」" notice="爆発" />
   <a time="151.0" sync="フェイトブレイカー:今度こそ間違わない……。" />
@@ -51,8 +51,8 @@
   <a time="161.0" text="時間切れ" />
   <t sync="シヴァ・ミトロン:あくまで静寂を乱そうというのか" goto="P2" />
   <!--８方向散開からの分岐-->
-  <t sync="^14:(9CD0|9D89):" notice="ペア" >
-    <v-notice text="炎:ペア" duration="7" notice-o="3" />
+  <t sync="^14:(9CD0|9D89):" notice="頭割り" >
+    <v-notice text="炎:頭割り" duration="7" notice-o="3" />
   </t>
   <t sync="^14:(9CD4|9D8A):" notice="散開" notice-o="3" >
     <v-notice text="雷:散開" duration="7" />
@@ -106,8 +106,8 @@
   <a time="042.0" text="キック" sync="巫女の鏡像の「(アクス|サイス)キック」" />
   <a time="049.0" text="ノックバック" sync="シヴァ・ミトロンの「ヘヴンリーストライク」" notice="ノックバック" />
   <a time="052.0" text="AoE捨て" sync="巫女の鏡像の「シンホーリー」" notice="頭割り。AoE捨て" />
-  <a time="055.0" text="視線注意" sync="シヴァ・ミトロン:光によりて、静寂を！" notice="視線注意" />
-  <a time="060.0" text="アーマー" sync="シヴァ・ミトロンの「ブライトアーマー」" />
+  <a time="055.0" text="視線注意" sync="シヴァ・ミトロン:光によりて、静寂を！" />
+  <a time="060.0" text="アーマー" sync="シヴァ・ミトロンの「ブライトアーマー」" notice="視線注意" />
   <a time="067.0" text="双剣技1" sync="巫女の鏡像の「(静寂|閑寂)の双剣技」" sync-interval="5" />
   <a time="070.0" text="双剣技2" />
   <a time="081.0" text="頭割り" sync="シヴァ・ミトロンの「ホーリーレイ」" notice="頭割り" />
@@ -131,17 +131,17 @@
   <!--履行でワイプした場合、リセットがされない対策-->
   <t sync="フェイトブレイカー:今こそ誓いを果たす時" goto="P1" />
   <!--キックの内外判定-->
-  <t sync="^14:9D0A:" notice="外処理" >
+  <t sync="巫女の鏡像は「アクスキック」の構え。" notice="外処理" >
     <v-notice text="外処理" duration="5" />
   </t>
-  <t sync="^14:9D0B:" notice="内処理" >
-    <v-notice text="内処理" duration="5" />
+  <t sync="巫女の鏡像は「サイスキック」の構え。" notice="ナカ処理" >
+    <v-notice text="中処理" duration="5" />
   </t>
   <!--双剣技の前後判定-->
-  <t sync="^14:9D01:" notice="後ろから" >
+  <t sync="巫女の鏡像:静寂に凍てつけ！" notice="後ろから" >
     <v-notice text="後→前" duration="5" />
   </t>
-  <t sync="^14:9D02:" notice="前から" >
+  <t sync="巫女の鏡像:閑寂に沈め…！" notice="前から" >
     <v-notice text="前→後" duration="5" />
   </t>
   <!--バニシュガの集散判定-->
