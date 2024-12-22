@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <timeline>
   <name>絶エデン</name>
-  <rev>draft.13</rev>
+  <rev>rev.2</rev>
   <description>
-    202412070052:ドラフト8 雑魚でACTがリセットしない対策。
-    202412090228:ドラフト11
-    ドラフト12 基準を確認のコールをずらした
+    rev2 最終誘導TTSを追加
     AquaCatのブログをよろしくお願いします。(https://www.aquacat.work/)
   </description>
   <author>Aqua Cat</author>
@@ -25,12 +23,12 @@
       <set name="count" value="0" />
     </expressions>
   </a>
-  <a time="014.0" text="8方向散開" sync="フェイトブレイカーの「サイクロニックブレイク」" notice="8方向散開" notice-o="-8" />
+  <a time="014.0" text="8方向散開" sync="フェイトブレイカーの「サイクロニックブレイク」" />
   <a time="025.0" text="爆印刻" sync="フェイトブレイカーの「連鎖爆印刻」" notice="タンク強攻撃" />
   <a time="036.0" text="楽園絶技" sync="フェイトブレイカーの「楽園絶技」" />
   <a time="040.0" text="爆印" sync="フェイトブレイカーの「爆印」" />
   <a time="050.0" text="ブラスティングゾーン" sync="フェイトブレイカーの幻影の「ブラスティングゾーン」" />
-  <a time="056.0" text="8方向散開" sync="フェイトブレイカーの幻影の「サイクロニックブレイク」" notice="8方向散開" notice-o="-8" />
+  <a time="056.0" text="8方向散開" sync="フェイトブレイカーの幻影の「サイクロニックブレイク」" />
   <a time="064.0" text="転輪召" sync="フェイトブレイカーの幻影の「転輪召」" />
   <a time="065.0" text="ストライク1" sync="フェイトブレイカーの幻影の「バーンストライク」" />
   <a time="071.0" text="ストライク2" sync="フェイトブレイカーの幻影の「バーンストライク」" />
@@ -46,7 +44,6 @@
   <a time="131.0" text="爆印刻" sync="フェイトブレイカーの「連鎖爆印刻」" notice="タンク強攻撃" />
   <a time="142.0" text="バーンストライク" sync="フェイトブレイカーの「バーンストライク」" />
   <a time="146.0" text="爆発" sync="フェイトブレイカーの「爆発」" notice="爆発" />
-  <a time="151.0" sync="フェイトブレイカー:今度こそ間違わない……。" />
   <a time="151.0" text="最終詠唱" sync="フェイトブレイカーは「光焔光背」の構え。" />
   <a time="161.0" text="時間切れ" />
   <t sync="シヴァ・ミトロン:あくまで静寂を乱そうというのか" goto="P2" />
@@ -205,9 +202,11 @@
 </s>
 
 <s name="P4">
-  <a time="012.0" text="具象化" sync="シヴァ・ミトロンの「具象化」" >
+  <a time="012.0" text="具象化" sync="シヴァ・ミトロンの「具象化」" no="100" >
     <expressions><!--フラグを初期化-->
       <set name="blue" value="false" />
+      <set name="east" value="false" />
+      <set name="west" value="false" />
     </expressions>
   </a>
   <a time="023.0" text="移動" sync="シヴァ・ミトロンの「ドラゴンアーマー」" />
@@ -233,8 +232,21 @@
   <a time="120.0" text="大波1" sync="シヴァ・ミトロンの「光の大波」" />
   <a time="121.0" text="砂時計3" sync="悲しみの砂時計の「メイルシュトローム」" notice="3回目" />
   <a time="127.0" text="大波2" sync="シヴァ・ミトロンの「光の大波」" notice="リターン注意" />
-  <a time="132.0" text="リターン設置" sync="闇の巫女は「スピリットテイカー」の構え。" notice="リターン設置、散開" />
+  <a time="131.0" text="クワイタス" sync="闇の巫女の「クワイタス」" notice="全体攻撃" />
+  <a time="132.0" text="リターン設置" sync="闇の巫女は「スピリットテイカー」の構え。" notice="リターン設置、散開" notice-o="0" />
   <a time="137.0" text="テイカー" sync="闇の巫女の「スピリットテイカー」" />
+  <a time="143.0" text="ノックバック1" sync="シヴァ・ミトロンの「ホーリーウィング」" sync-interval="10" />
+  <a time="147.0" text="ノックバック2"  />
+  <a time="156.0" text="2組" sync="シヴァ・ミトロンの「アク・モーン」" notice="ふたくみ" />
+  <a time="163.0" text="全体攻撃" sync="未来の欠片の「忘却の此方」" notice="全体攻撃" />
+  <a time="166.0" text="全員" sync="シヴァ・ミトロンの「モーン・アファー」" notice="全員" />
+  <a time="168.0" text="最終詠唱" sync="シヴァ・ミトロンは「絶対零度」の構え。" />
+  <a time="168.0" text="最終詠唱" sync="闇の巫女は「エンド・オブ・メモリーズ」を唱えた。" />
+  <a time="179.0" text="時間切れ" sync="シヴァ・ミトロンの「絶対零度」" />
+
+  <t sync="シヴァ・ミトロン:記憶から消し去れぬとでも" goto="P5" />
+  <t sync="シヴァ・ミトロン:時は満ちた…… ともに闇に還ろう、とこしえに" goto="P5b" />
+
 
   <t sync="^1A:[id8]:[mex] gains the effect of 光の鎖" notice="鎖担当" >
     <v-notice text="鎖担当" duration="7" />
@@ -274,19 +286,88 @@
   <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：(ダークホーリー|ダークウォタガ)" notice="南で集合" >
     <v-notice text="南で集合→床踏み" duration="40" />
   </t>
-  <!--POS調査トリガ。オミット中。
-  <t sync="107:[id8]:9D3B:100.009:119.999:"  >
-    <v-notice text="A検知10:19" duration="5" />
+<!--大波とノックバック-->
+  <t no="5" sync="^107:[id8]:9D3B:119.999:100.009:" notice="東" >
+    <v-notice text="東" duration="10" />
+    <expressions>
+      <set name="east" value="true" />
+    </expressions>
   </t>
-  <t sync="107:[id8]:9D3B:119.999:100.009:"  >
-    <v-notice text="B検知19:10" duration="5" />
+  <t no="6" sync="^107:[id8]:9D3B:79.989:100.009:" notice="西" >
+    <v-notice text="西" duration="10" />
+    <expressions>
+      <set name="west" value="true" />
+    </expressions>
   </t>
-  <t sync="107:[id8]:9D3B:100.009:79.989"  >
-    <v-notice text="C検知7:10" duration="5" />
+<!--フラグによるリターンを判断-->
+  <t no="7" sync="^107:[id8]:9D3B:100.009:79.989:" notice="北、リターン１" >
+    <v-notice text="北:1リターン" duration="10" />
+    <expressions>
+      <pre name="east" value="true" />
+    </expressions>
   </t>
-  <t sync="107:[id8]:9D3B:79.989:100.009"  >
-    <v-notice text="D検知7:10" duration="5" />
+  <t no="8" sync="^107:[id8]:9D3B:100.009:119.999:" notice="南、リターン２" >
+    <v-notice text="南:2リターン" duration="10" />
+    <expressions>
+      <pre name="east" value="true" />
+    </expressions>
   </t>
-  -->
+
+  <t no="9" sync="^107:[id8]:9D3B:100.009:79.989:" notice="北、リターン４" >
+    <v-notice text="北:4リターン" duration="10" />
+    <expressions>
+      <pre name="west" value="true" />
+    </expressions>
+  </t>
+  <t no="10" sync="^107:[id8]:9D3B:100.009:119.999:" notice="南、リターン３" >
+    <v-notice text="南:3リターン" duration="10" />
+    <expressions>
+      <pre name="west" value="true" />
+    </expressions>
+  </t>
+</s>
+
+<s name="P5B">
+  <a time="20.0" text="同期待ち" sync="ガーディアン・オブ・エデン:今こそ調和がもたらされん。" />
+  <a time="25.0" text="今度こそ間違うなよ" notice="今度こそ間違うなよ" />
+  <a time="31.0" text="パラダイスロスト" sync="ガーディアン・オブ・エデンの「パラダイスロスト」" />
+</s>
+
+<s name="P5">
+  <a time="073.0" text="同期待ち" sync="パンドラ・ミトロン:何度でも" />
+  <a time="084.0" text="光塵の剣" sync="パンドラ・ミトロンの「光塵の剣」" notice="全体攻撃" />
+  <a time="111.0" text="アク・モーン" sync="パンドラ・ミトロンの「アク・モーン」" />
+  <a time="119.0" text="パラダイスリゲインド" sync="パンドラ・ミトロンの「パラダイスリゲインド」" />
+  <a time="129.0" text="光と闇の片翼" sync="パンドラ・ミトロンの「光と闇の片翼」" sync-interval="20" />
+  <a time="143.0" text="【予告】星霊の剣" sync="パンドラ・ミトロンは「星霊の剣」の構え。" />
+  <a time="150.0" text="星霊の剣1" notice="いち" notice-o="0" />
+  <a time="155.0" text="星霊の剣2" notice="に" notice-o="0" />
+  <a time="159.0" text="星霊の剣3" notice="さん" notice-o="0" />
+  <a time="164.0" text="星霊の剣4" notice="よん" notice-o="0" />
+
+  <a time="172.0" text="LB準備" sync="パンドラ・ミトロンは「パンドラの櫃」の構え。" />
+  <a time="186.0" text="パンドラの櫃" sync="パンドラ・ミトロンの「パンドラの櫃」" />
+
+  <a time="196.0" text="光塵の剣" sync="パンドラ・ミトロンの「光塵の剣」" notice="全体攻撃" />
+  <a time="223.0" text="アク・モーン" sync="パンドラ・ミトロンの「アク・モーン」" />
+  <a time="236.0" text="パラダイスリゲインド" sync="パンドラ・ミトロンの「パラダイスリゲインド」" />
+  <a time="246.0" text="光と闇の片翼" sync="パンドラ・ミトロンの「光と闇の片翼」" sync-interval="20" />
+  <a time="255.0" text="【予告】星霊の剣" sync="パンドラ・ミトロンは「星霊の剣」の構え。" />
+  <a time="262.0" text="星霊の剣1" notice="いち" notice-o="0"  />
+  <a time="267.0" text="星霊の剣2" notice="に" notice-o="0" />
+  <a time="271.0" text="星霊の剣3" notice="さん" notice-o="0" />
+  <a time="276.0" text="星霊の剣4" notice="よん" notice-o="0" />
+
+  <a time="287.0" text="光塵の剣" sync="パンドラ・ミトロンの「光塵の剣」" notice="全体攻撃" />
+  <a time="314.0" text="アク・モーン" sync="パンドラ・ミトロンの「アク・モーン」" />
+  <a time="322.0" text="最終詠唱" sync="パンドラ・ミトロンは「パラダイスロスト」の構え。" />
+  <a time="344.0" text="時間切れ" sync="パンドラ・ミトロンの「パラダイスロスト」"  />
+
+  <t sync="^14:9D79:" notice="右が安置、誘導離れる" >
+    <v-notice text="右:安置 誘導:離" duration="5" />
+  </t>
+  <t sync="^14:9D29:" notice="左が安置、誘導近づく" >
+    <v-notice text="左:安置 誘導:近" duration="5" />
+  </t>
 </s>
 </timeline>
