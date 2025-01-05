@@ -161,25 +161,87 @@
   <a time="037.0" text="時間圧縮・絶" sync="闇の巫女の「時間圧縮・絶」" />
   <a time="041.0" text="スピード" sync="闇の巫女は「スピード」を唱えた。" notice="基準を確認！" notice-o="-2" />
 
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 11" notice="早ファイガ" >
-    <v-notice text="早ファイガ" duration="5" />
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 11" notice="早ファイガ" notice-o="0" >
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="中ファイガ" >
-    <v-notice text="中ファイガ" duration="5" />
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 11" notice="ファイガ捨て" notice-o="6" >
+    <v-notice text="ファイガ" duration="11" order="1" icon="Explosion.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="遅ファイガ" >
-    <v-notice text="遅ファイガ" duration="5" />
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 11" notice="リターン設置" notice-o="11" >
+    <v-notice text="リターン" duration="16" order="2" icon="TurnL.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="ブリザガ" >
-    <v-notice text="ブリザガ" duration="5" />
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 11" notice="頭割り" notice-o="16" >
+    <v-notice text="頭割り2" duration="21" order="3" icon="Stack.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 11" notice="ビーム誘導" notice-o="21" >
+    <v-notice text="ビーム誘導" duration="26" order="4" icon="Nail.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 11" notice="頭割り" notice-o="26" >
+    <v-notice text="頭割り3" duration="31" order="5" icon="Stack.png" />
   </t>
 
-  <a time="049.0" text="早ファイガ" sync="闇の巫女の「ダークファイガ」" notice="いち" notice-o="0" />
-  <a time="055.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" notice="にい" notice-o="0" />
-  <a time="059.0" text="中ファイガ" sync="闇の巫女の「ダークファイガ」" notice="さん" notice-o="0" />
-  <a time="065.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" notice="よん" notice-o="0" />
-  <a time="070.0" text="遅ファイガ" sync="闇の巫女の「ダークファイガ」" notice="ごお" notice-o="0" />
-  <a time="075.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" notice="ろく" notice-o="0" />
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="中ファイガ" notice-o="0" >
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="頭割り" notice-o="6" >
+    <v-notice text="頭割り1" duration="11" order="1" icon="Stack.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="リターン設置" notice-o="11" >
+    <v-notice text="リターン" duration="16" order="2" icon="TurnL.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="ファイガ捨て" notice-o="16" >
+    <v-notice text="ファイガ" duration="21" order="3" icon="Explosion.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="中央" notice-o="21" >
+    <v-notice text="中央" duration="26" order="4" icon="Stack.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="頭割り" notice-o="26" >
+    <v-notice text="頭割り3" duration="31" order="5" icon="Stack.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 21" notice="ビーム誘導" notice-o="31" >
+    <v-notice text="ビーム誘導" duration="36" order="6" icon="Nail.png" />
+  </t>
+
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="遅ファイガ" notice-o="0" >
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="頭割り" notice-o="6" >
+    <v-notice text="頭割り1" duration="11" order="1" icon="Stack.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="ビーム誘導" notice-o="11" >
+    <v-notice text="ビーム誘導" duration="16" order="2" icon="Nail.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="頭割り" notice-o="16" >
+    <v-notice text="頭割り2" duration="21" order="3" icon="Stack.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="リターン設置" notice-o="21" >
+    <v-notice text="リターン" duration="26" order="4" icon="TurnL.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="ファイガ捨て" notice-o="26" >
+    <v-notice text="ファイガ" duration="31" order="5" icon="Explosion.png" />
+  </t>
+
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="ブリザガ" notice-o="0" >
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="頭割り" notice-o="6" >
+    <v-notice text="頭割り1" duration="11" order="1" icon="Stack.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="リターン設置" notice-o="11" >
+    <v-notice text="リターン" duration="16" order="2" icon="TurnL.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="頭割り" notice-o="16" >
+    <v-notice text="頭割り2" duration="21" order="3" icon="Stack.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="ビーム誘導" notice-o="21" >
+    <v-notice text="ビーム誘導" duration="26" order="4" icon="Nail.png" />
+  </t>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="頭割り" notice-o="26" >
+    <v-notice text="頭割り3" duration="31" order="5" icon="Stack.png" />
+  </t>
+
+  <a time="049.0" text="早ファイガ" sync="闇の巫女の「ダークファイガ」" />
+  <a time="055.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" />
+  <a time="059.0" text="中ファイガ" sync="闇の巫女の「ダークファイガ」" />
+  <a time="065.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" />
+  <a time="070.0" text="遅ファイガ" sync="闇の巫女の「ダークファイガ」" />
+  <a time="075.0" text="誘導" sync="楽しみの砂時計の「シンメルトン」" />
   <a time="078.0" text="外周向く" notice="外周に向く" />
   <a time="081.0" text="シャドウアイ" sync="闇の巫女の「シャドウアイ」" />
   <a time="086.0" text="中央集合" sync="闇の巫女の「シェルクラッシャー」" notice="中央集合" />
