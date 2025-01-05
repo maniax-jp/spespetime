@@ -184,7 +184,12 @@
   <a time="081.0" text="シャドウアイ" sync="闇の巫女の「シャドウアイ」" />
   <a time="086.0" text="中央集合" sync="闇の巫女の「シェルクラッシャー」" notice="中央集合" />
   <a time="094.0" text="全体攻撃" sync="闇の巫女の「ショックウェーブ・パルサー」" notice="全体攻撃" />
-  <a time="102.0" text="強攻撃" sync="闇の巫女の「ブラックヘイロー」" notice="強攻撃" />
+  <a time="102.0" text="強攻撃" sync="闇の巫女の「ブラックヘイロー」" notice="強攻撃" >
+    <expressions>
+      <set name="apocalypse_rotation" value="none" />
+      <set name="apocalypse_direction" value="none" />
+    </expressions>
+  </a>
   <a time="111.0" text="ディレイスペル" sync="闇の巫女の「ディレイスペル・リフレイン」" />
   <a time="119.0" text="ダークウォタガ" sync="闇の巫女の「ダークウォタガ」" />
   <a time="122.0" text="アポカリプス" sync="闇の巫女は「アポカリプス」を唱えた。" notice="安置を確認" />
@@ -199,6 +204,82 @@
   <a time="166.0" text="最終詠唱開始" sync="闇の巫女は「エンド・オブ・メモリーズ」を唱えた。" />
   <a time="177.0" text="時間切れ" sync="闇の巫女の「エンド・オブ・メモリーズ」" />
   <t sync="シヴァ・ミトロン:まだ彼女が真に覚醒していない" goto="P4" />
+
+@{
+  string[] pos_north  = {"100\\.0000", "86\\.0000"};
+  string[] pos_center = {"100\\.0000", "100\\.0000"};
+  string[] degree_m90 = {"-1\\.5709"};
+  string[] degree_0   = {"0\\.0000"};
+  string[] degree_45  = {"0\\.7854"};
+  string[] degree_90  = {"1\\.5708"};
+  string[] degree_135 = {"2\\.3562"};
+  string[] label_ac = {"label_ac"};
+  string[] label_13 = {"label_13"};
+  string[] label_bd = {"label_bd"};
+  string[] label_24 = {"label_24"};
+  string[] label_right = {"label_right"};
+  string[] label_left = {"label_left"};
+  string[] call_acR = {"AC右"};
+  string[] call_acL = {"AC左"};
+  string[] call_13R = {"いちさん右"};
+  string[] call_13L = {"いちさん左"};
+  string[] call_bdR = {"BD右"};
+  string[] call_bdL = {"BD左"};
+  string[] call_24R = {"にいよん右"};
+  string[] call_24L = {"にいよん左"};
+
+  string[,][] pattern_direction = {
+    {pos_center, degree_0, label_ac},
+    {pos_center, degree_45, label_24},
+    {pos_center, degree_90, label_bd},
+    {pos_center, degree_135, label_13},
+  };
+  string[,][] pattern_rotation = {
+    {pos_north, degree_m90, label_left},
+    {pos_north, degree_90, label_right},
+  };
+  string[,][] safe = {
+    // 方角 回転 コール
+    {label_ac, label_left, call_13L},
+    {label_ac, label_right, call_24R},
+    {label_13, label_left, call_bdL},
+    {label_13, label_right, call_acR},
+    {label_bd, label_left, call_24L},
+    {label_bd, label_right, call_13R},
+    {label_24, label_left, call_acL},
+    {label_24, label_right, call_bdR},
+  };
+}
+@for (int i = 0; i < pattern_direction.GetLength(0); i++) {
+  <t name="アポカリプス方角@(pattern_direction[i,1][0])" sync="^105:Add:[id8]:BNpcID:1EB0FF:.*:Heading:@(pattern_direction[i,1][0]):.*PosX:@(pattern_direction[i,0][0]):PosY:@(pattern_direction[i,0][1]):">
+    <expressions>
+      <pre name="apocalypse_direction" value="none" />
+      <set name="apocalypse_direction" value="@(pattern_direction[i,2][0])" />
+    </expressions>
+  </t>
+}
+@for (int i = 0; i < pattern_rotation.GetLength(0); i++) {
+  <t name="アポカリプス回転@(pattern_rotation[i,1][0])" sync="^105:Add:[id8]:BNpcID:1EB0FF:.*:Heading:@(pattern_rotation[i,1][0]):.*PosX:@(pattern_rotation[i,0][0]):PosY:@(pattern_rotation[i,0][1]):">
+    <expressions>
+      <pre name="apocalypse_rotation" value="none" />
+      <set name="apocalypse_rotation" value="@(pattern_rotation[i,2][0])" />
+    </expressions>
+  </t>
+}
+@for (int i = 0; i < safe.GetLength(0); i++) {
+  <t sync="闇の巫女の「アポカリプス」" notice="@(safe[i,2][0])" >
+    <expressions>
+      <pre name="apocalypse_direction" value="@(safe[i,0][0])" />
+      <pre name="apocalypse_rotation" value="@(safe[i,1][0])" />
+    </expressions>
+    <v-notice
+      text="@(safe[i,2][0])"
+      order="-1"
+      icon="PunishmentGlory.png"
+      duration="30" />
+  </t>
+}
+
 </s>
 
 <s name="P4">
