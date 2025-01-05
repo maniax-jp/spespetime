@@ -251,7 +251,7 @@
   };
 }
 @for (int i = 0; i < pattern_direction.GetLength(0); i++) {
-  <t name="アポカリプス方角@(pattern_direction[i,1][0])" sync="^105:Add:[id8]:BNpcID:1EB0FF:.*:Heading:@(pattern_direction[i,1][0]):.*PosX:@(pattern_direction[i,0][0]):PosY:@(pattern_direction[i,0][1]):">
+  <t name="アポカリプス方角@(pattern_direction[i,2][0])" sync="^105:Add:[id8]:BNpcID:1EB0FF:.*:Heading:@(pattern_direction[i,1][0]):.*PosX:@(pattern_direction[i,0][0]):PosY:@(pattern_direction[i,0][1]):">
     <expressions>
       <pre name="apocalypse_direction" value="none" />
       <set name="apocalypse_direction" value="@(pattern_direction[i,2][0])" />
@@ -259,7 +259,7 @@
   </t>
 }
 @for (int i = 0; i < pattern_rotation.GetLength(0); i++) {
-  <t name="アポカリプス回転@(pattern_rotation[i,1][0])" sync="^105:Add:[id8]:BNpcID:1EB0FF:.*:Heading:@(pattern_rotation[i,1][0]):.*PosX:@(pattern_rotation[i,0][0]):PosY:@(pattern_rotation[i,0][1]):">
+  <t name="アポカリプス回転@(pattern_rotation[i,2][0])" sync="^105:Add:[id8]:BNpcID:1EB0FF:.*:Heading:@(pattern_rotation[i,1][0]):.*PosX:@(pattern_rotation[i,0][0]):PosY:@(pattern_rotation[i,0][1]):">
     <expressions>
       <pre name="apocalypse_rotation" value="none" />
       <set name="apocalypse_rotation" value="@(pattern_rotation[i,2][0])" />
