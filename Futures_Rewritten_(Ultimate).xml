@@ -402,6 +402,94 @@
   </t>
 
 
+@{
+  string[] priority_north = {"DRK", "GNB", "WHM", "SCH"};
+  string[] priority_south = {"DRG", "NIN", "DNC", "PCT"};
+}
+@for (int i = 0; i < my_priority; i++)
+{
+  <t no="1" name="死の宣告@(priority_death[i])" sync="[@(priority_death[i])]に「死の宣告」の効果。" >
+    <expressions>
+      <set name="doom_count" count="+1" />
+    </expressions>
+  </t>
+  
+  <t no="1" name="InsertTether" sync-count="1-4" sync="^23:[id8]:[pc]:[id8]:[pc]:1B:[id8]:[pc]:0000:[id4]:(?&lt;mark_code&gt;[0-9a-fA-F]{4}):">
+    <expressions>
+      <table>
+      {
+          "method":"Insert", "table":"DiceTable",
+          "cols" : [
+            { "name":"marker", "val":"STR-${mark_code}", "key":"true" },
+            { "name":"target", "val":"${_pc}" },
+          ]
+      }
+      </table>
+    </expressions>
+  </t>
+}
+  <t no="1" sync="[mex]に「死の宣告」の効果。" >
+    <expressions>
+      <set name="3mark" value="true" />
+    </expressions>
+  </t>
+
+@{
+  string[] label_a = {"A"};
+  string[] label_1 = {"1"};
+  string[] label_b = {"B"};
+  string[] label_2 = {"2"};
+  string[] label_c = {"C"};
+  string[] label_3 = {"3"};
+  string[] label_d = {"D"};
+  string[] label_4 = {"4"};
+  string[] label_L = {"左"};
+  string[] label_R = {"右"};
+
+  string[,][] doom_ptn = {
+    // ゲリック, 左右
+    {label_a, label_L},
+    {label_b, label_L},
+    {label_c, label_R},
+    {label_d, label_R},
+  };
+  int doom_max = 4;
+}
+@for (int i = 0; i < doom_ptn.GetLength(0); i++) {
+  for (int j = 1; j <= doom_max; j++) {
+  <t no="2" sync="^23:[id8]:[pc]:[id8]:[pc]:" notice="無職 北 @(doom_ptn[i,1][0])から@(j)番目" sync-count="4" >
+    <expressions>
+      <pre name="3mark" value="false" />
+      <pre name="guerrique_found" value="@(doom_ptn[i,0][0])" />
+      <pre name="doom_count" count="@(my_priority-j+1)" />
+    </expressions>
+    <v-notice
+      text="無職"
+      icon="Free.png"
+      duration="29" />
+  </t>
+  <t no="2" sync="[pc]に「死の宣告」の効果。" notice="死の宣告 南 @(doom_ptn[i,1][0])から@(j)番目" sync-count="4" >
+    <expressions>
+      <pre name="3mark" value="true" />
+      <pre name="guerrique_found" value="@(doom_ptn[i,0][0])" />
+      <pre name="doom_count" count="@(j-1)" />
+    </expressions>
+    <v-notice
+      text="死の宣告"
+      icon="Timer.png"
+      duration="29" />
+  </t>
+  
+    <t no="2" sync="^1B:" sync-count="8" text="１番" notice="一番">
+      <expressions>
+        <pre name="TABLE['DiceTable'][0]['target']" value="@Model.Player.Name" />
+      </expressions>
+      <v-notice icon="Dice1.png" duration="30" duration-visible="false" order="-2" sync-to-hide="ブルートジャスティス:コードネーム「ブルートジャスティス」" />
+    </t>
+  }
+}
+
+
 <!--赤ブリ判断用-->
   <t no="3" sync="^1A:[id8]:[mex] gains the effect of 聖竜の牙" >
     <expressions><!--青担当か-->
