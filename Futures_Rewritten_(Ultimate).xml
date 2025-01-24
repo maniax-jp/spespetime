@@ -394,11 +394,11 @@
   <t sync="^1A:[id8]:[mex] gains the effect of 光の鎖" notice="鎖担当" >
     <v-notice text="鎖担当" duration="7" />
   </t>
-  <t sync="^14:9D23:" notice="東が安置" >
-    <v-notice text="東安置" duration="5" />
+  <t sync="^14:9D23:" notice="いち２安置" >
+    <v-notice text="1-2安置" duration="5" />
   </t>
-  <t sync="^14:9D24:" notice="西が安置" >
-    <v-notice text="西安置" duration="5" />
+  <t sync="^14:9D24:" notice="さん4安置" >
+    <v-notice text="3-4安置" duration="5" />
   </t>
 
 
