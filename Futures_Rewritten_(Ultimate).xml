@@ -435,6 +435,7 @@
     <expressions>
       <set name="tether_d_t_found" value="@(priority_south[i])" />
     </expressions>
+  </t>
     
   <t no="1" name="CheckTetherH" sync="^23:[id8]:[@(priority_south[i])]:[id8]:[HEALER]:" sync-count="1">
     <expressions>
@@ -447,7 +448,7 @@
     </expressions>
   </t>
 }
-@for (int i = 0; i < priority_north.Length; i++) {
+@for (int i = 0; i < priority_south.Length; i++) {
   <t no="2" sync="^23:[id8]:[pc]:[id8]:[pc]:" notice="線資格" sync-count="4">
     <expressions>
       <pre name="ther_da_db_found" value="@(priority_south[i])" />
