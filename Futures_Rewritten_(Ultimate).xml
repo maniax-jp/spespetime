@@ -350,6 +350,9 @@
       <set name="blue" value="false" />
       <set name="east" value="false" />
       <set name="west" value="false" />
+      <set name="tether_da_db_found" value="none" />
+      <set name="tether_d_t_found" value="none" />
+      <set name="tether_d_h_found" value="none" />
     </expressions>
   </a>
   <a time="023.0" text="移動" sync="シヴァ・ミトロンの「ドラゴンアーマー」" />
