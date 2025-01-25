@@ -408,9 +408,9 @@
   string[] priority_north = {"TANK", "HEALER"};
   string[] priority_south = {"DRG", "NIN", "DNC", "PCT"};
 
-  // Da-Db and Da-T → 線四角
+  // Da-Db and Da-T → 四角
   // Da-Db and Da-H → 砂時計
-  // other          → 蝶ネクタイ
+  // Da-Db is none  → 蝶ネクタイ
 }
 @for (int i = 0; i < priority_south.Length; i++) {
   for (int j = i+1; j < priority_south.Length; j++) {
@@ -425,7 +425,6 @@
     </expressions>
   </t>
   }
-  
   <t no="1" name="CheckTetherT" sync="^23:[id8]:[@(priority_south[i])]:[id8]:[TANK]:" sync-count="1">
     <expressions>
       <set name="tether_d_t_found" value="@(priority_south[i])" />
@@ -436,7 +435,6 @@
       <set name="tether_d_t_found" value="@(priority_south[i])" />
     </expressions>
   </t>
-    
   <t no="1" name="CheckTetherH" sync="^23:[id8]:[@(priority_south[i])]:[id8]:[HEALER]:" sync-count="1">
     <expressions>
       <set name="tether_d_h_found" value="@(priority_south[i])" />
