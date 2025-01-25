@@ -350,6 +350,9 @@
       <set name="blue" value="false" />
       <set name="east" value="false" />
       <set name="west" value="false" />
+      <set name="tether_da_db_found" value="none" />
+      <set name="tether_d_t_found" value="none" />
+      <set name="tether_d_h_found" value="none" />
     </expressions>
   </a>
   <a time="023.0" text="移動" sync="シヴァ・ミトロンの「ドラゴンアーマー」" />
@@ -388,7 +391,7 @@
   <a time="179.0" text="時間切れ" sync="シヴァ・ミトロンの「絶対零度」" />
 
   <t sync="シヴァ・ミトロン:記憶から消し去れぬとでも" goto="P5" />
-  <t sync="シヴァ・ミトロン:時は満ちた…… ともに闇に還ろう、とこしえに" goto="P5b" />
+  <t sync="シヴァ・ミトロン:時は満ちた…… ともに闇に還ろう、とこしえに" goto="P5B" />
 
 
   <t sync="^1A:[id8]:[mex] gains the effect of 光の鎖" notice="鎖担当" >
@@ -401,6 +404,67 @@
     <v-notice text="3-4安置" duration="5" />
   </t>
 
+@{
+  string[] priority_north = {"TANK", "HEALER"};
+  string[] priority_south = {"DRG", "NIN", "DNC", "PCT"};
+
+  // Da-Db and Da-T → 四角
+  // Da-Db and Da-H → 砂時計
+  // Da-Db is none  → 蝶ネクタイ
+}
+@for (int i = 0; i < priority_south.Length; i++) {
+  for (int j = i+1; j < priority_south.Length; j++) {
+  <t no="1" name="CheckTetherD" sync="^23:[id8]:[@(priority_south[i])]:[id8]:[@(priority_south[j])]:" sync-count="1">
+    <expressions>
+      <set name="tether_da_db_found" value="@(priority_south[i])" />
+    </expressions>
+  </t>
+  <t no="1" name="CheckTetherDInverse" sync="^23:[id8]:[@(priority_south[j])]:[id8]:[@(priority_south[i])]:" sync-count="1">
+    <expressions>
+      <set name="tether_da_db_found" value="@(priority_south[i])" />
+    </expressions>
+  </t>
+  }
+  <t no="1" name="CheckTetherT" sync="^23:[id8]:[@(priority_south[i])]:[id8]:[TANK]:" sync-count="1">
+    <expressions>
+      <set name="tether_d_t_found" value="@(priority_south[i])" />
+    </expressions>
+  </t>
+  <t no="1" name="CheckTetherTInverse" sync="^23:[id8]:[TANK]:[id8]:[@(priority_south[i])]:" sync-count="1">
+    <expressions>
+      <set name="tether_d_t_found" value="@(priority_south[i])" />
+    </expressions>
+  </t>
+  <t no="1" name="CheckTetherH" sync="^23:[id8]:[@(priority_south[i])]:[id8]:[HEALER]:" sync-count="1">
+    <expressions>
+      <set name="tether_d_h_found" value="@(priority_south[i])" />
+    </expressions>
+  </t>
+  <t no="1" name="CheckTetherHInverse" sync="^23:[id8]:[HEALER]:[id8]:[@(priority_south[i])]:" sync-count="1">
+    <expressions>
+      <set name="tether_d_h_found" value="@(priority_south[i])" />
+    </expressions>
+  </t>
+}
+@for (int i = 0; i < priority_south.Length; i++) {
+  <t no="2" sync="^23:[id8]:[pc]:[id8]:[pc]:" notice="線資格" sync-count="4">
+    <expressions>
+      <pre name="ther_da_db_found" value="@(priority_south[i])" />
+      <pre name="tether_d_t_found" value="@(priority_south[i])" />
+    </expressions>
+  </t>
+  <t no="2" sync="^23:[id8]:[pc]:[id8]:[pc]:" notice="砂時計" sync-count="4">
+    <expressions>
+      <pre name="ther_da_db_found" value="@(priority_south[i])" />
+      <pre name="tether_d_h_found" value="@(priority_south[i])" />
+    </expressions>
+  </t>
+}
+  <t no="2" sync="^23:[id8]:[pc]:[id8]:[pc]:" notice="蝶ネクタイ" sync-count="4">
+    <expressions>
+      <pre name="ther_da_db_found" value="none" />
+    </expressions>
+  </t>
 
 <!--赤ブリ判断用-->
   <t no="3" sync="^1A:[id8]:[mex] gains the effect of 聖竜の牙" >
