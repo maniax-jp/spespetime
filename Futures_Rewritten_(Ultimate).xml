@@ -353,6 +353,7 @@
       <set name="tether_da_db_found" value="none" />
       <set name="tether_d_t_found" value="none" />
       <set name="tether_d_h_found" value="none" />
+      <set name="crystalize" value="false" />
     </expressions>
   </a>
   <a time="023.0" text="移動" sync="シヴァ・ミトロンの「ドラゴンアーマー」" />
@@ -367,7 +368,11 @@
   <a time="064.0" text="舞踏技2" />
   <a time="067.0" text="全体攻撃" sync="未来の欠片の「忘却の此方」" notice="全体攻撃" />
   <a time="073.0" text="アク・モーン" sync="闇の巫女の「アク・モーン」" notice="4人割" />
-  <a time="084.0" text="集合" sync="闇の巫女の「モーン・アファー」" notice="集合" />
+  <a time="084.0" text="集合" sync="闇の巫女の「モーン・アファー」" notice="集合" >
+    <expressions>
+      <set name="crystalize" value="true" />
+    </expressions>
+  </a>
   <!--ここから時間結晶-->
   <a time="099.0" text="時間結晶" sync="シヴァ・ミトロンの「時間結晶」" />
   <a time="103.0" text="紫線を確認" sync="闇の巫女は「スピード」を唱えた。" notice="紫線を確認" />
@@ -449,20 +454,20 @@
 @for (int i = 0; i < priority_south.Length; i++) {
   <t no="2" sync="^23:[id8]:[pc]:[id8]:[pc]:" notice="線資格" sync-count="4">
     <expressions>
-      <pre name="ther_da_db_found" value="@(priority_south[i])" />
+      <pre name="tether_da_db_found" value="@(priority_south[i])" />
       <pre name="tether_d_t_found" value="@(priority_south[i])" />
     </expressions>
   </t>
   <t no="2" sync="^23:[id8]:[pc]:[id8]:[pc]:" notice="砂時計" sync-count="4">
     <expressions>
-      <pre name="ther_da_db_found" value="@(priority_south[i])" />
+      <pre name="tether_da_db_found" value="@(priority_south[i])" />
       <pre name="tether_d_h_found" value="@(priority_south[i])" />
     </expressions>
   </t>
 }
   <t no="2" sync="^23:[id8]:[pc]:[id8]:[pc]:" notice="蝶ネクタイ" sync-count="4">
     <expressions>
-      <pre name="ther_da_db_found" value="none" />
+      <pre name="tether_da_db_found" value="none" />
     </expressions>
   </t>
 
@@ -492,6 +497,9 @@
   </t>
   <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：(ダークホーリー|ダークウォタガ)" notice="南で集合" >
     <v-notice text="南で集合→床踏み" duration="40" />
+    <expressions>
+      <pre name="crystalize" value="true" />
+    </expressions>
   </t>
 <!--大波とノックバック-->
   <t no="5" sync="^107:[id8]:9D3B:119.999:100.009:" notice="東" >
