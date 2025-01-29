@@ -367,7 +367,7 @@
   <a time="061.0" text="舞踏技1" sync="闇の巫女の「宵闇の舞踏技」" sync-interval="10" />
   <a time="064.0" text="舞踏技2" />
   <a time="067.0" text="全体攻撃" sync="未来の欠片の「忘却の此方」" notice="全体攻撃" />
-  <a time="073.0" text="アク・モーン" sync="闇の巫女の「アク・モーン」" notice="4人割" />
+  <a time="073.0" text="アク・モーン" sync="闇の巫女の「アク・モーン」" notice="7人割" />
   <a time="084.0" text="集合" sync="闇の巫女の「モーン・アファー」" notice="集合" >
     <expressions>
       <set name="crystalize" value="true" />
@@ -399,7 +399,7 @@
   <t sync="シヴァ・ミトロン:時は満ちた…… ともに闇に還ろう、とこしえに" goto="P5B" />
 
 
-  <t sync="^1A:[id8]:[mex] gains the effect of 光の鎖" notice="鎖担当" >
+  <t sync="^1A:[id8]:[mex] gains the effect of 光の鎖" notice="" >
     <v-notice text="鎖担当" duration="7" />
   </t>
   <t sync="^14:9D23:" notice="いち２安置" >
