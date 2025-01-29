@@ -357,9 +357,9 @@
   </a>
   <a time="023.0" text="移動" sync="シヴァ・ミトロンの「ドラゴンアーマー」" />
   <a time="026.0" text="着弾" sync="シヴァ・ミトロンの「アク・ラーイ」" notice="移動" />
-  <a time="028.0" text="全体攻撃" sync="未来の欠片の「忘却の此方」" notice="全体攻撃" />
-  <a time="038.0" text="(強)全体攻撃" sync="闇の巫女の「光と闇の竜詩」" notice="全体攻撃" />
-  <a time="038.0" text="鎖付与" notice="デバフ確認" notic-o="0" />
+  <a time="028.0" text="全体攻撃" sync="未来の欠片の「忘却の此方」" notice="" />
+  <a time="038.0" text="(強)全体攻撃" sync="闇の巫女の「光と闇の竜詩」" notice="" />
+  <a time="038.0" text="鎖付与" notice="" />
   <a time="049.0" text="扇誘導" sync="シヴァ・ミトロンの「光の波動」" notice="扇誘導。散開" />
   <a time="053.0" text="テイカー" sync="闇の巫女の「スピリットテイカー」" />
   <a time="058.0" text="ウィング" sync="シヴァ・ミトロンの「ホーリーウィング」" notice="タンク誘導" />
