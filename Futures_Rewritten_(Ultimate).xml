@@ -347,13 +347,9 @@
 <s name="P4">
   <a time="012.0" text="具象化" sync="シヴァ・ミトロンの「具象化」" no="100" >
     <expressions><!--フラグを初期化-->
-      <set name="blue" value="false" />
-      <set name="east" value="false" />
-      <set name="west" value="false" />
       <set name="tether_da_db_found" value="none" />
       <set name="tether_d_t_found" value="none" />
       <set name="tether_d_h_found" value="none" />
-      <set name="crystalize" value="false" />
     </expressions>
   </a>
   <a time="023.0" text="移動" sync="シヴァ・ミトロンの「ドラゴンアーマー」" />
@@ -368,11 +364,7 @@
   <a time="064.0" text="舞踏技2" />
   <a time="067.0" text="全体攻撃" sync="未来の欠片の「忘却の此方」" notice="全体攻撃" />
   <a time="073.0" text="アク・モーン" sync="闇の巫女の「アク・モーン」" notice="7人割" />
-  <a time="084.0" text="集合" sync="闇の巫女の「モーン・アファー」" notice="集合" >
-    <expressions>
-      <set name="crystalize" value="true" />
-    </expressions>
-  </a>
+  <a time="084.0" text="集合" sync="闇の巫女の「モーン・アファー」" notice="集合" />
   <!--ここから時間結晶-->
   <a time="099.0" text="時間結晶" sync="シヴァ・ミトロンの「時間結晶」" />
   <a time="103.0" text="紫線を確認" sync="闇の巫女は「スピード」を唱えた。" notice="" />
@@ -471,74 +463,30 @@
     </expressions>
   </t>
 
-<!--赤ブリ判断用-->
-  <t no="3" sync="^1A:[id8]:[mex] gains the effect of 聖竜の牙" >
-    <expressions><!--青担当か-->
-      <set name="blue" value="true" />
-    </expressions>
+  <t sync="^1A:[id8]:[mex] gains the effect of 聖竜の牙" notice="青担当" notice-sync="true" >
+    <v-notice text="青担当" duration="40" />
   </t>
-<!--頭当たる組-->
-  <t sync="^1A:[id8]:[mex] gains the effect of 聖竜の爪 from  for 17" notice="東西へ、頭担当" >
-    <v-notice text="東西で頭→集合or回避" duration="17" />
+  <t sync="^1A:[id8]:[mex] gains the effect of 聖竜の爪 from  for 17" notice="赤ブリザガ" >
+    <v-notice text="赤ブリザガ" duration="40" />
   </t>
-
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークエアロガ" notice="エアロガ" >
-    <v-notice text="風:南→頭担当" duration="40" />
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークエアロガ" notice="赤エアロガ" >
+    <v-notice text="赤エアロガ" duration="40" />
   </t>
-<!--床踏み組-->
-  <t no="4" sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ" notice="南で集合" >
-    <v-notice text="南集合→床踏み" duration="40" />
-    <expressions><!--青ブリが真であれば実行-->
-      <pre name="blue" value="true" />
-    </expressions>
-  </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークエラプション" notice="北に行く" >
-    <v-notice text="炎:北→床踏み" duration="40" />
-  </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：(ダークホーリー|ダークウォタガ)" notice="南で集合" >
-    <v-notice text="南で集合→床踏み" duration="40" />
-    <expressions>
-      <pre name="crystalize" value="true" />
-    </expressions>
+  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークエラプション" notice="エラプション" notice-sync="true" >
+    <v-notice text="エラプション" duration="40" />
   </t>
 <!--大波とノックバック-->
-  <t no="5" sync="^107:[id8]:9D3B:119.999:100.009:" notice="東" >
-    <v-notice text="東" duration="10" />
-    <expressions>
-      <set name="east" value="true" />
-    </expressions>
+  <t sync="^107:[id8]:9D3B:119.999:100.009:" notice="Bから" >
+    <v-notice text="Bから" duration="10" />
   </t>
-  <t no="6" sync="^107:[id8]:9D3B:79.989:100.009:" notice="西" >
-    <v-notice text="西" duration="10" />
-    <expressions>
-      <set name="west" value="true" />
-    </expressions>
+  <t sync="^107:[id8]:9D3B:79.989:100.009:" notice="Dから" >
+    <v-notice text="Dから" duration="10" />
   </t>
-<!--フラグによるリターンを判断-->
-  <t no="7" sync="^107:[id8]:9D3B:100.009:79.989:" notice="北、リターン１" >
-    <v-notice text="北:1リターン" duration="10" />
-    <expressions>
-      <pre name="east" value="true" />
-    </expressions>
+  <t sync="^107:[id8]:9D3B:100.009:79.989:" notice="Aから" >
+    <v-notice text="Aから" duration="10" />
   </t>
-  <t no="8" sync="^107:[id8]:9D3B:100.009:119.999:" notice="南、リターン２" >
-    <v-notice text="南:2リターン" duration="10" />
-    <expressions>
-      <pre name="east" value="true" />
-    </expressions>
-  </t>
-
-  <t no="9" sync="^107:[id8]:9D3B:100.009:79.989:" notice="北、リターン４" >
-    <v-notice text="北:4リターン" duration="10" />
-    <expressions>
-      <pre name="west" value="true" />
-    </expressions>
-  </t>
-  <t no="10" sync="^107:[id8]:9D3B:100.009:119.999:" notice="南、リターン３" >
-    <v-notice text="南:3リターン" duration="10" />
-    <expressions>
-      <pre name="west" value="true" />
-    </expressions>
+  <t sync="^107:[id8]:9D3B:100.009:119.999:" notice="Cから" >
+    <v-notice text="Cから" duration="10" />
   </t>
 </s>
 
