@@ -200,39 +200,39 @@
     <v-notice text="ビーム誘導" duration="36" order="6" icon="Nail.png" />
   </t>
 
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="遅ファイガ" notice-o="0" >
+  <t sync="[mex]に「ディレイスペル：シャドウアイ」の効果。" notice="遅ファイガ" notice-o="0" >
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="頭割り" notice-o="6" >
+  <t sync="[mex]に「ディレイスペル：シャドウアイ」の効果。" notice="頭割り" notice-o="6" >
     <v-notice text="頭割り1" duration="11" order="1" icon="Stack.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="ビーム誘導" notice-o="11" >
+  <t sync="[mex]に「ディレイスペル：シャドウアイ」の効果。" notice="ビーム誘導" notice-o="11" >
     <v-notice text="ビーム誘導" duration="16" order="2" icon="Nail.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="頭割り" notice-o="16" >
+  <t sync="[mex]に「ディレイスペル：シャドウアイ」の効果。" notice="頭割り" notice-o="16" >
     <v-notice text="頭割り2" duration="21" order="3" icon="Stack.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="リターン設置" notice-o="21" >
+  <t sync="[mex]に「ディレイスペル：シャドウアイ」の効果。" notice="リターン設置" notice-o="21" >
     <v-notice text="リターン" duration="26" order="4" icon="TurnL.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークファイガ from  for 31" notice="ファイガ捨て" notice-o="26" >
+  <t sync="[mex]に「ディレイスペル：シャドウアイ」の効果。" notice="ファイガ捨て" notice-o="26" >
     <v-notice text="ファイガ" duration="31" order="5" icon="Explosion.png" />
   </t>
 
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="ブリザガ" notice-o="0" >
+  <t sync="[mex]に「ディレイスペル：ダークブリザガ」の効果。" notice="ブリザガ" notice-o="0" >
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="頭割り" notice-o="6" >
+  <t sync="[mex]に「ディレイスペル：ダークブリザガ」の効果。" notice="頭割り" notice-o="6" >
     <v-notice text="頭割り1" duration="11" order="1" icon="Stack.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="リターン設置" notice-o="11" >
+  <t sync="[mex]に「ディレイスペル：ダークブリザガ」の効果。" notice="リターン設置" notice-o="11" >
     <v-notice text="リターン" duration="16" order="2" icon="TurnL.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="頭割り" notice-o="16" >
+  <t sync="[mex]に「ディレイスペル：ダークブリザガ」の効果。" notice="頭割り" notice-o="16" >
     <v-notice text="頭割り2" duration="21" order="3" icon="Stack.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="ビーム誘導" notice-o="21" >
+  <t sync="[mex]に「ディレイスペル：ダークブリザガ」の効果。" notice="ビーム誘導" notice-o="21" >
     <v-notice text="ビーム誘導" duration="26" order="4" icon="Nail.png" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークブリザガ from  for 21" notice="頭割り" notice-o="26" >
+  <t sync="[mex]に「ディレイスペル：ダークブリザガ」の効果。" notice="頭割り" notice-o="26" >
     <v-notice text="頭割り3" duration="31" order="5" icon="Stack.png" />
   </t>
 
