@@ -463,16 +463,19 @@
     </expressions>
   </t>
 
-  <t sync="^1A:[id8]:[mex] gains the effect of 聖竜の牙" notice="青担当" notice-sync="true" >
+  <t sync="[mex]に「聖竜の牙」の効果。" notice="青担当" notice-sync="true" >
     <v-notice text="青担当" duration="40" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of 聖竜の爪 from  for 17" notice="赤ブリザガ" >
-    <v-notice text="赤ブリザガ" duration="40" />
+  <t sync="[mex]に「聖竜の爪」の効果。" notice="赤担当" notice-sync="true" >
+    <v-notice text="赤担当" duration="40" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークエアロガ" notice="赤エアロガ" >
-    <v-notice text="赤エアロガ" duration="40" />
+  <t sync="[mex]に「ディレイスペル：ダークブリザガ」の効果。" notice="ブリザガ" notice-sync="true" >
+    <v-notice text="ブリザガ" duration="40" />
   </t>
-  <t sync="^1A:[id8]:[mex] gains the effect of ディレイスペル：ダークエラプション" notice="エラプション" notice-sync="true" >
+  <t sync="[mex]に「ディレイスペル：ダークエアロガ」の効果。" notice="エアロガ" notice-sync="true" >
+    <v-notice text="エアロガ" duration="40" />
+  </t>
+  <t sync="[mex]に「ディレイスペル：ダークエラプション」の効果。" notice="エラプション" notice-sync="true" >
     <v-notice text="エラプション" duration="40" />
   </t>
 <!--大波とノックバック-->
