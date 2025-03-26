@@ -531,10 +531,10 @@
   <a time="322.0" text="最終詠唱" sync="パンドラ・ミトロンは「パラダイスロスト」の構え。" />
   <a time="344.0" text="時間切れ" sync="パンドラ・ミトロンの「パラダイスロスト」"  />
 
-  <t sync="^14:9D79:" notice="右が安置、誘導離れる" >
+  <t sync="^14:9D79:" notice="光" >
     <v-notice text="右:安置 誘導:離" duration="5" />
   </t>
-  <t sync="^14:9D29:" notice="左が安置、誘導近づく" >
+  <t sync="^14:9D29:" notice="闇" >
     <v-notice text="左:安置 誘導:近" duration="5" />
   </t>
 </s>
