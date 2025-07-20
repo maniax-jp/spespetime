@@ -19,19 +19,37 @@ sudo yum install libX11-devel libXcursor-devel libXrandr-devel libXinerama-devel
 
 ## Building and Running
 
+### Quick Start
 ```bash
 # Clone the repository
 git clone https://github.com/maniax-jp/spespetime.git
 cd spespetime
 
+# Use the build script (recommended)
+./build.sh
+
+# Or use Make
+make console    # Build console demo
+make graphics   # Build graphics version
+make help       # Show all options
+
+# Run the console demo (works without graphics libraries)
+./console_demo
+
+# Run the full graphics version (requires X11 libraries)
+./blockbreaker
+```
+
+### Manual Build
+```bash
 # Install dependencies
 go mod tidy
 
-# Build the game
-go build -o blockbreaker main.go
+# Build console demo
+go build -o console_demo console_demo.go
 
-# Run the game
-./blockbreaker
+# Build graphics version
+go build -o blockbreaker main.go
 ```
 
 ## Game Controls

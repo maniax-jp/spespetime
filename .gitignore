@@ -11,6 +11,10 @@
 go.work
 go.work.sum
 
+# Built binaries
+blockbreaker
+console_demo
+
 # IDE and editor files
 .vscode/
 .idea/
