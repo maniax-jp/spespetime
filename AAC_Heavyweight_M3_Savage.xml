@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>ヘビー級3層</name>
+  <rev>Rev.1</rev>
+  <description>
+        202601100227:Rev.1
+        *わざと性能下げてる部分があります。理由は察してください。
+    </description>
+    <author>Aqua Cat</author>
+  <license>CC BY-SA</license>
+  <zone>AAC Heavyweight M3 (Savage)</zone>
+  <locale>JA</locale>
+    <start>0039::戦闘開始！</start>
+    <entry>ENTRY</entry>
+
+    <default target-element="Activity" target-attr="notice-o" value="-4" />
+    <default target-element="Activity" target-attr="sync-s" value="-3" />
+    <default target-element="Activity" target-attr="sync-e" value="3" />
+
+<s name="ENTRY">
+  <a time="001" text="同期待ち" sync="メテムの実況:ついに、統一王者「ザ・タイラント」との決戦です！" />
+  <a time="011" text="全体" sync="ザ・タイラントの「キング・オブ・アルカディア」" notice="全体攻撃" />
+  <a time="018" text="ジェネレート" sync="ザ・タイラントの「ウェポンジェネレート：バスター」" />
+  <a time="024" text="バスター" sync="ザ・タイラントの「ウェポンバスター」" />
+  <a time="039" text="トロフィーW" sync="ザ・タイラントの「トロフィーウェポンズ」" />
+  <a time="049" text="アサルト3" sync="ザ・タイラントの「ウェポンアサルト」"  sync-interval="15" />
+  <a time="054" text="アサルト2" />
+  <a time="059" text="アサルト1" />
+  <a time="073" text="トロフィーW" sync="ザ・タイラントの「トロフィーウェポンズ」" />
+  <a time="080" text="コメットレイン" sync="ザ・タイラントの「コメットレイン」"  />
+  <a time="094" text="アサルト3" sync="ザ・タイラントの「ウェポンアサルト」"  sync-interval="15" />
+  <a time="099" text="アサルト2" />
+  <a time="104" text="アサルト1" />
+  <a time="108" text="コメット"  />
+  <a time="123" text="全体" sync="ザ・タイラントの「キング・オブ・アルカディア」" notice="全体攻撃" />
+  <a time="135" text="ジェネレート" sync="ザ・タイラントの「ウェポンジェネレート：ドミネーション」" />
+  <a time="141" text="全体(凶斬り)" sync="ザ・タイラントの「ダンス・オブ・ドミネーション」" notice="全体攻撃" />
+  <a time="150" text="ペア割り" sync="ザ・タイラントの「ザ・ハリケーン」"  />
+  <a time="157" text="ジェネレート" sync="ザ・タイラントの「ウェポンジェネレート：バスター」" />
+  <a time="163" text="バスター" sync="ザ・タイラントの「ウェポンバスター」" />
+  <a time="180" text="ミールストーム" sync="ザ・タイラントの「ザ・ミールストーム」" notice="ミールストーム" />
+  <a time="185" text="トロフィーW" sync="ザ・タイラントの「アルティメット・トロフィーウェポンズ」" />
+  <a time="194" text="ウェポンアサルト6" />
+  <a time="199" text="ウェポンアサルト5" />
+  <a time="204" text="ウェポンアサルト4" />
+  <a time="210" text="ウェポンアサルト3" />
+    <!--同期用に残す-->
+  <a time="213" sync="メテムの実況:す、凄まじい猛攻！ 恐るべし統一王者ッ" />
+  <a time="215" text="ウェポンアサルト2" />
+  <a time="220" text="ウェポンアサルト1" />
+    <a time="225" text="竜巻" />
+  <a time="228" text="イモータルレイン" sync="ザ・タイラントの「イモータルレイン」" />
+  <a time="240" text="全体" sync="ザ・タイラントの「ワン・アンド・オンリー」" notice="全体攻撃" />
+  <a time="254" text="強攻撃1" sync="ザ・タイラントの「ファイアストリーム」" sync-interval="10" />
+  <a time="257" text="強攻撃2" />
+  <a time="267" text="オービタルライン" sync="ザ・タイラントの「オービタルライン」" notice="外周確認" />
+  <a time="276" text="MT誘導" sync="ザ・タイラントの「ファイア・アンド・テイル」" />
+  <a time="294" text="メテオレイン" sync="ザ・タイラントの「メテオレイン」" notice="ヒラ中央" />
+  <a time="301" text="ファイア4" sync="ザ・タイラントの「ビッグファイア」" notice="1回目" />
+  <a time="311" text="ファイア3" sync="ザ・タイラントの「ビッグファイア」" notice="2回目"  />
+  <a time="321" text="ファイア2" sync="ザ・タイラントの「ビッグファイア」" notice="3回目"  />
+  <a time="331" text="ファイア1" sync="ザ・タイラントの「ビッグファイア」" notice="4回目"  />
+  <a time="344" text="トライスターズ" sync="ザ・タイラントの「トライスターズ・タイラントフォール」" />
+  <a time="363" text="エリアチェンジ" sync="ザ・タイラントの「フラットライナー」" notice="全体攻撃" />
+  <a time="378" text="メテオ" sync="ザ・タイラントの「チャンピオンズ・メテオ」" />
+  <a time="405" text="ブレス" sync="ザ・タイラントの「ファイアブレス」" />
+  <a time="437" text="ブレス" sync="ザ・タイラントの「ファイアブレス」" />
+  <a time="447" text="頭割り" sync="ザ・タイラントの「ヘビーメテオ」" notice="頭割り、5連" />
+  <a time="464" text="アルカディア・クラッシュ" sync="ザ・タイラントの「アルカディア・クラッシュ」" />
+  <a time="479" text="同期" sync="メテムの実況:準備が整ったようなので、リングを修復します。" sync-s="-20" sync-e="20" />
+  <a time="482" text="全体" sync="ザ・タイラントの「キング・オブ・アルカディア」" />
+  <a time="494" text="強攻撃1" sync="ザ・タイラントの「ファイアストリーム」" sync-interval="10" />
+  <a time="497" text="強攻撃2" />
+  <a time="507" text="オービタルライン" sync="ザ・タイラントの「オービタルライン」" notice="外周確認" />
+  <a time="516" text="MT誘導" sync="ザ・タイラントの「ファイア・アンド・テイル」" />
+  <a time="525" text="全体" sync="ザ・タイラントの「キング・オブ・アルカディア」" notice="全体攻撃" />
+  <a time="538" text="メテオスタンピード" sync="ザ・タイラントの「メテオスタンピード」" />
+  <a time="544" text="距離減着弾" />
+  <a time="574" text="スピンファイア" sync="ザ・タイラントの「(ツーウェイ|フォーウェイ)・スピンファイア」" />
+  <a time="584" text="全体" sync="ザ・タイラントの「キング・オブ・アルカディア」" notice="全体攻撃" />
+  <a time="598" text="頭割り3" sync="ザ・タイラントの「ハートブレイクキック」" notice="頭割り1回目" />
+  <a time="617" text="頭割り2" sync="ザ・タイラントの「ハートブレイクキック」" notice="頭割り2回目" />
+  <a time="638" text="頭割り1" sync="ザ・タイラントの「ハートブレイクキック」" notice="頭割り3回目" />
+  <a time="656" text="時間切れ開始" sync="ザ・タイラントは「ハートブレイカー」の構え。" />
+  <a time="665" text="時間切れ" sync="ザ・タイラントの「ハートブレイカー」" />
+</s>
+
+<t sync="^14:B423" notice="鎌" >
+    <v-notice text="鎌:Y字散開" duration="12" />
+</t>
+<t sync="^14:B422" notice="斧" >
+    <v-notice text="斧:散開(Tペア)" duration="12" />
+</t>
+
+<!--未来予知が過ぎるのでディレイを追加。自己責任でnotice-oとdelayを削除してください。-->
+<t sync="^14:(B450|B44A)" notice="北安置" notice-o="5" >
+    <v-notice text="北安置" duration="20" delay="5" />
+</t>
+
+<t sync="^14:(B44C|B44E)" notice="南安置" notice-o="5" >
+    <v-notice text="南安置" duration="20" delay="5" />
+</t>
+
+<!--上記安置トリガの4方向指定かつ高速版。１マーカーが北西
+<t sync="^14:B44A" notice="2安置" >
+    <v-notice text="2安置" duration="20" />
+</t>
+<t sync="^14:B44C" notice="3安置" >
+    <v-notice text="3安置" duration="20" />
+</t>
+<t sync="^14:B44E" notice="4安置" >
+    <v-notice text="4安置" duration="20" />
+</t>
+<t sync="^14:B450" notice="1安置" >
+    <v-notice text="1安置" duration="20" />
+</t>
+-->
+
+<t sync="ザ・タイラントは「ツーウェイ・スピンファイア」の構え。" notice="ツーウェイ" >
+    <v-notice text="ツー:左右" duration="12" />
+</t>
+<t sync="ザ・タイラントは「フォーウェイ・スピンファイア」の構え。" notice="フォーウェイ" >
+    <v-notice text="フォー:ナナメ" duration="12" />
+</t>
+
+</timeline>
