@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<timeline>
+  <name>ヘビー級4層</name>
+  <rev>TEST31</rev>
+  <description>
+        20260120:TEST31 ブログのコメントにて指摘頂いた部分を修正。いつもありがとうございます。
+        とりあえず仮完成。ドリーム部分をなんとかしたい。
+    </description>
+    <author>Aqua Cat</author>
+  <license>CC BY-SA</license>
+  <zone>AAC Heavyweight M4 (Savage)</zone>
+    <locale>JA</locale>
+    <start>0039::戦闘開始！</start>
+    <entry>P0</entry>
+
+    <default target-element="Activity" target-attr="notice-o" value="-4" />
+    <default target-element="Activity" target-attr="sync-s" value="-3" />
+    <default target-element="Activity" target-attr="sync-e" value="3" />
+
+    <s name="P0">
+        <!--前半後半分岐を先に設定。-->
+        <a time="010" text="前後半分岐待ち" />
+            <t sync="メテムの実況:オーナーの悪行は許されません！" >
+                <load target="P1" truncate="true" />
+            </t>
+            <t sync="メテムの実況:闘いは終わりません！ いけ、挑戦者、絶対に諦めるな～" >
+                <load target="P11" truncate="true" />
+            </t>
+            <!--実験中トリガ-->
+    </s>
+
+<s name="P1">
+  <a time="001.0" text="同期待ち" sync="メテムの実況:オーナーの悪行は許されません！" />
+  <a time="016.0" text="全体" sync="リンドブルムの「フィクサー・オブ・アルカディア」" notice="全体攻撃" />
+  <a time="028.0" text="玉を確認" sync="リンドブルムは「リーサルスカージ」の構え。" notice="玉を確認" >
+        <v-notice text="玉を確認" duration="12" />
+    </a>
+  <a time="041.0" text="リーサル1" sync="リンドブルムの「リーサルスカージ」" sync-interval="13" />
+  <a time="044.0" text="リーサル2" />
+  <a time="047.0" text="リーサル3" />
+  <a time="050.0" text="リーサル4" />
+    <a time="067.0" text="集合" sync="リンドブルムは「細胞付着・前期」の構え。" />
+    <a time="071.0" text="細胞付着・前期" sync="リンドブルムの「細胞付着・前期」" />
+    <a time="088.0" text="細胞爆発" sync="リンドブルムの「細胞爆発」" />
+    <a time="097.0" text="頭割+T強" sync="リンドブルムの「細胞重爆」" notice="頭割りと強攻撃" />
+    <a time="108.0" text="全体" sync="リンドブルムの「フィクサー・オブ・アルカディア」" notice="全体攻撃" />
+    <a time="120.0" text="細胞付着・中期" sync="リンドブルムの「細胞付着・中期」" />
+        <t sync="リンドブルムは「細胞付着・中期」の構え。" >
+            <load target="P2" truncate="true" />
+        </t>
+        <!--THDによって頭割りを判別-->
+        <t sync="^1A:[id8]:[DPS] gains the effect of 起爆細胞：重爆" notice="タンヒラ散開" >
+            <v-notice text="頭割:DPS" duration="17" />
+        </t>
+        <t sync="^1A:[id8]:([TANK]|[HEALER]) gains the effect of 起爆細胞：重爆" notice="DPS散開" >
+            <v-notice text="頭割:TH" duration="17" />
+        </t>
+        <!--リーチの安置判断-->
+        <t sync="^15:[id8]:リンドブルム:B49A:" notice="左側安置" >
+            <v-notice text="左側安置" duration="17" />
+        </t>
+        <t sync="^15:[id8]:リンドブルム:B49B:" notice="右側安置" >
+            <v-notice text="右側安置" duration="17" />
+        </t>
+</s>
+
+<s name="P2">
+    <a time="004" text="細胞付着・中期" sync="リンドブルムの「細胞付着・中期」" />
+    <a time="019" text="回転開始" sync="リンドブルムの「クルエルコイル」" />
+    <a time="036" text="変異1" sync="連環細胞の「細胞変異」" />
+    <a time="041" text="変異2" sync="連環細胞の「細胞変異」" />
+    <a time="046" text="変異3" sync="連環細胞の「細胞変異」" />
+    <a time="051" text="変異4" sync="連環細胞の「細胞変異」" />
+    <a time="060" text="コンストリクター" sync="リンドブルムの「コンストリクター」" />
+    <a time="071" text="全体" sync="リンドブルムの「スプラッターシェッド」" />
+    <a time="090" text="細胞付着・後期" sync="リンドブルムの「細胞付着・後期」" />
+        <t sync="リンドブルムは「細胞付着・後期」の構え。" >
+            <load target="P3" truncate="true" />
+        </t>
+        <!--アルファ/ベータとターゲッティング-->
+        <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4752" notice="あるふぁ、出る担当" >
+            <v-notice text="α:出る担当" duration="60" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4754" notice="べーた、残る担当" >
+            <v-notice text="β:残る担当" duration="60" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of ファーストターゲット" notice="いちばん" >
+            <v-notice text="線1、塔3担当" duration="60" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of セカンドターゲット" notice="にばん" >
+            <v-notice text="線2、塔4担当" duration="60" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of サードターゲット" notice="さんばん" >
+            <v-notice text="線3、塔1担当" duration="60" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of フォースターゲット" notice="よんばん" >
+            <v-notice text="線4、塔2担当" duration="60" />
+        </t>
+</s>
+
+<s name="P3">
+    <a time="004" text="細胞付着・後期" sync="リンドブルムの「細胞付着・後期」" />
+    <a time="009" text="フェラルフィッション" sync="リンドブルムの「フェラルフィッション」" />
+  <a time="013" text="エリアチェンジ" sync="リンドブルムの「ブリングダウン・ハウス」" />
+    <a time="016" text="バインド" sync="リンドブルムの「細胞飛散」" />
+    <a time="020" text="散開注意" />
+    <a time="026" text="ブレス誘導" sync="リンドブルムの「スプリットスカージ」" notice="ブレス" />
+    <a time="029" text="AoE誘導" sync="リンドブルムの「ドロップスカージ」" notice="ドロップ" />
+    <a time="039" text="全体" sync="リンドブルムの「フィクサー・オブ・アルカディア」" notice="全体攻撃" />
+    <a time="051.0" text="細胞付着・終期" sync="リンドブルムの「細胞付着・終期」" />
+        <t sync="リンドブルムは「細胞付着・終期」の構え。" >
+            <load target="P4" truncate="true" />
+        </t>
+        <!--安置床の通い-->
+        <t sync="^14:B4A1" notice="十字床" >
+            <v-notice text="十字床" duration="20" />
+        </t>
+        <t sync="^14:B4A2" notice="ナナメ床" >
+            <v-notice text="ナナメ床" duration="20" />
+        </t>
+        <!--エフェクト及び待機位置の通知-->
+        <t sync="^1A:[id8]:[mex] gains the effect of Unknown_DE6.*?BuffID: 0DE6-436" notice="下待機" >
+            <v-notice text="下待機" duration="5" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of Unknown_DE6.*?BuffID: 0DE6-437" notice="左待機" >
+            <v-notice text="左待機" duration="5" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of Unknown_DE6.*?BuffID: 0DE6-438" notice="上待機" >
+            <v-notice text="上待機" duration="5" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of Unknown_DE6.*?BuffID: 0DE6-439" notice="右待機" >
+            <v-notice text="右待機" duration="5" />
+        </t>
+</s>
+
+<s name="P4">
+    <a time="004.0" text="細胞付着・終期" sync="リンドブルムの「細胞付着・終期」" />
+    <a time="006.0" text="AoE誘導" sync="リンドブルムは「ラヴェナスリーチ」の構え。" />
+    <a time="018.0" text="リーチ" sync="リンドブルムの「ラヴェナスリーチ」" />
+    <a time="020.0" text="集合" notice="中央集合" />
+    <a time="026.0" text="集合" sync="リンドブルムの「細胞爆発」" notice="移動" />
+    <a time="031.0" text="大爆発" sync="リンドブルムの「大爆発」" />
+    <a time="040.0" text="全体" sync="リンドブルムの「スプラッターシェッド」" notice="全体攻撃" />
+    <a time="066.0" text="リーサル1" sync="リンドブルムの「リーサルスカージ」" sync-interval="13" />
+    <a time="069.0" text="リーサル2" />
+    <a time="072.0" text="リーサル3" />
+    <a time="075.0" text="リーサル4" />
+        <t sync="リンドブルムは「リーサルスカージ」の構え。">
+            <load target="P5" truncate="true" />
+        </t>
+
+        <!--リーチの安置判断-->
+        <t sync="^15:[id8]:リンドブルム:B49A:" notice="左側安置" >
+            <v-notice text="左側安置" duration="17" />
+        </t>
+        <t sync="^15:[id8]:リンドブルム:B49B:" notice="右側安置" >
+            <v-notice text="右側安置" duration="17" />
+        </t>
+        <!--付着細胞の通知-->
+        <t sync="^1A:[id8]:[mex] gains the effect of 致死細胞" notice="範囲側" >
+            <v-notice text="致死:範囲側" duration="25" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of 起爆細胞" notice="安置側" >
+            <v-notice text="起爆:安置側" duration="25" />
+        </t>
+</s>
+
+<s name="P5">
+    <a time="000" text="玉を確認" notice="玉を確認" >
+        <v-notice text="玉を確認" duration="12" />
+    </a>
+    <a time="012" text="スカージ1" sync="リンドブルムの「リーサルスカージ」" sync-interval="13" />
+  <a time="015" text="リーサル2" />
+  <a time="018" text="リーサル3" />
+  <a time="021" text="リーサル4" />
+    <a time="038" text="全体" sync="リンドブルムの「スローターシェッド」" notice="全体攻撃" />
+    <a time="048" text="大爆発" sync="リンドブルムの「大爆発」" />
+    <a time="054" text="腕1" />
+    <a time="058" text="腕2" />
+    <a time="067" text="全体" sync="リンドブルムの「スローターシェッド」" notice="全体攻撃" />
+    <a time="077" text="大爆発" sync="リンドブルムの「大爆発」" />
+    <a time="083" text="腕1" />
+    <a time="087" text="腕2" />
+    <a time="096" text="全体" sync="リンドブルムの「スローターシェッド」" notice="全体攻撃" />
+    <a time="106" text="大爆発" sync="リンドブルムの「大爆発」" />
+    <a time="112" text="腕1" />
+    <a time="116" text="腕2" />
+    <a time="124" text="時間切れ開始" sync="リンドブルムは「オーバーキュア・オーバーキル」の構え。" />
+    <a time="140" text="時間切れ" sync="リンドブルムの「オーバーキュア・オーバーキル」" />
+    <a time="145" text="待機へ" >
+        <load target="P0" truncate="true" />
+    </a>
+    <t sync="メテムの実況:核が脈打っている！？ 何やら禍々しいことが起ころうとしています" >
+        <load target="P0" truncate="true" />
+    </t>
+
+    <!--腕の通知-->
+        <t sync="^15:[id8]:リンドブルム:B4CD:" notice="左安置" >
+            <v-notice text="左安置" duration="20" />
+        </t>
+        <t sync="^15:[id8]:リンドブルム:B4CB:" notice="右安置" >
+            <v-notice text="右安置" duration="20" />
+        </t>
+        <t sync="^15:[id8]:リンドブルム:B4CC:" notice="左からノックバック" >
+            <v-notice text="左からノックバック" duration="20" />
+        </t>
+        <t sync="^15:[id8]:リンドブルム:B4CE:" notice="右からノックバック" >
+            <v-notice text="右からノックバック" duration="20" />
+        </t>
+</s>
+
+<s name="P11">
+    <a time="010.0" text="同期待ち" />
+    <a time="016.0" text="全体攻撃" sync="リンドブルムの「アルカディアン・フレイム」" notice="全体攻撃" />
+    <!--P1レプリケーション-->
+    <a time="028.0" text="分身" sync="リンドブルムの「レプリケーション」" />
+    <a time="039.0" text="1回目" sync="人型分体の「トップティアスラム」" notice="バフを確認" />
+    <a time="045.0" text="キック" sync="リンドブルムの「スネークキック」" />
+    <a time="061.0" text="2回目" sync="人型分体の「トップティアスラム」" />
+    <a time="070.0" text="T誘導" sync="リンドブルムの「ダブルソバット」" notice="タンク誘導、キック注意"  />
+    <!--P2模倣細胞-->
+    <a time="092.0" text="模倣細胞" sync="リンドブルムの「模倣細胞」" />
+    <a time="106.0" text="レプリケーション" sync="リンドブルムの「レプリケーション」" />
+    <a time="127.0" text="【4/扇】扇誘導" sync="リンドブルムの「ファイアフォール・スプラッシュ」" notice="誘導注意" />
+    <a time="135.0" text="頭割" sync="リンドブルムは「スネークキック」の構え。" notice="頭割り、扇注意" />
+    <a time="141.0" text="キック" sync="リンドブルムの「スネークキック」" />
+    <a time="152.0" text="リバース開始" sync="リンドブルムの「リエナクトメント」" notice="リバース開始" />
+    <a time="160.0" text="ニア・ファー" sync="リンドブルムの「ネザーレイジ・(ニア|ファー)」" />
+    <a time="164.0" text="【ボ単】頭割り1" sync="人型分体の「ヘビースラム」" notice="頭割り" />
+    <a time="168.0" text="【4/扇】扇誘導" sync="人型分体の「ファイアフォール・スプラッシュ" notice="扇誘導" />
+    <a time="172.0" text="【ボ単】頭割り２" sync="人型分体の「ヘビースラム」" notice="頭割り" />
+    <a time="185.0" text="変異細胞" sync="リンドブルムの「変異細胞」" />
+    <a time="191.0" text="スフィア" sync="リンドブルムの「マナスフィア」" />
+    <a time="201.0" text="魔力放散" sync="リンドブルムの「魔力放散」" />
+    <a time="218.0" text="開放1" />
+    <a time="224.0" text="開放2" />
+    <a time="229.0" text="ニア・ファー" sync="リンドブルムの「ネザーワールド・(ニア|ファー)」" />
+    <a time="238.0" text="全体" sync="リンドブルムの「アルカディアン・フレイム」" />
+    <a time="247.0" text="T誘導" sync="リンドブルムの「ダブルソバット」" notice="タンク誘導、キック注意" />
+    <a time="271.0" text="ドリーム" sync="リンドブルムの「アルカディアン・ドリーム」" />
+    <t sync="リンドブルムは「アルカディアン・ドリーム」の構え。" >
+        <load target="P12" truncate="true" />
+    </t>
+        <t sync="^14:B527:" notice="キック注意" >
+            <v-notice text="キック注意" duration="4" />
+        </t>
+        <!--個人使用トリガー-->
+        <t sync="^14:B4DA:" notice="縦範囲" >
+            <v-notice text="遠隔:BD安置" duration="23" />
+        </t>
+        <t sync="^14:B4DB:" notice="横範囲" >
+            <v-notice text="遠隔:AC安置" duration="23" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of 火属性耐性低下［強］" notice="次は単体受け" >
+            <v-notice text="次は闇の単体" duration="23" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of 闇属性耐性低下［強］" notice="次はペア受け" >
+            <v-notice text="次は炎のペア" duration="23" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4769" notice="あるふぁ" >
+            <v-notice text="A:当たらない" duration="17" />
+        </t>
+        <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4771" notice="べーた" >
+            <v-notice text="B:受ける" duration="17" />
+        </t>
+        <t sync="^14:B52B:" notice="ニア、ベータ寄る" >
+            <v-notice text="ニア:βが寄る" duration="7" />
+        </t>
+        <t sync="^14:B52C:" notice="ファー、ベータ離れる" >
+            <v-notice text="ファー:βが離れる" duration="7" />
+        </t>
+</s>
+
+<s name="P12">
+    <a time="006.0" text="ドリーム" sync="リンドブルムの「アルカディアン・ドリーム」" notice="全体攻撃" >
+        <expressions>
+      <set name="shadow" value="null" />
+            <set name="XY" value="null" />
+            <set name="Top" value="null" />
+    </expressions>
+    </a>
+    <a time="012.0" text="自機確認" sync="リンドブルムの「模倣細胞」" notice="自機の位置を確認" />
+    <a time="034.0" text="【予告】安置確認" sync="リンドブルムの「レプリケーション」" notice="安置を確認" />
+    <a time="052.0" text="線取り開始" sync="リンドブルムの「レプリケーション」" />
+    <a time="072.0" text="線取り終了" sync="リンドブルムの「心象投影」" />
+    <a time="075.0" text="【発動】安置へ" sync="人型分体の「パワーガッシャー」" notice="安置へ移動" />
+    <a time="078" text="エリアチェンジ" />
+    <a time="081.0" text="全体" sync="リンドブルムの「リンドブルム・メテオ」" />
+    <a time="087.0" text="【予告】隕石" sync="リンドブルムの「ダウンフォール」" notice="担当を確認" />
+    <a time="093.0" text="デバフ付与" sync="リンドブルムの「アルカディアン・アルケイナム」" />
+    <a time="101.0" text="範囲or頭割り" sync="リンドブルムの「心象投影」" notice="頭割りと範囲捨て" />
+  <a time="107.0" text="アクション４" />
+  <a time="112.0" text="アクション３" />
+  <a time="117.0" text="アクション２" />
+  <a time="122.0" text="アクション１" />
+    <a time="126.0" text="塔踏み" sync="リンドブルムは「心象投影」の構え。" notice="次は、塔踏み" />
+    <a time="135.0" text="塔:着弾" sync="リンドブルムの「着弾」" notice="塔発動" />
+    <a time="145.0" text="遠近発動" sync="リンドブルムの「リンドブルム・グレア」" />
+    <a time="155.0" text="空間裂断" sync="リンドブルムの「空間裂断」" notice="ボスを確認" />
+    <a time="167.0" text="散開位置へ" sync="リンドブルムの「心象投影」" notice="移動先を確認" />
+    <a time="173.0" text="ダミー攻撃:前半" sync="リンドブルムの「リエナクトメント」" />
+    <a time="175.0" text="頭割り" sync="人型分体の「ヘビースラム」" />
+  <a time="182.0" text="島安置へ" sync="リンドブルムの「心象投影」" />
+    <a time="190.0" text="ダミー攻撃:後半" sync="リンドブルムの「心象投影」"/>
+    <a time="197.0" text="頭割り" sync="人型分体の「ヘビースラム」" />
+    <a time="202.0" text="安置へ" sync="人型分体の「パワーガッシャー」" />
+    <a time="209.0" text="全体" sync="リンドブルムの「アルカディアン・ドリーム」" />
+    <a time="218.0" text="T誘導" sync="リンドブルムの「ダブルソバット」" notice="タンク誘導、キック注意" />
+    <a time="252.0" text="全体2" sync="リンドブルムの「アルカディアン・ヘル」" />
+    <a time="268.0" text="全体1" sync="リンドブルムの「アルカディアン・ヘル」" />
+    <a time="280.0" text="時間切れ開始" sync="リンドブルムは「アルカディアン・ヘル」の構え。" />
+    <a time="291.0" text="時間切れ" sync="リンドブルムの「アルカディアン・ヘル」" />
+
+    <t sync="^14:B510:.*?100.00,88.00,0.00" notice="A側へ" >
+        <v-notice text="A横安置" duration="10" />
+    </t>
+    <t sync="^14:B510:.*?100.00,112.00,0.00" notice="C側へ" >
+        <v-notice text="C横安置" duration="10" />
+    </t>
+    <!--塔踏み時のデバフをコールする。-->
+    <t sync="^1A:[id8]:[mex] gains the effect of 光属性耐性低下［強］" notice="たんしょく" >
+        <v-notice text="塔:単色" duration="23" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4768" notice="ヒート" >
+        <v-notice text="ヒート注意" duration="7" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4766" notice="ファー" >
+        <v-notice text="ファー担当" duration="7" />
+    </t>
+    <t sync="^1A:[id8]:[mex] gains the effect of _rsv_4767" notice="ニア" >
+        <v-notice text="ニア担当" duration="7" />
+    </t>
+    <!--空間断裂自の裏詠唱をフラグへ設定する。-->
+    <t sync="^14:B50F:.*?113.97,99.99,0.00" notice="B島" >
+        <v-notice text="B島縦安置" duration="10" />
+            <expressions>
+                <set name="shadow" value="Byoko" />
+            </expressions>
+    </t>
+    <t sync="^14:B50F:.*?85.98,99.99,0.00" notice="D島" >
+        <v-notice text="D島縦安置" duration="10" />
+            <expressions>
+                <set name="shadow" value="Dyoko" />
+            </expressions>
+    </t>
+    <t sync="^14:B510:.*?113.97,99.99,0.00" notice="B島" >
+        <v-notice text="B島横安置" duration="10" />
+            <expressions>
+                <set name="shadow" value="Btate" />
+            </expressions>
+    </t>
+    <t sync="^14:B510:.*?85.98,99.99,0.00" notice="D島" >
+        <v-notice text="D島横安置" duration="10" />
+            <expressions>
+                <set name="shadow" value="Dtate" />
+            </expressions>
+    </t>
+<!--フラグ設定後、事前の技で安置をコールする。-->
+    <t sync="^14:BBE2:" notice="Bたて安置" >
+            <expressions>
+                <pre name="shadow" value="Byoko" />
+            </expressions>
+        <v-notice text="B島:縦安置" duration="30" />
+    </t>
+    <t sync="^14:BBE2:" notice="Dたて安置" >
+            <expressions>
+                <pre name="shadow" value="Dyoko" />
+            </expressions>
+        <v-notice text="D島:縦安置" duration="30" />
+    </t>
+    <t sync="^14:BBE2:" notice="Bよこ安置" >
+            <expressions>
+                <pre name="shadow" value="Btate" />
+            </expressions>
+        <v-notice text="B島:横安置" duration="30" />
+    </t>
+    <t sync="^14:BBE2:" notice="Dよこ安置" >
+            <expressions>
+                <pre name="shadow" value="Dtate" />
+            </expressions>
+        <v-notice text="D島:横安置" duration="30" />
+    </t>
+
+
+<!--おまけ。できてない部分はチャットからフラグをセット。
+    <t sync="^00:.?*X字" notice="X字" >
+            <expressions>
+                <set name="Top" value="X" />
+            </expressions>
+        <v-notice text="X字をセット" duration="3" />
+    </t>
+    <t sync="^00:.?*十字" notice="十字" >
+            <expressions>
+                <set name="Top" value="Y" />
+            </expressions>
+        <v-notice text="X字をセット" duration="3" />
+    </t>
+
+    <t sync="^00:.?*北単体" notice="X字" >
+            <expressions>
+                <set name="kita" value="tan" />
+            </expressions>
+        <v-notice text="北単体をセット" duration="3" />
+    </t>
+    <t sync="^00:.?*北頭割り" notice="十字" >
+            <expressions>
+                <set name="kita" value="wari" />
+            </expressions>
+        <v-notice text="北頭割りをセット" duration="30" />
+    </t>
+
+
+    <t sync="^14:B529:" notice="範囲から" >
+            <expressions>
+                <pre name="kita" value="tan" />
+            </expressions>
+        <v-notice text="範囲から" duration="20" />
+    </t>
+    <t sync="^14:B4EC:" notice="頭割りから" >
+            <expressions>
+                <pre name="kita" value="wari" />
+            </expressions>
+        <v-notice text="頭割りから" duration="20" />
+    </t>
+
+<t sync="^14:B4EC:" notice="1と4で頭割り" >
+        <expressions>
+            <pre name="Top" value="Y" />
+        </expressions>
+    <v-notice text="1と4で頭割り" duration="20" />
+</t>
+<t sync="^14:B4EC:" notice="十字で頭割り" >
+        <expressions>
+            <pre name="Top" value="X" />
+        </expressions>
+    <v-notice text="ADで頭割り" duration="20" />
+</t>
+-->
+</s>
+
+</timeline>
