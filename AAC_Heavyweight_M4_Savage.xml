@@ -408,26 +408,39 @@
             <expressions>
                 <set name="Top" value="X" />
             </expressions>
-        <v-notice text="X字をセット" duration="3" />
+        <v-notice text="X字をセット" duration="240" />
     </t>
     <t sync="^00:0038::十字" notice="十字" >
             <expressions>
                 <set name="Top" value="Y" />
             </expressions>
-        <v-notice text="十字をセット" duration="3" />
+        <v-notice text="十字をセット" duration="240" />
     </t>
 
     <t sync="^00:0038::円範囲から" notice="円範囲から" >
             <expressions>
                 <set name="kita" value="en" />
             </expressions>
-        <v-notice text="円範囲から" duration="3" />
+        <v-notice text="円範囲から" duration="240" />
     </t>
     <t sync="^00:0038::頭割りから" notice="頭割りから" >
             <expressions>
                 <set name="kita" value="wari" />
             </expressions>
-        <v-notice text="頭割りから" duration="3" />
+        <v-notice text="頭割りから" duration="240" />
+    </t>
+
+    <t sync="^00:0038::1-2安地" notice="壱にぃ安置" >
+            <expressions>
+                <set name="anti" value="12" />
+            </expressions>
+        <v-notice text="1-2安地" duration="240" />
+    </t>
+    <t sync="^00:0038::3-4安地" notice="三よん安置" >
+            <expressions>
+                <set name="anti" value="34" />
+            </expressions>
+        <v-notice text="3-4安地" duration="240" />
     </t>
 
     <t sync="^14:B529:" notice="円範囲から" >
