@@ -268,12 +268,6 @@
             <v-notice text="キック注意" duration="4" />
         </t>
         <!--個人使用トリガー-->
-        <t sync="^14:B4DA:" notice="縦範囲" >
-            <v-notice text="遠隔:BD安置" duration="23" />
-        </t>
-        <t sync="^14:B4DB:" notice="横範囲" >
-            <v-notice text="遠隔:AC安置" duration="23" />
-        </t>
         <t sync="^1A:[id8]:[mex] gains the effect of 火属性耐性低下［強］" notice="次は単体受け" >
             <v-notice text="次は闇の単体" duration="23" />
         </t>
@@ -443,13 +437,13 @@
         <v-notice text="3-4安地" duration="240" />
     </t>
 
-    <t sync="^14:B529:" notice="円範囲から" >
+    <t sync="リンドブルムの「アルカディアン・アルケイナム」" notice="円範囲から" notice-o="6" >
             <expressions>
                 <pre name="kita" value="en" />
             </expressions>
         <v-notice text="円範囲から" duration="20" />
     </t>
-    <t sync="^14:B4EC:" notice="頭割りから" >
+    <t sync="リンドブルムの「アルカディアン・アルケイナム」" notice="頭割りから" notice-o="6" >
             <expressions>
                 <pre name="kita" value="wari" />
             </expressions>
